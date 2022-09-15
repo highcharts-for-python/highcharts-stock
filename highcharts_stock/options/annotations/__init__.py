@@ -1,276 +1,179 @@
-from typing import Optional, List
+from typing import Optional
 
-from validator_collection import validators
-
-from highcharts_python import constants, errors
 from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
 
-from highcharts_python.options.annotations.animation import AnnotationAnimation
-from highcharts_python.options.annotations.control_point_options import AnnotationControlPointOption
-from highcharts_python.options.annotations.events import AnnotationEvent
-from highcharts_python.options.annotations.label_options import LabelOptions
-from highcharts_python.options.annotations.label_options import AnnotationLabel
-from highcharts_python.options.annotations.shape_options import ShapeOptions
-from highcharts_python.options.annotations.shape_options import AnnotationShape
+from highcharts_python.options.annotations import Annotation as AnnotationBase
+
+from highcharts_stock.options.annotations.stock_tools import CrookedLineAnnotation
+from highcharts_stock.options.annotations.stock_tools import ElliottWaveAnnotation
+from highcharts_stock.options.annotations.stock_tools import FibonacciAnnotation
+from highcharts_stock.options.annotations.stock_tools import FibonacciTimeZonesAnnotation
+from highcharts_stock.options.annotations.stock_tools import InfinityLineAnnotation
+from highcharts_stock.options.annotations.stock_tools import MeasureAnnotation
+from highcharts_stock.options.annotations.stock_tools import PitchforkAnnotation
+from highcharts_stock.options.annotations.stock_tools import TimeCyclesAnnotation
+from highcharts_stock.options.annotations.stock_tools import TunnelAnnotation
+from highcharts_stock.options.annotations.stock_tools import VerticalLineAnnotation
 
 
-class Annotation(HighchartsMeta):
+class Annotation(AnnotationBase):
     """A basic type of an annotation. It allows adding custom labels or shapes. The
     items can be tied to points, axis coordinates or chart pixel coordinates."""
 
     def __init__(self, **kwargs):
-        self._animation = None
-        self._control_point_options = None
-        self._crop = None
-        self._draggable = None
-        self._events = None
-        self._id = None
-        self._label_options = None
-        self._labels = None
-        self._shape_options = None
-        self._shapes = None
-        self._visible = None
-        self._z_index = None
+        self._crooked_line = None
+        self._elliott_wave = None
+        self._fibonacci = None
+        self._fibonacci_time_zones = None
+        self._infinity_line = None
+        self._measure = None
+        self._pitchfork = None
+        self._time_cycles = None
+        self._tunnel = None
+        self._vertical_line = None
 
-        self.animation = kwargs.get('animation', None)
-        self.control_point_options = kwargs.get('control_point_options', None)
-        self.crop = kwargs.get('crop', None)
-        self.draggable = kwargs.get('draggable', None)
-        self.events = kwargs.get('events', None)
-        self.id = kwargs.get('id', None)
-        self.label_options = kwargs.get('label_options', None)
-        self.labels = kwargs.get('labels', None)
-        self.shape_options = kwargs.get('shape_options', None)
-        self.shapes = kwargs.get('shapes', None)
-        self.visible = kwargs.get('visible', None)
-        self.z_index = kwargs.get('z_index', None)
+        self.crooked_line = kwargs.get('crooked_line', None)
+        self.elliott_wave = kwargs.get('elliott_wave', None)
+        self.fibonacci = kwargs.get('fibonacci', None)
+        self.fibonacci_time_zones = kwargs.get('fibonacci_time_zones', None)
+        self.infinity_line = kwargs.get('infinity_line', None)
+        self.measure = kwargs.get('measure', None)
+        self.pitchfork = kwargs.get('pitchfork', None)
+        self.time_cycles = kwargs.get('time_cycles', None)
+        self.tunnel = kwargs.get('tunnel', None)
+        self.vertical_line = kwargs.get('vertical_line', None)
+
+        super().__init__(**kwargs)
 
     @property
-    def animation(self) -> Optional[AnnotationAnimation]:
-        """Enable or disable the initial animation when a series is displayed for the
-        annotation. If not :obj:`None <python:None>`, is enabled. Otherwise, disabled.
+    def crooked_line(self) -> Optional[CrookedLineAnnotation]:
+        """A :term:`crooked line` annotation.
 
-        .. warning::
-
-          This option only applies to the initial animation.
-
-          For other animations, see ``chart.animation`` and the animation parameter under
-          the API methods.
-
-        :returns: The configuration settings for the annotation animation.
-        :rtype: :class:`AnnotationAnimation`
+        :rtype: :class:`CrookedLineAnnotation` or :obj:`None <python:None>`
         """
-        return self._animation
+        return self._crooked_line
 
-    @animation.setter
-    @class_sensitive(AnnotationAnimation)
-    def animation(self, value):
-        self._animation = value
+    @crooked_line.setter
+    @class_sensitive(CrookedLineAnnotation)
+    def crooked_line(self, value):
+        self._crooked_line = value
 
     @property
-    def control_point_options(self) -> Optional[AnnotationControlPointOption]:
-        """Options for annotation's control points.
+    def elliott_wave(self) -> Optional[ElliottWaveAnnotation]:
+        """An :term:`elliott wave` annotation.
 
-        Each control point inherits options from this property, though the global
-        options can be overwritten by options in a specific control point.
-
-        :returns: Options configuring the annotations' control points.
-        :rtype: :class:`AnnotationControlPointOption` or :obj:`None <python:None>`
-
+        :rtype: :class:`ElliottWaveAnnotation` or :obj:`None <python:None>`
         """
-        return self._control_point_options
+        return self._elliott_wave
 
-    @control_point_options.setter
-    @class_sensitive(AnnotationControlPointOption)
-    def control_point_options(self, value):
-        self._control_point_options = value
+    @elliott_wave.setter
+    @class_sensitive(ElliottWaveAnnotation)
+    def elliott_wave(self, value):
+        self._elliott_wave = value
 
     @property
-    def crop(self) -> Optional[bool]:
-        """If ``True``, hide the part of the annotation that is outside the plot area.
-        Defaults to ``True``.
+    def fibonacci(self) -> Optional[FibonacciAnnotation]:
+        """A :term:`Fibonacci` annotation.
 
-        :returns: Flag indicating whether to clip an annotation that extends beyond the
-          plot area.
-        :rtype: :class:`bool <python:bool>` or :obj:`None <python:None>`
+        :rtype: :class:`FibonacciAnnotation` or :obj:`None <python:None>`
         """
-        return self._crop
+        return self._fibonacci
 
-    @crop.setter
-    def crop(self, value):
-        if value is None:
-            self._crop = None
-        else:
-            self._crop = bool(value)
+    @fibonacci.setter
+    @class_sensitive(FibonacciAnnotation)
+    def fibonacci(self, value):
+        self._fibonacci = value
 
     @property
-    def draggable(self) -> Optional[str]:
-        f"""Setting that allows an annotation to be draggable by a user. Defaults to
-        ``'{constants.DEFAULT_DRAGGABLE}'``
+    def fibonnaci_time_zones(self) -> Optional[FibonacciTimeZonesAnnotation]:
+        """A :term:`Fibonacci Time Zones` annotation.
 
-        Supports values:
-
-          * ``'x'``
-          * ``'xy'``
-          * ``'y'``
-          * ``''`` (empty string - disables dragging)
-
-        :returns: Configuration of annotation dragging by the user.
-        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
-
-        :raises HighchartsValueError: if an unsupported value is supplied
+        :rtype: :class:`FibonacciTimeZonesAnnotation` or :obj:`None <python:None>`
         """
-        return self._draggable
+        return self._fibonnaci_time_zones
 
-    @draggable.setter
-    def draggable(self, value):
-        if value is None:
-            self._draggable = None
-        else:
-            value = validators.string(value, allow_empty = True)
-            value = value.lower()
-            if value not in ['x', 'xy', 'y']:
-                raise errors.HighchartsValueError(f'draggable must be "x", "xy", "y", '
-                                                  f'or "". Was: {value}')
-            self._draggable = value
+    @fibonnaci_time_zones.setter
+    @class_sensitive(FibonacciTimeZonesAnnotation)
+    def fibonnaci_time_zones(self, value):
+        self._fibonnaci_time_zones = value
 
     @property
-    def events(self) -> Optional[AnnotationEvent]:
-        """JavaScript callback functions that fire in response to annotation-related
-        events.
+    def infinity_line(self) -> Optional[InfinityLineAnnotation]:
+        """A :term:`infinity line` annotation.
 
-        :returns: Callback functions that fire in response to annotation-related events.
-        :rtype: :class:`AnnotationEvent` or :obj:`None <python:None>`
-
+        :rtype: :class:`InfinityLineAnnotation` or :obj:`None <python:None>`
         """
-        return self._events
+        return self._infinity_line
 
-    @events.setter
-    @class_sensitive(AnnotationEvent)
-    def events(self, value):
-        self._events = value
+    @infinity_line.setter
+    @class_sensitive(InfinityLineAnnotation)
+    def infinity_line(self, value):
+        self._infinity_line = value
 
     @property
-    def id(self) -> Optional[str]:
-        """Sets an ID for the annotation. Can be user later when removing an annotation
-        using the JavaScript ``Chart.removeAnnotation(id)`` method.
+    def measure(self) -> Optional[MeasureAnnotation]:
+        """A measure annotation.
 
-        :returns: The ID for the annotation.
-        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        :rtype: :class:`MeasureAnnotation` or :obj:`None <python:None>`
         """
-        return self._id
+        return self._measure
 
-    @id.setter
-    def id(self, value):
-        self._id = validators.string(value, allow_empty = True)
+    @measure.setter
+    @class_sensitive(MeasureAnnotation)
+    def measure(self, value):
+        self._measure = value
 
     @property
-    def label_options(self) -> Optional[LabelOptions]:
-        """Global options applied to all annotation labels.
+    def pitchfork(self) -> Optional[PitchforkAnnotation]:
+        """A :term:`pitchfork` annotation.
 
-        .. note::
-
-          An option from the :meth:`Annotation.label_options` can be overwritten by the
-          configuration for a specific label.
-
-        :returns: Configuration options for annotation labels.
-        :rtype: :class:`LabelOptions` or :obj:`None <python:None>`
+        :rtype: :class:`PitchforkAnnotation` or :obj:`None <python:None>`
         """
-        return self._label_options
+        return self._pitchfork
 
-    @label_options.setter
-    @class_sensitive(LabelOptions)
-    def label_options(self, value):
-        self._label_options = value
+    @pitchfork.setter
+    @class_sensitive(PitchforkAnnotation)
+    def pitchfork(self, value):
+        self._pitchfork = value
 
     @property
-    def labels(self) -> Optional[List[AnnotationLabel]]:
-        """An array of labels to display for annotations.
+    def time_cycles(self) -> Optional[TimeCyclesAnnotation]:
+        """A :term:`TimeCycles` annotation.
 
-        .. seealso::
-
-          * :meth:`Annotation.label_options`
-          * :class:`LabelOptions`
-
-        :returns: A collection of labels to display for annotation.
-        :rtype: :class:`list <python:list>` of :class:`AnnotationLabel` or
-          :obj:`None <python:None>`
+        :rtype: :class:`TimeCyclesAnnotation` or :obj:`None <python:None>`
         """
-        return self._labels
+        return self._time_cycles
 
-    @labels.setter
-    @class_sensitive(AnnotationLabel, force_iterable = True)
-    def labels(self, value):
-        self._labels = value
+    @time_cycles.setter
+    @class_sensitive(TimeCyclesAnnotation)
+    def time_cycles(self, value):
+        self._time_cycles = value
 
     @property
-    def shape_options(self) -> Optional[ShapeOptions]:
-        """Global options applied to all annotation shapes.
+    def tunnel(self) -> Optional[TunnelAnnotation]:
+        """A :term:`tunnel` annotation.
 
-        .. note::
-
-          An option from the :meth:`Annotation.shape_options` can be overwritten by the
-          configuration for a specific shape.
-
-        :returns: Configuration options for annotation shapes.
-        :rtype: :class:`ShapeOptions` or :obj:`None <python:None>`
+        :rtype: :class:`TunnelAnnotation` or :obj:`None <python:None>`
         """
-        return self._shape_options
+        return self._tunnel
 
-    @shape_options.setter
-    @class_sensitive(ShapeOptions)
-    def shape_options(self, value):
-        self._shape_options = value
+    @tunnel.setter
+    @class_sensitive(TunnelAnnotation)
+    def tunnel(self, value):
+        self._tunnel = value
 
     @property
-    def shapes(self) -> Optional[List[AnnotationShape]]:
-        """An array of shapes to display for annotations.
+    def vertical_line(self) -> Optional[VerticalLineAnnotation]:
+        """A :term:`vertical line` annotation.
 
-        .. seealso::
-
-          * :meth:`Annotation.shape_options`
-          * :class:`shapeOptions`
-
-        :returns: A collection of shapes to display for annotation.
-        :rtype: :class:`list <python:list>` of :class:`AnnotationShape` or
-          :obj:`None <python:None>`
+        :rtype: :class:`VerticalLineAnnotation` or :obj:`None <python:None>`
         """
-        return self._shapes
+        return self._vertical_line
 
-    @shapes.setter
-    @class_sensitive(AnnotationShape, force_iterable = True)
-    def shapes(self, value):
-        self._shapes = value
-
-    @property
-    def visible(self) -> Optional[bool]:
-        """If ``True``, indicates the annotation is visible.
-
-        :returns: Flag which indicates whether the annotation is visible or not.
-        :rtype: :class:`bool <python:bool>` or :obj:`None <python:None>`
-        """
-        return self._visible
-
-    @visible.setter
-    def visible(self, value):
-        if value is None:
-            self._visible = None
-        else:
-            self._visible = bool(value)
-
-    @property
-    def z_index(self) -> Optional[int]:
-        """The Z-Index for the annotation. Defaults to ``6``.
-
-        :returns: The z-index for the annotation.
-        :rtype: :class:`int <python:int>` or :obj:`None <python:None>`
-        """
-        return self._z_index
-
-    @z_index.setter
-    def z_index(self, value):
-        self._z_index = validators.integer(value, allow_empty = True)
+    @vertical_line.setter
+    @class_sensitive(VerticalLineAnnotation)
+    def vertical_line(self, value):
+        self._vertical_line = value
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -287,32 +190,37 @@ class Annotation(HighchartsMeta):
             'shapes': as_dict.get('shapes', None),
             'visible': as_dict.get('visible', None),
             'z_index': as_dict.get('zIndex', None),
+
+            'crooked_line': as_dict.get('crookedLine', None),
+            'elliott_wave': as_dict.get('elliottWave', None),
+            'fibonacci': as_dict.get('fibonacci', None),
+            'fibonacci_time_zones': as_dict.get('fibonacciTimeZones', None),
+            'infinity_line': as_dict.get('infinityLine', None),
+            'measure': as_dict.get('measure', None),
+            'pitchfork': as_dict.get('pitchfork', None),
+            'time_cycles': as_dict.get('timeCycles', None),
+            'tunnel': as_dict.get('tunnel', None),
+            'vertical_line': as_dict.get('verticalLine', None),
         }
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
-            'animation': self.animation,
-            'controlPointOptions': self.control_point_options,
-            'crop': self.crop,
-            'draggable': self.draggable,
-            'events': self.events,
-            'id': self.id,
-            'labelOptions': self.label_options,
-            'labels': self.labels,
-            'shapeOptions': self.shape_options,
-            'shapes': self.shapes,
-            'visible': self.visible,
-            'zIndex': self.z_index
+            'crookedLine': self.crooked_line,
+            'elliottWave': self.elliott_wave,
+            'fibonacci': self.fibonacci,
+            'fibonacciTimeZones': self.fibonacci_time_zones,
+            'infinityLine': self.infinity_line,
+            'measure': self.measure,
+            'pitchfork': self.pitchfork,
+            'timeCycles': self.time_cycles,
+            'tunnel': self.tunnel,
+            'verticalLine': self.vertical_line,
         }
 
+        parent_as_dict = super()._to_untrimmed_dict(in_cls = in_cls)
+
+        for key in parent_as_dict:
+            untrimmed[key] = parent_as_dict[key]
+
         return untrimmed
-
-
-__all__ = [
-    'Annotation',
-    'AnnotationPoint',
-    'LabelOptions',
-    'AnnotationLabel',
-    'ShapeOptions'
-]
