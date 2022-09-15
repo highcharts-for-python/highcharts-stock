@@ -16,7 +16,82 @@ from highcharts_stock.options.annotations.stock_tools import TunnelAnnotation
 from highcharts_stock.options.annotations.stock_tools import VerticalLineAnnotation
 
 
-class Annotation(AnnotationBase):
+class NavigationAnnotationOptions(AnnotationBase):
+    """Annotation that can be configured for the
+    :class:`Navigation <highcharts_stock.options.navigation.Navigation>`
+    """
+
+    def __init__(self, **kwargs):
+        self._fibonacci_time_zones = None
+        self._time_cycles = None
+
+        self.fibonacci_time_zones = kwargs.get('fibonacci_time_zones', None)
+        self.time_cycles = kwargs.get('time_cycles', None)
+
+        super().__init__(**kwargs)
+
+    @property
+    def fibonnaci_time_zones(self) -> Optional[FibonacciTimeZonesAnnotation]:
+        """A :term:`Fibonacci Time Zones` annotation.
+
+        :rtype: :class:`FibonacciTimeZonesAnnotation` or :obj:`None <python:None>`
+        """
+        return self._fibonnaci_time_zones
+
+    @fibonnaci_time_zones.setter
+    @class_sensitive(FibonacciTimeZonesAnnotation)
+    def fibonnaci_time_zones(self, value):
+        self._fibonnaci_time_zones = value
+
+    @property
+    def time_cycles(self) -> Optional[TimeCyclesAnnotation]:
+        """A :term:`TimeCycles` annotation.
+
+        :rtype: :class:`TimeCyclesAnnotation` or :obj:`None <python:None>`
+        """
+        return self._time_cycles
+
+    @time_cycles.setter
+    @class_sensitive(TimeCyclesAnnotation)
+    def time_cycles(self, value):
+        self._time_cycles = value
+
+    @classmethod
+    def _get_kwargs_from_dict(cls, as_dict):
+        kwargs = {
+            'animation': as_dict.get('animation', None),
+            'control_point_options': as_dict.get('controlPointOptions', None),
+            'crop': as_dict.get('crop', None),
+            'draggable': as_dict.get('draggable', None),
+            'events': as_dict.get('events', None),
+            'id': as_dict.get('id', None),
+            'label_options': as_dict.get('labelOptions', None),
+            'labels': as_dict.get('labels', None),
+            'shape_options': as_dict.get('shapeOptions', None),
+            'shapes': as_dict.get('shapes', None),
+            'visible': as_dict.get('visible', None),
+            'z_index': as_dict.get('zIndex', None),
+
+            'fibonacci_time_zones': as_dict.get('fibonacciTimeZones', None),
+            'time_cycles': as_dict.get('timeCycles', None),
+        }
+        return kwargs
+
+    def _to_untrimmed_dict(self, in_cls = None) -> dict:
+        untrimmed = {
+            'fibonacciTimeZones': self.fibonacci_time_zones,
+            'timeCycles': self.time_cycles,
+        }
+
+        parent_as_dict = super()._to_untrimmed_dict(in_cls = in_cls)
+
+        for key in parent_as_dict:
+            untrimmed[key] = parent_as_dict[key]
+
+        return untrimmed
+
+
+class Annotation(NavigationAnnotationOptions):
     """A basic type of an annotation. It allows adding custom labels or shapes. The
     items can be tied to points, axis coordinates or chart pixel coordinates."""
 
@@ -24,22 +99,18 @@ class Annotation(AnnotationBase):
         self._crooked_line = None
         self._elliott_wave = None
         self._fibonacci = None
-        self._fibonacci_time_zones = None
         self._infinity_line = None
         self._measure = None
         self._pitchfork = None
-        self._time_cycles = None
         self._tunnel = None
         self._vertical_line = None
 
         self.crooked_line = kwargs.get('crooked_line', None)
         self.elliott_wave = kwargs.get('elliott_wave', None)
         self.fibonacci = kwargs.get('fibonacci', None)
-        self.fibonacci_time_zones = kwargs.get('fibonacci_time_zones', None)
         self.infinity_line = kwargs.get('infinity_line', None)
         self.measure = kwargs.get('measure', None)
         self.pitchfork = kwargs.get('pitchfork', None)
-        self.time_cycles = kwargs.get('time_cycles', None)
         self.tunnel = kwargs.get('tunnel', None)
         self.vertical_line = kwargs.get('vertical_line', None)
 
@@ -85,19 +156,6 @@ class Annotation(AnnotationBase):
         self._fibonacci = value
 
     @property
-    def fibonnaci_time_zones(self) -> Optional[FibonacciTimeZonesAnnotation]:
-        """A :term:`Fibonacci Time Zones` annotation.
-
-        :rtype: :class:`FibonacciTimeZonesAnnotation` or :obj:`None <python:None>`
-        """
-        return self._fibonnaci_time_zones
-
-    @fibonnaci_time_zones.setter
-    @class_sensitive(FibonacciTimeZonesAnnotation)
-    def fibonnaci_time_zones(self, value):
-        self._fibonnaci_time_zones = value
-
-    @property
     def infinity_line(self) -> Optional[InfinityLineAnnotation]:
         """A :term:`infinity line` annotation.
 
@@ -135,19 +193,6 @@ class Annotation(AnnotationBase):
     @class_sensitive(PitchforkAnnotation)
     def pitchfork(self, value):
         self._pitchfork = value
-
-    @property
-    def time_cycles(self) -> Optional[TimeCyclesAnnotation]:
-        """A :term:`TimeCycles` annotation.
-
-        :rtype: :class:`TimeCyclesAnnotation` or :obj:`None <python:None>`
-        """
-        return self._time_cycles
-
-    @time_cycles.setter
-    @class_sensitive(TimeCyclesAnnotation)
-    def time_cycles(self, value):
-        self._time_cycles = value
 
     @property
     def tunnel(self) -> Optional[TunnelAnnotation]:
@@ -191,14 +236,15 @@ class Annotation(AnnotationBase):
             'visible': as_dict.get('visible', None),
             'z_index': as_dict.get('zIndex', None),
 
+            'fibonacci_time_zones': as_dict.get('fibonacciTimeZones', None),
+            'time_cycles': as_dict.get('timeCycles', None),
+
             'crooked_line': as_dict.get('crookedLine', None),
             'elliott_wave': as_dict.get('elliottWave', None),
             'fibonacci': as_dict.get('fibonacci', None),
-            'fibonacci_time_zones': as_dict.get('fibonacciTimeZones', None),
             'infinity_line': as_dict.get('infinityLine', None),
             'measure': as_dict.get('measure', None),
             'pitchfork': as_dict.get('pitchfork', None),
-            'time_cycles': as_dict.get('timeCycles', None),
             'tunnel': as_dict.get('tunnel', None),
             'vertical_line': as_dict.get('verticalLine', None),
         }
@@ -209,11 +255,9 @@ class Annotation(AnnotationBase):
             'crookedLine': self.crooked_line,
             'elliottWave': self.elliott_wave,
             'fibonacci': self.fibonacci,
-            'fibonacciTimeZones': self.fibonacci_time_zones,
             'infinityLine': self.infinity_line,
             'measure': self.measure,
             'pitchfork': self.pitchfork,
-            'timeCycles': self.time_cycles,
             'tunnel': self.tunnel,
             'verticalLine': self.vertical_line,
         }
