@@ -6,6 +6,7 @@ from validator_collection import validators
 from highcharts_python.decorators import class_sensitive
 from highcharts_python.options.axes.y_axis import YAxis as YAxisBase
 
+from highcharts_stock import errors
 from highcharts_stock.options.axes.resize import ResizeOptions
 from highcharts_stock.options.scrollbar import Scrollbar
 
@@ -13,17 +14,48 @@ from highcharts_stock.options.scrollbar import Scrollbar
 class YAxis(YAxisBase):
 
     def __init__(self, **kwargs):
+        self._max_length = None
         self._max_range = None
+        self._min_length = None
         self._range = None
         self._resize = None
         self._scrollbar = None
 
-        self.resize = kwargs.get('resize', None)
+        self.max_length = kwargs.get('max_length', None)
         self.max_range = kwargs.get('max_range', None)
+        self.min_length = kwargs.get('min_length', None)
         self.range = kwargs.get('range', None)
+        self.resize = kwargs.get('resize', None)
         self.scrollbar = kwargs.get('scrollbar', None)
 
         super().__init__(**kwargs)
+
+    @property
+    def max_length(self) -> Optional[str | int | float | Decimal]:
+        """Maximum size of a resizable axis, expressed either as a percentage of the plot
+        area in a string or in pixels as a number. Defaults to :obj:`None <python:None>`.
+
+        :rtype: :class:`str <python:str>` or :class:`int <python:int>` or
+          :obj:`None <python:None>`
+        """
+        return self._max_length
+
+    @max_length.setter
+    def max_length(self, value):
+        if not value:
+            self._max_length = None
+        else:
+            try:
+                value = validators.string(value)
+                if '%' not in value:
+                    raise errors.HighchartsValueError('max_length accepts strings as '
+                                                      'a percentage of plot area. No '
+                                                      '"%" character found.')
+                self._max_length = value
+            except (TypeError):
+                self._max_length = validators.numeric(value,
+                                                      allow_empty = True,
+                                                      minimum = 0)
 
     @property
     def max_range(self) -> Optional[int | float | Decimal]:
@@ -42,6 +74,33 @@ class YAxis(YAxisBase):
     @max_range.setter
     def max_range(self, value):
         self._max_range = validators.numeric(value, allow_empty = True)
+
+    @property
+    def min_length(self) -> Optional[str | int | float | Decimal]:
+        """Minimum size of a resizable axis, expressed either as a percentage of the plot
+        area in a string or in pixels as a number. Defaults to :obj:`None <python:None>`.
+
+        :rtype: :class:`str <python:str>` or :class:`int <python:int>` or
+          :obj:`None <python:None>`
+        """
+        return self._min_length
+
+    @min_length.setter
+    def min_length(self, value):
+        if not value:
+            self._min_length = None
+        else:
+            try:
+                value = validators.string(value)
+                if '%' not in value:
+                    raise errors.HighchartsValueError('min_length accepts strings as '
+                                                      'a percentage of plot area. No '
+                                                      '"%" character found.')
+                self._min_length = value
+            except (TypeError):
+                self._min_length = validators.numeric(value,
+                                                      allow_empty = True,
+                                                      minimum = 0)
 
     @property
     def range(self) -> Optional[int | float | Decimal]:
@@ -199,7 +258,9 @@ class YAxis(YAxisBase):
             'stops': as_dict.get('stops', None),
             'tooltip_value_format': as_dict.get('tooltipValueFormat', None),
 
+            'max_length': as_dict.get('maxLength', None),
             'max_range': as_dict.get('maxRange', None),
+            'min_length': as_dict.get('minLength', None),
             'range': as_dict.get('range', None),
             'resize': as_dict.get('resize', None),
             'scrollbar': as_dict.get('scrollbar', None),
@@ -209,7 +270,9 @@ class YAxis(YAxisBase):
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
+            'maxLength': self.max_length,
             'maxRange': self.max_range,
+            'minLength': self.min_length,
             'range': self.range,
             'resize': self.resize,
             'scrollbar': self.scrollbar,
