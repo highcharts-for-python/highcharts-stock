@@ -1,79 +1,105 @@
 from typing import Optional
+from decimal import Decimal
+
+from validator_collection import validators
 
 from highcharts_python.decorators import class_sensitive
 from highcharts_python.metaclasses import HighchartsMeta
+from highcharts_python.utility_classes.gradients import Gradient
+from highcharts_python.utility_classes.patterns import Pattern
+from highcharts_python.utility_functions import validate_color
 
 from highcharts_stock.options.plot_options.indicators import ComparableIndicatorOptions
-from highcharts_stock.utility_classes.line_styles import LineStylesColorWidth
 
 
-class AroonLineStyleOptions(HighchartsMeta):
-    """Styles for the Aroon-Down line."""
+class AOOptions(ComparableIndicatorOptions):
+    """Options to configure an Awesome :term:`Oscillator`, used within the financial
+    markets to confirm or disprove trends on price charts
 
-    def __init__(self, **kwargs):
-        self._styles = None
-
-        self.styles = kwargs.get('styles', None)
-
-    @property
-    def styles(self) -> Optional[LineStylesColorWidth]:
-        """Styles for the Aroon-Down line.
-
-        :rtype: :class:`AroonLineStyles` or :obj:`None <python:None>`
-        """
-        return self._styles
-
-    @styles.setter
-    @class_sensitive(LineStylesColorWidth)
-    def styles(self, value):
-        self._styles = value
-
-    @classmethod
-    def _get_kwargs_from_dict(cls, as_dict):
-        kwargs = {
-            'styles': as_dict.get('styles', None)
-        }
-
-        return kwargs
-
-    def _to_untrimmed_dict(self, in_cls = None) -> dict:
-        untrimmed = {
-            'styles': self.styles
-        }
-
-        return untrimmed
-
-
-class AroonOptions(ComparableIndicatorOptions):
-    """Configuration options for the Aroon indicator, which is a
-    :term:`technical indicator` used to identify a change in the trend of the value of an
-    asset.
-
-    .. figure:: ../../../_static/aroon-example.png
-      :alt: Aroon Example Chart
+    .. figure:: ../../../_static/awesome-oscillator-example.png
+      :alt: Awesome Oscillator (AO) Example Chart
       :align: center
 
     """
 
     def __init__(self, **kwargs):
-        self._aroon_down = None
+        self._greater_bar_color = None
+        self._group_padding = None
+        self._lower_bar_color = None
+        self._point_padding = None
 
-        self.aroon_down = kwargs.get('aroon_down', None)
+        self.greater_bar_color = kwargs.get('greater_bar_color', None)
+        self.group_padding = kwargs.get('group_padding', None)
+        self.lower_bar_color = kwargs.get('lower_bar_color', None)
+        self.point_padding = kwargs.get('point_padding', None)
 
         super().__init__(**kwargs)
 
     @property
-    def aroon_down(self) -> Optional[AroonLineStyleOptions]:
-        """Styles for the Aroon-Down line.
+    def greater_bar_color(self) -> Optional[str | Gradient | Pattern]:
+        """Color of an Awesome Oscillator bar that is greater than the previous one.
+        Defaults to ``'#06b535'``.
 
-        :rtype: :class:`AroonLineStyleOptions`
+        .. note::
+
+          If a ``.color`` is provided, the ``.color`` takes precedence and the
+          ``.greater_bar_color`` is ignored.
+
+        :rtype: :class:`str <python:str>`, :class:`Gradient`, :class:`Pattern``, or
+          :obj:`None <python:None>`
         """
-        return self._aroon_down
+        return self._greater_bar_color
 
-    @aroon_down.setter
-    @class_sensitive(AroonLineStyleOptions)
-    def aroon_down(self, value):
-        self._aroon_down = value
+    @greater_bar_color.setter
+    def greater_bar_color(self, value):
+        self._greater_bar_color = validate_color(value)
+
+    @property
+    def group_padding(self) -> Optional[int | float | Decimal]:
+        """Padding between each value group, in x axis units. Defaults to ``0.2``.
+
+        :rtype: numeric or :obj:`None <python:None>`
+        """
+        return self._group_padding
+
+    @group_padding.setter
+    def group_padding(self, value):
+        self._group_padding = validators.numeric(value,
+                                                 allow_empty = True,
+                                                 minimum = 0)
+
+    @property
+    def lower_bar_color(self) -> Optional[str | Gradient | Pattern]:
+        """Color of an Awesome Oscillator bar that is lower than the previous one.
+        Defaults to ``'#f21313'``.
+
+        .. note::
+
+          If a ``.color`` is provided, the ``.color`` takes precedence and the
+          ``.lower_bar_color`` is ignored.
+
+        :rtype: :class:`str <python:str>`, :class:`Gradient`, :class:`Pattern``, or
+          :obj:`None <python:None>`
+        """
+        return self._lower_bar_color
+
+    @lower_bar_color.setter
+    def lower_bar_color(self, value):
+        self._lower_bar_color = validate_color(value)
+
+    @property
+    def point_padding(self) -> Optional[int | float | Decimal]:
+        """Padding between each column or bar, in x axis units. Defaults to ``0.1``.
+
+        :rtype: numeric or :obj:`None <python:None>`
+        """
+        return self._point_padding
+
+    @point_padding.setter
+    def point_padding(self, value):
+        self._point_padding = validators.numeric(value,
+                                                 allow_empty = True,
+                                                 minimum = 0)
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -156,14 +182,20 @@ class AroonOptions(ComparableIndicatorOptions):
             'compare': as_dict.get('compare', None),
             'compare_base': as_dict.get('compareBase', None),
 
-            'aroon_down': as_dict.get('aroonDown', None),
+            'greater_bar_color': as_dict.get('greaterBarColor', None),
+            'group_padding': as_dict.get('groupPadding', None),
+            'lower_bar_color': as_dict.get('lowerBarColor', None),
+            'point_padding': as_dict.get('pointPadding', None),
         }
 
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
-            'aroonDown': self.aroon_down,
+            'greaterBarColor': self.greater_bar_color,
+            'groupPadding': self.group_padding,
+            'lowerBarColor': self.lower_bar_color,
+            'pointPadding': self.point_padding,
         }
 
         parent_as_dict = super()._to_untrimmed_dict(in_cls = in_cls)

@@ -1,25 +1,108 @@
 from typing import Optional
 
+from validator_collection import validators
+
 from highcharts_python.decorators import class_sensitive
 from highcharts_python.metaclasses import HighchartsMeta
 
 from highcharts_stock.options.plot_options.indicators import ComparableIndicatorOptions
 from highcharts_stock.utility_classes.line_styles import LineStylesColorWidth
+from highcharts_stock.options.plot_options.momentum import OBVParameters
 
 
-class AroonLineStyleOptions(HighchartsMeta):
-    """Styles for the Aroon-Down line."""
+class KlingerParameters(OBVParameters):
+
+    def __init__(self, **kwargs):
+        self._fast_avg_period = None
+        self._signal_period = None
+        self._slow_avg_period = None
+
+        self.fast_avg_period = kwargs.get('fast_avg_period', None)
+        self.signal_period = kwargs.get('signal_period', None)
+        self.slow_avg_period = kwargs.get('slow_avg_period', None)
+
+        super().__init__(**kwargs)
+
+    @property
+    def fast_avg_period(self) -> Optional[int]:
+        """The fast period for indicator calculations. Defaults to ``34``.
+
+        :rtype: :class:`int <python:int>` or :obj:`None <python:None>`
+        """
+        return self._fast_avg_period
+
+    @fast_avg_period.setter
+    def fast_avg_period(self, value):
+        self._fast_avg_period = validators.integer(value,
+                                                   allow_empty = True,
+                                                   minimum = 0)
+
+    @property
+    def signal_period(self) -> Optional[int]:
+        """The signal period for indicator calculations. Defaults to ``9``.
+
+        :rtype: :class:`int <python:int>` or :obj:`None <python:None>`
+        """
+        return self._signal_period
+
+    @signal_period.setter
+    def signal_period(self, value):
+        self._signal_period = validators.integer(value,
+                                                 allow_empty = True,
+                                                 minimum = 0)
+
+    @property
+    def slow_avg_period(self) -> Optional[int]:
+        """The slow period for indicator calculations. Defaults to ``55``.
+
+        :rtype: :class:`int <python:int>` or :obj:`None <python:None>`
+        """
+        return self._slow_avg_period
+
+    @slow_avg_period.setter
+    def slow_avg_period(self, value):
+        self._slow_avg_period = validators.integer(value,
+                                                   allow_empty = True,
+                                                   minimum = 0)
+
+    @classmethod
+    def _get_kwargs_from_dict(cls, as_dict):
+        kwargs = {
+            'volume_series_id': as_dict.get('volumeSeriesID', None),
+            'fast_avg_period': as_dict.get('fastAvgPeriod', None),
+            'signal_period': as_dict.get('signalPeriod', None),
+            'slow_avg_period': as_dict.get('slowAvgPeriod', None),
+        }
+
+        return kwargs
+
+    def _to_untrimmed_dict(self, in_cls = None) -> dict:
+        untrimmed = {
+            'fastAvgPeriod': self.fast_avg_period,
+            'signalPeriod': self.signal_period,
+            'slowAvgPeriod': self.slow_avg_period,
+            'volumeSeriesID': self.volume_series_id,
+        }
+
+        return untrimmed
+
+
+class KlingerLineOptions(HighchartsMeta):
+    """Options for styling Klinger lines."""
 
     def __init__(self, **kwargs):
         self._styles = None
+        self._zones = None
 
         self.styles = kwargs.get('styles', None)
+        self.zones = kwargs.get('zones', None)
 
     @property
     def styles(self) -> Optional[LineStylesColorWidth]:
-        """Styles for the Aroon-Down line.
+        """Styles to apply to the line itself.
 
-        :rtype: :class:`AroonLineStyles` or :obj:`None <python:None>`
+        :rtype: :class:`LineStylesColorWidth <highcharts_stock.utility_classes.line_styles.LineStylesColorWidth>`
+          or :obj:`None <python:None>`
         """
         return self._styles
 
@@ -31,49 +114,62 @@ class AroonLineStyleOptions(HighchartsMeta):
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
         kwargs = {
-            'styles': as_dict.get('styles', None)
+            'styles': as_dict.get('styles', None),
         }
 
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
-            'styles': self.styles
+            'styles': self.styles,
         }
 
         return untrimmed
 
 
-class AroonOptions(ComparableIndicatorOptions):
-    """Configuration options for the Aroon indicator, which is a
-    :term:`technical indicator` used to identify a change in the trend of the value of an
-    asset.
+class KlingerOptions(ComparableIndicatorOptions):
+    """Options to configure a Klinger :term:`Oscillator`, used to determine the long-term
+    trend of money flow while remaining sensitive enough to detect short-term
+    fluctuations.
 
-    .. figure:: ../../../_static/aroon-example.png
-      :alt: Aroon Example Chart
+    .. figure:: ../../../_static/klinger-example.png
+      :alt: Klinger Example Chart
       :align: center
 
     """
 
     def __init__(self, **kwargs):
-        self._aroon_down = None
+        self._signal_line = None
 
-        self.aroon_down = kwargs.get('aroon_down', None)
+        self.signal_line = kwargs.get('signal_line', None)
 
         super().__init__(**kwargs)
 
     @property
-    def aroon_down(self) -> Optional[AroonLineStyleOptions]:
-        """Styles for the Aroon-Down line.
+    def params(self) -> Optional[KlingerParameters]:
+        """Parameters used in calculating the indicator's data points.
 
-        :rtype: :class:`AroonLineStyleOptions`
+        :rtype: :class:`KlingerParameters` or :obj:`None <python:None>`
         """
-        return self._aroon_down
+        return self._params
 
-    @aroon_down.setter
-    @class_sensitive(AroonLineStyleOptions)
-    def aroon_down(self, value):
-        self._aroon_down = value
+    @params.setter
+    @class_sensitive(KlingerParameters)
+    def params(self, value):
+        self._params = value
+
+    @property
+    def signal_line(self) -> Optional[KlingerLineOptions]:
+        """Styles for configuring the Signal line.
+
+        :rtype: :class:`KlingerLineOptions` or :obj:`None <python:None>`
+        """
+        return self._signal_line
+
+    @signal_line.setter
+    @class_sensitive(KlingerLineOptions)
+    def signal_line(self, value):
+        self._signal_line = value
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -156,14 +252,14 @@ class AroonOptions(ComparableIndicatorOptions):
             'compare': as_dict.get('compare', None),
             'compare_base': as_dict.get('compareBase', None),
 
-            'aroon_down': as_dict.get('aroonDown', None),
+            'signal_line': as_dict.get('signalLine', None),
         }
 
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
-            'aroonDown': self.aroon_down,
+            'signalLine': self.signal_line,
         }
 
         parent_as_dict = super()._to_untrimmed_dict(in_cls = in_cls)

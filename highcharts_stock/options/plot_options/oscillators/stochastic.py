@@ -1,14 +1,123 @@
-from typing import Optional
+from typing import Optional, List
+
+from validator_collection import validators
 
 from highcharts_python.decorators import class_sensitive
 from highcharts_python.metaclasses import HighchartsMeta
 
-from highcharts_stock.options.plot_options.indicators import ComparableIndicatorOptions
+from highcharts_stock import errors
+from highcharts_stock.options.plot_options.indicators import ParameterBase, ComparableIndicatorOptions
 from highcharts_stock.utility_classes.line_styles import LineStylesColorWidth
 
 
-class AroonLineStyleOptions(HighchartsMeta):
-    """Styles for the Aroon-Down line."""
+class StochasticParameters(ParameterBase):
+
+    @property
+    def index(self):
+        """Does not apply, so raises an :exc:`AttributeError <python:AttributeError>`."""
+        raise AttributeError(f"{self.__class__.__name__} has no attribute 'index'")
+
+    @index.setter
+    def index(self, value):
+        raise AttributeError(f"{self.__class__.__name__} has no attribute 'index'")
+
+    @property
+    def period(self):
+        """Does not apply, so raises an :exc:`AttributeError <python:AttributeError>`."""
+        raise AttributeError(f"{self.__class__.__name__} has no attribute 'period'")
+
+    @period.setter
+    def period(self, value):
+        raise AttributeError(f"{self.__class__.__name__} has no attribute 'period'")
+
+    @property
+    def periods(self) -> Optional[List[int]]:
+        """The periods to use when calculating the Stochastic Oscillator. Defaults
+        to ``[14, 3]``.
+
+        .. note::
+
+          Expects a two-member iterable of :class:`int <python:int>` instances.
+
+        :rtype: :class:`list <python:list>` of :class:`int <python:int>`, or
+          :obj:`None <python:None>`
+        """
+        return self._periods
+
+    @periods.setter
+    def periods(self, value):
+        if not value:
+            self._periods = None
+        else:
+            value = validators.iterable(value)
+            if len(value) != 2:
+                raise errors.HighchartsValueError(f'periods expects a 2-member iterable. '
+                                                  f'Received a {len(value)}-member '
+                                                  f'iterable.')
+            self._periods = [validators.integer(x, minimum = 0) for x in value]
+
+    @classmethod
+    def _get_kwargs_from_dict(cls, as_dict):
+        kwargs = {
+            'periods': as_dict.get('periods', None),
+        }
+
+        return kwargs
+
+    def _to_untrimmed_dict(self, in_cls = None) -> dict:
+        untrimmed = {
+            'periods': self.periods,
+        }
+
+        return untrimmed
+
+
+class SlowStochasticParameters(StochasticParameters):
+
+    @property
+    def periods(self) -> Optional[List[int]]:
+        """The periods to use when calculating the Slow Stochastic Oscillator. Defaults
+        to ``[14, 3, 3]``.
+
+        .. note::
+
+          Expects a three-member iterable of :class:`int <python:int>` instances.
+
+        :rtype: :class:`list <python:list>` of :class:`int <python:int>`, or
+          :obj:`None <python:None>`
+        """
+        return self._periods
+
+    @periods.setter
+    def periods(self, value):
+        if not value:
+            self._periods = None
+        else:
+            value = validators.iterable(value)
+            if len(value) != 3:
+                raise errors.HighchartsValueError(f'periods expects a 3-member iterable. '
+                                                  f'Received a {len(value)}-member '
+                                                  f'iterable.')
+            self._periods = [validators.integer(x, minimum = 0) for x in value]
+
+    @classmethod
+    def _get_kwargs_from_dict(cls, as_dict):
+        kwargs = {
+            'periods': as_dict.get('periods', None),
+        }
+
+        return kwargs
+
+    def _to_untrimmed_dict(self, in_cls = None) -> dict:
+        untrimmed = {
+            'periods': self.periods,
+        }
+
+        return untrimmed
+
+
+class StochasticStyleOptions(HighchartsMeta):
+    """Styles for the Stochastic lines."""
 
     def __init__(self, **kwargs):
         self._styles = None
@@ -17,9 +126,9 @@ class AroonLineStyleOptions(HighchartsMeta):
 
     @property
     def styles(self) -> Optional[LineStylesColorWidth]:
-        """Styles for the Aroon-Down line.
+        """Styles for the line.
 
-        :rtype: :class:`AroonLineStyles` or :obj:`None <python:None>`
+        :rtype: :class:`LineStylesColorWidth` or :obj:`None <python:None>`
         """
         return self._styles
 
@@ -44,36 +153,47 @@ class AroonLineStyleOptions(HighchartsMeta):
         return untrimmed
 
 
-class AroonOptions(ComparableIndicatorOptions):
-    """Configuration options for the Aroon indicator, which is a
-    :term:`technical indicator` used to identify a change in the trend of the value of an
-    asset.
+class StochasticOptions(ComparableIndicatorOptions):
+    """Configuration for a Stochastic :term:`Oscillator`.
 
-    .. figure:: ../../../_static/aroon-example.png
-      :alt: Aroon Example Chart
+    .. figure:: ../../../_static/stochastic-example.png
+      :alt: Stochsatic Oscillator Example Chart
       :align: center
 
     """
 
     def __init__(self, **kwargs):
-        self._aroon_down = None
+        self._smoothed_line = None
 
-        self.aroon_down = kwargs.get('aroon_down', None)
+        self.smoothed_line = kwargs.get('smoothed_line', None)
 
         super().__init__(**kwargs)
 
     @property
-    def aroon_down(self) -> Optional[AroonLineStyleOptions]:
-        """Styles for the Aroon-Down line.
+    def smoothed_line(self) -> Optional[StochasticStyleOptions]:
+        """Styles for the smoothed line.
 
-        :rtype: :class:`AroonLineStyleOptions`
+        :rtype: :class:`StochasticStyleOptions` or :obj:`None <python:None>`
         """
-        return self._aroon_down
+        return self._smoothed_line
 
-    @aroon_down.setter
-    @class_sensitive(AroonLineStyleOptions)
-    def aroon_down(self, value):
-        self._aroon_down = value
+    @smoothed_line.setter
+    @class_sensitive(StochasticStyleOptions)
+    def smoothed_line(self, value):
+        self._smoothed_line = value
+
+    @property
+    def params(self) -> Optional[StochasticParameters]:
+        """Parameters used in calculating the indicator's data points.
+
+        :rtype: :class:`StochasticParameters` or :obj:`None <python:None>`
+        """
+        return self._params
+
+    @params.setter
+    @class_sensitive(StochasticParameters)
+    def params(self, value):
+        self._params = value
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -156,14 +276,14 @@ class AroonOptions(ComparableIndicatorOptions):
             'compare': as_dict.get('compare', None),
             'compare_base': as_dict.get('compareBase', None),
 
-            'aroon_down': as_dict.get('aroonDown', None),
+            'smoothed_line': as_dict.get('smoothedLine', None),
         }
 
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
-            'aroonDown': self.aroon_down,
+            'smoothedLine': self.smoothed_line,
         }
 
         parent_as_dict = super()._to_untrimmed_dict(in_cls = in_cls)
@@ -172,3 +292,25 @@ class AroonOptions(ComparableIndicatorOptions):
             untrimmed[key] = parent_as_dict[key]
 
         return untrimmed
+
+
+class SlowStochasticOptions(ComparableIndicatorOptions):
+    """Configuration for a Slow Stochastic :term:`Oscillator`.
+
+    .. figure:: ../../../_static/slow-stochastic-example.png
+      :alt: Slow Stochsatic Oscillator Example Chart
+      :align: center
+
+    """
+    @property
+    def params(self) -> Optional[SlowStochasticParameters]:
+        """Parameters used in calculating the indicator's data points.
+
+        :rtype: :class:`SlowStochasticParameters` or :obj:`None <python:None>`
+        """
+        return self._params
+
+    @params.setter
+    @class_sensitive(SlowStochasticParameters)
+    def params(self, value):
+        self._params = value

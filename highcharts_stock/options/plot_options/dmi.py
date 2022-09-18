@@ -3,12 +3,13 @@ from typing import Optional
 from highcharts_python.decorators import class_sensitive
 from highcharts_python.metaclasses import HighchartsMeta
 
-from highcharts_stock.options.plot_options.indicators import ComparableIndicatorOptions
+from highcharts_stock.options.plot_options.indicators import ParameterBase, ComparableIndicatorOptions
+from highcharts_stock.options.plot_options.oscillators import WilliamsRParameters as DMIParameters
 from highcharts_stock.utility_classes.line_styles import LineStylesColorWidth
 
 
-class AroonLineStyleOptions(HighchartsMeta):
-    """Styles for the Aroon-Down line."""
+class DMIStyleOptions(HighchartsMeta):
+    """Styles for the Directional Movement Index lines."""
 
     def __init__(self, **kwargs):
         self._styles = None
@@ -17,9 +18,9 @@ class AroonLineStyleOptions(HighchartsMeta):
 
     @property
     def styles(self) -> Optional[LineStylesColorWidth]:
-        """Styles for the Aroon-Down line.
+        """Styles for the bottom line.
 
-        :rtype: :class:`AroonLineStyles` or :obj:`None <python:None>`
+        :rtype: :class:`LineStylesColorWidth` or :obj:`None <python:None>`
         """
         return self._styles
 
@@ -44,36 +45,64 @@ class AroonLineStyleOptions(HighchartsMeta):
         return untrimmed
 
 
-class AroonOptions(ComparableIndicatorOptions):
-    """Configuration options for the Aroon indicator, which is a
-    :term:`technical indicator` used to identify a change in the trend of the value of an
-    asset.
+class DMIOptions(ComparableIndicatorOptions):
+    """Options to configure a Directional Movement Index (DMI)
+    :term:`indicator <technical indicator>`, which can be used to identify whether an
+    asset is trending by comparing highs and lows over time.
 
-    .. figure:: ../../../_static/aroon-example.png
-      :alt: Aroon Example Chart
+    .. figure:: ../../../_static/dmi-example.png
+      :alt: Directional Movement Index (DMI) Example Chart
       :align: center
 
     """
 
     def __init__(self, **kwargs):
-        self._aroon_down = None
+        self._minus_di_line = None
+        self._plus_di_line = None
 
-        self.aroon_down = kwargs.get('aroon_down', None)
+        self.minus_di_line = kwargs.get('minusDILine', None)
+        self.plus_di_line = kwargs.get('plusDILine', None)
 
         super().__init__(**kwargs)
 
     @property
-    def aroon_down(self) -> Optional[AroonLineStyleOptions]:
-        """Styles for the Aroon-Down line.
+    def minus_di_line(self) -> Optional[DMIStyleOptions]:
+        """Styles for the minus DI line.
 
-        :rtype: :class:`AroonLineStyleOptions`
+        :rtype: :class:`DMIStyleOptions` or :obj:`None <python:None>`
         """
-        return self._aroon_down
+        return self._minus_di_line
 
-    @aroon_down.setter
-    @class_sensitive(AroonLineStyleOptions)
-    def aroon_down(self, value):
-        self._aroon_down = value
+    @minus_di_line.setter
+    @class_sensitive(DMIStyleOptions)
+    def minus_di_line(self, value):
+        self._minus_di_line = value
+
+    @property
+    def plus_di_line(self) -> Optional[DMIStyleOptions]:
+        """Styles for the plus DI line.
+
+        :rtype: :class:`DMIStyleOptions` or :obj:`None <python:None>`
+        """
+        return self._plus_di_line
+
+    @plus_di_line.setter
+    @class_sensitive(DMIStyleOptions)
+    def plus_di_line(self, value):
+        self._plus_di_line = value
+
+    @property
+    def params(self) -> Optional[DMIParameters]:
+        """Parameters used in calculating the indicator's data points.
+
+        :rtype: :class:`DMIParameters` or :obj:`None <python:None>`
+        """
+        return self._params
+
+    @params.setter
+    @class_sensitive(DMIParameters)
+    def params(self, value):
+        self._params = value
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -156,14 +185,16 @@ class AroonOptions(ComparableIndicatorOptions):
             'compare': as_dict.get('compare', None),
             'compare_base': as_dict.get('compareBase', None),
 
-            'aroon_down': as_dict.get('aroonDown', None),
+            'minus_di_line': as_dict.get('minusDILine', None),
+            'plus_di_line': as_dict.get('plusDILine', None),
         }
 
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
-            'aroonDown': self.aroon_down,
+            'minusDILine': self.minus_di_line,
+            'plusDILine': self.plus_di_line,
         }
 
         parent_as_dict = super()._to_untrimmed_dict(in_cls = in_cls)

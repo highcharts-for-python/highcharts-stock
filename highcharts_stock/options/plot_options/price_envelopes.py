@@ -1,14 +1,78 @@
 from typing import Optional
+from decimal import Decimal
+
+from validator_collection import validators
 
 from highcharts_python.decorators import class_sensitive
 from highcharts_python.metaclasses import HighchartsMeta
 
-from highcharts_stock.options.plot_options.indicators import ComparableIndicatorOptions
+from highcharts_stock.options.plot_options.indicators import ParameterBase, ComparableIndicatorOptions
 from highcharts_stock.utility_classes.line_styles import LineStylesColorWidth
 
 
-class AroonLineStyleOptions(HighchartsMeta):
-    """Styles for the Aroon-Down line."""
+class PriceEnvelopesParameters(ParameterBase):
+
+    def __init__(self, **kwargs):
+        self._bottom_band = None
+        self._top_band = None
+
+        self.bottom_band = kwargs.get('bottom_band', None)
+        self.top_band = kwargs.get('top_band', None)
+
+        super().__init__(**kwargs)
+
+    @property
+    def bottom_band(self) -> Optional[int | float | Decimal]:
+        """Percentage below the moving average that should be displayed, relative to the
+        calculated value. Defaults to ``0.1``, which means 90%.
+
+        :rtype: numeric or :obj:`None <python:None>`
+        """
+        return self._bottom_band
+
+    @bottom_band.setter
+    def bottom_band(self, value):
+        self._bottom_band = validators.numeric(value, allow_empty = True)
+
+    @property
+    def top_band(self) -> Optional[int | float | Decimal]:
+        """Percentage above the moving average that should be displayed, relative to the
+        calculated value. Defaults to ``0.1``, which means 110%.
+
+        :rtype: numeric or :obj:`None <python:None>`
+        """
+        return self._top_band
+
+    @top_band.setter
+    def top_band(self, value):
+        self._top_band = validators.numeric(value, allow_empty = True)
+
+    @classmethod
+    def _get_kwargs_from_dict(cls, as_dict):
+        kwargs = {
+            'index': as_dict.get('index', None),
+            'period': as_dict.get('period', None),
+
+            'bottom_band': as_dict.get('bottomBand', None),
+            'top_band': as_dict.get('topBand', None),
+        }
+
+        return kwargs
+
+    def _to_untrimmed_dict(self, in_cls = None) -> dict:
+        untrimmed = {
+            'index': self.index,
+            'period': self.period,
+
+            'bottomBand': self.bottom_band,
+            'topBand': self.top_band,
+        }
+
+        return untrimmed
+
+
+class PriceEnvelopesStyleOptions(HighchartsMeta):
+    """Styles for the PriceEnvelopes lines."""
 
     def __init__(self, **kwargs):
         self._styles = None
@@ -17,9 +81,9 @@ class AroonLineStyleOptions(HighchartsMeta):
 
     @property
     def styles(self) -> Optional[LineStylesColorWidth]:
-        """Styles for the Aroon-Down line.
+        """Styles for the bottom line.
 
-        :rtype: :class:`AroonLineStyles` or :obj:`None <python:None>`
+        :rtype: :class:`LineStylesColorWidth` or :obj:`None <python:None>`
         """
         return self._styles
 
@@ -44,36 +108,63 @@ class AroonLineStyleOptions(HighchartsMeta):
         return untrimmed
 
 
-class AroonOptions(ComparableIndicatorOptions):
-    """Configuration options for the Aroon indicator, which is a
-    :term:`technical indicator` used to identify a change in the trend of the value of an
-    asset.
+class PriceEnvelopesOptions(ComparableIndicatorOptions):
+    """Configuration for :term:`Price Envelopes`, a :term:`technical indicator` based on
+    simple moving averages.
 
-    .. figure:: ../../../_static/aroon-example.png
-      :alt: Aroon Example Chart
+    .. figure:: ../../../_static/price-envelopes-example.png
+      :alt: Price Envelopes Example Chart
       :align: center
 
     """
 
     def __init__(self, **kwargs):
-        self._aroon_down = None
+        self._bottom_line = None
+        self._top_line = None
 
-        self.aroon_down = kwargs.get('aroon_down', None)
+        self.bottom_line = kwargs.get('bottom_line', None)
+        self.top_line = kwargs.get('top_line', None)
 
         super().__init__(**kwargs)
 
     @property
-    def aroon_down(self) -> Optional[AroonLineStyleOptions]:
-        """Styles for the Aroon-Down line.
+    def bottom_line(self) -> Optional[PriceEnvelopesStyleOptions]:
+        """Styles for the bottom line.
 
-        :rtype: :class:`AroonLineStyleOptions`
+        :rtype: :class:`AbandsStyleOptions` or :obj:`None <python:None>`
         """
-        return self._aroon_down
+        return self._bottom_line
 
-    @aroon_down.setter
-    @class_sensitive(AroonLineStyleOptions)
-    def aroon_down(self, value):
-        self._aroon_down = value
+    @bottom_line.setter
+    @class_sensitive(PriceEnvelopesStyleOptions)
+    def bottom_line(self, value):
+        self._bottom_line = value
+
+    @property
+    def params(self) -> Optional[PriceEnvelopesParameters]:
+        """Parameters used in calculating the indicator's data points.
+
+        :rtype: :class:`PriceEnvelopesParameters` or :obj:`None <python:None>`
+        """
+        return self._params
+
+    @params.setter
+    @class_sensitive(PriceEnvelopesParameters)
+    def params(self, value):
+        self._params = value
+
+    @property
+    def top_line(self) -> Optional[PriceEnvelopesStyleOptions]:
+        """Styles for the top line.
+
+        :rtype: :class:`PriceEnvelopesStyleOptions` or :obj:`None <python:None>`
+        """
+        return self._top_line
+
+    @top_line.setter
+    @class_sensitive(PriceEnvelopesStyleOptions)
+    def top_line(self, value):
+        self._top_line = value
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -156,14 +247,16 @@ class AroonOptions(ComparableIndicatorOptions):
             'compare': as_dict.get('compare', None),
             'compare_base': as_dict.get('compareBase', None),
 
-            'aroon_down': as_dict.get('aroonDown', None),
+            'bottom_line': as_dict.get('bottomLine', None),
+            'top_line': as_dict.get('topLine', None),
         }
 
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
-            'aroonDown': self.aroon_down,
+            'bottomLine': self.bottom_line,
+            'topLine': self.top_line,
         }
 
         parent_as_dict = super()._to_untrimmed_dict(in_cls = in_cls)
