@@ -216,3 +216,17 @@ class HollowCandlestickOptions(CandlestickOptions):
 
     """
     pass
+
+
+class HeikinAshiOptions(CandlestickOptions):
+    """General options to apply to Heikin Ashi series types, which are visualized
+    similarly to :class:`CandlestickSeries <options.series.candlestick.CandlestickSeries>`
+    but which feature a smoother line by tracking ranges of movement rather than
+    individual movements.
+
+    .. figure:: ../../../_static/heikin-ashi-example.png
+      :alt: Heikin Ashi Example Chart
+      :align: center
+
+    """
+    pass
