@@ -204,3 +204,15 @@ class CandlestickOptions(BaseBarOptions, NonIndicatorOptions):
             untrimmed[key] = parent_as_dict[key]
 
         return untrimmed
+
+
+class HollowCandlestickOptions(CandlestickOptions):
+    """General options to apply to Hollow Candlestick series types. A candlestick chart is
+    a style of financial chart used to describe price movements over time.
+
+    .. figure:: ../../../_static/hollow-candlestick-example.png
+      :alt: Hollow Candlestick Example Chart
+      :align: center
+
+    """
+    pass
