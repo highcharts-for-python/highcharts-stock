@@ -3,6 +3,7 @@ from decimal import Decimal
 
 from validator_collection import validators
 
+from highcharts_python import constants
 from highcharts_python.metaclasses import HighchartsMeta
 
 
@@ -78,6 +79,72 @@ class LineStylesColorWidth(LineStylesWidth):
         untrimmed = {
             'lineWidth': self.line_width,
             'lineColor': self.line_color,
+        }
+
+        return untrimmed
+
+
+class LineStylesColorWidthDash(LineStylesColorWidth):
+    """Line styles with line width and color."""
+
+    def __init__(self, **kwargs):
+        self._dash_style = None
+
+        self.dash_style = kwargs.get('dash_style', None)
+
+        super().__init__(**kwargs)
+
+    @property
+    def dash_style(self) -> Optional[str]:
+        """Name of the dash style to use for the shape's stroke.
+
+        Accepts the following values:
+
+          * ``'Solid'``
+          * ``'ShortDash'``
+          * ``'ShortDot'``
+          * ``'ShortDashDot'``
+          * ``'ShortDashDotDot'``
+          * ``'Dot'``
+          * ``'Dash'``
+          * ``'LongDash'``
+          * ``'DashDot'``
+          * ``'LongDashDot'``
+          * ``'LongDashDotDot'``
+
+        :returns: The name of the dash style to apply to the shape's stroke.
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return self._dash_style
+
+    @dash_style.setter
+    def dash_style(self, value):
+        value = validators.string(value, allow_empty = True)
+        if not value:
+            self._dash_style = None
+        else:
+            if value not in constants.SHAPES_ALLOWED_DASH_STYLES:
+                raise errors.HighchartsValueError(f'dash_style expects a supported value.'
+                                                  f' Received: {value}')
+            self._dash_style = value
+
+    @classmethod
+    def _get_kwargs_from_dict(cls, as_dict):
+        kwargs = {
+            'line_width': as_dict.get('lineWidth', None),
+
+            'line_color': as_dict.get('lineColor', None),
+
+            'dash_style': as_dict.get('dashStyle', None),
+        }
+
+        return kwargs
+
+    def _to_untrimmed_dict(self, in_cls = None) -> dict:
+        untrimmed = {
+            'dashStyle': self.dash_style,
+            'lineColor': self.line_color,
+            'lineWidth': self.line_width,
         }
 
         return untrimmed
