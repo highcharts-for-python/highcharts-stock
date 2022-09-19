@@ -109,10 +109,10 @@ class AreaOptions(AreaBase, NonIndicatorOptions):
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {}
-        parents_as_dict = mro__to_untrimmed_dict(self, in_cls = in_cls) or {}
+        parent_as_dict = mro__to_untrimmed_dict(self, in_cls = in_cls) or {}
 
-        for key in parents_as_dict:
-            untrimmed[key] = parents_as_dict[key]
+        for key in parent_as_dict:
+            untrimmed[key] = parent_as_dict[key]
 
         return untrimmed
 
