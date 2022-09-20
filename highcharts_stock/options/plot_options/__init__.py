@@ -1,62 +1,118 @@
 from typing import Optional
 
 from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.options.plot_options.arcdiagram import ArcDiagramOptions
-from highcharts_python.options.plot_options.area import AreaOptions
-from highcharts_python.options.plot_options.area import AreaRangeOptions
-from highcharts_python.options.plot_options.area import AreaSplineOptions
-from highcharts_python.options.plot_options.area import AreaSplineRangeOptions
-from highcharts_python.options.plot_options.bar import BarOptions
-from highcharts_python.options.plot_options.bellcurve import BellCurveOptions
-from highcharts_python.options.plot_options.boxplot import BoxPlotOptions
-from highcharts_python.options.plot_options.bubble import BubbleOptions
-from highcharts_python.options.plot_options.bullet import BulletOptions
-from highcharts_python.options.plot_options.bar import ColumnOptions
-from highcharts_python.options.plot_options.bar import ColumnPyramidOptions
-from highcharts_python.options.plot_options.bar import ColumnRangeOptions
-from highcharts_python.options.plot_options.bar import CylinderOptions
-from highcharts_python.options.plot_options.dependencywheel import DependencyWheelOptions
-from highcharts_python.options.plot_options.dumbbell import DumbbellOptions
-from highcharts_python.options.plot_options.boxplot import ErrorBarOptions
-from highcharts_python.options.plot_options.funnel import FunnelOptions
-from highcharts_python.options.plot_options.funnel import Funnel3DOptions
-from highcharts_python.options.plot_options.gauge import GaugeOptions
-from highcharts_python.options.plot_options.heatmap import HeatmapOptions
-from highcharts_python.options.plot_options.histogram import HistogramOptions
-from highcharts_python.options.plot_options.item import ItemOptions
-from highcharts_python.options.plot_options.area import LineOptions
-from highcharts_python.options.plot_options.dumbbell import LollipopOptions
-from highcharts_python.options.plot_options.networkgraph import NetworkGraphOptions
-from highcharts_python.options.plot_options.organization import OrganizationOptions
-from highcharts_python.options.plot_options.packedbubble import PackedBubbleOptions
-from highcharts_python.options.plot_options.pareto import ParetoOptions
-from highcharts_python.options.plot_options.pie import PieOptions
-from highcharts_python.options.plot_options.polygon import PolygonOptions
-from highcharts_python.options.plot_options.pyramid import PyramidOptions
-from highcharts_python.options.plot_options.pyramid import Pyramid3DOptions
-from highcharts_python.options.plot_options.sankey import SankeyOptions
-from highcharts_python.options.plot_options.scatter import ScatterOptions
-from highcharts_python.options.plot_options.scatter import Scatter3DOptions
-from highcharts_python.options.plot_options.series import SeriesOptions
-from highcharts_python.options.plot_options.gauge import SolidGaugeOptions
-from highcharts_python.options.plot_options.spline import SplineOptions
-from highcharts_python.options.plot_options.area import StreamGraphOptions
-from highcharts_python.options.plot_options.sunburst import SunburstOptions
-from highcharts_python.options.plot_options.heatmap import TilemapOptions
-from highcharts_python.options.plot_options.timeline import TimelineOptions
-from highcharts_python.options.plot_options.treemap import TreemapOptions
-from highcharts_python.options.plot_options.pie import VariablePieOptions
-from highcharts_python.options.plot_options.bar import VariwideOptions
-from highcharts_python.options.plot_options.vector import VectorOptions
-from highcharts_python.options.plot_options.venn import VennOptions
-from highcharts_python.options.plot_options.bar import WaterfallOptions
-from highcharts_python.options.plot_options.bar import WindBarbOptions
-from highcharts_python.options.plot_options.wordcloud import WordcloudOptions
-from highcharts_python.options.plot_options.bar import XRangeOptions
+from highcharts_python.options.plot_options import PlotOptions as PlotOptionsBase
+
+from highcharts_stock.options.plot_options.arcdiagram import ArcDiagramOptions
+from highcharts_stock.options.plot_options.area import AreaOptions
+from highcharts_stock.options.plot_options.area import AreaRangeOptions
+from highcharts_stock.options.plot_options.area import AreaSplineOptions
+from highcharts_stock.options.plot_options.area import AreaSplineRangeOptions
+from highcharts_stock.options.plot_options.bar import BarOptions
+from highcharts_stock.options.plot_options.bellcurve import BellCurveOptions
+from highcharts_stock.options.plot_options.boxplot import BoxPlotOptions
+from highcharts_stock.options.plot_options.bubble import BubbleOptions
+from highcharts_stock.options.plot_options.bullet import BulletOptions
+from highcharts_stock.options.plot_options.bar import ColumnOptions
+from highcharts_stock.options.plot_options.bar import ColumnPyramidOptions
+from highcharts_stock.options.plot_options.bar import ColumnRangeOptions
+from highcharts_stock.options.plot_options.bar import CylinderOptions
+from highcharts_stock.options.plot_options.dependencywheel import DependencyWheelOptions
+from highcharts_stock.options.plot_options.dumbbell import DumbbellOptions
+from highcharts_stock.options.plot_options.boxplot import ErrorBarOptions
+from highcharts_stock.options.plot_options.funnel import FunnelOptions
+from highcharts_stock.options.plot_options.funnel import Funnel3DOptions
+from highcharts_stock.options.plot_options.gauge import GaugeOptions
+from highcharts_stock.options.plot_options.heatmap import HeatmapOptions
+from highcharts_stock.options.plot_options.histogram import HistogramOptions
+from highcharts_stock.options.plot_options.item import ItemOptions
+from highcharts_stock.options.plot_options.area import LineOptions
+from highcharts_stock.options.plot_options.dumbbell import LollipopOptions
+from highcharts_stock.options.plot_options.networkgraph import NetworkGraphOptions
+from highcharts_stock.options.plot_options.organization import OrganizationOptions
+from highcharts_stock.options.plot_options.packedbubble import PackedBubbleOptions
+from highcharts_stock.options.plot_options.pareto import ParetoOptions
+from highcharts_stock.options.plot_options.pie import PieOptions
+from highcharts_stock.options.plot_options.polygon import PolygonOptions
+from highcharts_stock.options.plot_options.pyramid import PyramidOptions
+from highcharts_stock.options.plot_options.pyramid import Pyramid3DOptions
+from highcharts_stock.options.plot_options.sankey import SankeyOptions
+from highcharts_stock.options.plot_options.scatter import ScatterOptions
+from highcharts_stock.options.plot_options.scatter import Scatter3DOptions
+from highcharts_stock.options.plot_options.series import SeriesOptions
+from highcharts_stock.options.plot_options.gauge import SolidGaugeOptions
+from highcharts_stock.options.plot_options.spline import SplineOptions
+from highcharts_stock.options.plot_options.area import StreamGraphOptions
+from highcharts_stock.options.plot_options.sunburst import SunburstOptions
+from highcharts_stock.options.plot_options.heatmap import TilemapOptions
+from highcharts_stock.options.plot_options.timeline import TimelineOptions
+from highcharts_stock.options.plot_options.treemap import TreemapOptions
+from highcharts_stock.options.plot_options.pie import VariablePieOptions
+from highcharts_stock.options.plot_options.bar import VariwideOptions
+from highcharts_stock.options.plot_options.vector import VectorOptions
+from highcharts_stock.options.plot_options.venn import VennOptions
+from highcharts_stock.options.plot_options.bar import WaterfallOptions
+from highcharts_stock.options.plot_options.bar import WindBarbOptions
+from highcharts_stock.options.plot_options.wordcloud import WordcloudOptions
+from highcharts_stock.options.plot_options.bar import XRangeOptions
+
+# Highcharts Plot Options
+from highcharts_stock.options.plot_options.abands import (AbandsOptions,
+                                                          PCOptions,
+                                                          KeltnerChannelsOptions,
+                                                          BBOptions)
+from highcharts_stock.options_plot_options.ad import ADOptions
+from highcharts_stock.options.plot_options.aroon import AroonOptions
+from highcharts_stock.options.plot_options.atr import ATROptions, NATROptions
+from highcharts_stock.options.plot_options.averages import (DEMAOptions,
+                                                            EMAOptions,
+                                                            SMAOptions,
+                                                            TEMAOptions,
+                                                            VWAPOptions,
+                                                            WMAOptions)
+from highcharts_stock.options.plot_options.candlestick import (CandlestickOptions,
+                                                               HollowCandlestickOptions,
+                                                               HeikinAshiOptions)
+from highcharts_stock.options.plot_options.disparity_index import DisparityIndexOptions
+from highcharts_stock.options.plot_options.dmi import DMIOptions
+from highcharts_stock.options.plot_options.flags import FlagsOptions
+from highcharts_stock.options.plot_options.hlc import (HLCOptions,
+                                                       OHLCOptions)
+from highcharts_stock.options.plot_options.linear_regressions import (LinearRegressionOptions,
+                                                                      LinearRegressionAngleOptions,
+                                                                      LinearRegressionInterceptOptions,
+                                                                      LinearRegressionSlopeOptions,
+                                                                      TrendlineOptions)
+from highcharts_stock.options.plot_options.pivot_points import PivotPointsOptions
+from highcharts_stock.options.plot_options.price_evenlopes import PriceEnvelopesOptions
+from highcharts_stock.options.plot_options.psar import PSAROptions
+from highcharts_stock.options.plot_options.vbp import VBPOptions
+from highcharts_stock.options.plot_options.zigzag import ZigZagOptions
+from highcharts_stock.options.plot_options.momentum import (MomentumOptions,
+                                                            OBVOptions,
+                                                            ROCOptions,
+                                                            RSIOptions)
+from highcharts_stock.options.plot_options.momentum.ikh import IKHOptions
+from highcharts_stock.options.plot_options.momentum.macd import MACDOptions
+from highcharts_stock.options.plot_options.momentum.supertrend import SupertrendOptions
+from highcharts_stock.options.plot_options.oscillators import (AroonOscillatorOptions,
+                                                               APOOptions,
+                                                               CCIOptions,
+                                                               ChaikinOptions,
+                                                               CMOOptions,
+                                                               DPOOptions,
+                                                               TRIXOptions,
+                                                               WilliamsROptions)
+from highcharts_stock.options.plot_options.oscillators.ao import AOOptions
+from highcharts_stock.options.plot_options.oscillators.klinger import KlingerOptions
+from highcharts_stock.options.plot_options.oscillators.money_flow import (MFIOptions,
+                                                                          CMFOptions)
+from highcharts_stock.options.plot_options.oscillators.ppo import PPOOptions
+from highcharts_stock.options.plot_options.oscillators.stochastic import (StochasticOptions,
+                                                                          SlowStochasticOptions)
 
 
-class PlotOptions(HighchartsMeta):
+class PlotOptions(PlotOptionsBase):
     """A wrapper object for configurations applied to each series type.
 
     The config objects for each series can also be overridden for each series item as
@@ -75,63 +131,1127 @@ class PlotOptions(HighchartsMeta):
     """
 
     def __init__(self, **kwargs):
-        self._arcdiagram = None
-        self._area = None
-        self._arearange = None
-        self._areaspline = None
-        self._areasplinerange = None
-        self._bar = None
-        self._bellcurve = None
-        self._boxplot = None
-        self._bubble = None
-        self._bullet = None
-        self._column = None
-        self._columnpyramid = None
-        self._columnrange = None
-        self._cylinder = None
-        self._dependencywheel = None
-        self._dumbbell = None
-        self._errorbar = None
-        self._funnel = None
-        self._funnel_3d = None
-        self._gauge = None
-        self._heatmap = None
-        self._histogram = None
-        self._item = None
-        self._line = None
-        self._lollipop = None
-        self._networkgraph = None
-        self._organization = None
-        self._packedbubble = None
-        self._pareto = None
-        self._pie = None
-        self._polygon = None
-        self._pyramid = None
-        self._pyramid_3d = None
-        self._sankey = None
-        self._scatter = None
-        self._scatter_3d = None
-        self._series = None
-        self._solidgauge = None
-        self._spline = None
-        self._streamgraph = None
-        self._sunburst = None
-        self._tilemap = None
-        self._timeline = None
-        self._treemap = None
-        self._variablepie = None
-        self._variwide = None
-        self._vector = None
-        self._venn = None
-        self._waterfall = None
-        self._windbarb = None
-        self._wordcloud = None
-        self._xrange = None
+        self._abands = None
+        self._ad = None
+        self._ao = None
+        self._apo = None
+        self._aroon = None
+        self._aroonoscillator = None
+        self._atr = None
+        self._bb = None
+        self._candlestick = None
+        self._cci = None
+        self._chaikin = None
+        self._cmf = None
+        self._cmo = None
+        self._dema = None
+        self._disparityindex = None
+        self._dmi = None
+        self._dpo = None
+        self._ema = None
+        self._flags = None
+        self._heikinashi = None
+        self._hlc = None
+        self._hollowcandlestick = None
+        self._ikh = None
+        self._keltnerchannels = None
+        self._klinger = None
+        self._linearregression = None
+        self._linearregressionngle = None
+        self._linearregressionintercept = None
+        self._linearregressionslope = None
+        self._macd = None
+        self._mfi = None
+        self._momentum = None
+        self._natr = None
+        self._obv = None
+        self._ohlc = None
+        self._pc = None
+        self._pivotpoints = None
+        self._ppo = None
+        self._priceenvelopes = None
+        self._psar = None
+        self._roc = None
+        self._rsi = None
+        self._slowstochastic = None
+        self._sma = None
+        self._stochastic = None
+        self._supertrend = None
+        self._tema = None
+        self._trendline = None
+        self._trix = None
+        self._vbp = None
+        self._vwap = None
+        self._williamsr = None
+        self._wma = None
+        self._zigzag = None
 
-        for attribute in dir(self):
-            if attribute.startswith('_') and not attribute.startswith('__'):
-                non_private_name = attribute[1:]
-                setattr(self, non_private_name, kwargs.get(non_private_name, None))
+        self.abands = kwargs.get('abands', None)
+        self.ad = kwargs.get('ad', None)
+        self.ao = kwargs.get('ao', None)
+        self.apo = kwargs.get('apo', None)
+        self.aroon = kwargs.get('aroon', None)
+        self.aroonoscillator = kwargs.get('aroonoscillator', None)
+        self.atr = kwargs.get('atr', None)
+        self.bb = kwargs.get('bb', None)
+        self.candlestick = kwargs.get('candlestick', None)
+        self.cci = kwargs.get('cci', None)
+        self.chaikin = kwargs.get('chaikin', None)
+        self.cmf = kwargs.get('cmf', None)
+        self.cmo = kwargs.get('cmo', None)
+        self.dema = kwargs.get('dema', None)
+        self.disparityindex = kwargs.get('disparityindex', None)
+        self.dmi = kwargs.get('dmi', None)
+        self.dpo = kwargs.get('dpo', None)
+        self.ema = kwargs.get('ema', None)
+        self.flags = kwargs.get('flags', None)
+        self.heikinashi = kwargs.get('heikinashi', None)
+        self.hlc = kwargs.get('hlc', None)
+        self.hollowcandlestick = kwargs.get('hollowcandlestick', None)
+        self.ikh = kwargs.get('ikh', None)
+        self.keltnerchannels = kwargs.get('keltnerchannels', None)
+        self.klinger = kwargs.get('klinger', None)
+        self.linearregression = kwargs.get('linearregression', None)
+        self.linearregressionngle = kwargs.get('linearregressionngle', None)
+        self.linearregressionintercept = kwargs.get('linearregressionintercept', None)
+        self.linearregressionslope = kwargs.get('linearregressionslope', None)
+        self.macd = kwargs.get('macd', None)
+        self.mfi = kwargs.get('mfi', None)
+        self.momentum = kwargs.get('momentum', None)
+        self.natr = kwargs.get('natr', None)
+        self.obv = kwargs.get('obv', None)
+        self.ohlc = kwargs.get('ohlc', None)
+        self.pc = kwargs.get('pc', None)
+        self.pivotpoints = kwargs.get('pivotpoints', None)
+        self.ppo = kwargs.get('ppo', None)
+        self.priceenvelopes = kwargs.get('priceenvelopes', None)
+        self.psar = kwargs.get('psar', None)
+        self.roc = kwargs.get('roc', None)
+        self.rsi = kwargs.get('rsi', None)
+        self.slowstochastic = kwargs.get('slowstochastic', None)
+        self.sma = kwargs.get('sma', None)
+        self.stochastic = kwargs.get('stochastic', None)
+        self.supertrend = kwargs.get('supertrend', None)
+        self.tema = kwargs.get('tema', None)
+        self.trendline = kwargs.get('trendline', None)
+        self.trix = kwargs.get('trix', None)
+        self.vbp = kwargs.get('vbp', None)
+        self.vwap = kwargs.get('vwap', None)
+        self.williamsr = kwargs.get('williamsr', None)
+        self.wma = kwargs.get('wma', None)
+        self.zigzag = kwargs.get('zigzag', None)
+
+        super().__init__(**kwargs)
+
+    @property
+    def abands(self) -> Optional[AbandsOptions]:
+        """Configuration for :term:`Acceleration Bands`, a :term:`technical indicator` which
+        plots a trio of lines using a simple moving average for the midpoint, and the high and
+        low values as the corresponding high and low bands.
+
+        .. figure:: ../../../_static/abands-example.png
+          :alt: Acceleration Bands Example Chart
+          :align: center
+
+        :rtype: :class:`AbandsOptions` or :obj:`None <python:None>`
+        """
+        return self._abands
+
+    @abands.setter
+    @class_sensitive(AbandsOptions)
+    def abands(self, value):
+        self._abands = value
+
+    @property
+    def ad(self) -> Optional[ADOptions]:
+        """Options to configure an Accumulation/Distribution
+        :term:`indicator <techincal indicator>`, which is a cumulative indicator that uses
+        volume and price to assess whether a stock is being accumulated or distributed
+
+        .. figure:: ../../../_static/ad-example.png
+          :alt: Accumulation/Distribution Example Chart
+          :align: center
+
+        :rtype: :class:`ADOptions` or :obj:`None <python:None>`
+        """
+        return self._ad
+
+    @ad.setter
+    @class_sensitive(ADOptions)
+    def ad(self, value):
+        self._ad = value
+
+    @property
+    def ao(self) -> Optional[AOOptions]:
+        """General options to configure Awesome :term:`Oscillators <oscillator>`, used
+        within the financial markets to confirm or disprove trends on price charts.
+
+        .. figure:: ../../../_static/awesome-oscillator-example.png
+          :alt: Awesome Oscillator (AO) Example Chart
+          :align: center
+
+        :rtype: :class:`AOOptions` or :obj:`None <python:None>`
+        """
+        return self._aa
+
+    @ao.setter
+    @class_sensitive(AOOptions)
+    def ao(self, value):
+        self._ao = value
+
+    @property
+    def apo(self) -> Optional[APOOptions]:
+        """General options to configure Absolute Price
+        :term:`Oscillators <oscillator>` (APO), which is an :term:`oscillator` that
+        displays the difference between two exponential moving averages of an asset's
+        price expressed as an absolute value
+
+        .. figure:: ../../../_static/apo-example.png
+          :alt: Absolute Price Oscillator Example Chart
+          :align: center
+
+        :rtype: :class:`APOOptions` or :obj:`None <python:None>`
+        """
+        return self._apo
+
+    @apo.setter
+    @class_sensitive(APOOptions)
+    def apo(self, value):
+        self._apo = value
+
+    @property
+    def aroon(self) -> Optional[AroonOptions]:
+        """General options for the Aroon indicator, which is a
+        :term:`technical indicator` used to identify a change in the trend of the value of
+        an asset.
+
+        .. figure:: ../../../_static/aroon-example.png
+          :alt: Aroon Example Chart
+          :align: center
+
+        :rtype: :class:`AroonOptions` or :obj:`None <python:None>`
+        """
+        return self._aroon
+
+    @aroon.setter
+    @class_sensitive(AroonOptions)
+    def aroon(self, value):
+        self._aroon = value
+
+    @property
+    def aroonoscillator(self) -> Optional[AroonOscillatorOptions]:
+        """General options to configure an Aroon Oscillator series, which is an
+        :term:`oscillator` that is used to gauge the strength of a current trend and the
+        likelihood that it will continue.
+
+        .. figure:: ../../../_static/aroon-oscillator-example.png
+          :alt: Aroon Oscillator Example Chart
+          :align: center
+
+        :rtype: :class:`AroonOscillatorOptions` or :obj:`None <python:None>`
+        """
+        return self._aroonoscillator
+
+    @aroonoscillator.setter
+    @class_sensitive(AroonOscillatorOptions)
+    def aroonoscillator(self, value):
+        self._aroonoscillator = value
+
+    @property
+    def atr(self) -> Optional[ATROptions]:
+        """General options to configure an Average True Range :term:`indicator <technical indicator>`,
+        which is a measure of the degree of volatility in a value over time using a look-back
+        period determined by the configuration of
+        :meth:`.params <highcharts_stock.options.plot_options.atr.ATROptions.params`.
+
+        .. figure:: ../../../_static/atr-example.png
+          :alt: ATR Example Chart
+          :align: center
+
+        :rtype: :class:`ATROptions` or :obj:`None <python:None>`
+        """
+        return self._atr
+
+    @atr.setter
+    @class_sensitive(ATROptions)
+    def atr(self, value):
+        self._atr = value
+
+    @property
+    def bb(self) -> Optional[BBOptions]:
+        """General options for Bollinger Bands, a :term:`technical indicator`.
+
+        .. figure:: ../../../_static/bollinger-bands-example.png
+          :alt: Bollinger Bands Example Chart
+          :align: center
+
+        :rtype: :class:`BBOptions` or :obj:`None <python:None>`
+        """
+        return self._bb
+
+    @bb.setter
+    @class_sensitive(BBOptions)
+    def bb(self, value):
+        self._bb = value
+
+    @property
+    def candlestick(self) -> Optional[CandlestickOptions]:
+        """General options to apply to all Candlestick series types. A candlestick chart
+        is a style of financial chart used to describe price movements over time.
+
+        .. figure:: ../../../_static/candlestick-example.png
+          :alt: Candlestick Example Chart
+          :align: center
+
+        :rtype: :class:`CandlestickOptions` or :obj:`None <python:None>`
+        """
+        return self._candlestick
+
+    @candlestick.setter
+    @class_sensitive(CandlestickOptions)
+    def candlestick(self, value):
+        self._candlestick = value
+
+    @property
+    def cci(self) -> Optional[CCIOptions]:
+        """General options to configure a Commodity Channel Index
+        :term:`indicator <technical indicator>`, which is an :term:`oscillator` that measures
+        the difference between the current price and the historical average price using a
+        look-back
+        period determined by the configuration of
+        :meth:`.params <highcharts_stock.options.plot_options.atr.CCIOptions.params`.
+
+        .. figure:: ../../../_static/cci-example.png
+          :alt: CCI Example Chart
+          :align: center
+
+        :rtype: :class:`CCIOptions` or :obj:`None <python:None>`
+        """
+        return self._cci
+
+    @cci.setter
+    @class_sensitive(CCIOptions)
+    def cci(self, value):
+        self._cci = value
+
+    @property
+    def chaikin(self) -> Optional[ChaikinOptions]:
+        """General options to configure a Chaikin :term:`oscillator`, which measures the
+        accummulation-distribution line of moving average convergence-divergence by
+        subtracting a 10-day exponential moving average from a 3-day moving average of the
+        accumulation-distribution line.
+
+        .. figure:: ../../../_static/chaikin-example.png
+          :alt: Chaikin Oscillator Example Chart
+          :align: center
+
+        :rtype: :class:`ChaikinOptions` or :obj:`None <python:None>`
+        """
+        return self._chaikin
+
+    @chaikin.setter
+    @class_sensitive(ChaikinOptions)
+    def chaikin(self, value):
+        self._chaikin = value
+
+    @property
+    def cmf(self) -> Optional[CMFOptions]:
+        """General options to configure a Chaikin Money Flow :term:`indicator <technical indicator>`,
+        which uses price and
+        volume data to identify over-bought or over-sold signals in an asset.
+
+        .. figure:: ../../../_static/cmf-example.png
+          :alt: Chaikin Money Flow Example Chart
+          :align: center
+
+        :rtype: :class:`CMFOptions` or :obj:`None <python:None>`
+        """
+        return self._cmf
+
+    @cmf.setter
+    @class_sensitive(CMFOptions)
+    def cmf(self, value):
+        self._cmf = value
+
+    @property
+    def cmo(self) -> Optional[CMOOptions]:
+        """General options to configure a Chande Momentum :term:`Oscillator`, which uses momentum to
+        identify relative strength or weakness in a market.
+
+        .. caution::
+
+          The chosen time frame - configured by
+          :meth:`.params.period <highcharts_stock.options.plot_options.atr.CCIOptions.params`
+          and defaulting to a value of ``20`` - has a significant impact on the signals
+          generated by the indicator.
+
+        .. figure:: ../../../_static/cmo-example.png
+          :alt: Chande Momentum Oscillator Example Chart
+          :align: center
+
+        :rtype: :class:`CMOOptions` or :obj:`None <python:None>`
+        """
+        return self._cmo
+
+    @cmo.setter
+    @class_sensitive(CMOOptions)
+    def cmo(self, value):
+        self._cmo = value
+
+    @property
+    def dema(self) -> Optional[DEMAOptions]:
+        """General options to configure a Double Exponential Moving Average :term:`indicator`, which
+        is often used to reduce the "noise" produced on a simple moving average.
+
+        .. figure:: ../../../_static/dema-example.png
+          :alt: DEMA Example Chart
+          :align: center
+
+        :rtype: :class:`DEMAOptions` or :obj:`None <python:None>`
+        """
+        return self._dema
+
+    @dema.setter
+    @class_sensitive(DEMAOptions)
+    def dema(self, value):
+        self._dema = value
+
+    @property
+    def disparityindex(self) -> Optional[DisparityIndexOptions]:
+        """General options to configure a Disparity Index :term:`indicator`, which measures the
+        relative position of the most-recent value to a selected moving average, expressed as
+        a percentage.
+
+        .. figure:: ../../../_static/disparity-index-example.png
+          :alt: Disparity Index Example Chart
+          :align: center
+
+        :rtype: :class:`DisparityIndexOptions` or :obj:`None <python:None>`
+        """
+        return self._disparityindex
+
+    @disparityindex.setter
+    @class_sensitive(DisparityIndexOptions)
+    def disparityindex(self, value):
+        self._disparityindex = value
+
+    @property
+    def dmi(self) -> Optional[DMIOptions]:
+        """General options to configure a Directional Movement Index (DMI)
+        :term:`indicator <technical indicator>`, which can be used to identify whether an
+        asset is trending by comparing highs and lows over time.
+
+        .. figure:: ../../../_static/dmi-example.png
+          :alt: Directional Movement Index (DMI) Example Chart
+          :align: center
+
+        :rtype: :class:`DMIOptions` or :obj:`None <python:None>`
+        """
+        return self._dmi
+
+    @dmi.setter
+    @class_sensitive(DMIOptions)
+    def dmi(self, value):
+        self._dmi = value
+
+    @property
+    def dpo(self) -> Optional[DPOOptions]:
+        """General options to configure a Detrended Price :term:`Oscillator`, which
+        strips out price trends in an effort to estimate the length of price cycles.
+
+        .. figure:: ../../../_static/dpo-example.png
+          :alt: DPO Example Chart
+          :align: center
+
+        :rtype: :class:`DPOOptions` or :obj:`None <python:None>`
+        """
+        return self._dpo
+
+    @dpo.setter
+    @class_sensitive(DPOOptions)
+    def dpo(self, value):
+        self._dpo = value
+
+    @property
+    def ema(self) -> Optional[EMAOptions]:
+        """General options to configure an Exponential Moving Average :term:`indicator`, which
+        is used to give greater weight to recent values.
+
+        .. figure:: ../../../_static/ema-example.png
+          :alt: Exponential Moving Average Example Chart
+          :align: center
+
+        :rtype: :class:`EMAOptions` or :obj:`None <python:None>`
+        """
+        return self._ema
+
+    @ema.setter
+    @class_sensitive(EMAOptions)
+    def ema(self, value):
+        self._ema = value
+
+    @property
+    def flags(self) -> Optional[FlagsOptions]:
+        """General options to configure flags, which are used to mark events in **Highcharts Stock for Python**. They can be added
+        on the timeline, or attached to a specific series.
+
+        .. figure:: ../../../_static/flags-example.png
+          :alt: Flags Example
+          :align: center
+
+        :rtype: :class:`FlagsOptions` or :obj:`None <python:None>`
+        """
+        return self._flags
+
+    @flags.setter
+    @class_sensitive(FlagsOptions)
+    def flags(self, value):
+        self._flags = value
+
+    @property
+    def heikinashi(self) -> Optional[HeikinAshiOptions]:
+        """General options to apply to Heikin Ashi series types, which are visualized
+        similarly to :class:`CandlestickSeries <options.series.candlestick.CandlestickSeries>`
+        but which feature a smoother line by tracking ranges of movement rather than
+        individual movements.
+
+        .. figure:: ../../../_static/heikin-ashi-example.png
+          :alt: Heikin Ashi Example Chart
+          :align: center
+
+        :rtype: :class:`HeikinAshiOptions` or :obj:`None <python:None>`
+        """
+        return self._heikinashi
+
+    @heikinashi.setter
+    @class_sensitive(HeikinAshiOptions)
+    def heikinashi(self, value):
+        self._heikinashi = value
+
+    @property
+    def hlc(self) -> Optional[HLCOptions]:
+        """General options to apply to all :term:`HLC` series types. An HLC chart is a
+        style of financial chart used to describe price movements over time.
+
+        .. figure:: ../../../_static/hlc-example.png
+          :alt: HLC Example Chart
+          :align: center
+
+        :rtype: :class:`HLCOptions` or :obj:`None <python:None>`
+        """
+        return self._hlc
+
+    @hlc.setter
+    @class_sensitive(HLCOptions)
+    def hlc(self, value):
+        self._hlc = value
+
+    @property
+    def hollowcandlestick(self) -> Optional[HollowCandlestickOptions]:
+        """General options to apply to Hollow Candlestick series types. A candlestick chart is
+        a style of financial chart used to describe price movements over time.
+
+        .. figure:: ../../../_static/hollow-candlestick-example.png
+          :alt: Hollow Candlestick Example Chart
+          :align: center
+
+        :rtype: :class:`HollowCandlestickOptions` or :obj:`None <python:None>`
+        """
+        return self._hollowcandlestick
+
+    @hollowcandlestick.setter
+    @class_sensitive(HollowCandlestickOptions)
+    def hollowcandlestick(self, value):
+        self._hollowcandlestick = value
+
+    @property
+    def ikh(self) -> Optional[IKHOptions]:
+        """General options to configure a Ichimoku Kinko Hyo (IKH, or "ichimoku"), a momentum
+        :term:`indicator <techincal indicator>`.
+
+        .. figure:: ../../../_static/ikh-example.png
+          :alt: Ichimoku Kinko Hyo (IKH) Example Chart
+          :align: center
+
+        :rtype: :class:`IKHOptions` or :obj:`None <python:None>`
+        """
+        return self._ikh
+
+    @ikh.setter
+    @class_sensitive(IKHOptions)
+    def ikh(self, value):
+        self._ikh = value
+
+    @property
+    def keltnerchannels(self) -> Optional[KeltnerChannelsOptions]:
+        """General options to configure Keltner Channels :term:`indicator <technical indicator>`.
+
+        .. figure:: ../../../_static/keltner-channels-example.png
+          :alt: Keltner Channels Example Chart
+          :align: center
+
+        :rtype: :class:`KeltnerChannelsOptions` or :obj:`None <python:None>`
+        """
+        return self._keltnerchannels
+
+    @keltnerchannels.setter
+    @class_sensitive(KeltnerChannelsOptions)
+    def keltnerchannels(self, value):
+        self._keltnerchannels = value
+
+    @property
+    def klinger(self) -> Optional[KlingerOptions]:
+        """General options to configure a Klinger :term:`Oscillator`, used to determine the long-term
+        trend of money flow while remaining sensitive enough to detect short-term
+        fluctuations.
+
+        .. figure:: ../../../_static/klinger-example.png
+          :alt: Klinger Example Chart
+          :align: center
+
+        :rtype: :class:`KlingerOptions` or :obj:`None <python:None>`
+        """
+        return self._klinger
+
+    @klinger.setter
+    @class_sensitive(KlingerOptions)
+    def klinger(self, value):
+        self._klinger = value
+
+    @property
+    def linearregression(self) -> Optional[LinearRegressionOptions]:
+        """General options to configure a Linear Regression :term:`indicator`, which calculates a
+        linear regression for a given set of values.
+
+        .. figure:: ../../../_static/linear-regression-example.png
+          :alt: Linear Regression Example Chart
+          :align: center
+
+        :rtype: :class:`LinearRegressionOptions` or :obj:`None <python:None>`
+        """
+        return self._linearregression
+
+    @linearregression.setter
+    @class_sensitive(LinearRegressionOptions)
+    def linearregression(self, value):
+        self._linearregression = value
+
+    @property
+    def linearregressionangle(self) -> Optional[LinearRegressionAngleOptions]:
+        """General options to configure a Linear Regression Angle :term:`indicator`, which is a
+        directional movement indicator which defines a trend at the moment of its birth and
+        can be used to identify trend weakening.
+
+        .. figure:: ../../../_static/linear-regression-angle-example.png
+          :alt: Linear Regression Angle Example Chart
+          :align: center
+
+        :rtype: :class:`LinearRegressionAngleOptions` or :obj:`None <python:None>`
+        """
+        return self._linearregressionangle
+
+    @linearregressionangle.setter
+    @class_sensitive(LinearRegressionAngleOptions)
+    def linearregressionangle(self, value):
+        self._linearregressionangle = value
+
+    @property
+    def linearregressionintercept(self) -> Optional[LinearRegressionInterceptOptions]:
+        """General options to configure a Linear Regression Intercept :term:`indicator`.
+
+        .. figure:: ../../../_static/linear-regression-intercept-example.png
+          :alt: Linear Regression Intercept Example Chart
+          :align: center
+
+        :rtype: :class:`LinearRegressionInterceptOptions` or :obj:`None <python:None>`
+        """
+        return self._linearregressionintercept
+
+    @linearregressionintercept.setter
+    @class_sensitive(LinearRegressionInterceptOptions)
+    def linearregressionintercept(self, value):
+        self._linearregressionintercept = value
+
+    @property
+    def linearregressionslope(self) -> Optional[LinearRegressionSlopeOptions]:
+        """General options to configure a Linear Regression Slope :term:`indicator`.
+
+        .. figure:: ../../../_static/linear-regression-slope-example.png
+          :alt: Linear Regression Slope Example Chart
+          :align: center
+
+        :rtype: :class:`LinearRegressionSlopeOptions` or :obj:`None <python:None>`
+        """
+        return self._linearregressionslope
+
+    @linearregressionslope.setter
+    @class_sensitive(LinearRegressionSlopeOptions)
+    def linearregressionslope(self, value):
+        self._linearregressionslope = value
+
+    @property
+    def macd(self) -> Optional[MACDOptions]:
+        """General options to configure a Moving Average Convergence/Divergence, a momentum
+        :term:`indicator <techincal indicator>`.
+
+        .. figure:: ../../../_static/macd-example.png
+          :alt: Moving Average Convergence/Divergence (MACD) Example Chart
+          :align: center
+
+        :rtype: :class:`MACDOptions` or :obj:`None <python:None>`
+        """
+        return self._macd
+
+    @macd.setter
+    @class_sensitive(MACDOptions)
+    def macd(self, value):
+        self._macd = value
+
+    @property
+    def mfi(self) -> Optional[MFIOptions]:
+        """General options to configure a Money Flow Index :term:`oscillator`, which uses price and
+        volume data to identify over-bought or over-sold signals in an asset.
+
+        .. figure:: ../../../_static/mfi-example.png
+          :alt: Money Flow Index Example Chart
+          :align: center
+
+        :rtype: :class:`MFIOptions` or :obj:`None <python:None>`
+        """
+        return self._mfi
+
+    @mfi.setter
+    @class_sensitive(MFIOptions)
+    def mfi(self, value):
+        self._mfi = value
+
+    @property
+    def momentum(self) -> Optional[MomentumOptions]:
+        """General options to configure a Momentum :term:`indicator <techincal indicator>`.
+
+        .. figure:: ../../../_static/momentum-example.png
+          :alt: Momentum Example Chart
+          :align: center
+
+        :rtype: :class:`MomentumOptions` or :obj:`None <python:None>`
+        """
+        return self._momentum
+
+    @momentum.setter
+    @class_sensitive(MomentumOptions)
+    def momentum(self, value):
+        self._momentum = value
+
+    @property
+    def natr(self) -> Optional[NATROptions]:
+        """General options to configure a Normalized Average True Range
+        :term:`indicator <technical indicator>`.
+
+        .. figure:: ../../../_static/natr-example.png
+          :alt: NATR Example Chart
+          :align: center
+
+        :rtype: :class:`NATROptions` or :obj:`None <python:None>`
+        """
+        return self._natr
+
+    @natr.setter
+    @class_sensitive(NATROptions)
+    def natr(self, value):
+        self._natr = value
+
+    @property
+    def obv(self) -> Optional[OBVOptions]:
+        """General options to configure a Normalized Average True Range
+        :term:`indicator <technical indicator>`.
+
+        .. figure:: ../../../_static/obv-example.png
+          :alt: OBV Example Chart
+          :align: center
+
+        :rtype: :class:`OBVOptions` or :obj:`None <python:None>`
+        """
+        return self._obv
+
+    @obv.setter
+    @class_sensitive(OBVOptions)
+    def obv(self, value):
+        self._obv = value
+
+    @property
+    def ohlc(self) -> Optional[OHLCOptions]:
+        """General options to apply to a :term:`OHLC` series type. An OHLC chart is a
+        sub-type of :term:`HLC` charts which displays the open, high, low, and close values
+        of an asset over time.
+
+        .. figure:: ../../../_static/ohlc-example.png
+          :alt: OHLC Example Chart
+          :align: center
+
+        :rtype: :class:`OHLCOptions` or :obj:`None <python:None>`
+        """
+        return self._ohlc
+
+    @ohlc.setter
+    @class_sensitive(OHLCOptions)
+    def ohlc(self, value):
+        self._ohlc = value
+
+    @property
+    def pc(self) -> Optional[PCOptions]:
+        """General options for a Price Channel :term:`indicator <technical indicator>`.
+
+        .. figure:: ../../../_static/price-channel-example.png
+          :alt: Price Channel Example Chart
+          :align: center
+
+        :rtype: :class:`PCOptions` or :obj:`None <python:None>`
+        """
+        return self._pc
+
+    @pc.setter
+    @class_sensitive(PCOptions)
+    def pc(self, value):
+        self._pc = value
+
+    @property
+    def pivotpoints(self) -> Optional[PivotPointsOptions]:
+        """General options to configure a Pivot Points :term:`indicator <techincal indicator>`,
+        which are typically used to identify trends and reversals in intraday trading.
+
+        .. figure:: ../../../_static/pivot-points-example.png
+          :alt: Pivot Points Example Chart
+          :align: center
+
+        :rtype: :class:`PivotPointsOptions` or :obj:`None <python:None>`
+        """
+        return self._pivotpoints
+
+    @pivotpoints.setter
+    @class_sensitive(PivotPointsOptions)
+    def pivotpoints(self, value):
+        self._pivotpoints = value
+
+    @property
+    def ppo(self) -> Optional[PPOOptions]:
+        """General options to configure a Percentage Price :term:`Oscillator`, which shows the
+        relationship between two moving averages in percentage terms.
+
+        .. note::
+
+          Defaults to comparing a 26-period and 12-period exponential moving average, though
+          this can be adjusted using
+          :meth:`.params.period <highcharts_stock.options.plot_options.oscillators.PPOOptions.params`.
+
+        .. figure:: ../../../_static/cmo-example.png
+          :alt: Chande Momentum Oscillator Example Chart
+          :align: center
+
+        :rtype: :class:`PPOOptions` or :obj:`None <python:None>`
+        """
+        return self._ppo
+
+    @ppo.setter
+    @class_sensitive(PPOOptions)
+    def ppo(self, value):
+        self._ppo = value
+
+    @property
+    def priceenvelopes(self) -> Optional[PriceEnvelopesOptions]:
+        """General options for for :term:`Price Envelopes`, a :term:`technical indicator` based on
+        simple moving averages.
+
+        .. figure:: ../../../_static/price-envelopes-example.png
+          :alt: Price Envelopes Example Chart
+          :align: center
+
+        :rtype: :class:`PriceEnvelopesOptions` or :obj:`None <python:None>`
+        """
+        return self._priceenvelopes
+
+    @priceenvelopes.setter
+    @class_sensitive(PriceEnvelopesOptions)
+    def priceenvelopes(self, value):
+        self._priceenvelopes = value
+
+    @property
+    def psar(self) -> Optional[PSAROptions]:
+        """General options to configure a Parabolic SAR :term:`indicator <techincal indicator>`,
+        which can be used to determine the direction in which a trend is moving.
+
+        .. figure:: ../../../_static/psar-example.png
+          :alt: Parabolic SAR Example Chart
+          :align: center
+
+        :rtype: :class:`PSAROptions` or :obj:`None <python:None>`
+        """
+        return self._psar
+
+    @psar.setter
+    @class_sensitive(PSAROptions)
+    def psar(self, value):
+        self._psar = value
+
+    @property
+    def roc(self) -> Optional[ROCOptions]:
+        """General options to configure a Rate of Change :term:`indicator <techincal indicator>`.
+
+        .. figure:: ../../../_static/roc-example.png
+          :alt: Rate of Change Example Chart
+          :align: center
+
+        The indicator value for each point is calculated using:
+
+        .. code-block::
+
+          (C - Cn)/ Cn * 100
+
+        where:
+
+          * ``C`` is the close value of the point of the same x in the linked series, and
+          * ``Cn`` is the close value of the point ``n`` periods ago, where ``n`` is
+            determined via
+            :meth:`.params.period <highcharts_stock.options.plot_options.momentum.ROCOptions.params>`
+
+        :rtype: :class:`ROCOptions` or :obj:`None <python:None>`
+        """
+        return self._roc
+
+    @roc.setter
+    @class_sensitive(ROCOptions)
+    def roc(self, value):
+        self._roc = value
+
+    @property
+    def rsi(self) -> Optional[RSIOptions]:
+        """General options to configure a Relative Strength Index, a momentum
+        :term:`indicator <techincal indicator>` that measures the speed and magnitude of
+        recent value changes to evaluate over-valued or under-valued conditions.
+
+        .. figure:: ../../../_static/rsi-example.png
+          :alt: Relative Strength Index Example Chart
+          :align: center
+
+        :rtype: :class:`RSIOptions` or :obj:`None <python:None>`
+        """
+        return self._rsi
+
+    @rsi.setter
+    @class_sensitive(RSIOptions)
+    def rsi(self, value):
+        self._rsi = value
+
+    @property
+    def slowstochastic(self) -> Optional[SlowStochasticOptions]:
+        """General configuration for Stochastic :term:`Oscillators <oscillator>`.
+
+        .. figure:: ../../../_static/stochastic-example.png
+          :alt: Stochsatic Oscillator Example Chart
+          :align: center
+
+        :rtype: :class:`SlowStochasticOptions` or :obj:`None <python:None>`
+        """
+        return self._slowstochastic
+
+    @slowstochastic.setter
+    @class_sensitive(SlowStochasticOptions)
+    def slowstochastic(self, value):
+        self._slowstochastic = value
+
+    @property
+    def sma(self) -> Optional[SMAOptions]:
+        """General options to configure a Simple Moving Average :term:`indicator`.
+
+        .. figure:: ../../../_static/sma-example.png
+          :alt: Simple Moving Average Example Chart
+          :align: center
+
+        :rtype: :class:`SMAOptions` or :obj:`None <python:None>`
+        """
+        return self._sma
+
+    @sma.setter
+    @class_sensitive(SMAOptions)
+    def sma(self, value):
+        self._sma = value
+
+    @property
+    def stochastic(self) -> Optional[StochasticOptions]:
+        """General options for Stochastic :term:`Oscillators <oscillator>`.
+
+        .. figure:: ../../../_static/stochastic-example.png
+          :alt: Stochsatic Oscillator Example Chart
+          :align: center
+
+        :rtype: :class:`StochasticOptions` or :obj:`None <python:None>`
+        """
+        return self._stochastic
+
+    @stochastic.setter
+    @class_sensitive(StochasticOptions)
+    def stochastic(self, value):
+        self._stochastic = value
+
+    @property
+    def supertrend(self) -> Optional[SupertrendOptions]:
+        """General options to configure a Supertrend, a momentum
+        :term:`indicator <techincal indicator>` used to help identify buy/sell signals.
+
+        .. figure:: ../../../_static/supertrend-example.png
+          :alt: Supertrend Example Chart
+          :align: center
+
+        :rtype: :class:`SupertrendOptions` or :obj:`None <python:None>`
+        """
+        return self._supertrend
+
+    @supertrend.setter
+    @class_sensitive(SupertrendOptions)
+    def supertrend(self, value):
+        self._supertrend = value
+
+    @property
+    def tema(self) -> Optional[TEMAOptions]:
+        """General options to configure a Triple Exponential Moving Average :term:`indicator`, which
+        is often used to reduce the "noise" produced on a simple moving average.
+
+        .. figure:: ../../../_static/tema-example.png
+          :alt: TEMA Example Chart
+          :align: center
+
+        :rtype: :class:`TEMAOptions` or :obj:`None <python:None>`
+        """
+        return self._tema
+
+    @tema.setter
+    @class_sensitive(TEMAOptions)
+    def tema(self, value):
+        self._tema = value
+
+    @property
+    def trendline(self) -> Optional[TrendlineOptions]:
+        """General options to configure a Trendline :term:`indicator`, which fits a straight line to
+        the linked data using the Sum of Least Squares method.
+
+        .. figure:: ../../../_static/trendline-example.png
+          :alt: Trendline Example Chart
+          :align: center
+
+        :rtype: :class:`TrendlineOptions` or :obj:`None <python:None>`
+        """
+        return self._trendline
+
+    @trendline.setter
+    @class_sensitive(TrendlineOptions)
+    def trendline(self, value):
+        self._trendline = value
+
+    @property
+    def trix(self) -> Optional[TRIXOptions]:
+        """General options to configure a Triple Exponential Average :term:`Oscillator`, which
+        can be used to suggest increasing or decreasing momentum.
+
+        .. figure:: ../../../_static/trix-example.png
+          :alt: TRIX Example Chart
+          :align: center
+
+        :rtype: :class:`TRIXOptions` or :obj:`None <python:None>`
+        """
+        return self._trix
+
+    @trix.setter
+    @class_sensitive(TRIXOptions)
+    def trix(self, value):
+        self._trix = value
+
+    @property
+    def vbp(self) -> Optional[VBPOptions]:
+        """General options to configure a Volume-by-Price (VBP)
+        :term:`indicator <technical indicator>`, which can be used to analyze volumes traded
+        within various price bands.
+
+        .. figure:: ../../../_static/vbp-example.png
+          :alt: Volume-by-Price (VBP) Example Chart
+          :align: center
+
+        :rtype: :class:`VBPOptions` or :obj:`None <python:None>`
+        """
+        return self._vbp
+
+    @vbp.setter
+    @class_sensitive(VBPOptions)
+    def vbp(self, value):
+        self._vbp = value
+
+    @property
+    def vwap(self) -> Optional[VWAPOptions]:
+        """General options to configure a Volume Weighted Average Price (VWAP) :term:`indicator`.
+
+        .. figure:: ../../../_static/vwap-example.png
+          :alt: Volume Weighted Average Price Example Chart
+          :align: center
+
+        :rtype: :class:`VWAPOptions` or :obj:`None <python:None>`
+        """
+        return self._vwap
+
+    @vwap.setter
+    @class_sensitive(VWAPOptions)
+    def vwap(self, value):
+        self._vwap = value
+
+    @property
+    def williamsr(self) -> Optional[WilliamsROptions]:
+        """General options to configure a Williams %R :term:`oscillator`, which uses the current
+        closing price in relation to the high and low of the past ``n`` days to indicate
+        overbought and oversold levels.
+
+        .. figure:: ../../../_static/williamsr-example.png
+          :alt: Williams %R Example Chart
+          :align: center
+
+        :rtype: :class:`WilliamsROptions` or :obj:`None <python:None>`
+        """
+        return self._williamsr
+
+    @williamsr.setter
+    @class_sensitive(WilliamsROptions)
+    def williamsr(self, value):
+        self._williamsr = value
+
+    @property
+    def wma(self) -> Optional[WMAOptions]:
+        """General options to configure a Weighted Moving Average :term:`indicator`.
+
+        .. figure:: ../../../_static/wma-example.png
+          :alt: Weighted Moving Average Example Chart
+          :align: center
+
+        :rtype: :class:`WMAOptions` or :obj:`None <python:None>`
+        """
+        return self._wma
+
+    @wma.setter
+    @class_sensitive(WMAOptions)
+    def wma(self, value):
+        self._wma = value
+
+    @property
+    def zigzag(self) -> Optional[ZigZagOptions]:
+        """General options to configure a ZigZag :term:`indicator`.
+
+        .. figure:: ../../../_static/zigzag-example.png
+          :alt: ZigZag Example Chart
+          :align: center
+
+        :rtype: :class:`ZigZagOptions` or :obj:`None <python:None>`
+        """
+        return self._zigzag
+
+    @zigzag.setter
+    @class_sensitive(ZigZagOptions)
+    def zigzag(self, value):
+        self._zigzag = value
 
     @property
     def arcdiagram(self) -> Optional[ArcDiagramOptions]:
@@ -1436,13 +2556,123 @@ class PlotOptions(HighchartsMeta):
             'waterfall': as_dict.get('waterfall', None),
             'windbarb': as_dict.get('windbarb', None),
             'wordcloud': as_dict.get('wordcloud', None),
-            'xrange': as_dict.get('xrange', None)
+            'xrange': as_dict.get('xrange', None),
+
+            'abands': as_dict.get('abands', None),
+            'ad': as_dict.get('ad', None),
+            'ao': as_dict.get('ao', None),
+            'apo': as_dict.get('apo', None),
+            'aroon': as_dict.get('aroon', None),
+            'aroonoscillator': as_dict.get('aroonoscillator', None),
+            'atr': as_dict.get('atr', None),
+            'bb': as_dict.get('bb', None),
+            'candlestick': as_dict.get('candlestick', None),
+            'cci': as_dict.get('cci', None),
+            'chaikin': as_dict.get('chaikin', None),
+            'cmf': as_dict.get('cmf', None),
+            'cmo': as_dict.get('cmo', None),
+            'dema': as_dict.get('dema', None),
+            'disparityindex': as_dict.get('disparityindex', None),
+            'dmi': as_dict.get('dmi', None),
+            'dpo': as_dict.get('dpo', None),
+            'ema': as_dict.get('ema', None),
+            'flags': as_dict.get('flags', None),
+            'heikinashi': as_dict.get('heikinashi', None),
+            'hlc': as_dict.get('hlc', None),
+            'hollowcandlestick': as_dict.get('hollowcandlestick', None),
+            'ikh': as_dict.get('ikh', None),
+            'keltnerchannels': as_dict.get('keltnerchannels', None),
+            'klinger': as_dict.get('klinger', None),
+            'linearregression': as_dict.get('linearregression', None),
+            'linearregressionngle': as_dict.get('linearregressionngle', None),
+            'linearregressionintercept': as_dict.get('linearregressionintercept', None),
+            'linearregressionslope': as_dict.get('linearregressionslope', None),
+            'macd': as_dict.get('macd', None),
+            'mfi': as_dict.get('mfi', None),
+            'momentum': as_dict.get('momentum', None),
+            'natr': as_dict.get('natr', None),
+            'obv': as_dict.get('obv', None),
+            'ohlc': as_dict.get('ohlc', None),
+            'pc': as_dict.get('pc', None),
+            'pivotpoints': as_dict.get('pivotpoints', None),
+            'ppo': as_dict.get('ppo', None),
+            'priceenvelopes': as_dict.get('priceenvelopes', None),
+            'psar': as_dict.get('psar', None),
+            'roc': as_dict.get('roc', None),
+            'rsi': as_dict.get('rsi', None),
+            'slowstochastic': as_dict.get('slowstochastic', None),
+            'sma': as_dict.get('sma', None),
+            'stochastic': as_dict.get('stochastic', None),
+            'supertrend': as_dict.get('supertrend', None),
+            'tema': as_dict.get('tema', None),
+            'trendline': as_dict.get('trendline', None),
+            'trix': as_dict.get('trix', None),
+            'vbp': as_dict.get('vbp', None),
+            'vwap': as_dict.get('vwap', None),
+            'williamsr': as_dict.get('williamsr', None),
+            'wma': as_dict.get('wma', None),
+            'zigzag': as_dict.get('zigzag', None),
         }
 
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
+            'abands': self.abands,
+            'ad': self.ad,
+            'ao': self.ao,
+            'apo': self.apo,
+            'aroon': self.aroon,
+            'aroonoscillator': self.aroonoscillator,
+            'atr': self.atr,
+            'bb': self.bb,
+            'candlestick': self.candlestick,
+            'cci': self.cci,
+            'chaikin': self.chaikin,
+            'cmf': self.cmf,
+            'cmo': self.cmo,
+            'dema': self.dema,
+            'disparityindex': self.disparityindex,
+            'dmi': self.dmi,
+            'dpo': self.dpo,
+            'ema': self.ema,
+            'flags': self.flags,
+            'heikinashi': self.heikinashi,
+            'hlc': self.hlc,
+            'hollowcandlestick': self.hollowcandlestick,
+            'ikh': self.ikh,
+            'keltnerchannels': self.keltnerchannels,
+            'klinger': self.klinger,
+            'linearregression': self.linearregression,
+            'linearregressionngle': self.linearregressionngle,
+            'linearregressionintercept': self.linearregressionintercept,
+            'linearregressionslope': self.linearregressionslope,
+            'macd': self.macd,
+            'mfi': self.mfi,
+            'momentum': self.momentum,
+            'natr': self.natr,
+            'obv': self.obv,
+            'ohlc': self.ohlc,
+            'pc': self.pc,
+            'pivotpoints': self.pivotpoints,
+            'ppo': self.ppo,
+            'priceenvelopes': self.priceenvelopes,
+            'psar': self.psar,
+            'roc': self.roc,
+            'rsi': self.rsi,
+            'slowstochastic': self.slowstochastic,
+            'sma': self.sma,
+            'stochastic': self.stochastic,
+            'supertrend': self.supertrend,
+            'tema': self.tema,
+            'trendline': self.trendline,
+            'trix': self.trix,
+            'vbp': self.vbp,
+            'vwap': self.vwap,
+            'williamsr': self.williamsr,
+            'wma': self.wma,
+            'zigzag': self.zigzag,
+
             'arcdiagram': self.arcdiagram,
             'area': self.area,
             'arearange': self.arearange,

@@ -294,7 +294,7 @@ class StochasticOptions(ComparableIndicatorOptions):
         return untrimmed
 
 
-class SlowStochasticOptions(ComparableIndicatorOptions):
+class SlowStochasticOptions(StochasticOptions):
     """Configuration for a Slow Stochastic :term:`Oscillator`.
 
     .. figure:: ../../../_static/slow-stochastic-example.png

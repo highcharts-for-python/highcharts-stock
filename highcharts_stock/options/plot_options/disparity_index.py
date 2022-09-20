@@ -85,10 +85,6 @@ class DisparityIndexOptions(ComparableIndicatorOptions):
     """
 
     @property
-    def type(self) -> str:
-        return 'disparityIndex'
-
-    @property
     def params(self) -> Optional[DisparityIndexParameters]:
         """Parameters used in calculating the indicator's data points.
 

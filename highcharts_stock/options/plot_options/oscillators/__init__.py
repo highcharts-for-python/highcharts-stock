@@ -45,6 +45,20 @@ class AroonOscillatorOptions(IndicatorOptions):
     pass
 
 
+class APOOptions(ComparableIndicatorOptions):
+    """Options to configure a Absolute Price
+    :term:`Oscillator <oscillator>` (APO), which is an :term:`oscillator` that displays
+    the difference between two exponential moving averages of an asset's price expressed
+    as an absolute value
+
+    .. figure:: ../../../_static/apo-example.png
+      :alt: Absolute Price Oscillator Example Chart
+      :align: center
+
+    """
+    pass
+
+
 class CCIOptions(ComparableIndicatorOptions):
     """Options to configure a Commodity Channel Index
     :term:`indicator <technical indicator>`, which is an :term:`oscillator` that measures
@@ -54,7 +68,7 @@ class CCIOptions(ComparableIndicatorOptions):
     :meth:`.params <highcharts_stock.options.plot_options.atr.CCIOptions.params`.
 
     .. figure:: ../../../_static/cci-example.png
-      :alt: ATR Example Chart
+      :alt: CCI Example Chart
       :align: center
 
     """

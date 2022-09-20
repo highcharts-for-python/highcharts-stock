@@ -114,8 +114,8 @@ class MomentumOptions(ComparableIndicatorOptions):
     """Options to configure a Momentum :term:`indicator <techincal indicator>`.
 
     .. figure:: ../../../_static/momentum-example.png
-    :alt: Momentum Example Chart
-    :align: center
+      :alt: Momentum Example Chart
+      :align: center
 
     """
     pass
@@ -188,28 +188,5 @@ class RSIOptions(ComparableIndicatorOptions):
 
     @params.setter
     @class_sensitive(RSIParameters)
-    def params(self, value):
-        self._params = value
-
-
-class MACDOptions(ComparableIndicatorOptions):
-    """Options to configure a Moving Average Convergence/Divergence, a momentum
-    :term:`indicator <techincal indicator>`.
-
-    .. figure:: ../../../_static/macd-example.png
-      :alt: Moving Average Convergence/Divergence (MACD) Example Chart
-      :align: center
-
-    """
-    @property
-    def params(self) -> Optional[MACDParameters]:
-        """Parameters used in calculating the indicator's data points.
-
-        :rtype: :class:`MACDParameters` or :obj:`None <python:None>`
-        """
-        return self._params
-
-    @params.setter
-    @class_sensitive(MACDParameters)
     def params(self, value):
         self._params = value
