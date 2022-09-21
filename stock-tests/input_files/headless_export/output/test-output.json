@@ -1,0 +1,1 @@
+{"infile": {"series": [{"data": [{"y": 1}, {"y": 3}, {"y": 2}, {"y": 4}], "type": "line"}, {"data": [{"y": 5}, {"y": 3}, {"y": 4}, {"y": 2}], "type": "line"}], "xAxis": {"categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]}}, "type": "png", "scale": 1, "constr": "Chart", "b64": false, "noDownload": false, "asyncRendering": false}
