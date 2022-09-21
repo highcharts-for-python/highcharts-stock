@@ -10,7 +10,7 @@ from highcharts_python.headless_export import ExportServer
 from highcharts_python.options.series.series_generator import (create_series_obj,
                                                                SERIES_CLASSES,
                                                                STOCK_SERIES_LIST)
-from highcharts_python.global_options.shared_options import SharedOptions
+from highcharts_python.global_options.shared_options import SharedStockOptions
 
 from highcharts_stock.options import HighchartsStockOptions
 
@@ -359,7 +359,7 @@ class Chart(ChartBase):
 
         if global_options is not None:
             global_options = validate_types(global_options,
-                                            types = SharedOptions)
+                                            types = SharedStockOptions)
 
         if self.is_stock_chart:
             include_str = constants.STOCK_INCLUDE_STR
