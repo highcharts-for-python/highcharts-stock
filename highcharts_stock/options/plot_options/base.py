@@ -440,3 +440,76 @@ class NonIndicatorOptions(StockBaseOptions):
         }
 
         return untrimmed
+
+
+class NavigatorIndicatorOptions(HighchartsMeta):
+    """Set of options to mix in when an indicator supports a presence in the Navigator."""
+
+    def __init__(self, **kwargs):
+        self._navigator_options = None
+        self._show_in_navigator = None
+
+        self.navigator_options = kwargs.get('navigator_options', None)
+        self.show_in_navigator = kwargs.get('show_in_navigator', None)
+
+        super().__init__(**kwargs)
+
+    @property
+    def navigator_options(self) -> Optional[Navigator]:
+        """Options for the corresponding :term:`navigator` series if
+        :meth:`.show_in_navigator <highcharts_stock.options.plot_options.base.StockBaseWithNavigatorOptions.show_in_navigator>`
+        is ``True`` for this series. Defaults to :obj:`None <python:None>`
+
+        .. note::
+
+          These options are merged with options in ``navigator.series``, and will take
+          precedence if the same option is defined both places.
+
+        :rtype: :class:`NavigatorOptions <highcharts_stock.navigator.Navigator>` or
+          :obj:`None <python:None>`
+        """
+        return self._navigator_options
+
+    @navigator_options.setter
+    @class_sensitive(Navigator)
+    def navigator_options(self, value):
+        self._navigator_options = value
+
+    @property
+    def show_in_navigator(self) -> Optional[bool]:
+        """If ``True``, shows the series in the :term:`navigator`. Defaults to
+        :obj:`None <python:None>`.
+
+        .. note::
+
+          Takes precedence over
+          :meth:`Navigator.base_series <highcharts_stock.navigator.Navigator.base_series>`
+          if provided.
+
+        :rtype: :class:`bool <python:bool>` or :obj:`None <python:None>`
+        """
+        return self._show_in_navigator
+
+    @show_in_navigator.setter
+    def show_in_navigator(self, value):
+        if value is None:
+            self._show_in_navigator = None
+        else:
+            self._show_in_navigator = bool(value)
+
+    @classmethod
+    def _get_kwargs_from_dict(cls, as_dict):
+        kwargs = {
+            'navigator_options': as_dict.get('navigatorOptions', None),
+            'show_in_navigator': as_dict.get('showInNavigator', None),
+        }
+
+        return kwargs
+
+    def _to_untrimmed_dict(self, in_cls = None) -> dict:
+        untrimmed = {
+            'navigatorOptions': self.navigator_options,
+            'showInNavigator': self.show_in_navigator,
+        }
+
+        return untrimmed
