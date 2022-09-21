@@ -44,24 +44,17 @@ class ExportServer(ExportServerBase):
     def options(self, value):
         if not value:
             self._options = None
-        elif self.is_stock_chart:
+        elif checkers.is_type(value, ('HighchartsStockOptions', 'HighchartsOptions')):
+            self._options = value
+        elif ('navigator' in value
+              or 'scrollbar' in value
+              or 'rangeSelector' in value
+              or 'range_selector' in value
+              or 'stockTools' in value
+              or 'stock_tools' in value):
             self._options = validate_types(value, HighchartsStockOptions)
         else:
-            if checkers.is_type(value, 'HighchartsStockOptions'):
-                self._options = value
-                self.is_stock_chart = True
-            elif checkers.is_type(value, 'HighchartsOptions'):
-                self._options = value
-            elif ('navigator' in value
-                  or 'scrollbar' in value
-                  or 'rangeSelector' in value
-                  or 'range_selector' in value
-                  or 'stockTools' in value
-                  or 'stock_tools' in value):
-                self._options = validate_types(value, HighchartsStockOptions)
-                self.is_stock_chart = True
-            else:
-                self._options = validate_types(value, HighchartsOptions)
+            self._options = validate_types(value, HighchartsOptions)
 
     @property
     def global_options(self) -> Optional[SharedOptions | SharedStockOptions]:
