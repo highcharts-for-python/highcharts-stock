@@ -3,14 +3,14 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python import errors
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.options.series.base import SeriesBase
-from highcharts_python.utility_classes.gradients import Gradient
-from highcharts_python.utility_classes.patterns import Pattern
-from highcharts_python.options.axes.x_axis import XAxis
-from highcharts_python.options.axes.y_axis import YAxis
+from highcharts_stock import errors
+from highcharts_stock.decorators import class_sensitive
+from highcharts_stock.metaclasses import HighchartsMeta
+from highcharts_stock.options.series.base import SeriesBase
+from highcharts_stock.utility_classes.gradients import Gradient
+from highcharts_stock.utility_classes.patterns import Pattern
+from highcharts_stock.options.axes.x_axis import XAxis
+from highcharts_stock.options.axes.y_axis import YAxis
 
 
 class HandleOptions(HighchartsMeta):

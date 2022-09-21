@@ -3,8 +3,8 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python import constants
-from highcharts_python.metaclasses import HighchartsMeta
+from highcharts_stock import constants
+from highcharts_stock.metaclasses import HighchartsMeta
 
 
 class LineStylesWidth(HighchartsMeta):

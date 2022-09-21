@@ -3,9 +3,9 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
 from highcharts_python.options.axes.x_axis import XAxis as XAxisBase
 
+from highcharts_stock.decorators import class_sensitive
 from highcharts_stock.options.scrollbar import Scrollbar
 
 

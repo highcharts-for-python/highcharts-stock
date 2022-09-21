@@ -2,9 +2,9 @@ from typing import Optional
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.utility_classes.data_labels import DataLabel
+from highcharts_stock.decorators import class_sensitive
+from highcharts_stock.metaclasses import HighchartsMeta
+from highcharts_stock.utility_classes.data_labels import DataLabel
 
 
 class LastPriceOptions(HighchartsMeta):

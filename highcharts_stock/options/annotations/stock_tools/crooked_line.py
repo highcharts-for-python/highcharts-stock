@@ -2,10 +2,9 @@ from typing import Optional, List
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
-
 from highcharts_stock import errors
+from highcharts_stock.decorators import class_sensitive
+from highcharts_stock.metaclasses import HighchartsMeta
 from highcharts_stock.options.annotations.stock_tools.type_options.line import LineFillOnly
 from highcharts_stock.options.annotations.stock_tools.type_options.points import StockToolsPoint
 

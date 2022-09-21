@@ -1,10 +1,8 @@
 from typing import Optional
 
-from validator_collection import validators
-
-from highcharts_python.decorators import class_sensitive
 from highcharts_python.options.navigation import NavigationBase
 
+from highcharts_stock.decorators import class_sensitive
 from highcharts_stock.options.annotations import NavigationAnnotationOptions
 
 

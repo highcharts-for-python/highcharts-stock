@@ -2,9 +2,9 @@ from typing import Optional
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.options.chart.reset_zoom_button import ResetZoomButtonOptions
+from highcharts_stock.decorators import class_sensitive
+from highcharts_stock.metaclasses import HighchartsMeta
+from highcharts_stock.options.chart.reset_zoom_button import ResetZoomButtonOptions
 
 from highcharts_stock import errors
 

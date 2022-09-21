@@ -3,11 +3,10 @@ from typing import Optional
 import esprima
 from esprima.error_handler import Error as ParseError
 
-from highcharts_python import errors
-from highcharts_python.decorators import validate_types
-
 from highcharts_stock.options import HighchartsStockOptions
 
+from highcharts_stock import errors
+from highcharts_stock.decorators import validate_types
 from highcharts_python.global_options.shared_options import SharedOptions
 
 

@@ -1,13 +1,10 @@
 from typing import Optional
 
-from validator_collection import validators
-
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.options.annotations.shape_options import ShapeOptions
-from highcharts_python.options.annotations.label_options import LabelOptions
-from highcharts_python.options.annotations.control_point_options import AnnotationControlPointOption
-
+from highcharts_stock.decorators import class_sensitive
+from highcharts_stock.metaclasses import HighchartsMeta
+from highcharts_stock.options.annotations.shape_options import ShapeOptions
+from highcharts_stock.options.annotations.label_options import LabelOptions
+from highcharts_stock.options.annotations.control_point_options import AnnotationControlPointOption
 from highcharts_stock.options.annotations.stock_tools.crooked_line import CrookedLineTypeOptions
 from highcharts_stock.options.annotations.stock_tools.elliott_wave import ElliottWaveTypeOptions
 from highcharts_stock.options.annotations.stock_tools.fibonacci import FibonacciTypeOptions

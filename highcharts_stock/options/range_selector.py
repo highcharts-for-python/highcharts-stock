@@ -3,13 +3,13 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.utility_classes.data_grouping import DataGroupingOptions
-from highcharts_python.utility_classes.ast import AttributeObject
-from highcharts_python.utility_classes.javascript_functions import CallbackFunction
-
 from highcharts_stock import errors
+from highcharts_stock.metaclasses import HighchartsMeta
+from highcharts_stock.decorators import class_sensitive
+from highcharts_stock.utility_classes.data_grouping import DataGroupingOptions
+from highcharts_stock.utility_classes.ast import AttributeObject
+from highcharts_stock.utility_classes.javascript_functions import CallbackFunction
+
 from highcharts_stock.utility_classes.events import RangeSelectorEvents
 
 

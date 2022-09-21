@@ -6,11 +6,11 @@ from validator_collection import validators
 from highcharts_stock.options.series.base import SeriesBase
 from highcharts_stock.options.plot_options.arcdiagram import ArcDiagramOptions
 
-from highcharts_python import errors
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.options.series.data.arcdiagram import ArcDiagramData
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
-from highcharts_python.utility_classes.nodes import NodeOptions
+from highcharts_stock import errors
+from highcharts_stock.decorators import class_sensitive
+from highcharts_stock.options.series.data.arcdiagram import ArcDiagramData
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.utility_classes.nodes import NodeOptions
 
 
 class ArcDiagramSeries(SeriesBase, ArcDiagramOptions):

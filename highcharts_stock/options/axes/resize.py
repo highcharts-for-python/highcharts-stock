@@ -3,11 +3,10 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python import constants
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
 
-from highcharts_stock import errors
+from highcharts_stock import constants, errors
+from highcharts_stock.decorators import class_sensitive
+from highcharts_stock.metaclasses import HighchartsMeta
 
 
 class ControlledAxis(HighchartsMeta):
@@ -86,7 +85,7 @@ class ControlledAxis(HighchartsMeta):
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
             'next': self.next,
-            'prev': selfprev,
+            'prev': self.prev,
         }
 
         return untrimmed

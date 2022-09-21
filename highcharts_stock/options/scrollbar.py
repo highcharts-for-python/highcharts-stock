@@ -3,10 +3,10 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.utility_classes.gradients import Gradient
-from highcharts_python.utility_classes.patterns import Pattern
-from highcharts_python.utility_functions import validate_color
+from highcharts_stock.metaclasses import HighchartsMeta
+from highcharts_stock.utility_classes.gradients import Gradient
+from highcharts_stock.utility_classes.patterns import Pattern
+from highcharts_stock.utility_functions import validate_color
 
 
 class Scrollbar(HighchartsMeta):

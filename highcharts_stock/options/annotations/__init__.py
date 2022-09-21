@@ -1,9 +1,9 @@
 from typing import Optional
 
-from highcharts_python.decorators import class_sensitive
 
 from highcharts_python.options.annotations import Annotation as AnnotationBase
 
+from highcharts_stock.decorators import class_sensitive
 from highcharts_stock.options.annotations.stock_tools import CrookedLineAnnotation
 from highcharts_stock.options.annotations.stock_tools import ElliottWaveAnnotation
 from highcharts_stock.options.annotations.stock_tools import FibonacciAnnotation

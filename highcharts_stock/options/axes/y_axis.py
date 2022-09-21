@@ -3,10 +3,10 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
 from highcharts_python.options.axes.y_axis import YAxis as YAxisBase
 
 from highcharts_stock import errors
+from highcharts_stock.decorators import class_sensitive
 from highcharts_stock.options.axes.resize import ResizeOptions
 from highcharts_stock.options.scrollbar import Scrollbar
 

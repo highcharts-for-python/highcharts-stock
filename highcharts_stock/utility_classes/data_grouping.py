@@ -2,10 +2,10 @@ from typing import Optional
 
 from validator_collection import validators
 
-from highcharts_python.decorators import validate_types
-from highcharts_python.utility_classes.javascript_functions import CallbackFunction
-
 from highcharts_python.utility_classes.data_grouping import DataGroupingOptions as DataGroupingBase
+
+from highcharts_stock.decorators import validate_types
+from highcharts_stock.utility_classes.javascript_functions import CallbackFunction
 
 
 class DataGroupingOptions(DataGroupingBase):

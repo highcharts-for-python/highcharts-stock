@@ -2,19 +2,18 @@ from typing import Optional
 
 from validator_collection import validators, checkers
 
-from highcharts_python import constants, errors
-from highcharts_python.decorators import validate_types
 from highcharts_python.options import HighchartsOptions
-from highcharts_python.js_literal_functions import serialize_to_js_literal
-from highcharts_python.headless_export import ExportServer
-from highcharts_python.options.series.series_generator import (create_series_obj,
-                                                               SERIES_CLASSES,
-                                                               STOCK_SERIES_LIST)
-from highcharts_python.global_options.shared_options import SharedStockOptions
-
-from highcharts_stock.options import HighchartsStockOptions
-
 from highcharts_python.chart import Chart as ChartBase
+
+from highcharts_stock import constants, errors
+from highcharts_stock.decorators import validate_types
+from highcharts_stock.js_literal_functions import serialize_to_js_literal
+from highcharts_stock.headless_export import ExportServer
+from highcharts_stock.options.series.series_generator import (create_series_obj,
+                                                              SERIES_CLASSES,
+                                                              STOCK_SERIES_LIST)
+from highcharts_stock.global_options.shared_options import SharedStockOptions
+from highcharts_stock.options import HighchartsStockOptions
 
 
 class Chart(ChartBase):
