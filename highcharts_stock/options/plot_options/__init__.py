@@ -56,7 +56,7 @@ from highcharts_stock.options.plot_options.bar import WindBarbOptions
 from highcharts_stock.options.plot_options.wordcloud import WordcloudOptions
 from highcharts_stock.options.plot_options.bar import XRangeOptions
 
-# Highcharts Plot Options
+# Highcharts Stock Plot Options
 from highcharts_stock.options.plot_options.abands import (AbandsOptions,
                                                           PCOptions,
                                                           KeltnerChannelsOptions,
