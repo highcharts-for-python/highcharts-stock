@@ -8,7 +8,7 @@ from highcharts_python.decorators import class_sensitive
 from highcharts_python.metaclasses import HighchartsMeta
 
 from highcharts_stock import errors
-from highcharts_stock.navigator import Navigator
+from highcharts_stock.options.navigator import Navigator
 from highcharts_stock.utility_classes.data_grouping import DataGroupingOptions
 from highcharts_stock.utility_classes.last_price import LastPriceOptions
 

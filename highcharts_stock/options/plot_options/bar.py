@@ -3,7 +3,8 @@ from highcharts_python.options.plot_options.bar import BaseBarOptions as BaseBar
                                                        WaterfallOptions as WaterfallBase, \
                                                        WindBarbOptions as WindBarbBase, \
                                                        XRangeOptions as XRangeBase
-
+from highcharts_python.options.plot_options.bar import (CylinderOptions,
+                                                        VariwideOptions)
 from highcharts_stock.options.plot_options.base import NonIndicatorOptions
 from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 

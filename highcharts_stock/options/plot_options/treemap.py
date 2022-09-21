@@ -1,16 +1,17 @@
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_python.options.plot_options.treemap import TreemapOptions as TreemapBase
 
-from highcharts_stock.options.series.base import NavigatorIndicatorSeries
-from highcharts_stock.options.plot_options.oscillators.klinger import KlingerOptions
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.plot_options.base import NonIndicatorOptions
 
 
-class KlingerSeries(NavigatorIndicatorSeries, KlingerOptions):
-    """Options to configure a Klinger :term:`Oscillator`, used to determine the long-term
-    trend of money flow while remaining sensitive enough to detect short-term
-    fluctuations.
+class TreemapOptions(TreemapBase):
+    """General options to apply to all Treemap series types.
 
-    .. figure:: ../../../_static/klinger-example.png
-      :alt: Klinger Example Chart
+    A treemap displays hierarchical data using nested rectangles. The data can be laid
+    out in varying ways depending on options.
+
+    .. figure:: ../../../_static/treemap-example.png
+      :alt: Treemap Example Chart
       :align: center
 
     """
@@ -57,35 +58,42 @@ class KlingerSeries(NavigatorIndicatorSeries, KlingerOptions):
             'animation_limit': as_dict.get('animationLimit', None),
             'boost_blending': as_dict.get('boostBlending', None),
             'boost_threshold': as_dict.get('boostThreshold', None),
-            'color_index': as_dict.get('colorIndex', None),
+            'color_axis': as_dict.get('colorAxis', None),
             'color_key': as_dict.get('colorKey', None),
-            'connect_nulls': as_dict.get('connectNulls', None),
-            'crisp': as_dict.get('crisp', None),
+            'colors': as_dict.get('colors', None),
             'crop_threshold': as_dict.get('cropThreshold', None),
-            'data_sorting': as_dict.get('dataSorting', None),
             'find_nearest_point_by': as_dict.get('findNearestPointBy', None),
             'get_extremes_from_all': as_dict.get('getExtremesFromAll', None),
+            'ignore_hidden_point': as_dict.get('ignoreHiddenPoint', None),
             'linecap': as_dict.get('linecap', None),
             'line_width': as_dict.get('lineWidth', None),
+            'negative_color': as_dict.get('negativeColor', None),
+            'point_interval': as_dict.get('pointInterval', None),
+            'point_interval_unit': as_dict.get('pointIntervalUnit', None),
+            'point_start': as_dict.get('pointStart', None),
             'relative_x_value': as_dict.get('relativeXValue', None),
-            'shadow': as_dict.get('shadow', None),
             'soft_threshold': as_dict.get('softThreshold', None),
+            'stacking': as_dict.get('stacking', None),
             'step': as_dict.get('step', None),
             'zone_axis': as_dict.get('zoneAxis', None),
             'zones': as_dict.get('zones', None),
 
-            'color_axis': as_dict.get('colorAxis', None),
-            'connect_ends': as_dict.get('connectEnds', None),
-            'drag_drop': as_dict.get('dragDrop', None),
-            'negative_color': as_dict.get('negativeColor', None),
-            'point_interval': as_dict.get('pointInterval', None),
-            'point_interval_unit': as_dict.get('pointIntervalUnit', None),
-            'point_placement': as_dict.get('pointPlacement', None),
-            'point_start': as_dict.get('pointStart', None),
-            'stacking': as_dict.get('stacking', None),
+            'color_index': as_dict.get('colorIndex', None),
+            'crisp': as_dict.get('crisp', None),
+            'allow_traversing_tree': as_dict.get('allowTraversingTree', None),
+            'breadcrumbs': as_dict.get('breadcrumbs', None),
+            'color_by_point': as_dict.get('colorByPoint', None),
+            'level_is_constant': as_dict.get('levelIsConstant', None),
+            'levels': as_dict.get('levels', None),
+
+            'alternate_starting_direction': as_dict.get('alternateStartingDirection',
+                                                        None),
+            'interact_by_leaf': as_dict.get('interactByLeaf', None),
+            'layout_algorithm': as_dict.get('layoutAlgorithm', None),
+            'layout_starting_direction': as_dict.get('layoutStartingDirection', None),
+            'sort_index': as_dict.get('sortIndex', None),
 
             'compare_start': as_dict.get('compareStart', None),
-            'compare_to_main': as_dict.get('compareToMain', None),
             'cumulative': as_dict.get('cumulative', None),
             'data_as_columns': as_dict.get('dataAsColumns', None),
             'data_grouping': as_dict.get('dataGrouping', None),
@@ -93,23 +101,11 @@ class KlingerSeries(NavigatorIndicatorSeries, KlingerOptions):
             'gap_unit': as_dict.get('gapUnit', None),
             'last_price': as_dict.get('lastPrice', None),
             'last_visible_price': as_dict.get('lastVisiblePrice', None),
-            'name': as_dict.get('name', None),
-            'params': as_dict.get('params', None),
 
             'compare': as_dict.get('compare', None),
             'compare_base': as_dict.get('compareBase', None),
-
-            'signal_line': as_dict.get('signalLine', None),
-
-            'id': as_dict.get('id', None),
-            'index': as_dict.get('index', None),
-            'legend_index': as_dict.get('legendIndex', None),
-            'stack': as_dict.get('stack', None),
-            'x_axis': as_dict.get('xAxis', None),
-            'y_axis': as_dict.get('yAxis', None),
-            'z_index': as_dict.get('zIndex', None),
-
             'navigator_options': as_dict.get('navigatorOptions', None),
+            'point_range': as_dict.get('pointRange', None),
             'show_in_navigator': as_dict.get('showInNavigator', None),
         }
 

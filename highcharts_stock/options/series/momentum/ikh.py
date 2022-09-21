@@ -4,7 +4,7 @@ from highcharts_stock.options.series.base import NavigatorIndicatorSeries
 from highcharts_stock.options.plot_options.momentum.ikh import IKHOptions
 
 
-class IKHOptions(NavigatorIndicatorSeries, IKHOptions):
+class IKHSeries(NavigatorIndicatorSeries, IKHOptions):
     """Options to configure a Ichimoku Kinko Hyo (IKH, or "ichimoku"), a momentum
     :term:`indicator <techincal indicator>`.
 

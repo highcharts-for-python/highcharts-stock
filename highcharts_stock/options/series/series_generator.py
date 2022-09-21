@@ -65,7 +65,7 @@ from highcharts_stock.options.series.abands import (AbandsSeries,
                                                     PCSeries,
                                                     KeltnerChannelsSeries,
                                                     BBSeries)
-from highcharts_stock.options_series.ad import ADSeries
+from highcharts_stock.options.series.ad import ADSeries
 from highcharts_stock.options.series.aroon import AroonSeries
 from highcharts_stock.options.series.atr import ATRSeries, NATRSeries
 from highcharts_stock.options.series.averages import (DEMASeries,
@@ -88,7 +88,7 @@ from highcharts_stock.options.series.linear_regressions import (LinearRegression
                                                                 LinearRegressionSlopeSeries,
                                                                 TrendlineSeries)
 from highcharts_stock.options.series.pivot_points import PivotPointsSeries
-from highcharts_stock.options.series.price_evenlopes import PriceEnvelopesSeries
+from highcharts_stock.options.series.price_envelopes import PriceEnvelopesSeries
 from highcharts_stock.options.series.psar import PSARSeries
 from highcharts_stock.options.series.vbp import VBPSeries
 from highcharts_stock.options.series.zigzag import ZigZagSeries

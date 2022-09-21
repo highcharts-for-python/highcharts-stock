@@ -5,7 +5,7 @@ from validator_collection import validators
 from highcharts_python.decorators import class_sensitive
 
 from highcharts_stock.options.plot_options.indicators import ParameterBase, ComparableIndicatorOptions
-from highhcarts_stock.options.plot_options.ad import ADParameters as CMFParameters
+from highcharts_stock.options.plot_options.ad import ADParameters as CMFParameters
 
 
 class MFIParameters(ParameterBase):

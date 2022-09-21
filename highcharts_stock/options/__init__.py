@@ -39,9 +39,9 @@ from highcharts_stock.options.axes.z_axis import ZAxis
 
 # Highcharts Stock Classes
 from highcharts_stock.options.navigator import Navigator
-from highcharts_stock.range_selector import RangeSelector
-from highcharts_stock.scrollbar import Scrollbar
-from highcharts_stock.stock_tools import StockTools
+from highcharts_stock.options.range_selector import RangeSelector
+from highcharts_stock.options.scrollbar import Scrollbar
+from highcharts_stock.options.stock_tools import StockTools
 
 from highcharts_python.options import HighchartsOptions
 
