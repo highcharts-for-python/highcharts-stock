@@ -1,7 +1,9 @@
+from typing import Optional, List
 from highcharts_python.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.series.base import SeriesBase
 from highcharts_stock.options.plot_options.hlc import HLCOptions, OHLCOptions
+from highcharts_stock.options.series.data.hlc import HLCData, OHLCData
 
 
 class HLCSeries(SeriesBase, HLCOptions):
@@ -16,6 +18,77 @@ class HLCSeries(SeriesBase, HLCOptions):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+    @property
+    def data(self) -> Optional[List[HLCData]]:
+        """Collection of data that represents the series. Defaults to
+        :obj:`None <python:None>`.
+
+        While the series type returns a collection of :class:`HLCData` instances,
+        it accepts as input three different types of data:
+
+        .. tabs::
+
+          .. tab:: 4D Collection
+
+            .. code-block::
+
+              series = HLCSeries()
+              series.data = [
+                  [1463753252, 2, 0, 4],
+                  [1563753252, 4, 2, 8],
+                  [1663753252, 3, 9, 3]
+              ]
+
+            A four-dimensional collection of numerical values representing (in order) the
+            ``x`` value, the ``high`` value, the ``low`` value, and the ``close`` value.
+
+            .. tip::
+
+              The ``x`` value is always expected to be a timestamp expressed in
+              milliseconds since 1970. If a :class:`datetime <python:datetime.datetime>`
+              or coercable is supplied, **Highcharts for Python** will automatically
+              coerce it to a POSIX timestamp (milliseconds since 1970).
+
+          .. tab:: 3D Collection
+
+            .. code-block::
+
+              series = HLCSeries()
+              series.data = [
+                  [2, 0, 4],
+                  [4, 2, 8],
+                  [3, 9, 3]
+              ]
+
+            A three-dimensional collection of numerical values. The members represent the
+            the ``high`` value, the ``low`` value, and the ``close`` value respectively.
+
+            .. note::
+
+              The ``x`` value in this case will be automatically calculated either
+              starting from ``0`` and incremented by ``1`` or from
+              :meth:`.point_start <highcharts_stock.options.series.hlc.HLCSeries.point_start>`
+              and
+              :meth:`.point_interval <highcharts_stock.options.series.hlc.HLCSeries.point_interval>`
+              in the series or plot options.
+
+          .. tab:: Object Collection
+
+            A one-dimensional collection of :class:`HLCData` objects, or objects
+            coercable.
+
+        :rtype: :class:`list <python:list>` of :class:`HLCData` or
+          :obj:`None <python:None>`
+        """
+        return self._data
+
+    @data.setter
+    def data(self, value):
+        if not value:
+            self._data = None
+        else:
+            self._data = HLCData.from_array(value)
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -147,6 +220,79 @@ class OHLCSeries(SeriesBase, OHLCOptions):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+    @property
+    def data(self) -> Optional[List[OHLCData]]:
+        """Collection of data that represents the series. Defaults to
+        :obj:`None <python:None>`.
+
+        While the series type returns a collection of :class:`OHLCData` instances,
+        it accepts as input three different types of data:
+
+        .. tabs::
+
+          .. tab:: 5D Collection
+
+            .. code-block::
+
+              series = OHLCSeries()
+              series.data = [
+                  [1463753252, 7, 2, 0, 4],
+                  [1563753252, 1, 4, 2, 8],
+                  [1663753252, 3, 3, 9, 3]
+              ]
+
+            A five-dimensional collection of numerical values representing (in order) the
+            ``x`` value, the ``open`` value, the ``high`` value, the ``low`` value, and
+            the ``close`` value.
+
+            .. tip::
+
+              The ``x`` value is always expected to be a timestamp expressed in
+              milliseconds since 1970. If a :class:`datetime <python:datetime.datetime>`
+              or coercable is supplied, **Highcharts for Python** will automatically
+              coerce it to a POSIX timestamp (milliseconds since 1970).
+
+          .. tab:: 4D Collection
+
+            .. code-block::
+
+              series = OHLCSeries()
+              series.data = [
+                  [7, 2, 0, 4],
+                  [1, 4, 2, 8],
+                  [3, 3, 9, 3]
+              ]
+
+            A four-dimensional collection of numerical values. The members represent the
+            ``open`` value, the ``high`` value, the ``low`` value, and the ``close``
+            value, respectively.
+
+            .. note::
+
+              The ``x`` value in this case will be automatically calculated either
+              starting from 0 and incremented by 1 or from
+              :meth:`.point_start <highcharts_stock.options.series.candlestick.OHLCSeries.point_start>`
+              and
+              :meth:`.point_interval <highcharts_stock.options.series.candlestick.OHLCSeries.point_interval>`
+              in the series or plot options.
+
+          .. tab:: Object Collection
+
+            A one-dimensional collection of :class:`OHLCData` objects, or objects
+            coercable.
+
+        :rtype: :class:`list <python:list>` of :class:`OHLCData` or
+          :obj:`None <python:None>`
+        """
+        return self._data
+
+    @data.setter
+    def data(self, value):
+        if not value:
+            self._data = None
+        else:
+            self._data = OHLCData.from_array(value)
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
