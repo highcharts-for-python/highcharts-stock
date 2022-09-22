@@ -30,26 +30,30 @@ class StockToolsGUI(HighchartsMeta):
         :meth:`.definitions <highcharts_stock.options.stock_tools.StockToolsGUI.definitions`
         setting.
 
-        Defaults to: ``[
-            'indicators',
-            'separator',
-            'simpleShapes',
-            'lines',
-            'crookedLines',
-            'measure',
-            'advanced',
-            'toggleAnnotations',
-            'separator',
-            'verticalLabels',
-            'flags',
-            'separator',
-            'zoomChange',
-            'fullScreen',
-            'typeChange',
-            'separator',
-            'currentPriceIndicator',
-            'saveChart'
-        ]``
+        Defaults to:
+
+          .. code-block:: python
+
+            [
+                'indicators',
+                'separator',
+                'simpleShapes',
+                'lines',
+                'crookedLines',
+                'measure',
+                'advanced',
+                'toggleAnnotations',
+                'separator',
+                'verticalLabels',
+                'flags',
+                'separator',
+                'zoomChange',
+                'fullScreen',
+                'typeChange',
+                'separator',
+                'currentPriceIndicator',
+                'saveChart'
+            ]
 
         :rtype: :class:`list <python:list>` of :class:`str <python:str>`, or
           :obj:`None <python:None>`
