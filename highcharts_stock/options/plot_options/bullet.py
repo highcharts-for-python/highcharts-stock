@@ -1,4 +1,5 @@
-from highcharts_python.options.plot_options.bullet import BulletOptions as BulletBase
+from highcharts_python.options.plot_options.bullet import (TargetOptions,
+                                                           BulletOptions as BulletBase)
 from highcharts_python.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.plot_options.base import NonIndicatorOptions

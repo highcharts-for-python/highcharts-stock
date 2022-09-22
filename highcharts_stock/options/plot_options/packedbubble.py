@@ -1,4 +1,5 @@
-from highcharts_python.options.plot_options.packedbubble import PackedBubbleOptions as PackedBubbleBase
+from highcharts_python.options.plot_options.packedbubble import (ParentNodeOptions,
+                                                                 PackedBubbleOptions as PackedBubbleBase)
 from highcharts_python.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.plot_options.base import NonIndicatorOptions

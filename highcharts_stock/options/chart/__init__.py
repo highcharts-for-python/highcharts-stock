@@ -1,6 +1,7 @@
 from typing import Optional
 
-from highcharts_python.options.chart import ChartOptions as ChartOptionsBase
+from highcharts_python.options.chart import (PanningOptions,
+                                             ChartOptions as ChartOptionsBase)
 
 from highcharts_stock.decorators import class_sensitive
 from highcharts_stock.options.chart.zooming import ZoomingOptions

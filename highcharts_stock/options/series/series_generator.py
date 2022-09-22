@@ -286,20 +286,29 @@ STOCK_SERIES_LIST = [
 
 
 def create_series_obj(value, default_type = None) -> Optional[SeriesBase | IndicatorSeriesBase]:
-    """Create an instance descended from :class:`SeriesBase` or
-    :class:`IndicatorSeriesBase`.
+    """Create an instance descended from
+    :class:`SeriesBase <highcharts_stock.options.series.base.SeriesBase>` or
+    :class:`IndicatorSeriesBase <highcharts_stock.options.series.base.IndicatorSeriesBase>`.
 
-    :param value: The input that should be de-serialized to a :class:`SeriesBase`
-      instance. Expected to be either a :class:`SeriesBase` instance, a
-      :class:`dict <python:dict>`, or a JSON :class:`str <python:str>`
+    :param value: The input that should be de-serialized to a
+      :class:`SeriesBase <highcharts_stock.options.series.base.SeriesBase>` or
+      :class:`IndicatorSeriesBase <highcharts_stock.options.series.base.IndicatorSeriesBase>`
+      instance. Expected to be either a
+      :class:`SeriesBase <highcharts_stock.options.series.base.SeriesBase>` or
+      :class:`IndicatorSeriesBase <highcharts_stock.options.series.base.IndicatorSeriesBase>`
+      instance, a :class:`dict <python:dict>`, or a JSON :class:`str <python:str>`.
 
     :param default_type: The default series type to apply if not specified in
       ``value``. Defaults to :obj:`None <python:None>`
     :type default_type: :class:`str <python:str>` or :obj:`None <python:None>`
 
-    :returns: A :class:`SeriesBase` or :class:`IndicatorSeriesBase`(descendant) instance
-    :rtype: :class:`SeriesBase` or :class:`IndicatorSeriesBase` or
-      :obj:`None <python:None>`
+    :returns: A :class:`SeriesBase <highcharts_stock.options.series.base.SeriesBase>`
+      (descendant) instance or
+      :class:`IndicatorSeriesBase <highcharts_stock.options.series.base.IndicatorSeriesBase>`
+      (descendant) instance
+    :rtype: :class:`SeriesBase <highcharts_stock.options.series.base.SeriesBase>` or
+      :class:`IndicatorSeriesBase <highcharts_stock.options.series.base.IndicatorSeriesBase>`
+      or :obj:`None <python:None>`
     """
     if not value:
         return None

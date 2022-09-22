@@ -1,4 +1,6 @@
-from highcharts_python.options.plot_options.gauge import (GaugeOptions as GaugeBase,
+from highcharts_python.options.plot_options.gauge import (DialOptions,
+                                                          PivotOptions,
+                                                          GaugeOptions as GaugeBase,
                                                           SolidGaugeOptions as SolidGaugeBase)
 from highcharts_python.utility_functions import mro__to_untrimmed_dict
 
