@@ -3,16 +3,16 @@ from decimal import Decimal
 
 from validator_collection import validators, checkers
 
-from highcharts_python import constants, errors
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.options.series.data.base import DataBase
-from highcharts_python.options.plot_options.drag_drop import DragDropOptions
-from highcharts_python.utility_classes.data_labels import DataLabel
+from highcharts_stock import constants, errors
+from highcharts_stock.decorators import class_sensitive
+from highcharts_stock.options.series.data.base import DataBase
+from highcharts_stock.options.plot_options.drag_drop import DragDropOptions
+from highcharts_stock.utility_classes.data_labels import DataLabel
 
 
 class HLCData(DataBase):
     """Data point that can be visualized in a
-    :class:`HLCSeries <highcharts_python.options.series.hlc.HLCSeries>`,
+    :class:`HLCSeries <highcharts_stock.options.series.hlc.HLCSeries>`,
     featuring an ``x`` value, a ``high`` value, a ``low`` value, and a ``close`` value.
     """
 
@@ -227,7 +227,7 @@ class HLCData(DataBase):
 
 class OHLCData(HLCData):
     """Data point that can be visualized in a
-    :class:`OHLCSeries <highcharts_python.options.series.hlc.OHLCSeries>`,
+    :class:`OHLCSeries <highcharts_stock.options.series.hlc.OHLCSeries>`,
     featuring an ``x`` value, an ``open`` value, a ``high`` value, a ``low`` value, and a
     ``close`` value.
     """

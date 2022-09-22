@@ -1354,6 +1354,116 @@ property. You can do this in several ways:
       :returns: A new :class:`Chart <highcharts_stock.chart.Chart>` instance
       :rtype: :class:`Chart <highcharts_stock.chart.Chart>`
 
+.. _using_technical_indicators:
+
+Using Technical Indicators
+=============================
+
+One of the most valuable aspects of
+`Highcharts Stock <https://www.highcharts.com/products/stock/>`__ is the inclusion of over
+40 :term:`technical indicators <technical indicator>`. These are additional analytical
+tools which can be overlaid on your visualization to provide insights into the data you
+are looking at.
+
+For example, are you hoping to understand whether the trajectory of a stock price is about
+to change? Or do you want to determine whether a given asset has been under-or-over sold?
+Or maybe you want to plot a simple linear regression against your primary series? You can
+do all of these and more using the technical indicators provided by
+`Highcharts Stock <https://www.highcharts.com/products/stock>`__.
+
+Technical indicators are :term:`series` in their own right, and can be added to your
+chart the same as you would add any other series. However, unlike traditional series they
+do *not* have a ``.data`` property, since they do not receive any data points. Instead,
+they reference the primary series whose data should be used to calculate the indicator via
+their :meth:`.linked_to <highcharts_stock.options.series.base.IndicatorSeries.linked_to>`
+property.
+
+You can add a series using the following methods:
+
+.. tabs::
+
+  .. tab:: ``Series.add_indicator()``
+
+    All standard :term:`series` (descending from
+    :class:`SeriesBase <highcharts_stock.options.series.base.SeriesBase>`) have an
+    :meth:`.add_indicator() <highcharts_stock.options.series.base.SeriesBase>` method
+    which can be used to easily configure a new indicator tied to the series in question.
+
+    You can call the method very simply:
+
+    .. code-block:: python
+
+      my_chart = Chart(series = [my_series])
+
+      # Adds a new Simple Moving Average indicator to the chart, based off of the
+      # "my_series" series.
+
+      my_chart = my_series.add_indicator(my_chart, 'sma')
+
+    The method has a straightforward signature:
+
+    .. method:: .add_indicator(chart, indicator_name, indicator_kwargs = None)
+
+      :param chart: The chart object in which the series is rendered and to which the
+        indicator should be appended.
+      :type chart: :class:`Chart <highcharts_stock.chart.Chart>`
+
+      :param indicator_name: The name of the indicator that should be added to the series
+        and chart. For the list of supported indicators, please review the
+        :ref:`Indicator List <indicator_list>`.
+      :type indicator_name: :class:`str <python:str>`
+
+      :param indicator_kwargs: Keyword arguments to apply when instantiating the new
+        indicator series. Defaults to :obj:`None <python:None>`.
+      :type indicator_kwargs: :class:`dict <python:dict>` or :obj:`None <python:None>`
+
+      :returns: ``chart`` with a new indicator series included in its list of configured
+        series.
+      :rtype: :class:`Chart <highcharts_stock.chart.Chart>`
+
+  .. tab:: ``Chart.add_indicator()``
+
+    You can also add an indicator directly to the
+    :class:`Chart <highcharts_stock.chart.Chart>` object using the
+    :meth:`Chart.add_series() <highcharts_stock.chart.Chart.add_indicator>` method.
+
+    .. code-block:: python
+
+      # Adds a Simple Moving Average indicator to the series with the ID "my-series-id"
+      my_chart.add_indicator('sma', series = 'my-series-id')
+
+      # Adds a Simple Moving Average indicator AND the series with the ID "my-series-id"
+      my_chart.add_indicator('sma', series = my_series)
+
+    The :meth:`Chart.add_series() <highcharts_stock.chart.Chart.add_indicator>` method
+    has a straightforward signature:
+
+    .. method:: .add_series(indicator_name, series, indicator_kwargs = None)
+
+      Creates a :class:`IndicatorSeriesBase` (descendant) that calculates the
+      ``indicator_name`` :term:`technical indicator` for the series provided in
+      ``series``, and adds it to the chart's
+      :meth:`.options.series <highcharts_stock.options.HighchartsStockOptions.series>`.
+
+      :param indicator_name: The name of the indicator that should be added to the series
+        and chart. For the list of supported indicators, please review the
+        :ref:`Indicator List <indicator_list>`.
+      :type indicator_name: :class:`str <python:str>`
+
+      :param series: The series to which the indicator should be added. Accepts either a
+        series' :meth:`.id <highcharts_stock.options.series.SeriesBase.id>` as a
+        :class:`str <python:str>`, or a
+        :class:`SeriesBase <highcharts_stock.options.series.base.SeriesBase>` (descendant)
+        instance.
+      :type series: :class:`str <python:str>` or
+        :class:`SeriesBase <highcharts_stock.options.series.base.SeriesBase>`
+
+      :param indicator_kwargs: Keyword arguments to apply when instantiating the new
+        indicator series. Defaults to :obj:`None <python:None>`.
+      :type indicator_kwargs: :class:`dict <python:dict>` or :obj:`None <python:None>`
+
+      :returns: Nothing. It simply changes the composition of the chart instance's
+        series to now include a new series with the indicator.
 
 --------------------
 

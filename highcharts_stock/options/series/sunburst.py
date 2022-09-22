@@ -1,7 +1,7 @@
 from typing import Optional, List
 
-from highcharts_python.options.series.data.sunburst import SunburstData
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.sunburst import SunburstData
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.series.base import SeriesBase
 from highcharts_stock.options.plot_options.sunburst import SunburstOptions

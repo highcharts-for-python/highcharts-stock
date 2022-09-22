@@ -4,7 +4,7 @@ from validator_collection import validators
 
 from highcharts_stock.options.series.area import AreaSeries
 from highcharts_stock.options.plot_options.bellcurve import BellCurveOptions
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 
 class BellCurveSeries(AreaSeries, BellCurveOptions):

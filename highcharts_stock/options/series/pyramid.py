@@ -1,6 +1,6 @@
 from typing import Optional, List
-from highcharts_python.options.series.data.single_point import SinglePointData
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.single_point import SinglePointData
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.series.funnel import FunnelSeries
 from highcharts_stock.options.series.pie import PieSeries

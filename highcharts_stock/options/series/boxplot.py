@@ -1,8 +1,8 @@
 from typing import Optional, List
 
-from highcharts_python.options.series.data.boxplot import BoxPlotData
-from highcharts_python.options.series.data.range import RangeData
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.boxplot import BoxPlotData
+from highcharts_stock.options.series.data.range import RangeData
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.series.bar import BarSeries
 from highcharts_stock.options.plot_options.boxplot import BoxPlotOptions

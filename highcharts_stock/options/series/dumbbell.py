@@ -1,9 +1,9 @@
 from typing import Optional, List
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.options.series.data.range import ConnectedRangeData
-from highcharts_python.options.plot_options.drag_drop import HighLowDragDropOptions
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.decorators import class_sensitive
+from highcharts_stock.options.series.data.range import ConnectedRangeData
+from highcharts_stock.options.plot_options.drag_drop import HighLowDragDropOptions
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.plot_options.dumbbell import LollipopOptions, DumbbellOptions
 from highcharts_stock.options.series.base import SeriesBase

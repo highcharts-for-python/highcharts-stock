@@ -1,4 +1,4 @@
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.series.base import NavigatorIndicatorSeries
 from highcharts_stock.options.plot_options.atr import ATROptions, NATROptions
@@ -126,7 +126,7 @@ class NATRSeries(NavigatorIndicatorSeries, NATROptions):
       :align: center
 
     """
-    
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 

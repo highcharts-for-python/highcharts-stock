@@ -4,60 +4,60 @@ import json
 
 from validator_collection import validators, checkers
 
-from highcharts_python import errors
+from highcharts_stock import errors
 
-from highcharts_python.options.series.base import SeriesBase
-from highcharts_python.options.series.arcdiagram import ArcDiagramSeries
-from highcharts_python.options.series.area import AreaSeries
-from highcharts_python.options.series.area import AreaRangeSeries
-from highcharts_python.options.series.area import AreaSplineSeries
-from highcharts_python.options.series.area import AreaSplineRangeSeries
-from highcharts_python.options.series.area import LineSeries
-from highcharts_python.options.series.area import StreamGraphSeries
-from highcharts_python.options.series.bar import BarSeries
-from highcharts_python.options.series.bar import ColumnSeries
-from highcharts_python.options.series.bar import ColumnPyramidSeries
-from highcharts_python.options.series.bar import ColumnRangeSeries
-from highcharts_python.options.series.bar import CylinderSeries
-from highcharts_python.options.series.bar import VariwideSeries
-from highcharts_python.options.series.bar import WaterfallSeries
-from highcharts_python.options.series.bar import WindBarbSeries
-from highcharts_python.options.series.bar import XRangeSeries
-from highcharts_python.options.series.bellcurve import BellCurveSeries
-from highcharts_python.options.series.boxplot import BoxPlotSeries
-from highcharts_python.options.series.boxplot import ErrorBarSeries
-from highcharts_python.options.series.bubble import BubbleSeries
-from highcharts_python.options.series.bullet import BulletSeries
-from highcharts_python.options.series.dependencywheel import DependencyWheelSeries
-from highcharts_python.options.series.dumbbell import DumbbellSeries
-from highcharts_python.options.series.dumbbell import LollipopSeries
-from highcharts_python.options.series.funnel import FunnelSeries
-from highcharts_python.options.series.funnel import Funnel3DSeries
-from highcharts_python.options.series.gauge import GaugeSeries
-from highcharts_python.options.series.gauge import SolidGaugeSeries
-from highcharts_python.options.series.heatmap import HeatmapSeries
-from highcharts_python.options.series.heatmap import TilemapSeries
-from highcharts_python.options.series.histogram import HistogramSeries
-from highcharts_python.options.series.item import ItemSeries
-from highcharts_python.options.series.networkgraph import NetworkGraphSeries
-from highcharts_python.options.series.organization import OrganizationSeries
-from highcharts_python.options.series.packedbubble import PackedBubbleSeries
-from highcharts_python.options.series.pareto import ParetoSeries
-from highcharts_python.options.series.pie import PieSeries
-from highcharts_python.options.series.pie import VariablePieSeries
-from highcharts_python.options.series.polygon import PolygonSeries
-from highcharts_python.options.series.pyramid import PyramidSeries
-from highcharts_python.options.series.pyramid import Pyramid3DSeries
-from highcharts_python.options.series.sankey import SankeySeries
-from highcharts_python.options.series.scatter import ScatterSeries
-from highcharts_python.options.series.scatter import Scatter3DSeries
-from highcharts_python.options.series.spline import SplineSeries
-from highcharts_python.options.series.sunburst import SunburstSeries
-from highcharts_python.options.series.timeline import TimelineSeries
-from highcharts_python.options.series.treemap import TreemapSeries
-from highcharts_python.options.series.vector import VectorSeries
-from highcharts_python.options.series.venn import VennSeries
-from highcharts_python.options.series.wordcloud import WordcloudSeries
+from highcharts_stock.options.series.base import SeriesBase
+from highcharts_stock.options.series.arcdiagram import ArcDiagramSeries
+from highcharts_stock.options.series.area import AreaSeries
+from highcharts_stock.options.series.area import AreaRangeSeries
+from highcharts_stock.options.series.area import AreaSplineSeries
+from highcharts_stock.options.series.area import AreaSplineRangeSeries
+from highcharts_stock.options.series.area import LineSeries
+from highcharts_stock.options.series.area import StreamGraphSeries
+from highcharts_stock.options.series.bar import BarSeries
+from highcharts_stock.options.series.bar import ColumnSeries
+from highcharts_stock.options.series.bar import ColumnPyramidSeries
+from highcharts_stock.options.series.bar import ColumnRangeSeries
+from highcharts_stock.options.series.bar import CylinderSeries
+from highcharts_stock.options.series.bar import VariwideSeries
+from highcharts_stock.options.series.bar import WaterfallSeries
+from highcharts_stock.options.series.bar import WindBarbSeries
+from highcharts_stock.options.series.bar import XRangeSeries
+from highcharts_stock.options.series.bellcurve import BellCurveSeries
+from highcharts_stock.options.series.boxplot import BoxPlotSeries
+from highcharts_stock.options.series.boxplot import ErrorBarSeries
+from highcharts_stock.options.series.bubble import BubbleSeries
+from highcharts_stock.options.series.bullet import BulletSeries
+from highcharts_stock.options.series.dependencywheel import DependencyWheelSeries
+from highcharts_stock.options.series.dumbbell import DumbbellSeries
+from highcharts_stock.options.series.dumbbell import LollipopSeries
+from highcharts_stock.options.series.funnel import FunnelSeries
+from highcharts_stock.options.series.funnel import Funnel3DSeries
+from highcharts_stock.options.series.gauge import GaugeSeries
+from highcharts_stock.options.series.gauge import SolidGaugeSeries
+from highcharts_stock.options.series.heatmap import HeatmapSeries
+from highcharts_stock.options.series.heatmap import TilemapSeries
+from highcharts_stock.options.series.histogram import HistogramSeries
+from highcharts_stock.options.series.item import ItemSeries
+from highcharts_stock.options.series.networkgraph import NetworkGraphSeries
+from highcharts_stock.options.series.organization import OrganizationSeries
+from highcharts_stock.options.series.packedbubble import PackedBubbleSeries
+from highcharts_stock.options.series.pareto import ParetoSeries
+from highcharts_stock.options.series.pie import PieSeries
+from highcharts_stock.options.series.pie import VariablePieSeries
+from highcharts_stock.options.series.polygon import PolygonSeries
+from highcharts_stock.options.series.pyramid import PyramidSeries
+from highcharts_stock.options.series.pyramid import Pyramid3DSeries
+from highcharts_stock.options.series.sankey import SankeySeries
+from highcharts_stock.options.series.scatter import ScatterSeries
+from highcharts_stock.options.series.scatter import Scatter3DSeries
+from highcharts_stock.options.series.spline import SplineSeries
+from highcharts_stock.options.series.sunburst import SunburstSeries
+from highcharts_stock.options.series.timeline import TimelineSeries
+from highcharts_stock.options.series.treemap import TreemapSeries
+from highcharts_stock.options.series.vector import VectorSeries
+from highcharts_stock.options.series.venn import VennSeries
+from highcharts_stock.options.series.wordcloud import WordcloudSeries
 
 # Highcharts Stock-specific Series
 from highcharts_stock.options.series.base import IndicatorSeriesBase
@@ -284,8 +284,63 @@ STOCK_SERIES_LIST = [
     'zigzag',
 ]
 
+INDICATOR_LIST = {
+    # Highcharts for Stock Series Types
+    'abands': AbandsSeries,
+    'ad': ADSeries,
+    'ao': AOSeries,
+    'apo': APOSeries,
+    'aroon': AroonSeries,
+    'aroonoscillator': AroonOscillatorSeries,
+    'atr': ATRSeries,
+    'bb': BBSeries,
+    'cci': CCISeries,
+    'chaikin': ChaikinSeries,
+    'cmf': CMFSeries,
+    'cmo': CMOSeries,
+    'dema': DEMASeries,
+    'disparityindex': DisparityIndexSeries,
+    'dmi': DMISeries,
+    'dpo': DPOSeries,
+    'ema': EMASeries,
+    'flags': FlagsSeries,
+    'heikinashi': HeikinAshiSeries,
+    'ikh': IKHSeries,
+    'keltnerchannels': KeltnerChannelsSeries,
+    'klinger': KlingerSeries,
+    'linearregression': LinearRegressionSeries,
+    'linearregressionngle': LinearRegressionAngleSeries,
+    'linearregressionintercept': LinearRegressionInterceptSeries,
+    'linearregressionslope': LinearRegressionSlopeSeries,
+    'macd': MACDSeries,
+    'mfi': MFISeries,
+    'momentum': MomentumSeries,
+    'natr': NATRSeries,
+    'obv': OBVSeries,
+    'pc': PCSeries,
+    'pivotpoints': PivotPointsSeries,
+    'ppo': PPOSeries,
+    'priceenvelopes': PriceEnvelopesSeries,
+    'psar': PSARSeries,
+    'roc': ROCSeries,
+    'rsi': RSISeries,
+    'slowstochastic': SlowStochasticSeries,
+    'sma': SMASeries,
+    'stochastic': StochasticSeries,
+    'supertrend': SupertrendSeries,
+    'tema': TEMASeries,
+    'trendline': TrendlineSeries,
+    'trix': TRIXSeries,
+    'vbp': VBPSeries,
+    'vwap': VWAPSeries,
+    'williamsr': WilliamsRSeries,
+    'wma': WMASeries,
+    'zigzag': ZigZagSeries,
+}
 
-def create_series_obj(value, default_type = None) -> Optional[SeriesBase | IndicatorSeriesBase]:
+
+def create_series_obj(value,
+                      default_type = None) -> Optional[SeriesBase | IndicatorSeriesBase]:
     """Create an instance descended from
     :class:`SeriesBase <highcharts_stock.options.series.base.SeriesBase>` or
     :class:`IndicatorSeriesBase <highcharts_stock.options.series.base.IndicatorSeriesBase>`.

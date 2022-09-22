@@ -3,14 +3,120 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
-from highcharts_python.options.series.base import SeriesBase
+from highcharts_stock import errors
+from highcharts_stock.decorators import validate_types
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.base import SeriesBase as OriginalSeriesBase
 
-from highcharts_python.options.plot_options.series import SeriesOptions
+from highcharts_stock.options.plot_options.series import SeriesOptions
 from highcharts_stock.options.plot_options.base import NavigatorIndicatorOptions
 
+from highcharts_stock.options.series.series_generator import INDICATOR_LIST
 
-class IndicatorSeriesBase(SeriesOptions):
+
+class IndicatorFactoryMixin(object):
+    """Mix-in used to add the ``.add_indicator()`` and ``.get_indicator()`` methods to
+    series object."""
+
+    def add_indicator(self, chart, indicator_name, indicator_kwargs = None):
+        """Adds a :term:`technical indicator` linked to the current series to the
+        ``chart``.
+
+        :param chart: The chart object in which the series is rendered and to which the
+          indicator should be appended.
+
+          .. warning::
+
+            If ``chart`` already contains a series with the same
+            :meth:`.id <highcharts_stock.options.series.base.SeriesBase.id>` as ``self``,
+            that series in ``chart`` will be *replaced* by ``self``.
+
+        :type chart: :class:`Chart <highcharts_stock.chart.Chart>`
+
+        :param indicator_name: The name of the indicator that should be added to the
+          series and chart. For the list of supported indicators, please review the
+          :ref:`Indicator List <indicator_list>`.
+        :type indicator_name: :class:`str <python:str>`
+
+        :param indicator_kwargs: Keyword arguments to apply when instantiating the new
+          indicator series. Defaults to :obj:`None <python:None>`.
+        :type indicator_kwargs: :class:`dict <python:dict>` or :obj:`None <python:None>`
+
+        :returns: ``chart`` with a new indicator series included in its list of configured
+          series.
+        :rtype: :class:`Chart <highcharts_stock.chart.Chart>`
+        """
+        from highcharts_stock.chart import Chart
+        from highcharts_stock.options import HighchartsStockOptions
+
+        if not self.id:
+            raise errors.HighchartsValueError('series does not have an .id '
+                                              'specified. Cannot add an '
+                                              'indicator.')
+
+        chart = validate_types(chart, Chart)
+        if chart.options and chart.options.series:
+            series_list = [x for x in chart.options.series
+                           if x.id != self.id]
+        elif chart.options:
+            series_list = []
+        else:
+            chart.options = HighchartsStockOptions()
+            series_list = []
+
+        indicator = self.get_indicator(indicator_name,
+                                       indicator_kwargs = indicator_kwargs)
+        series_list.append(self)
+        series_list.append(indicator)
+
+        chart.options.series = series_list
+
+        return chart
+
+    def get_indicator(self, indicator_name, indicator_kwargs = None):
+        """Retrieve a :term:`technical indicator` :term:`series` instance linked to the
+        current series.
+
+        :param indicator_name: The name of the indicator that should be added to the
+          series and chart. For the list of supported indicators, please review the
+          :ref:`Indicator List <indicator_list>`.
+        :type indicator_name: :class:`str <python:str>`
+
+        :param indicator_kwargs: Keyword arguments to apply when instantiating the new
+          indicator series. Defaults to :obj:`None <python:None>`.
+        :type indicator_kwargs: :class:`dict <python:dict>` or :obj:`None <python:None>`
+
+        :returns: The :term:`technical indicator` series instance
+        :rtype: :class:`IndicatorSeriesBase <highcharts_stock.options.series.base.IndicatorSeriesBase>`
+          descendant corresponding to ``indicator_name``
+        """
+        if not self.id:
+            raise errors.HighchartsValueError('series does not have an .id '
+                                              'specified. Cannot add an '
+                                              'indicator.')
+
+        indicator_name = validators.string(indicator_name, allow_empty = False)
+        indicator_name = indicator_name.lower()
+        if indicator_name not in INDICATOR_LIST:
+            raise errors.HighchartsValueError(f'indicator_name expects a valid indicator '
+                                              f'name. Did not recognize: '
+                                              f'"{indicator_name}"')
+
+        indicator_kwargs = validators.dict(indicator_kwargs, allow_empty = True) or {}
+
+        indicator_cls = INDICATOR_LIST.get(indicator_name)
+        indicator = indicator_cls(**indicator_kwargs)
+        indicator.linked_to = self.id
+
+        return indicator
+
+
+class SeriesBase(OriginalSeriesBase, IndicatorFactoryMixin):
+    """Generic base class for specific series configurations."""
+    pass
+
+
+class IndicatorSeriesBase(SeriesOptions, IndicatorFactoryMixin):
     """Generic base class for specific :term:`technical indicator` series
     configurations."""
 

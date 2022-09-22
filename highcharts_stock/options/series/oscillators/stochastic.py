@@ -1,4 +1,4 @@
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.series.base import IndicatorSeriesBase
 from highcharts_stock.options.plot_options.oscillators.stochastic import (StochasticOptions,

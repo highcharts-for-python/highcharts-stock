@@ -3,9 +3,9 @@ from typing import Optional, List
 from highcharts_stock.options.series.base import SeriesBase
 from highcharts_stock.options.plot_options.area import AreaOptions, LineOptions
 
-from highcharts_python.options.series.data.cartesian import CartesianData
-from highcharts_python.options.series.data.range import RangeData
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.cartesian import CartesianData
+from highcharts_stock.options.series.data.range import RangeData
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 
 class AreaSeries(SeriesBase, AreaOptions):

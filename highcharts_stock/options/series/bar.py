@@ -1,12 +1,18 @@
 from typing import Optional, List
 
-from highcharts_python.options.series.data.cartesian import CartesianData, Cartesian3DData
-from highcharts_python.options.series.data.bar import BarData, WaterfallData, WindBarbData, XRangeData
-from highcharts_python.options.series.data.range import RangeData
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.cartesian import CartesianData, Cartesian3DData
+from highcharts_stock.options.series.data.bar import (BarData,
+                                                      WaterfallData,
+                                                      WindBarbData,
+                                                      XRangeData)
+from highcharts_stock.options.series.data.range import RangeData
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
-from highcharts_stock.options.plot_options.bar import BaseBarOptions, BarOptions, WaterfallOptions, \
-    WindBarbOptions, XRangeOptions
+from highcharts_stock.options.plot_options.bar import (BaseBarOptions,
+                                                       BarOptions,
+                                                       WaterfallOptions,
+                                                       WindBarbOptions,
+                                                       XRangeOptions)
 
 from highcharts_stock.options.series.base import SeriesBase
 

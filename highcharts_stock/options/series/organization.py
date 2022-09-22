@@ -1,9 +1,9 @@
 from typing import Optional, List
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.options.series.data.connections import OutgoingWeightedConnectionData
-from highcharts_python.utility_classes.nodes import OrganizationNodeOptions
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.decorators import class_sensitive
+from highcharts_stock.options.series.data.connections import OutgoingWeightedConnectionData
+from highcharts_stock.utility_classes.nodes import OrganizationNodeOptions
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.series.bar import BarSeries
 from highcharts_stock.options.plot_options.organization import OrganizationOptions

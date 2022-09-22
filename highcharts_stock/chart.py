@@ -11,7 +11,8 @@ from highcharts_stock.js_literal_functions import serialize_to_js_literal
 from highcharts_stock.headless_export import ExportServer
 from highcharts_stock.options.series.series_generator import (create_series_obj,
                                                               SERIES_CLASSES,
-                                                              STOCK_SERIES_LIST)
+                                                              STOCK_SERIES_LIST,
+                                                              INDICATOR_LIST)
 from highcharts_stock.global_options.shared_options import SharedStockOptions
 from highcharts_stock.options import HighchartsStockOptions
 
@@ -306,6 +307,83 @@ class Chart(ChartBase):
         updated_series = existing_series + new_series
 
         self.options.series = updated_series
+
+    def add_indicator(self,
+                      indicator_name,
+                      series,
+                      indicator_kwargs = None):
+        """Creates a new :term:`technical indicator` series which calculates the indicator
+        ``indicator_name`` for the series provided in ``series``, and adds it to the
+        chart's
+        :meth:`.options.series <highcharts_stock.options.HighchartsStockOptions.series>`.
+
+        :param indicator_name: The name of the indicator that should be added to the
+          series and chart. For the list of supported indicators, please review the
+          :ref:`Indicator List <indicator_list>`.
+        :type indicator_name: :class:`str <python:str>`
+
+        :param series: The series to which the indicator should be added. Accepts either a
+          series' :meth:`.id <highcharts_stock.options.series.SeriesBase.id>` as a
+          :class:`str <python:str>`, or a
+          :class:`SeriesBase <highcharts_stock.options.series.base.SeriesBase>`
+          (descendant) instance.
+        :type series: :class:`str <python:str>` or
+          :class:`SeriesBase <highcharts_stock.options.series.base.SeriesBase>`
+
+        :param indicator_kwargs: Keyword arguments to apply when instantiating the new
+          indicator series. Defaults to :obj:`None <python:None>`.
+        :type indicator_kwargs: :class:`dict <python:dict>` or :obj:`None <python:None>`
+
+        :returns: Nothing. It simply changes the composition of the chart instance's
+          series to now include a new series with the indicator.
+        """
+        if self.options and self.options.series:
+            series_list = self.options.series
+        elif self.options:
+            self.options.series = []
+            series_list = self.options.series
+        else:
+            self.options = HighchartsStockOptions()
+            self.options.series = []
+            series_list = self.options.series
+
+        series_obj = None
+        if isinstance(series, str):
+            if '}' in series:
+                series_obj = create_series_obj(series)
+                series_id = series_obj.id
+                if not series_id:
+                    raise errors.HighchartsValueError('series does not have an .id '
+                                                      'specified. Cannot add an '
+                                                      'indicator.')
+            else:
+                series_id = validators.string(series)
+                contains_series_id = False
+                for item in series_list:
+                    if item.id == series_id:
+                        contains_series_id = True
+                        series_obj = item
+                        break
+
+                if not contains_series_id:
+                    raise errors.HighchartsValueError(f'chart does not contain a series '
+                                                      f'with an id: "{value}"')
+        else:
+            series_obj = create_series_obj(series)
+            if not series_obj.id:
+                raise errors.HighchartsValueError('series does not have an .id '
+                                                  'specified. Cannot add an '
+                                                  'indicator.')
+            for item in series_list:
+                updated_series_list = [x for x in series_list
+                                       if x.id != series.id]
+                series_list = [x for x in updated_series_list]
+                series_list.append(series_obj)
+
+        indicator = series_obj.get_indicator(indicator_name,
+                                             indicator_kwargs = indicator_kwargs)
+        series_list.append(indicator)
+        self.options.series = series_list
 
     @classmethod
     def from_series(cls, *series, kwargs = None):
