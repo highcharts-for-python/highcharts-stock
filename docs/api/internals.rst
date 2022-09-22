@@ -17,7 +17,7 @@ module: :mod:`.metaclasses <highcharts_stock.metaclasses>`
 
 The :mod:`.metaclasses <highcharts_stock.metaclasses>` module contains - as one might
 expect - :term:`metaclasses <metaclass>` that are used to ensure a consistent interface
-throughout the **Highcharts for Python** library.
+throughout the **Highcharts Stock for Python** library.
 
 
 class: :class:`HighchartsMeta <highcharts_stock.metaclasses.HighchartsMeta>`
@@ -59,7 +59,7 @@ module: :mod:`.decorators <highcharts_stock.decorators>`
 ******************************************************************************
 
 The :mod:`.decorators <highcharts_stock.decorators>` module contains decorators and
-decorator-assisting functions used throughout the **Highcharts for Python** library.
+decorator-assisting functions used throughout the **Highcharts Stock for Python** library.
 
 decorator: :deco:`@class_sensitive <highcharts_stock.decorators.class_sensitive>`
 =======================================================================================
@@ -137,8 +137,8 @@ function: :func:`get_key_value_pairs() <highcharts_stock.js_literal_functions.ge
 ********************************************************************
 
 The :mod:`.utility_functions <highcharts_stock.utility_functions>` module contains a
-small number of functions which serve as utilities across the **Highcharts for Python**
-library. Think of it as a function "catch all" module.
+small number of functions which serve as utilities across the
+**Highcharts Stock for Python** library. Think of it as a function "catch all" module.
 
 function:: :func:`mro_to_dict() <highcharts_stock.utility_functions.mro_to_dict>`
 =====================================================================================================

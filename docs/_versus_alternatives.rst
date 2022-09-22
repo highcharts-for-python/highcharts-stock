@@ -1,8 +1,8 @@
-Since `Highcharts JS <https://www.highcharts.com/>`_ is the most popular high-end data
-visualization library for JavaScript, there are a variety of alternative ways of
-working with Highcharts in Python. We have an obvious bias towards
-**Highcharts for Python**, but it may be useful to compare it against some commonly-used
-alternatives:
+Since `Highcharts Stock <https://www.highcharts.com/product/stock/>`_ is one of the most
+popular high-end time-series data visualization libraries for JavaScript, there are a
+variety of alternative ways of working with it in Python. We have an obvious bias towards
+**Highcharts Stock for Python**, but it may be useful to compare it against some
+commonly-used alternatives:
 
 .. tabs::
 
@@ -10,8 +10,8 @@ alternatives:
 
     By far, this is the most common approach to integrating Highcharts into your Python
     code. As a developer, you know that your JavaScript front-end will be using Highcharts
-    JS. So you work in your Python backend to deliver the data to your front-end that your
-    front-end will need.
+    Stock. So you work in your Python backend to deliver the data to your front-end that
+    your front-end will need. Simple, right? Often, more complicated than one might think.
 
     There are many patterns for rolling your own Highcharts + Python implementation, but
     the patterns I have seen most often include:
@@ -32,19 +32,22 @@ alternatives:
         the team turns to weaker data visualization packages because they are available
         in Python.
 
-    The first approach is very "clean" from a code architecture standpoint. However, in
-    practice it often problematic because it delegates data manipulation and
-    (potentially) business logic handling to your front-end code. Depending on the overall
-    design of your software, it can make your code harder to maintain. Furthermore,
-    depending on your team composition, it may simply be impractical for your team.
+    The first approach is very "clean" from a code architecture standpoint. It maintains
+    good separation of concerns, and leaves the problem of visualization to where
+    (architecturally) it should be: in your front-end code. However, in practice it is
+    often problematic because it delegates data manipulation and (potentially) business
+    logic handling to your front-end code. Depending on the overall design of your
+    application, it can make your code harder to maintain. Furthermore, depending on your
+    team composition, it may simply be impractical for your team.
 
     The second approach is also fairly clean. JSON, after all, is easy in both Python
     and JavaScript. But JSON is a suboptimal transport mechanism for some of Highcharts
-    most powerful features: callback functions. As this is native JavaScript code, they
-    cannot really be serialized securely to JSON and then executed directly by the
-    Highcharts library. So while simple use cases can be handled through JSON
-    serialization, many more robust or sophisticated uses of Highcharts (which would rely
-    on formatters, event handling, etc.) will simply not work.
+    most powerful features: :term:`callback functions <callback function>`. As these are
+    native JavaScript code, they cannot be serialized securely to JSON and then executed
+    directly by the Highcharts library. This is a big security anti-pattern, so while
+    simple use cases can be handled through JSON serialization, many more sophisticated
+    uses of Highcharts (which would rely on formatters, event handling, etc.) will simply
+    not work.
 
     The third approach is the most robust. And for the most sophisticated Highcharts +
     Python applications that I have seen, it has been the approach of choice because it
@@ -54,9 +57,12 @@ alternatives:
 
     And the fourth option is - in my experience - one of the most common. Even though
     plenty of developers coming to Python from the JavaScript ecosystem ask "Why can't we
-    just Highcharts?", many in the Python ecosystem will answer "because it's a pain to
-    do". So they turn to Highcharts alternatives that are more Python-friendly, like
+    just use Highcharts?", many in the Python ecosystem will answer "because it's a pain
+    to do". So they turn to Highcharts alternatives that are more Python-friendly, like
     `plotly <https://plotly.com/python/>`_.
+
+    **Highcharts for Python** and its **Highcharts Stock for Python** extension are
+    designed to eliminate this pain.
 
     .. tip::
 
@@ -68,7 +74,7 @@ alternatives:
       using Highcharts. But anything more robust than that is going to prove "hacky" and
       incredibly difficult to maintain.
 
-      Which is why I wrote **Highcharts for Python**.
+      Which is why I wrote **Highcharts for Python** and **Highcharts Stock for Python**.
 
   .. tab:: panel-highcharts
 

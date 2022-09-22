@@ -7,17 +7,18 @@
 |
 
 ###################################################
-Highcharts for Python Toolkit
+Highcharts Stock for Python
 ###################################################
 
-**High-end data visualization for the Python ecosystem**
+**High-end time series data visualization for the Python ecosystem**
 
 .. sidebar:: Version Compatibility
 
-  **Highcharts for Python** is designed to be compatible with:
+  **Highcharts Stock for Python** is designed to be compatible with:
 
     * Python 3.9 or higher,
     * Highcharts JS 10.2 or higher,
+    * Highcharts for Python 1.0.0 or higher,
     * Jupyter Notebook 6.4 or higher,
     * Pandas 1.3 or higher
     * PySpark 3.3 or higher
@@ -42,21 +43,18 @@ Highcharts for Python Toolkit
   Glossary <glossary>
   Licensing <license>
 
-The **Highcharts for Python Toolkit** is a Python library that provides a Python wrapper
-for the fantastic `Highcharts JS <https://www.highcharts.com>`__ suite of JavaScript data
-visualization libraries, with full integration into the robust Python ecosystem. The full
-toolkit includes support for:
+The **Highcharts Stock for Python** is an extension to the
+`Highcharts for Python <https://highcharts-python.readthedocs.io>`__ library, and provides
+a Python wrapper for the fantastic
+`Highcharts Stock <https://www.highcharts.com/products/stock/>`__
+JavaScript data visualization library. **Highcharts Stock for Python** also supports
 
   * **Highcharts JS** - the core Highcharts data visualization library
-  * **Highcharts Stock** - the robust time series visualization extension to Highcharts JS
-  * **Highcharts Maps** - the rich map visualization extension to Highcharts JS
-  * **Highcharts Gantt** - the :term:`Gantt charting <Gantt Chart>` extension to
-    Highcharts JS
   * The **Highcharts Export Server** - enabling the programmatic creation of static
     (downloadable) data visualizations
 
-In order to integrate **Highcharts for Python** into the Python ecosystem, the library
-features native integration with:
+In order to integrate **Highcharts Stock for Python** into the Python ecosystem, the
+library features native integration with:
 
   * **Jupyter Labs/Notebook**. You can now produce high-end and interactive plots and
     renders using the full suite of Highcharts visualization capabilities.
@@ -85,57 +83,69 @@ Dependencies
 Why Highcharts for Python?
 *********************************
 
-Odds are you are aware of `Highcharts JS <https://www.highcharts.com>`__. If not, why not?
+Odds are you are aware of
+`Highcharts Stock <https://www.highcharts.com/products/stock/>`__. If not, why not?
 It is the world's most popular, most powerful, category-defining JavaScript data
-visualization library. If you are building a web or mobile app/dashboard that will be
-visualizing data in some fashion, you should absolutely take a look at the Highcharts
-suite of solutions. Just take a look at some of their fantastic
-`demo visualizations <https://www.highcharts.com/demo>`_.
+visualization library for time-series data and - in particular - for stock price data.
 
-As the library name suggests, Highcharts JS is a JavaScript library. It is written in
-JavaScript, and is specifically used to configure and render data visualizations in a
-web browser (or other JavaScript-executing, like mobile app) environment. As a JavaScript
-library, its audience is JavaScript developers. But what about the broader ecosystem of
-Python developers and data scientists?
+If you are building a web or mobile app/dashboard that will be
+visualizing time series or stock price data in some fashion, you should absolutely take a
+look at the Highcharts suite of solutions. Just take a look at some of their fantastic
+`Highcharts Stock demo visualizations <https://www.highcharts.com/demo/stock>`__.
 
-Python is increasingly used as the technology of choice for data scientists and for
-creating the back-end of leading enterprise-grade applications. As such, it often provides
-the backend services that drive web and mobile applications - in other words, Python is
+Highcharts Stock is a JavaScript library, and is an extension of the
+`Highcharts JS <https://www.highcharts.com/products/highcharts/>`__ JavaScript library. It
+is written in JavaScript, and is specifically used to configure and render data
+visualizations in a web browser (or other JavaScript-executing, like mobile app)
+environment. As a JavaScript library, its audience is JavaScript developers. But what
+about the broader ecosystem of Python developers and data scientists?
+
+Python is increasingly used as the technology of choice for data science and for
+the backends of leading enterprise-grade applications. In other words, Python is
 often the backend that delivers data and content to the front-end...which then renders it
 using JavaScript and HTML.
 
 There are numerous Python frameworks (Django, Flask, Tornado, etc.) with specific
 capabilities to simplify integration with Javascript frontend frameworks (React, Angular,
 VueJS, etc.). But facilitating that with Highcharts has historically been very difficult.
-Part of this difficulty is because Highcharts JS - while supporting JSON as a
-serialization/deserialization format - leverages JavaScript object literals to expose the
+Part of this difficulty is because the Highcharts JavaScript suite - while supporting JSON as a
+serialization/deserialization format - leverages
+:term:`JavaScript object literals <JavaScript Object Literal Notation>` to expose the
 full power and interactivity of its data visualizations. And while it's easy to serialize
 JSON from Python, serializing and deserializing to/from JavaScript object literal notation
 is much more complicated. This means that Python developers looking to integrate with
-Highcharts typically had to either invest a lot of effort, or were only able to access
-a small portion of Highcharts rich functionality.
+Highcharts typically had to either invest a lot of effort, or were only able to leverage
+a small portion of Highcharts' rich functionality.
 
-So I wrote the **Highcharts for Python** toolkit to bridge that gap.
+So I wrote the **Highcharts for Python** toolkit to bridge that gap, and
+**Highcharts Stock for Python** to provide full support for the
+`Highcharts Stock <https://www.highcharts.com/products/stock/>`__ library extension.
 
-**Highcharts for Python** provides Python object representation for *all* of the
-JavaScript objects defined in the Highcharts API. It provides automatic data validation,
-and exposes simple and standardized methods for serializing those Python objects
-back-and-forth to JavaScript object literal notation.
+**Highcharts Stock for Python** provides support for
+the `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ extension, which is
+designed to provide extensive time series data visualization capabilities optimized for
+asset (e.g. stock) price data visualization, with extensive technical indicators and
+robust interactivity. For ease of use, it also includes the full functionality of
+**Highcharts for Python** as well.
 
-Key Highcharts for Python Features
-======================================
+Key Highcharts Stock for Python Features
+==============================================
 
 * **Clean and consistent API**. No reliance on "hacky" code, :class:`dict <python:dict>`
   and JSON serialization, or impossible to maintain / copy-pasted "spaghetti code".
 * **Comprehensive Highcharts support**. Every single Highcharts chart type and every
-  single configuration option is supported in **Highcharts for Python**. This includes the
-  use of Highcharts' rich JavaScript formatter (JS callback function) capabilities that
-  are often needed to get the most out of Highcharts' visualization and interaction
-  capabilities.
+  single configuration option is supported in **Highcharts Stock for Python**. This
+  includes the over 60 data visualization types supported by
+  `Highcharts JS <https://www.highcharts.com/product/highcharts/>`__ and the
+  over 40 technical indicator visualizations available in
+  `Highcharts Stock <https://www.highcharts.com/product/stock/>`__, with full support for
+  the rich JavaScript formatter (JS :term:`callback functions <callback function>`)
+  capabilities that are often needed to get the most out of Highcharts' visualization and
+  interaction capabilities.
 * **Simple JavaScript Code Generation**. With one method call, produce production-ready
   JavaScript code to render your interactive visualizations using Highcharts' rich
   capabilities.
-* **Easy and Robust Chart Download**. With one method call, produce high-end static
+* **Easy Chart Download**. With one method call, produce high-end static
   visualizations that can be downloaded or shared as files with your audience. Produce
   static charts using the Highsoft-provided
   :term:`Highcharts Export Server <Export Server>`, or using your own private export
@@ -151,8 +161,8 @@ Key Highcharts for Python Features
 
 |
 
-**Highcharts for Python** vs Alternatives
-==============================================
+**Highcharts Stock for Python** vs Alternatives
+=====================================================
 
 .. include:: _versus_alternatives.rst
 
@@ -162,12 +172,12 @@ Key Highcharts for Python Features
 Hello World, and Basic Usage
 ********************************
 
-1. Import Highcharts for Python
-=====================================
+1. Import Highcharts Stock for Python
+==========================================
 
   .. code-block:: python
 
-    from highcharts_python import highcharts
+    from highcharts_stock import highcharts
 
   .. seealso::
 
@@ -216,16 +226,16 @@ Hello World, and Basic Usage
     from highcharts_stock.global_options.shared_options import SharedOptions
 
     # from a JavaScript file
-    my_global_settings = SharedOptions.from_js_literal('my_js_literal.js')
+    my_global_settings = SharedStockOptions.from_js_literal('my_js_literal.js')
 
     # from a JSON file
-    my_global_settings = SharedOptions.from_json('my_json.json')
+    my_global_settings = SharedStockOptions.from_json('my_json.json')
 
     # from a Python dict
-    my_global_settings = SharedOptions.from_dict(my_dict_obj)
+    my_global_settings = SharedStockOptions.from_dict(my_dict_obj)
 
     # from a HighchartsOptions configuration object
-    my_global_settings = SharedOptions.from_options(my_options)
+    my_global_settings = SharedStockOptions.from_options(my_options)
 
   .. seealso::
 
@@ -296,8 +306,6 @@ that will render the chart wherever it is you want it to go:
   .. seealso::
 
     * :ref:`Rendering Your Charts <rendering>`
-    * :ref:`Using Highcharts for Python with Flask`
-    * :ref:`Using Highcharts for Python with Django`
 
 6. Generate the JavaScript Code for Your Global Settings (optional)
 =========================================================================
@@ -313,8 +321,6 @@ that will render the chart wherever it is you want it to go:
   .. seealso::
 
     * :ref:`Rendering Your Charts <rendering>`
-    * :ref:`Using Highcharts for Python with Flask <flask>`
-    * :ref:`Using Highcharts for Python with Django <django>`
 
 7. Generate a Static Version of Your Chart
 ==============================================
@@ -339,7 +345,7 @@ Questions and Issues
 *********************
 
 You can ask questions and report issues on the project's
-`Github Issues Page <https://github.com/hcpllc/highcharts-python/issues>`_
+`Github Issues Page <https://github.com/hcpllc/highcharts-stock/issues>`_
 
 -----------------
 

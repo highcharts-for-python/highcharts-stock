@@ -1,6 +1,6 @@
-#############################
-Using Highcharts for Python
-#############################
+#####################################
+Using Highcharts Stock for Python
+#####################################
 
 .. contents::
   :depth: 3
@@ -8,51 +8,76 @@ Using Highcharts for Python
 
 --------------
 
-***************************************************************
-Introduction to Highcharts JS and Highcharts for Python
-***************************************************************
+*******************************************************************
+Introduction to Highcharts Stock and Highcharts stock for Python
+*******************************************************************
 
-`Highcharts JS <https://www.highcharts.com>`__  is the gold-standard in JavaScript data visualization libraries,
+.. sidebar:: The Highcharts for Python Toolkit
+
+  The **Highcharts Stock for Python** library is part of the broader
+  `Highcharts for Python <https://highcharts-python.readthedocs.io/>`_ toolkit. The core
+  library provides Python wrappers for
+  `Highcharts JS <https://www.highcharts.com/products/highcharts/>`__, while
+  **Highcharts Stock for Python** extends the core library with support for
+  `Highcharts Stock <https://www.highcharts.com/products/stock>`__ in the same way that
+  Highcharts Stock extends Highcharts JS.
+
+  .. note::
+
+    **Highcharts Stock for Python** is an *additive* extension to
+    **Highcharts for Python**. This means that it includes the full set of functionality
+    from Highcharts for Python, is fully bakcwards-compatible with Highcharts for Python,
+    and exposes the exact same API for you to use. This makes it easy to for you to
+    combine visualization from the core
+    `Highcharts JS <https://www.highcharts.com/products/highcharts/>`__ library *and* the
+    `Highcharts Stock <https://www.highcharts.com/products/stock/>`_ library without
+    wrangling multiple similar dependencies in your Python code.
+
+`Highcharts Stock <https://www.highcharts.com/products/stock/>`__  is the gold-standard
+in JavaScript data visualization libraries for time-series and stock price data,
 enabling you to design rich, beautiful, and highly interactive data visualizations of
 (almost) any kind imaginable, and to render those visualizations in your web or mobile
 applications. Take a look at some of their
-`customer showcases <https://www.highcharts.com/blog/posts/use-cases/>`_ and their own
-`demo gallery <https://www.highcharts.com/demo>`_ to see what you can do with Highcharts.
+`customer showcases <https://www.highcharts.com/blog/posts/highcharts-stock+use-cases/>`_
+and their own `demo gallery <https://www.highcharts.com/products/stock/demo>`_ to see what
+you can do with Highcharts Stock.
 
-**Highcharts for Python** is a Python wrapper for the
-`Highcharts JS <https://www.highcharts.com>`__ JavaScript library, which means that it is designed to give developers
-working in Python a simple and Pythonic way of interacting with Highcharts JS. Highcharts
-for Python will *not* render data visualizations itself - that's what Highcharts JS does -
-but it *will* allow you to:
+**Highcharts Stock for Python** is a Python wrapper for the
+`Highcharts Stock <https://www.highcharts.com/products/stock/>`__ JavaScript library,
+which means that it is designed to give developers working in Python a simple and Pythonic
+way of interacting with Highcharts Stock. Highcharts Stock for Python will *not* render
+data visualizations itself - that's what Highcharts Stock does - but it *will* allow you
+to:
 
   #. Configure your data visualizations in Python.
   #. Supply data you have in Python to your data visualizations.
-  #. Programmatically produce the Highcharts JS JavaScript code that will actually render
-     your data visualization.
+  #. Programmatically produce the Highcharts Stock JavaScript code that will actually
+     render your data visualization.
   #. Programmatically download a static version of your visualization (as needed) within
      Python.
 
 .. tip::
 
-  Think of **Highcharts for Python** as a translator to bridge your data visualization
-  needs between Python and JavaScript.
+  Think of **Highcharts Stock for Python** as a translator to bridge your data
+  visualization needs between Python and JavaScript.
 
 -------------------
 
-*************************************************
-Key Design Patterns in Highcharts for Python
-*************************************************
+*****************************************************
+Key Design Patterns in Highcharts Stock for Python
+*****************************************************
 
-`Highcharts JS <https://www.highcharts.com>`__ is a large, robust, and complicated JavaScript library. If in doubt, take
-a look at their extensive `documentation <https://www.highcharts.com/docs/index>`_ and in
-particular their `API reference`_. Because
-**Highcharts for Python** wraps the Highcharts JS API, its design is heavily shaped by
+`Highcharts JS <https://www.highcharts.com>`__ is a large, robust, and complicated
+JavaScript library. If in doubt, take a look at their extensive
+`documentation <https://www.highcharts.com/docs/index>`_ and in
+particular their `API reference`_. Because **Highcharts for Python** and
+**Highcharts Stock for Python** wrap the Highcharts API, their design is heavily shaped by
 Highcharts JS' own design - as one should expect.
 
-However, one of the main goals of **Highcharts for Python** is to make the Highcharts JS
-library a little more Pythonic in terms of its design to make it easier for Python
-developers to leverage it. Here are the notable design patterns that have been adopted
-that you should be aware of:
+However, one of the main goals of the **Highcharts for Python** toolkit is to make the
+Highcharts JS library a little more Pythonic in terms of its design to make it easier for
+Python developers to leverage it. Here are the notable design patterns that have been
+adopted that you should be aware of:
 
 Code Style: Python vs JavaScript Naming Conventions
 =======================================================
@@ -62,16 +87,16 @@ Code Style: Python vs JavaScript Naming Conventions
 Standard Methods
 =======================================
 
-Every single object supported by the Highcharts JS API corresponds to a Python class in
-**Highcharts for Python**. You can find the complete list in our comprehensive
-:doc:`Highcharts for Python API Reference <api>`.
+Every single object supported by the Highcharts Stock API corresponds to a Python class in
+**Highcharts Stock for Python**. You can find the complete list in our comprehensive
+:doc:`Highcharts Stock for Python API Reference <api>`.
 
 These classes generally inherit from the
 :class:`HighchartsMeta <highcharts_stock.metaclasses.HighchartsMeta>` metaclass, which
 provides each class with a number of standard methods. These methods are the "workhorses"
-of **Highcharts for Python** and you will be relying heavily on them when using the
-library. Thankfully, their signatures and behavior is generally consistent - even if what
-happens "under the hood" is class-specific at times.
+of the **Highcharts for Python** toolkit and you will be relying heavily on them when
+using the library. Thankfully, their signatures and behavior is generally consistent -
+even if what happens "under the hood" is class-specific at times.
 
 The standard methods exposed by the classes are:
 
@@ -115,7 +140,7 @@ Class Structures and Inheritance
 
 .. warning::
 
-  Certain sections of the **Highcharts for Python** library - in particular the
+  Certain sections of the **Highcharts Stock for Python** library - in particular the
   :mod:`options.series <highcharts_stock.options.series>` classes - rely heavily on
   multiple inheritance. This is a known anti-pattern in Python development as it runs the
   risk of encountering the :term:`diamond of death` inheritance problem. This complicates
@@ -135,27 +160,28 @@ Class Structures and Inheritance
 
 --------------------------
 
-*************************************************
-Organizing Your Highcharts for Python Project
-*************************************************
+*******************************************************
+Organizing Your Highcharts Stock for Python Project
+*******************************************************
 
-**Highcharts for Python** is a utility that can integrate with - quite literally - any
-frontend framework. Whether your Python application is relying on iPython (e.g.
+**Highcharts Stock for Python** is a utility that can integrate with - quite literally -
+any frontend framework. Whether your Python application is relying on iPython (e.g.
 `Jupyter Notebook`_ or `Jupyter Labs`_),
 `Flask <https://flask.palletsprojects.com/en/2.2.x/>`_,
 `Django <https://www.djangoproject.com/>`_,  `FastAPI <https://fastapi.tiangolo.com/>`_,
 `Pyramid <https://trypyramid.com/>`_, `Tornado <https://www.tornadoweb.org/en/stable/>`_,
-or some completely home-grown solution all Highcharts for
-Python needs is a place where `Highcharts JS <https://www.highcharts.com>`__ JavaScript code can be executed.
+or some completely home-grown solution all Highcharts Stock for
+Python needs is a place where
+`Highcharts Stock <https://www.highcharts.com/products/stock/>`__ JavaScript code can be executed.
 
 All of those frameworks I mentioned have their own best practices for organizing their
 application structures, and those should *always* take priority. Even in a data-centric
-application that will be relying heavily on **Highcharts for Python**, your application's
-core business logic will be doing most of the heavy lifting and so your project's
-organization should reflect that.
+application that will be relying heavily on **Highcharts Stock for Python**, your
+application's core business logic will be doing most of the heavy lifting and so your
+project's organization should reflect that.
 
 However, there are a number of best practices that we recommend for organizing your
-files and code to work with **Highcharts for Python**:
+files and code to work with **Highcharts Stock for Python**:
 
   .. warning::
 
@@ -164,25 +190,28 @@ files and code to work with **Highcharts for Python**:
 
     The organizational model described below is just a suggestion, and you can (and likely
     will) depart from its principles and practices as you gain more experience using
-    **Highcharts for Python**. There's nothing wrong with that! It's just a set of best
-    practices that we've found work for us and which we therefore recommend.
+    **Highcharts Stock for Python**. There's nothing wrong with that! It's just a set of
+    best practices that we've found work for us and which we therefore recommend.
 
 .. _shared_options:
 
 Use Shared Options
 ========================
 
-One of the most challenging aspects of `Highcharts JS <https://www.highcharts.com>`__ is its sheer breadth of
-functionality and configurability. That's simultaneously the library's greatest strength,
-and its greatest weakness. This is because it can be quite challenging to wrangle
+One of the most challenging aspects of
+`Highcharts JS <https://www.highcharts.com/products/highcharts/>`__ and
+`Highcharts Stock <https://www.highcharts.com/products/stock/>`__ are their sheer breadth
+of functionality and configurability. That's simultaneously their greatest strength,
+and their greatest weakness. This is because it can be quite challenging to wrangle
 thousands of properties - especially when one single visualization can use thousands
 of properties!
 
-This is a challenge that the developers of `Highcharts JS <https://www.highcharts.com>`__ are keenly aware of, and one
-which we've given some thought to in the **Highcharts for Python** library. A core
-principle you should use throughout your project is to practice
-:iabbr:`DRY (Do Not Repeat Yourself)` programming. If your application will be generating
-multiple visualizations, they will likely need some consistent configurations.
+This is a challenge that the developers of `Highcharts JS <https://www.highcharts.com>`__
+are keenly aware of, and one which we've given some thought to throughout the
+**Highcharts for Python** toolkit. A core principle you should use throughout your project
+is to practice :iabbr:`DRY (Do Not Repeat Yourself)` programming. If your application will
+be generating multiple visualizations, they will likely need some consistent
+configurations.
 
 For example, you will want their title position to be consistent, their color schemes to
 be consistent, their font sizing to be consistent, etc. In your code you want these
@@ -190,10 +219,22 @@ configuration settings to be defined *once* and then applied to all of the visua
 you are producing.
 
 This can be facilitated using the
-:class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
-class. It generates a single set of global options which - when serialized to JavaScript -
-apply its configuration settings consistently across all data visualizations on the same
-page.
+:class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
+class. This generates a single set of global options which - when serialized to
+JavaScript - apply its configuration settings consistently across all data
+visualizations on the same page.
+
+.. warning::
+
+  :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
+  is a sub-class of
+  :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+  which extends its properties and methods with properties/methods that are only available
+  in the `Highcharts Stock API <https://api.highcharts.com/highstock/>`__.
+
+  However, this class is fully backwards-compatible with the
+  `Highcharts JS API <https://api.highcharts.com/highcharts/>`__ if you leave the
+  Stock-specific methods and properties set to :obj:`None <python:None>` (their default).
 
 As with all **Highcharts for Python** objects, you can instantiate them in several ways:
 
@@ -207,7 +248,7 @@ As with all **Highcharts for Python** objects, you can instantiate them in sever
 
       We really like to use JS literals written as separate files in our codebase. It
       makes it super simple to instantiate a
-      :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+      :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
       instance with one method call.
 
     Let's say you organize your files like so:
@@ -254,17 +295,17 @@ As with all **Highcharts for Python** objects, you can instantiate them in sever
         :language: javascript
 
     Now with this file, you can easily create a
-    :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+    :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
     instance by executing:
 
       .. code-block:: python
 
-        from highcharts_stock.highcharts import SharedOptions
+        from highcharts_stock.highcharts import SharedStockOptions
 
-        my_shared_options = SharedOptions.from_js_literal('../../project_resources/highcharts_config/shared_options.js')
+        my_shared_options = SharedStockOptions.from_js_literal('../../project_resources/highcharts_config/shared_options.js')
 
     And that's it! Now you have a
-    :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+    :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
     instance that can be used to apply your configuration standards to all of your charts.
     You can do that by delivering its JavaScript output to your front-end by calling:
 
@@ -325,9 +366,9 @@ As with all **Highcharts for Python** objects, you can instantiate them in sever
 
       .. code-block:: python
 
-        from highcharts_stock.highcharts import SharedOptions
+        from highcharts_stock.highcharts import SharedStockOptions
 
-        my_shared_options = SharedOptions.from_js_literal(
+        my_shared_options = SharedStockOptions.from_js_literal(
             '../../project_resources/highcharts_config/shared_options.json'
         )
 
@@ -337,7 +378,7 @@ As with all **Highcharts for Python** objects, you can instantiate them in sever
 
     If you are hoping to configure a simple set of options, one of the fastest ways to do
     so in your Python code is to instantiate your
-    :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+    :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
     instance from a simple :class:`dict <python:dict>`:
 
       .. code-block:: python
@@ -351,29 +392,30 @@ As with all **Highcharts for Python** objects, you can instantiate them in sever
             }
         }
 
-        my_shared_options = SharedOptions.from_dict(as_dict)
+        my_shared_options = SharedStockOptions.from_dict(as_dict)
 
         js_code_snippet = my_shared_options.to_js_literal()
 
       .. tip::
 
         This method is particularly helpful and easy to maintain if you are only using a
-        *very* small subset of the `Highcharts JS <https://www.highcharts.com>`__ configuration options.
+        *very* small subset of the `Highcharts JS <https://www.highcharts.com>`__
+        configuration options.
 
   .. tab:: with ``__init__()``
 
     You can also instantiate a
-    :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+    :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
     instance directly using keywords in the constructor:
 
       .. code-block:: python
 
-        from highcharts_stock.highcharts import ChartOptions, SharedOptions
+        from highcharts_stock.highcharts import ChartOptions, SharedStockOptions
 
-        my_shared_options = SharedOptions(chart = ChartOptions(background_color = '#fff',
-                                                               border_width = 2,
-                                                               plot_background_color = 'rgba(255, 255, 255, 0.9)',
-                                                               plot_border_width = 1))
+        my_shared_options = SharedStockOptions(chart = ChartOptions(background_color = '#fff',
+                                                                    border_width = 2,
+                                                                    plot_background_color = 'rgba(255, 255, 255, 0.9)',
+                                                                    plot_border_width = 1))
 
         js_code_snippet = my_shared_options.to_js_literal()
 
@@ -387,7 +429,7 @@ As with all **Highcharts for Python** objects, you can instantiate them in sever
         **Best practice!**
 
         While you can create a
-        :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+        :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
         instance and then modify its properties after the fact, that's not exactly the best
         code style. It makes things a bit verbose, and a little harder to reason about.
 
@@ -419,8 +461,8 @@ of your charts.
       **Best practice!**
 
       We really like to use JS literals written as separate files in our codebase. It
-      makes it super simple to instantiate a **Highcharts for Python** instance with one
-      method call.
+      makes it super simple to instantiate a **Highcharts Stock for Python** instance with
+      one method call.
 
     Let's say you organize your files like so:
 
@@ -437,8 +479,8 @@ of your charts.
         | ------------ data-file-03.csv
         | --------- **highcharts_config/**
         | ------------ shared_options.js
-        | ------------ **bar-template-01.js**
-        | ------------ **bar-template-02.js**
+        | ------------ **hlc-template-01.js**
+        | ------------ **hlc-template-02.js**
         | ------------ line-template.js
         | ------------ packed-bubble-template.js
         | ------ some_package/
@@ -452,8 +494,8 @@ of your charts.
         | --- .gitignore
         | --- requirements.txt
 
-    As you can see, there are two JS literal files named ``bar-template-01.js`` and
-    ``bar-template-02.js`` respectively. These template files can be used to significantly
+    As you can see, there are two JS literal files named ``hlc-template-01.js`` and
+    ``hlc-template-02.js`` respectively. These template files can be used to significantly
     accelerate the configuration of our bar charts. Each template corresponds to one
     sub-type of bar chart that we know we will need. These sub-types may have different
     event functions, or more frequently use different formatting functions to make the
@@ -464,13 +506,14 @@ of your charts.
 
       .. code-block:: python
 
-        from highcharts_stock.highcharts import Chart, BarSeries
+        from highcharts_stock.highcharts import Chart
+        from highcharts_stock.options.series.hlc import HLCSeries
 
         type_1_chart = Chart.from_js_literal(
-            '../../project_resources/highcharts_config/bar-template-01.js'
+            '../../project_resources/highcharts_config/hlc-template-01.js'
         )
         type_2_chart = Chart.from_js_literal(
-            '../../project_resources/highcharts_config/bar-template-02.js'
+            '../../project_resources/highcharts_config/hlc-template-02.js'
         )
 
     And that's it! Now you have two chart instances which you can further modify. For
@@ -481,8 +524,8 @@ of your charts.
         type_1_chart.container = 'chart1_div'
         type_2_chart.container = 'chart2_div'
 
-        type_1_chart.add_series(BarSeries.from_csv('../../project_resources/data_files/data-file-01.csv'))
-        type_2_chart.add_series(BarSeries.from_csv('../../project_resources/data_files/data-file-02.csv'))
+        type_1_chart.add_series(HLCSeries.from_csv('../../project_resources/data_files/data-file-01.csv'))
+        type_2_chart.add_series(HLCSeries.from_csv('../../project_resources/data_files/data-file-02.csv'))
 
     And then you can create the relevant JavaScript code to render the chart using:
 
@@ -532,14 +575,14 @@ of your charts.
 
       .. code-block:: python
 
-        type_1_chart = Chart.from_js_literal('../../project_resources/highcharts_config/bar-template-01.js')
+        type_1_chart = Chart.from_js_literal('../../project_resources/highcharts_config/hlc-template-01.js')
         other_chart = type_1_chart.copy(other_chart, overwrite = True)
 
       .. tip::
 
         The :meth:`Chart.copy() <highcharts_stock.chart.Chart.copy>` method supports a
         special keyword argument, ``preverse_data`` which if set to ``True`` will copy
-        properties (unless ``overwrite = True``) but will *not* overwrite any data. This
+        properties (unless ``overwrite = False``) but will *not* overwrite any data. This
         can be very useful to replicating the configuration of your chart across multiple
         charts that have different series and data.
 
@@ -547,7 +590,7 @@ of your charts.
 
             other_chart = Chart()
             other_chart.add_series(
-              BarSeries.from_csv('../../project_resources/data_files/data-file-02.csv')
+              HLCSeries.from_csv('../../project_resources/data_files/data-file-02.csv')
             )
 
             other_chart = type_1_chart.copy(other_chart,
@@ -559,30 +602,33 @@ of your charts.
 Working with Data
 **************************************
 
-Obviously, if you are going to use **Highcharts for Python** and `Highcharts JS <https://www.highcharts.com>`__ you will
+Obviously, if you are going to use **Highcharts Stock for Python** and
+`Highcharts Stock <https://www.highcharts.com/product/stock/>`__ you will
 need to have data to visualize. Python is rapidly becoming the *lingua franca* in the
-world of data manipulation, transformation, and analysis and **Highcharts for Python**
-is specifically designed to play well within that ecosystem to make it easy to visualize
-data from CSV files, from `pandas`_ dataframes, or `PySpark`_ dataframes.
+world of data manipulation, transformation, and analysis and
+**Highcharts Stock for Python** is specifically designed to play well within that
+ecosystem to make it easy to visualize data from CSV files, from `pandas`_ dataframes, or
+`PySpark`_ dataframes.
 
 How Data is Represented
 ==================================
 
-`Highcharts JS <https://www.highcharts.com>`__ supports two different ways of representing data: as an individual
-:term:`series` comprised of individual data points, and as a set of instructions to read
-data dynamically from a CSV file or an HTML table.
+`Highcharts JS <https://www.highcharts.com>`__ supports two different ways of representing
+data: as an individual :term:`series` comprised of individual data points, and as a set of
+instructions to read data dynamically from a CSV file or an HTML table.
 
   .. seealso::
 
     * :class:`DataBase <highcharts_stock.options.series.data.base.DataBase>` class
     * :class:`options.Data <highcharts_stock.options.data.Data>` class
 
-`Highcharts JS <https://www.highcharts.com>`__ organizes data into :term:`series`. You can think of a series as a single
-line on a graph that shows a set of values. The set of values that make up the series are
-:term:`data points <data point>`, which are defined by a set of properties that indicate the data
-point's position on one or more axes. As a result, `Highcharts JS <https://www.highcharts.com>`__ and
-**Highcharts for Python** both represent the data points in series as a list of data point
-objects in the ``data`` property within the series:
+`Highcharts JS <https://www.highcharts.com>`__ organizes data into :term:`series`. You can
+think of a series as a single line on a graph that shows a set of values. The set of
+values that make up the series are :term:`data points <data point>`, which are defined by
+a set of properties that indicate the data point's position on one or more axes. As a
+result, `Highcharts JS <https://www.highcharts.com>`__ and **Highcharts for Python** both
+represent the data points in series as a list of data point objects in the ``data``
+property within the series:
 
 .. list-table::
   :widths: 50 50
@@ -644,10 +690,25 @@ objects in the ``data`` property within the series:
         ])
 
 As you can see, **Highcharts for Python** represents its data the same way that
-`Highcharts JS <https://www.highcharts.com>`__ does. That should be expected. However, constructing tens, hundreds, or
-possibly thousands of data points individually in your code would be a nightmare. For that
-reason, **Highcharts for Python** provides a number of convenience methods to make it
-easier to populate your series.
+`Highcharts JS <https://www.highcharts.com>`__ does. That should be expected. However,
+constructing tens, hundreds, or possibly thousands of data points individually in your
+code would be a nightmare. For that reason, the **Highcharts for Python** toolkit provides
+a number of convenience methods to make it easier to populate your series.
+
+.. warning::
+
+  **PLEASE TAKE NOTE!**
+
+  **Highcharts Stock for Python** and
+  `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ support over 40
+  different :term:`technical indicators <technical indicator>`, which are visualizations
+  that are derived from *other* :term:`series` on your chart. These technical indicators
+  are a special kind of series, however they do not have a ``.data`` property and thus
+  cannot be given their own data points. Their data points are calculated automatically by
+  `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ from the
+  related :term:`series` indicated in their
+  :meth:`.linked_to <highcharts_stock.options.series.base.IndicatorSeriesBase.linked_to>`
+  properties.
 
 .. _populating_series_data:
 
@@ -761,6 +822,14 @@ However, they also have a special data point-specific deserialization method:
 
 Loading to an Existing Series
 -------------------------------
+
+  .. warning::
+
+    :term:`Technical indicators <technical indicator>` provided by
+    **Highcharts Stock for Python** do not support the ``.load_from_*`` methods because
+    their data gets populated dynamically based on the series indicated in their
+    :meth:`.linked_to <highcharts_stock.options.series.base.IndicatorSeriesBase.linked_to>`
+    property.
 
   .. method:: .load_from_csv(self, as_string_or_file, property_column_map, has_header_row = True, delimiter = ',', null_text = 'None', wrapper_character = "'", line_terminator = '\r\n', wrap_all_strings = False, double_wrapper_character_when_nested = False, escape_character = '\\')
 
@@ -935,6 +1004,16 @@ Loading to an Existing Series
 
 Creating a Brand New Series
 ------------------------------
+
+  .. warning::
+
+    :term:`Technical indicators <technical indicator>` provided by
+    **Highcharts Stock for Python** do not support the ``.from_csv()``,
+    ``.from_pandas()``, and ``.from_pyspark()`` methods because their data gets populated
+    dynamically based on the series indicated in their
+    :meth:`.linked_to <highcharts_stock.options.series.base.IndicatorSeriesBase.linked_to>`
+    property.
+
 
   .. method:: .from_csv(cls, as_string_or_file, property_column_map, series_kwargs = None, has_header_row = True, delimiter = ',', null_text = 'None', wrapper_character = "'", line_terminator = '\r\n', wrap_all_strings = False, double_wrapper_character_when_nested = False, escape_character = '\\')
     :classmethod:
@@ -1163,13 +1242,27 @@ Now that you have constructed your :term:`series` instances, you can add them to
 :term:`charts` very easily. First, **Highcharts for Python** represents visualizations as
 instances of the :class:`Chart <highcharts_stock.chart.Chart>` class. This class contains
 an :meth:`options <highcharts_stock.chart.Chart.options>` property, which itself contains
-an instance of :class:`HighchartsOptions <highcharts_stock.options.HighchartsOptions>`.
+an instance of
+:class:`HighchartsStockOptions <highcharts_stock.options.HighchartsStockOptions>`.
+
+  .. note::
+
+    The :class:`HighchartsStockOptions <highcharts_stock.options.HighchartsStockOptions>`
+    is a sub-class of the **Highcharts for Python**
+    :class:`HighchartsOptions <highcharts_stock.options.HighchartsOptions>` class, and is
+    fully backwards-compatible with it. This means that you can use them interchangably
+    when using **Highcharts Stock for Python**, as the
+    :class:`HighchartsStockOptions <highcharts_stock.options.HighchartsStockOptions>`
+    class merely extends its parent with a number of methods and properties that are
+    specifically supported by
+    `Highcharts Stock <https://www.highcharts.com/products/stock>`__.
 
   .. note::
 
     This structure - where the chart object contains an options object - is a little
-    nested for my tastes, but it is the structure which `Highcharts JS <https://www.highcharts.com>`__ has adopted and
-    so for the sake of consistency **Highcharts for Python** uses it as well.
+    nested for my tastes, but it is the structure which
+    `Highcharts JS <https://www.highcharts.com>`__ has adopted and
+    so for the sake of consistency the **Highcharts for Python** toolkit uses it as well.
 
 To be visualized on your chart, you will need to add your series instances to the
 :meth:`Chart.options.series <highcharts_stock.options.HighchartsOptions.series>`
@@ -1195,7 +1288,8 @@ property. You can do this in several ways:
 
       ``.add_series()`` is supported by both the
       :class:`Chart <highcharts_stock.chart.Chart>` and
-      :class:`HighchartsOptions <highcharts_stock.options.HighchartsOptions>` classes
+      :class:`HighchartsStockOptions <highcharts_stock.options.HighchartsStockOptions>`
+      classes
 
     .. code-block:: python
 
@@ -1208,7 +1302,7 @@ property. You can do this in several ways:
     .. method:: .add_series(self, *series)
 
       Adds ``series`` to the
-      :meth:`Chart.options.series <highcharts_stock.options.HighchartsOptions.series>`
+      :meth:`Chart.options.series <highcharts_stock.options.HighchartsStockOptions.series>`
       property.
 
       :param series: One or more :term:`series` instances (descended from
@@ -1224,7 +1318,8 @@ property. You can do this in several ways:
 
       ``.from_series()`` is supported by both the
       :class:`Chart <highcharts_stock.chart.Chart>` and
-      :class:`HighchartsOptions <highcharts_stock.options.HighchartsOptions>` classes
+      :class:`HighchartsStockOptions <highcharts_stock.options.HighchartsStockOptions>`
+      classes
 
     .. code-block:: python
 
@@ -1251,7 +1346,7 @@ property. You can do this in several ways:
         .. warning::
 
           If ``kwargs`` sets the
-          :meth:`options.series <highcharts_stock.options.HighchartsOptions.series>`
+          :meth:`options.series <highcharts_stock.options.HighchartsStockOptions.series>`
           property, that setting will be *overridden* by the contents of ``series``.
 
       :type kwargs: :class:`dict <python:dict>`
@@ -1278,50 +1373,91 @@ your visualizations:
 Rendering Highcharts Visualizations in Web Content
 ========================================================
 
-`Highcharts JS <https://www.highcharts.com>`__ is a JavaScript library specifically designed to enable rendering
-high-end data visualizations in a web context. The library is designed and optimized to
-operate within a web browser. **Highcharts for Python** therefore fully supports this
-capability, and we've enabled it using the *batteries included* principle.
+`Highcharts JS <https://www.highcharts.com>`__ is a JavaScript library specifically
+designed to enable rendering high-end data visualizations in a web context. The library is
+designed and optimized to operate within a web browser. The **Highcharts for Python**
+toolkit therefore fully supports this capability, and we've enabled it using the
+*batteries included* principle.
 
-To render a **Highcharts for Python** visualization in a web context, all you need is
-for the browser to execute the output of the chart's
-:meth:`.to_js_literal() <highcharts_stock.chart.Chart.to_js_literal>` method.
-
-That method will return a snippet of JavaScript code which when included in a web page
-will display the chart in full.
+To render a **Highcharts Stock for Python** visualization, all you need is for the browser
+to execute the output of the chart's
+:meth:`.to_js_literal() <highcharts_stock.chart.Chart.to_js_literal>` method, which will
+return a snippet of JavaScript code which when included in a web page will display the
+chart in full.
 
 .. warning::
 
-  The current version of **Highcharts for Python** assumes that your web content already
-  has all the ``<script/>`` tags which include the `Highcharts JS <https://www.highcharts.com>`__ modules your chart
-  relies on.
+  The current version of **Highcharts Stock for Python** includes all the ``<script/>``
+  tags which include the `Highcharts Stock <https://www.highcharts.com/products/stock>`__
+  modules. This is overkill, since most likely your visualization will not need *all* of
+  these scripts to be included.
 
-  This is likely to change in a future version of **Highcharts for Python**, where the
-  library will support the production of ``<script/>`` tags (see roadmap :issue:`2`).
+  This is likely to change in a future version of **Highcharts for Python** toolkit, where
+  the library will support the production of ``<script/>`` tags dynamically based on the
+  features your chart is using (see roadmap :issue:`2`).
 
 For example:
 
-  .. code-block:: python
+  .. tabs::
 
-    my_chart = Chart(container = 'target_div',
-                     options = {
-                         'series': [
-                             LineSeries.from_array([0, 5, 3, 5])
-                         ]
-                     },
-                     variable_name = 'myChart')
+    .. tab:: as a Highcharts Stock Chart
 
-    as_js_literal = my_chart.to_js_literal()
+      .. code-block:: python
 
-    # This will produce a string equivalent to:
-    #
-    # document.addEventListener('DOMContentLoaded', function() {
-    #   const myChart = Highcharts.chart('target_div', {
-    #      series: {
-    #          data: [0, 5, 3, 5]
-    #      }
-    #   });
-    # });
+        my_chart = Chart(container = 'target_div',
+                         options = {
+                             'series': [
+                                 HLCSeries.from_array([
+                                     [2, 0, 4],
+                                     [4, 2, 8],
+                                     [3, 9, 3]
+                                 ])
+                             ]
+                         },
+                         variable_name = 'myChart',
+                         is_stock_chart = True)
+
+        as_js_literal = my_chart.to_js_literal()
+
+        # This will produce a string equivalent to:
+        #
+        # document.addEventListener('DOMContentLoaded', function() {
+        #   const myChart = Highcharts.stockChart('target_div', {
+        #      series: {
+        #          type: 'hlc',
+        #          data: [
+        #            [2, 0, 4],
+        #            [4, 2, 8],
+        #            [3, 9, 3]
+        #          ]
+        #      }
+        #   });
+        # });
+
+    .. tab:: as a Highcharts JS Chart
+
+      .. code-block:: python
+
+        my_chart = Chart(container = 'target_div',
+                         options = {
+                             'series': [
+                                 LineSeries.from_array([0, 5, 3, 5])
+                             ]
+                         },
+                         variable_name = 'myChart')
+
+        as_js_literal = my_chart.to_js_literal()
+
+        # This will produce a string equivalent to:
+        #
+        # document.addEventListener('DOMContentLoaded', function() {
+        #   const myChart = Highcharts.chart('target_div', {
+        #      series: {
+        #          type: 'line',
+        #          data: [0, 5, 3, 5]
+        #      }
+        #   });
+        # });
 
 Now you can use whatever front-end framework you are using to insert that string into your
 application's HTML output (in an appropriate ``<script/>`` tag, of course).
@@ -1329,7 +1465,7 @@ application's HTML output (in an appropriate ``<script/>`` tag, of course).
 .. tip::
 
   The same principle applies to the use of
-  :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`.
+  :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`.
 
   It is recommended to place the JS literal form of your shared options *before* any of
   the charts that you will be visualizing.
@@ -1343,7 +1479,7 @@ application's HTML output (in an appropriate ``<script/>`` tag, of course).
 Rendering Highcharts for Python in Jupyter Labs or Jupyter Notebooks
 ======================================================================
 
-You can also render **Highcharts for Python** visualizations inside your
+You can also render **Highcharts Stock for Python** visualizations inside your
 `Jupyter <https://jupyter.org/>`_ notebook. This is as simple as executing a single
 :meth:`.display() <highcharts_stock.chart.Chart.display>` call on your
 :class:`Chart <highcharts_stock.chart.Chart>` instance:
@@ -1356,12 +1492,13 @@ You can also render **Highcharts for Python** visualizations inside your
                              LineSeries.from_array([0, 5, 3, 5])
                          ]
                      },
-                     variable_name = 'myChart')
+                     variable_name = 'myChart',
+                     is_stock_chart = True)
 
     my_chart.display()
 
     # You can also supply shared options to display to make sure that they are applied:
-    my_shared_options = SharedOptions()
+    my_shared_options = SharedStockOptions()
     my_chart.display(global_options = my_shared_options)
 
 You can call the ``.display()`` method from anywhere within any notebook cell, and it
@@ -1374,6 +1511,47 @@ will render the resulting chart in your notebook's output. That's it!
     :meth:`.display() <highcharts_stock.chart.Chart.display>` will raise a
     :exc:`HighchartsDependencyError`.
 
+Stock Chart vs Regular Chart
+==================================
+
+When using **Highcharts Stock for Python** you have the choice to render your charts
+using the `Highcharts Stock <https://www.highcharts.com/products/stock>`__ chart
+constructor or the standard
+`Highcharts JS <https://www.highcharts.com/products/highcharts/>`__ chart constructor.
+
+The difference between these two constructors relates to the features available in the
+chart. The Highcharts Stock chart will be visualized including the :term:`navigator`
+component, and can support time series :term:`scrollbars <scrollbar>`, even if the
+specific chart you are visualizing does not need or use them. A regular Highcharts JS
+chart cannot be displayed with either of these elements.
+
+It is entirely your decision, but you should know that
+`Highcharts JS <https://www.highcharts.com/products/highcharts/>`__ does not support any
+of the :term:`technical indicators <technical indicator>` supported by
+`Highcharts Stock <https://www.highcharts.com/products/stock>`__, and also does not
+support :term:`candlestick`, :term:`HLC`, or :term:`OHLC` series types.
+
+However, Highcharts Stock *can* visualize all of the series types offered by
+`Highcharts JS <https://www.highcharts.com/products/highcharts/>`__.
+
+When working with your :class:`Chart <highcharts_stock.chart.Chart>` object, you can set
+the :meth:`.is_stock_chart <highcharts_stock.chart.Chart.is_stock_chart>` property to
+``True`` to force the chart to be rendered using the (JavaScript)
+``Highcharts.stockChart()`` constructor.
+
+If you wish to force the use of the (JavaScript) ``Highcharts.chart()``
+constructor, you can explicitly set
+:meth:`.is_stock_chart <highcharts_stock.chart.Chart.is_stock_chart>` to ``False`` after
+populating the chart's :meth:`.options <highcharts_stock.chart.Chart.options>` property.
+
+If you do not set this property explicitly, **Highcharts Stock for Python** will make
+a determination based on the contents of the
+:meth:`.options <highcharts_stock.chart.Chart.options>` property. If that that property
+is set to a
+:class:`HighchartsStockOptions <highcharts_stock.options.HighchartsStockOptions>`
+instance, the :meth:`.is_stock_chart <highcharts_stock.chart.Chart.is_stock_chart>`
+property will be set to ``True``, unless explicitly overridden in your code.
+
 ---------------------------
 
 ********************************************
@@ -1382,10 +1560,10 @@ Downloading Your Visualizations
 
 .. sidebar:: Highcharts Export Server
 
-  Highsoft - the developers of `Highcharts JS <https://www.highcharts.com>`__ - are kind enough to provide a
-  rate-limited publicly available :term:`Export Server` that can be used by
-  `Highcharts JS <https://www.highcharts.com>`__ license-holders. By default, **Highcharts for Python** is configured to
-  use this server.
+  Highsoft - the developers of `Highcharts JS <https://www.highcharts.com>`__ - are kind
+  enough to provide a rate-limited publicly available :term:`Export Server` that can be
+  used by `Highcharts JS <https://www.highcharts.com>`__ license-holders. By default,
+  **Highcharts Stock for Python** is configured to use this server.
 
   However, there are many use cases where you may be deploying your own
   :term:`Export Server` and wish to use that instead. You can do this by
@@ -1398,7 +1576,7 @@ Sometimes you are not looking to produce an interactive web-based visualization 
 data, but instead are looking to produce a static image of your visualization that can
 be downloaded, emailed, or embedded in some other documents.
 
-With **Highcharts for Python**, that's as simple as executing the
+With **Highcharts Stock for Python**, that's as simple as executing the
 :meth:`Chart.download_chart() <highcharts_stock.chart.Chart.download_chart>` method.
 
 When you have defined a :class:`Chart <highcharts_stock.chart.Chart>` instance, you can
@@ -1416,7 +1594,8 @@ environment. The actual file itself is produced using a
                              )
                          ]
                      },
-                     variable_name = 'myChart')
+                     variable_name = 'myChart',
+                     is_stock_chart = True)
 
     my_png_image = my_chart.download_chart(
         format = 'png'
@@ -1497,7 +1676,9 @@ environment. The actual file itself is produced using a
       ``Highcharts.setOptions()`` method, and which will be applied to the exported
       chart. Defaults to :obj:`None <python:None>`.
 
-    :type global_options: :class:`HighchartsOptions` or :obj:`None <python:None>`
+    :type global_options: :class:`HighchartsStockOptions <highcharts_stock.options.HighchartsStockOptions>`,
+      :class:`HighchartsOptions <highcharts_stock.options.HighchartsOptions>` or
+      :obj:`None <python:None>`
 
     .. note::
 

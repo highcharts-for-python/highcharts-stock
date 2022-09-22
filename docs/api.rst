@@ -1,6 +1,6 @@
-########################################
-Highcharts for Python API Reference
-########################################
+###########################################
+Highcharts Stock for Python API Reference
+###########################################
 
 .. contents::
   :local:
@@ -21,14 +21,16 @@ Code Style: Python vs JavaScript Naming Conventions
 Standard Methods
 =======================================
 
-Every single object supported by the Highcharts JS API corresponds to a Python class in
-**Highcharts for Python**. These classes generally inherit from the
+Every single object supported by the
+`Highcharts Stock API <https://api.highcharts.com/highstock/>`__ corresponds to a Python
+class in **Highcharts Stock for Python**. These classes generally inherit from the
 :class:`HighchartsMeta <highcharts_stock.metaclasses.HighchartsMeta>` metaclass, which
 provides each class with a number of standard methods.
 
-These methods are the "workhorses" of **Highcharts for Python** and you will be relying
-heavily on them when using the library. Thankfully, their signatures and behavior is
-generally consistent - even if what happens "under the hood" is class-specific at times.
+These methods are the "workhorses" of **Highcharts Stock for Python** and you will be
+relying heavily on them when using the library. Thankfully, their signatures and behavior
+is generally consistent - even if what happens "under the hood" is class-specific at
+times.
 
 Deserialization Methods
 ---------------------------
@@ -63,7 +65,7 @@ Class Structures and Inheritance
 
 .. warning::
 
-  Certain sections of the **Highcharts for Python** library - in particular the
+  Certain sections of the **Highcharts Stock for Python** library - in particular the
   ``options.series`` classes - rely heavily on multiple inheritance. This is a known
   anti-pattern in Python development as it runs the risk of encountering the
   :term:`diamond of death` inheritance problem. This complicates the process of inheriting
@@ -74,7 +76,7 @@ Class Structures and Inheritance
   and maximize consistency. For that reason, I implemented it properly *despite* the
   anti-pattern, using some advanced Python concepts to navigate the Python MRO
   (Method Resolution Order) system cleanly. However, an awareness of the pattern used
-  may prove helpful if your code inherits from the Highcharts for Python classes.
+  may prove helpful if your code inherits from the Highcharts Stock for Python classes.
 
   .. seealso::
 
@@ -638,9 +640,9 @@ Library Internals
   Internal Reference <api/internals>
 
 While most users will be interacting with the :ref:`Core Components <core_components>` of
-**Highcharts for Python**, you may need (or choose to) work with various internals of the
-library. If you're :doc:`contributing` to the library, then you will definitely need to
-familiarize yourself with these internals.
+**Highcharts Stock for Python**, you may need (or choose to) work with various internals
+of the library. If you're :doc:`contributing` to the library, then you will definitely
+need to familiarize yourself with these internals.
 
 .. list-table::
   :widths: 60 40

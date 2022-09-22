@@ -8,3 +8,4 @@ from highcharts_stock import global_options, options, utility_classes
 
 SharedOptions = global_options.shared_options.SharedOptions
 SharedStockOptions = global_options.shared_options.SharedStockOptions
+ChartOptions = options.chart.ChartOptions

@@ -77,6 +77,7 @@ class Chart(ChartBase):
             self._options = None
         elif self.is_stock_chart:
             self._options = validate_types(value, HighchartsStockOptions)
+            self.is_stock_chart = True
         else:
             if checkers.is_type(value, 'HighchartsStockOptions'):
                 self._options = value

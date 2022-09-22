@@ -1,6 +1,6 @@
 .. note::
 
-  **Highcharts for Python** has several types of dependencies:
+  **Highcharts Stock for Python** has several types of dependencies:
 
     * "hard" dependencies, without which you will not be able to use the library at all,
     * "soft" dependencies, which will not produce errors but which may limit the value you
@@ -16,17 +16,19 @@
     .. warning::
 
       If these hard dependencies are not available in the environment where
-      **Highcharts for Python** is running, then the library will simply not work. Besides
-      Highcharts JS itself, all of the other hard dependencies are automatically installed
-      when installing **Highcharts for Python**.
+      **Highcharts Stock for Python** is running, then the library will simply not work.
+      Besides `Highcharts Stock <https://www.highcharts.com/products/stock>`__ itself, all
+      of the other hard dependencies are automatically installed when installing
+      **Highcharts Stock for Python**.
 
-    * `Highcharts JS <https://www.highcharts.com>`__ v.10.2 or higher
+    * `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ v.10.2 or higher
 
       .. note::
 
-        Not technically a Python dependency, but obviously **Highcharts for Python** will
-        not work properly if your rendering layer does not leverage Highcharts JS.
+        Not technically a Python dependency, but obviously **Highcharts Stock for Python**
+        will not work properly if your rendering layer does not leverage Highcharts Stock.
 
+    * `highcharts-python <https://highcharts-python.readthedocs.io>`_ v.1.0.0 or higher
     * `esprima-python <https://github.com/Kronuz/esprima-python>`_ v.4.0 or higher
     * `requests <https://requests.readthedocs.io/en/latest/>`_ v.2.28 or higher
     * `validator-collection <https://validator-collection.readthedocs.io/en/latest/>`_
@@ -37,7 +39,7 @@
     .. warning::
 
       If these soft dependencies are not available in the environment where
-      **Highcharts for Python** is running, then the library will throw a
+      **Highcharts Stock for Python** is running, then the library will throw a
       :exc:`HighchartsDependencyError <errors.HighchartsDependencyError>` exception when
       you try to use functionality that relies on them.
 
@@ -66,7 +68,7 @@
 
       .. code-block:: bash
 
-        $ pip install highcharts-python[develop]
+        $ pip install highcharts-stock[develop]
 
     * `pytest <https://docs.pytest.org/en/7.1.x/>`_ v.7.1 or higher
     * `pytest-cov <https://pytest-cov.readthedocs.io/en/latest/>`_ v.3.0 or higher
@@ -81,7 +83,7 @@
 
       .. code-block:: bash
 
-        $ pip install highcharts-python[docs]
+        $ pip install highcharts-stock[docs]
 
     * `Sphinx <https://www.sphinx-doc.org/en/master/>`_ v.5.1 or higher
     * `Sphinx RTD Theme <https://sphinx-themes.org/sample-sites/sphinx-rtd-theme/>`_ v.1.0

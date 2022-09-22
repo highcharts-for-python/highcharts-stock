@@ -4,8 +4,8 @@ Contributing to Highcharts for Python
 
 .. note::
 
-  As a general rule of thumb, **Highcharts for Python** applies :pep:`PEP 8 <8>` styling,
-  with some important differences.
+  As a general rule of thumb, the **Highcharts for Python** toolkit applies
+  :pep:`PEP 8 <8>` styling, with some important differences.
 
 .. include:: _unit_tests_code_coverage.rst
 
@@ -34,8 +34,8 @@ Contributing to Highcharts for Python
 Design Philosophy
 *************************
 
-**Highcharts for Python** is meant to be a "beautiful" and "usable" library. That means
-that it should offer an idiomatic API that:
+**Highcharts Stock for Python** is meant to be a "beautiful" and "usable" library. That
+means that it should offer an idiomatic API that:
 
 * works out of the box as intended,
 * minimizes "bootstrapping" to produce meaningful output, and
@@ -438,7 +438,7 @@ available at:
 Contributors
 ================
 
-Thanks to everyone who helps make **Highcharts for Python** useful:
+Thanks to everyone who helps make **Highcharts Stock for Python** useful:
 
 .. include:: _contributors.rst
 

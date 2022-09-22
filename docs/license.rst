@@ -1,7 +1,7 @@
 #########################################
-License for Highcharts for Python
+License for Highcharts Stock for Python
 #########################################
 
 .. todo::
 
-  Add details on the licensing terms for **Highcharts for Python**.
+  Add details on the licensing terms for **Highcharts Stock for Python**.
