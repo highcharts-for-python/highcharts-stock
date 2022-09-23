@@ -121,7 +121,7 @@ class FlagsOptions(SeriesBase, NonIndicatorOptions):
 
     @property
     def fill_color(self) -> Optional[str | Gradient | Pattern]:
-        """Fill color or gradient for the flag. Defaults to ``'#ffffff'.
+        """Fill color or gradient for the flag. Defaults to ``'#ffffff'``.
 
         :rtype: :obj:`None <python:None>`, :class:`Gradient`, :class:`Pattern`, or
           :class:`EnforcedNullType`

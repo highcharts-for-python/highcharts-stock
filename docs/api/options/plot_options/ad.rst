@@ -44,5 +44,3 @@ class: :class:`ADParameters <highcharts_stock.options.plot_options.ad.ADParamete
       :parts: -1
 
   |
-
--------------------

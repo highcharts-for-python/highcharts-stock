@@ -39,8 +39,6 @@ Sub-components
 
   * - Module
     - Classes / Functions
-  * - :mod:`.options.axes <highcharts_stock.options.axes>`
-    -
   * - :mod:`.options.axes.accessibility <highcharts_stock.options.axes.accessibility>`
     - :class:`AxisAccessibility <highcharts_stock.options.axes.accessibility.AxisAccessibility>`
   * - :mod:`.options.axes.breaks <highcharts_stock.options.axes.breaks>`

@@ -162,7 +162,7 @@ class ResizeOptions(HighchartsMeta):
 
     @property
     def line_color(self) -> Optional[str]:
-        """Color of the control line. Defaults to ``'#cccccc'.
+        """Color of the control line. Defaults to ``'#cccccc'``.
 
         :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
         """

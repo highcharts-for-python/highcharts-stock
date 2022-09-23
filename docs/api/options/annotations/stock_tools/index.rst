@@ -56,7 +56,7 @@ class: :class:`ElliottWaveAnnotation <highcharts_stock.options.annotations.stock
 class: :class:`FibonacciAnnotation <highcharts_stock.options.annotations.stock_tools.FibonacciAnnotation>`
 ************************************************************************************************************************************
 
-.. autoclass:: CrookedLineAnnotation
+.. autoclass:: FibonacciAnnotation
   :members:
   :inherited-members:
 
