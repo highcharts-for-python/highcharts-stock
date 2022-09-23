@@ -75,7 +75,7 @@ class PPOOptions(ComparableIndicatorOptions):
       this can be adjusted using
       :meth:`.params.period <highcharts_stock.options.plot_options.oscillators.PPOOptions.params`.
 
-    .. figure:: ../../../_static/cmo-example.png
+    .. figure:: ../../../../_static/cmo-example.png
       :alt: Chande Momentum Oscillator Example Chart
       :align: center
 

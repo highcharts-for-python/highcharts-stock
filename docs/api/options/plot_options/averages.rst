@@ -22,7 +22,7 @@ class: :class:`DEMAOptions <highcharts_stock.options.plot_options.averages.DEMAO
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DEMAOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

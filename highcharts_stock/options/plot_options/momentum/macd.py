@@ -152,12 +152,12 @@ class MACDOptions(ComparableIndicatorOptions):
     """Options to configure a Moving Average Convergence/Divergence, a momentum
     :term:`indicator <techincal indicator>`.
 
-    .. figure:: ../../../_static/macd-example.png
+    .. figure:: ../../../../_static/macd-example.png
       :alt: Moving Average Convergence/Divergence (MACD) Example Chart
       :align: center
 
     """
-    
+
     def __init__(self, **kwargs):
         self._group_padding = None
         self._macd_line = None

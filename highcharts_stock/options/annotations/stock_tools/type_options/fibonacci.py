@@ -39,14 +39,19 @@ class FibonacciTypeOptions(HighchartsMeta):
     @property
     def background_colors(self) -> Optional[str]:
         """An array of colors to apply to the backgorund of fibonacci annotations.
-        Defaults to: ``[
-            'rgba(130, 170, 255, 0.4)',
-            'rgba(139, 191, 216, 0.4)',
-            'rgba(150, 216, 192, 0.4)',
-            'rgba(156, 229, 161, 0.4)',
-            'rgba(162, 241, 130, 0.4)',
-            'rgba(169, 255, 101, 0.4)'
-        ]``
+
+        Defaults to:
+
+        .. code-block:: python
+
+          [
+              'rgba(130, 170, 255, 0.4)',
+              'rgba(139, 191, 216, 0.4)',
+              'rgba(150, 216, 192, 0.4)',
+              'rgba(156, 229, 161, 0.4)',
+              'rgba(162, 241, 130, 0.4)',
+              'rgba(169, 255, 101, 0.4)'
+          ]
 
         :rtype: :class:`list <python:list>` of :class:`str <python:str>`, or
           :obj:`None <python:None>`

@@ -13,6 +13,7 @@
   accessibility/index
   export_data
   navigation
+  stock_tools
 
 --------------
 

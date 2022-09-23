@@ -156,7 +156,7 @@ class StochasticStyleOptions(HighchartsMeta):
 class StochasticOptions(ComparableIndicatorOptions):
     """Configuration for a Stochastic :term:`Oscillator`.
 
-    .. figure:: ../../../_static/stochastic-example.png
+    .. figure:: ../../../../_static/stochastic-example.png
       :alt: Stochsatic Oscillator Example Chart
       :align: center
 
@@ -297,7 +297,7 @@ class StochasticOptions(ComparableIndicatorOptions):
 class SlowStochasticOptions(StochasticOptions):
     """Configuration for a Slow Stochastic :term:`Oscillator`.
 
-    .. figure:: ../../../_static/slow-stochastic-example.png
+    .. figure:: ../../../../_static/slow-stochastic-example.png
       :alt: Slow Stochsatic Oscillator Example Chart
       :align: center
 

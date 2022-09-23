@@ -38,7 +38,7 @@ class: :class:`AroonOscillatorOptions <highcharts_stock.options.plot_options.osc
 
 -------------------------
 
-.. module:: highcharts_stock.options.plot_options.oscillators
+
 
 ********************************************************************************************************************
 class: :class:`APOOptions <highcharts_stock.options.plot_options.oscillators.APOOptions>`
@@ -58,7 +58,7 @@ class: :class:`APOOptions <highcharts_stock.options.plot_options.oscillators.APO
 
 -------------------------
 
-.. module:: highcharts_stock.options.plot_options.oscillators
+
 
 ********************************************************************************************************************
 class: :class:`CCIOptions <highcharts_stock.options.plot_options.oscillators.CCIOptions>`
@@ -78,7 +78,7 @@ class: :class:`CCIOptions <highcharts_stock.options.plot_options.oscillators.CCI
 
 -------------------------
 
-.. module:: highcharts_stock.options.plot_options.oscillators
+
 
 ********************************************************************************************************************
 class: :class:`ChaikinOptions <highcharts_stock.options.plot_options.oscillators.ChaikinOptions>`
@@ -98,7 +98,7 @@ class: :class:`ChaikinOptions <highcharts_stock.options.plot_options.oscillators
 
 -------------------------
 
-.. module:: highcharts_stock.options.plot_options.oscillators
+
 
 ********************************************************************************************************************
 class: :class:`CMOOptions <highcharts_stock.options.plot_options.oscillators.CMOOptions>`
@@ -118,7 +118,7 @@ class: :class:`CMOOptions <highcharts_stock.options.plot_options.oscillators.CMO
 
 -------------------------
 
-.. module:: highcharts_stock.options.plot_options.oscillators
+
 
 ********************************************************************************************************************
 class: :class:`DPOOptions <highcharts_stock.options.plot_options.oscillators.DPOOptions>`
@@ -138,7 +138,7 @@ class: :class:`DPOOptions <highcharts_stock.options.plot_options.oscillators.DPO
 
 -------------------------
 
-.. module:: highcharts_stock.options.plot_options.oscillators
+
 
 ********************************************************************************************************************
 class: :class:`TRIXOptions <highcharts_stock.options.plot_options.oscillators.TRIXOptions>`
@@ -158,7 +158,7 @@ class: :class:`TRIXOptions <highcharts_stock.options.plot_options.oscillators.TR
 
 -------------------------
 
-.. module:: highcharts_stock.options.plot_options.oscillators
+
 
 ********************************************************************************************************************
 class: :class:`WilliamsROptions <highcharts_stock.options.plot_options.oscillators.WilliamsROptions>`
@@ -178,7 +178,7 @@ class: :class:`WilliamsROptions <highcharts_stock.options.plot_options.oscillato
 
 -------------------------
 
-.. module:: highcharts_stock.options.plot_options.oscillators
+
 
 ********************************************************************************************************************
 class: :class:`WilliamsRParameters <highcharts_stock.options.plot_options.oscillators.WilliamsRParameters>`
