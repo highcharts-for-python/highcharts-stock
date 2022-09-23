@@ -26,7 +26,7 @@ to visualize your data.
 
 .. seealso::
 
-  * :doc:`Using Highcharts Stock for Python <using>` > :ref:`Creating a Brand new Series <creating_a_brand_new_series>`
+  * :doc:`Using Highcharts Stock for Python <using>` > :ref:`Working with Data <working_with_data>`
   * :doc:`Using Highcharts Stock for Python <using>` > :ref:`Adding Series to Charts <adding_series_to_charts>`
   * :doc:`Using Highcharts Stock for Python <using>` > :ref:`Populating Series Data <populating_series_data>`
 
@@ -984,7 +984,7 @@ visualizations.
 
           :class:`highcharts_stock.options.series.pivot_points.PivotPointsSeries`
       * - **Price Channel**
-        - .. figure:: _static/pc-example.png
+        - .. figure:: _static/price-channel-example.png
             :alt: PC Example Chart
             :width: 100%
 
