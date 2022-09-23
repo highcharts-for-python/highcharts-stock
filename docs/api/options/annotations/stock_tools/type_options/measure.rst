@@ -1,5 +1,5 @@
 ########################################################################################################################
-:mod:`.measure <highcharts_stock.options.annotations.stock_tools.measure>`
+:mod:`.measure <highcharts_stock.options.annotations.stock_tools.type_options.measure>`
 ########################################################################################################################
 
 .. contents:: Module Contents
@@ -9,10 +9,10 @@
 
 --------------
 
-.. module:: highcharts_stock.options.annotations.stock_tools.measure
+.. module:: highcharts_stock.options.annotations.stock_tools.type_options.measure
 
 ************************************************************************************************************************************
-class: :class:`MeasureTypeOptions <highcharts_stock.options.annotations.stock_tools.measure.MeasureTypeOptions>`
+class: :class:`MeasureTypeOptions <highcharts_stock.options.annotations.stock_tools.type_options.measure.MeasureTypeOptions>`
 ************************************************************************************************************************************
 
 .. autoclass:: MeasureTypeOptions
@@ -30,7 +30,7 @@ class: :class:`MeasureTypeOptions <highcharts_stock.options.annotations.stock_to
 -----------------------
 
 ************************************************************************************************************************************
-class: :class:`MeasureLabelOptions <highcharts_stock.options.annotations.stock_tools.measure.MeasureLabelOptions>`
+class: :class:`MeasureLabelOptions <highcharts_stock.options.annotations.stock_tools.type_options.measure.MeasureLabelOptions>`
 ************************************************************************************************************************************
 
 .. autoclass:: MeasureLabelOptions
@@ -48,7 +48,7 @@ class: :class:`MeasureLabelOptions <highcharts_stock.options.annotations.stock_t
 -----------------------
 
 ************************************************************************************************************************************
-class: :class:`MeasureLabelStyle <highcharts_stock.options.annotations.stock_tools.measure.MeasureLabelStyle>`
+class: :class:`MeasureLabelStyle <highcharts_stock.options.annotations.stock_tools.type_options.measure.MeasureLabelStyle>`
 ************************************************************************************************************************************
 
 .. autoclass:: MeasureLabelStyle

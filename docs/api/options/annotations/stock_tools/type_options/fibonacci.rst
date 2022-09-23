@@ -1,5 +1,5 @@
 ########################################################################################################################
-:mod:`.fibonacci <highcharts_stock.options.annotations.stock_tools.fibonacci>`
+:mod:`.fibonacci <highcharts_stock.options.annotations.stock_tools.type_options.fibonacci>`
 ########################################################################################################################
 
 .. contents:: Module Contents
@@ -9,10 +9,10 @@
 
 --------------
 
-.. module:: highcharts_stock.options.annotations.stock_tools.fibonacci
+.. module:: highcharts_stock.options.annotations.stock_tools.type_options.fibonacci
 
 ************************************************************************************************************************************
-class: :class:`FibonacciTypeOptions <highcharts_stock.options.annotations.stock_tools.fibonacci.FibonacciTypeOptions>`
+class: :class:`FibonacciTypeOptions <highcharts_stock.options.annotations.stock_tools.type_options.fibonacci.FibonacciTypeOptions>`
 ************************************************************************************************************************************
 
 .. autoclass:: FibonacciTypeOptions
@@ -29,9 +29,9 @@ class: :class:`FibonacciTypeOptions <highcharts_stock.options.annotations.stock_
 
 -----------------------
 
-************************************************************************************************************************************
-class: :class:`FibonacciTimeZonesTypeOptions <highcharts_stock.options.annotations.stock_tools.fibonacci.FibonacciTimeZonesTypeOptions>`
-************************************************************************************************************************************
+*********************************************************************************************************************************************************
+class: :class:`FibonacciTimeZonesTypeOptions <highcharts_stock.options.annotations.stock_tools.type_options.fibonacci.FibonacciTimeZonesTypeOptions>`
+*********************************************************************************************************************************************************
 
 .. autoclass:: FibonacciTimeZonesTypeOptions
   :members:

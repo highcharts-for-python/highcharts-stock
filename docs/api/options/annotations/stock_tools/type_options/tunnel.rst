@@ -1,5 +1,5 @@
 ########################################################################################################################
-:mod:`.time_cycles <highcharts_stock.options.annotations.stock_tools.time_cycles>`
+:mod:`.tunnel <highcharts_stock.options.annotations.stock_tools.type_options.tunnel>`
 ########################################################################################################################
 
 .. contents:: Module Contents
@@ -9,19 +9,19 @@
 
 --------------
 
-.. module:: highcharts_stock.options.annotations.stock_tools.time_cycles
+.. module:: highcharts_stock.options.annotations.stock_tools.type_options.tunnel
 
 ************************************************************************************************************************************
-class: :class:`TimeCyclesTypeOptions <highcharts_stock.options.annotations.stock_tools.time_cycles.TimeCyclesTypeOptions>`
+class: :class:`TunnelTypeOptions <highcharts_stock.options.annotations.stock_tools.type_options.tunnel.TunnelTypeOptions>`
 ************************************************************************************************************************************
 
-.. autoclass:: TimeCyclesTypeOptions
+.. autoclass:: TunnelTypeOptions
   :members:
   :inherited-members:
 
   .. collapse:: Class Inheritance
 
-    .. inheritance-diagram:: TimeCyclesTypeOptions
+    .. inheritance-diagram:: TunnelTypeOptions
       :top-classes: highcharts_stock.metaclasses.HighchartsMeta
       :parts: -1
 

@@ -1,5 +1,5 @@
 ########################################################################################################################
-:mod:`.tunnel <highcharts_stock.options.annotations.stock_tools.tunnel>`
+:mod:`.pitchfork <highcharts_stock.options.annotations.stock_tools.type_options.pitchfork>`
 ########################################################################################################################
 
 .. contents:: Module Contents
@@ -9,19 +9,19 @@
 
 --------------
 
-.. module:: highcharts_stock.options.annotations.stock_tools.tunnel
+.. module:: highcharts_stock.options.annotations.stock_tools.type_options.pitchfork
 
 ************************************************************************************************************************************
-class: :class:`TunnelTypeOptions <highcharts_stock.options.annotations.stock_tools.tunnel.TunnelTypeOptions>`
+class: :class:`PitchforkTypeOptions <highcharts_stock.options.annotations.stock_tools.type_options.pitchfork.PitchforkTypeOptions>`
 ************************************************************************************************************************************
 
-.. autoclass:: TunnelTypeOptions
+.. autoclass:: PitchforkTypeOptions
   :members:
   :inherited-members:
 
   .. collapse:: Class Inheritance
 
-    .. inheritance-diagram:: TunnelTypeOptions
+    .. inheritance-diagram:: PitchforkTypeOptions
       :top-classes: highcharts_stock.metaclasses.HighchartsMeta
       :parts: -1
 
