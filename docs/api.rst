@@ -801,6 +801,21 @@ Core Components
     - :class:`WordcloudSeries <highcharts_stock.options.series.wordcloud.WordcloudSeries>`
   * - :mod:`.options.series.zigzag <highcharts_stock.options.series.zigzag>`
     - :class:`ZigZagSeries <highcharts_stock.options.series.zigzag.ZigZagSeries>`
+  * - :mod:`.options.stock_tools <highcharts_stock.options.stock_tools>`
+    - :class:`StockTools <highcharts_stock.options.stock_tools.StockTools>`
+      :class:`StockToolsGUI <highcharts_stock.options.stock_tools.StockToolsGUI>`
+  * - :mod:`.options.stock_tools.definitions <highcharts_stock.options.stock_tools.definitions>`
+    - :class:`StockToolsDefinitions <highcharts_stock.options.stock_tools.definitions.StockToolsDefinitions>`
+      :class:`AdvancedDefinitions <highcharts_stock.options.stock_tools.definitions.AdvancedDefinitions>`
+      :class:`CrookedLinesDefinitions <highcharts_stock.options.stock_tools.definitions.CrookedLinesDefinitions>`
+      :class:`FlagsDefinitions <highcharts_stock.options.stock_tools.definitions.FlagsDefinitions>`
+      :class:`LinesDefinitions <highcharts_stock.options.stock_tools.definitions.LinesDefinitions>`
+      :class:`MeasureDefinitions <highcharts_stock.options.stock_tools.definitions.MeasureDefinitions>`
+      :class:`SimpleShapesDefinitions <highcharts_stock.options.stock_tools.definitions.SimpleShapesDefinitions>`
+      :class:`TypeChangeDefinitions <highcharts_stock.options.stock_tools.definitions.TypeChangeDefinitions>`
+      :class:`VerticalLabelsDefinitions <highcharts_stock.options.stock_tools.definitions.VerticalLabelsDefinitions>`
+      :class:`ZoomChangeDefinitions <highcharts_stock.options.stock_tools.definitions.ZoomChangeDefinitions>`
+      :class:`Definition <highcharts_stock.options.stock_tools.definitions.Definition>`
   * - :mod:`.options.subtitle <highcharts_stock.options.subtitle>`
     - :class:`Subtitle <highcharts_stock.options.subtitle.Subtitle>`
   * - :mod:`.options.time <highcharts_stock.options.time>`
@@ -846,6 +861,7 @@ Core Components
       :class:`ClusterEvents <highcharts_stock.utility_classes.events.ClusterEvents>`
       :class:`AxisEvents <highcharts_stock.utility_classes.events.AxisEvents>`
       :class:`MouseEvents <highcharts_stock.utility_classes.events.MouseEvents>`
+      :class:`RangeSelectorEvents <highcharts_stock.utility_classes.events.RangeSelectorEvents>`
   * - :mod:`.utility_classes.gradients <highcharts_stock.utility_classes.gradients>`
     - :class:`Gradient <highcharts_stock.utility_classes.gradients.Gradient>`
       :class:`LinearGradient <highcharts_stock.utility_classes.gradients.LinearGradient>`
