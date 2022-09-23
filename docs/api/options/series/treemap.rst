@@ -22,7 +22,7 @@ class: :class:`TreemapSeries <highcharts_stock.options.series.treemap.TreemapSer
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TreemapSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`DataPointAccessibility <highcharts_stock.options.series.data.acce
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DataPointAccessibility
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`Pane <highcharts_stock.options.pane.Pane>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Pane
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`PaneBackground <highcharts_stock.options.pane.PaneBackground>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PaneBackground
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

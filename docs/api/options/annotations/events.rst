@@ -22,7 +22,7 @@ class: :class:`AnnotationEvent <highcharts_stock.options.annotations.events.Anno
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AnnotationEvent
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

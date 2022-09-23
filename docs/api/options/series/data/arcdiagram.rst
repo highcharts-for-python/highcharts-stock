@@ -22,7 +22,7 @@ class: :class:`ArcDiagramData <highcharts_stock.options.series.data.arcdiagram.A
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ArcDiagramData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

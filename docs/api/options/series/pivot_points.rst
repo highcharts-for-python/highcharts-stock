@@ -22,7 +22,7 @@ class: :class:`PivotPointsSeries <highcharts_stock.options.series.pivot_points.P
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PivotPointsSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

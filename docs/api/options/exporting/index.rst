@@ -28,7 +28,7 @@ class: :class:`Exporting <highcharts_stock.options.exporting.Exporting>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Exporting
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -46,7 +46,7 @@ class: :class:`ExportingAccessibilityOptions <highcharts_stock.options.exporting
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ExportingAccessibilityOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`ResetZoomButtonOptions <highcharts_stock.options.chart.reset_zoom
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ResetZoomButtonOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

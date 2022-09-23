@@ -27,7 +27,7 @@ class: :class:`Navigation <highcharts_stock.options.navigation.Navigation>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Navigation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

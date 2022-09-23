@@ -22,7 +22,7 @@ class: :class:`VectorSeries <highcharts_stock.options.series.vector.VectorSeries
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VectorSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -27,7 +27,7 @@ class: :class:`CrookedLineAnnotation <highcharts_stock.options.annotations.stock
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CrookedLineAnnotation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -45,7 +45,7 @@ class: :class:`ElliottWaveAnnotation <highcharts_stock.options.annotations.stock
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ElliottWaveAnnotation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -63,7 +63,7 @@ class: :class:`FibonacciAnnotation <highcharts_stock.options.annotations.stock_t
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: FibonacciAnnotation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -81,7 +81,7 @@ class: :class:`FibonacciTimeZonesAnnotation <highcharts_stock.options.annotation
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: FibonacciTimeZonesAnnotation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -99,7 +99,7 @@ class: :class:`InfinityLineAnnotation <highcharts_stock.options.annotations.stoc
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: InfinityLineAnnotation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -117,7 +117,7 @@ class: :class:`MeasureAnnotation <highcharts_stock.options.annotations.stock_too
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MeasureAnnotation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -135,7 +135,7 @@ class: :class:`PitchforkAnnotation <highcharts_stock.options.annotations.stock_t
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PitchforkAnnotation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -153,7 +153,7 @@ class: :class:`TimeCyclesAnnotation <highcharts_stock.options.annotations.stock_
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TimeCyclesAnnotation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -171,7 +171,7 @@ class: :class:`TunnelAnnotation <highcharts_stock.options.annotations.stock_tool
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TunnelAnnotation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -189,7 +189,7 @@ class: :class:`VerticalLineAnnotation <highcharts_stock.options.annotations.stoc
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VerticalLineAnnotation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

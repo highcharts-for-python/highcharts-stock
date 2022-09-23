@@ -22,7 +22,7 @@ class: :class:`PieOptions <highcharts_stock.options.plot_options.pie.PieOptions>
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PieOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -41,7 +41,7 @@ class: :class:`VariablePieOptions <highcharts_stock.options.plot_options.pie.Var
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VariablePieOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

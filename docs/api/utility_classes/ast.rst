@@ -22,7 +22,7 @@ class: :class:`ASTMap <highcharts_stock.utility_classes.ast.ASTMap>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ASTMap
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`ASTNode <highcharts_stock.utility_classes.ast.ASTNode>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ASTNode
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`TextPath <highcharts_stock.utility_classes.ast.TextPath>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TextPath
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`AttributeObject <highcharts_stock.utility_classes.ast.AttributeOb
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AttributeObject
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

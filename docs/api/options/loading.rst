@@ -22,7 +22,7 @@ class: :class:`Loading <highcharts_stock.options.loading.Loading>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Loading
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

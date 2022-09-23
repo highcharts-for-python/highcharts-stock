@@ -22,7 +22,7 @@ class: :class:`BarData <highcharts_stock.options.series.data.bar.BarData>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BarData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`WaterfallData <highcharts_stock.options.series.data.bar.Waterfall
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: WaterfallData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`WindBarbData <highcharts_stock.options.series.data.bar.WindBarbDa
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: WindBarbData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`XRangeData <highcharts_stock.options.series.data.bar.XRangeData>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: XRangeData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`KlingerSeries <highcharts_stock.options.series.oscillators.klinge
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: KlingerSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

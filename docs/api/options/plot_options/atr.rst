@@ -22,7 +22,7 @@ class: :class:`ATROptions <highcharts_stock.options.plot_options.atr.ATROptions>
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ATROptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`NATROptions <highcharts_stock.options.plot_options.atr.NATROption
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: NATROptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`DMISeries <highcharts_stock.options.series.dmi.DMISeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DMISeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`Tooltip <highcharts_stock.options.tooltips.Tooltip>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Tooltip
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

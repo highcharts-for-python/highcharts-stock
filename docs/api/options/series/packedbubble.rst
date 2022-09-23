@@ -22,7 +22,7 @@ class: :class:`PackedBubbleSeries <highcharts_stock.options.series.packedbubble.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PackedBubbleSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`MFIOptions <highcharts_stock.options.plot_options.oscillators.mon
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MFIOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`MFIParameters <highcharts_stock.options.plot_options.oscillators.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MFIParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`CMFOptions <highcharts_stock.options.plot_options.oscillators.mon
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CMFOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -29,7 +29,7 @@ class: :class:`ChartOptions <highcharts_stock.options.chart.ChartOptions>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ChartOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -47,7 +47,7 @@ class: :class:`PanningOptions <highcharts_stock.options.chart.PanningOptions>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PanningOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

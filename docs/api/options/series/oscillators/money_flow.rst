@@ -22,7 +22,7 @@ class: :class:`MFISeries <highcharts_stock.options.series.oscillators.money_flow
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MFISeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`CMFSeries <highcharts_stock.options.series.oscillators.money_flow
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CMFSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

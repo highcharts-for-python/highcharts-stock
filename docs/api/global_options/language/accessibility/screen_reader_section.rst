@@ -22,7 +22,7 @@ class: :class:`ScreenReaderSectionLanguageOptions <highcharts_stock.global_optio
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ScreenReaderSectionLanguageOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`ScreenReaderSectionAnnotationLanguage <highcharts_stock.global_op
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ScreenReaderSectionAnnotationLanguage
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

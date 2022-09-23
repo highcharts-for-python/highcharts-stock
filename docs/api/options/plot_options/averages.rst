@@ -40,7 +40,7 @@ class: :class:`EMAOptions <highcharts_stock.options.plot_options.averages.EMAOpt
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: EMAOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`SMAOptions <highcharts_stock.options.plot_options.averages.SMAOpt
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SMAOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`TEMAOptions <highcharts_stock.options.plot_options.averages.TEMAO
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TEMAOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -94,7 +94,7 @@ class: :class:`VWAPOptions <highcharts_stock.options.plot_options.averages.VWAPO
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VWAPOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -112,7 +112,7 @@ class: :class:`WMAOptions <highcharts_stock.options.plot_options.averages.WMAOpt
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: WMAOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -130,7 +130,7 @@ class: :class:`VWAPParameters <highcharts_stock.options.plot_options.averages.VW
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VWAPParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

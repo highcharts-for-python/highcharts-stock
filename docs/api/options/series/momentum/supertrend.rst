@@ -22,7 +22,7 @@ class: :class:`SupertrendSeries <highcharts_stock.options.series.momentum.supert
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SupertrendSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

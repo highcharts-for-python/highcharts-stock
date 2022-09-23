@@ -22,7 +22,7 @@ class: :class:`ATRSeries <highcharts_stock.options.series.atr.ATRSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ATRSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`NATRSeries <highcharts_stock.options.series.atr.NATRSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: NATRSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

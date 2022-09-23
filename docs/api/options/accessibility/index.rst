@@ -31,7 +31,7 @@ class: :class:`Accessibility <highcharts_stock.options.accessibility.Accessibili
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Accessibility
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -49,7 +49,7 @@ class: :class:`CustomAccessibilityComponents <highcharts_stock.options.accessibi
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CustomAccessibilityComponents
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

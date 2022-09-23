@@ -22,7 +22,7 @@ class: :class:`Navigator <highcharts_stock.options.navigator.Navigator>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Navigator
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`HandleOptions <highcharts_stock.options.navigator.HandleOptions>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: HandleOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

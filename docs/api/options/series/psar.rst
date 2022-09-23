@@ -22,7 +22,7 @@ class: :class:`PSARSeries <highcharts_stock.options.series.psar.PSARSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PSARSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

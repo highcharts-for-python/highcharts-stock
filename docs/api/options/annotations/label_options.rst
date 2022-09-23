@@ -22,7 +22,7 @@ class: :class:`AnnotationLabel <highcharts_stock.options.annotations.label_optio
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AnnotationLabel
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`AnnotationLabelOptionAccessibility <highcharts_stock.options.anno
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AnnotationLabelOptionAccessibility
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`LabelOptions <highcharts_stock.options.annotations.label_options.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LabelOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

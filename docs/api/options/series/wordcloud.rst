@@ -22,7 +22,7 @@ class: :class:`WordcloudSeries <highcharts_stock.options.series.wordcloud.Wordcl
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: WordcloudSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`BulletOptions <highcharts_stock.options.plot_options.bullet.Bulle
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BulletOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`TargetOptions <highcharts_stock.options.plot_options.bullet.Targe
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TargetOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

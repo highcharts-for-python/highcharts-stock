@@ -22,7 +22,7 @@ class: :class:`Chart <highcharts_stock.chart.Chart>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Chart
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

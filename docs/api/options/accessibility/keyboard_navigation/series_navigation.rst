@@ -22,7 +22,7 @@ class: :class:`SeriesNavigation <highcharts_stock.options.accessibility.keyboard
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SeriesNavigation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

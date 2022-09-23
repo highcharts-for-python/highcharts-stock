@@ -22,7 +22,7 @@ class: :class:`DataLabel <highcharts_stock.utility_classes.data_labels.DataLabel
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DataLabel
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`NodeDataLabel <highcharts_stock.utility_classes.data_labels.NodeD
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: NodeDataLabel
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`Filter <highcharts_stock.utility_classes.data_labels.Filter>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Filter
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

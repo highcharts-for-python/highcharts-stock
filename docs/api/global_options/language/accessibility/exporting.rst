@@ -22,7 +22,7 @@ class: :class:`ExportingLanguageOptions <highcharts_stock.global_options.languag
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ExportingLanguageOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

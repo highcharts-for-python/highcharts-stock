@@ -22,7 +22,7 @@ class: :class:`Boost <highcharts_stock.options.boost.Boost>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Boost
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`BoostDebug <highcharts_stock.options.boost.BoostDebug>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BoostDebug
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

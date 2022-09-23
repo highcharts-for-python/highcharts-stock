@@ -22,7 +22,7 @@ class: :class:`AnnotationPoint <highcharts_stock.options.annotations.points.Anno
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AnnotationPoint
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

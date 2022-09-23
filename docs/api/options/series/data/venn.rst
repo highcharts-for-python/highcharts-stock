@@ -22,7 +22,7 @@ class: :class:`VennData <highcharts_stock.options.series.data.venn.VennData>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VennData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

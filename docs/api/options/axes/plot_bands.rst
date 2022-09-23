@@ -22,7 +22,7 @@ class: :class:`PlotBand <highcharts_stock.options.axes.plot_bands.PlotBand>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PlotBand
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`PlotLine <highcharts_stock.options.axes.plot_bands.PlotLine>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PlotLine
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

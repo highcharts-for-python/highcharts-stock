@@ -22,7 +22,7 @@ class: :class:`ZigZagOptions <highcharts_stock.options.plot_options.zigzag.ZigZa
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ZigZagOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`ZigZagParameters <highcharts_stock.options.plot_options.zigzag.Zi
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ZigZagParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

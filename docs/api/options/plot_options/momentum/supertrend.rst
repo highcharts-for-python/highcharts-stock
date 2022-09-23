@@ -22,7 +22,7 @@ class: :class:`SupertrendOptions <highcharts_stock.options.plot_options.momentum
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SupertrendOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`SupertrendParameters <highcharts_stock.options.plot_options.momen
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SupertrendParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`SupertrendLineOptions <highcharts_stock.options.plot_options.mome
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SupertrendLineOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`Options3D <highcharts_stock.options.chart.options_3d.Options3D>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Options3D
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`Frame <highcharts_stock.options.chart.options_3d.Frame>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Frame
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`PanelOptions <highcharts_stock.options.chart.options_3d.PanelOpti
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PanelOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

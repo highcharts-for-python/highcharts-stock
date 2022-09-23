@@ -29,7 +29,7 @@ class: :class:`MomentumOptions <highcharts_stock.options.plot_options.momentum.M
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MomentumOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -47,7 +47,7 @@ class: :class:`OBVOptions <highcharts_stock.options.plot_options.momentum.OBVOpt
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: OBVOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -65,7 +65,7 @@ class: :class:`OBVParameters <highcharts_stock.options.plot_options.momentum.OBV
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: OBVParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -83,7 +83,7 @@ class: :class:`ROCOptions <highcharts_stock.options.plot_options.momentum.ROCOpt
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ROCOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -101,7 +101,7 @@ class: :class:`RSIOptions <highcharts_stock.options.plot_options.momentum.RSIOpt
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: RSIOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -119,7 +119,7 @@ class: :class:`RSIParameters <highcharts_stock.options.plot_options.momentum.RSI
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: RSIParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

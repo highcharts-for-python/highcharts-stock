@@ -22,7 +22,7 @@ class: :class:`ParetoSeries <highcharts_stock.options.series.pareto.ParetoSeries
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ParetoSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

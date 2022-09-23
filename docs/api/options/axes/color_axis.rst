@@ -22,7 +22,7 @@ class: :class:`ColorAxis <highcharts_stock.options.axes.color_axis.ColorAxis>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ColorAxis
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

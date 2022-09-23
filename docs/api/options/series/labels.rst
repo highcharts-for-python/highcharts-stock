@@ -22,7 +22,7 @@ class: :class:`SeriesLabel <highcharts_stock.options.series.labels.SeriesLabel>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SeriesLabel
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`Box <highcharts_stock.options.series.labels.Box>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Box
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

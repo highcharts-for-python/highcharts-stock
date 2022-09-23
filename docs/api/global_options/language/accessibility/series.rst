@@ -22,7 +22,7 @@ class: :class:`SeriesLanguageOptions <highcharts_stock.global_options.language.a
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SeriesLanguageOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`SeriesSummaryLanguageOptions <highcharts_stock.global_options.lan
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SeriesSummaryLanguageOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`SeriesTypeDescriptions <highcharts_stock.global_options.language.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SeriesTypeDescriptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

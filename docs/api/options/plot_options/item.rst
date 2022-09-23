@@ -22,7 +22,7 @@ class: :class:`ItemOptions <highcharts_stock.options.plot_options.item.ItemOptio
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ItemOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

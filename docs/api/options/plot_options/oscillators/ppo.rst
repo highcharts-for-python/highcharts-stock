@@ -22,7 +22,7 @@ class: :class:`PPOOptions <highcharts_stock.options.plot_options.oscillators.ppo
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PPOOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`PPOParameters <highcharts_stock.options.plot_options.oscillators.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PPOParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

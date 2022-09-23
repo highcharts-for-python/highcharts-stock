@@ -22,7 +22,7 @@ class: :class:`FunnelSeries <highcharts_stock.options.series.funnel.FunnelSeries
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: FunnelSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`Funnel3DSeries <highcharts_stock.options.series.funnel.Funnel3DSe
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Funnel3DSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

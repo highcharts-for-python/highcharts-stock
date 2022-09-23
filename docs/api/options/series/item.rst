@@ -22,7 +22,7 @@ class: :class:`ItemSeries <highcharts_stock.options.series.item.ItemSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ItemSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

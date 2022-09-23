@@ -22,7 +22,7 @@ class: :class:`SharedStockOptions <highcharts_stock.global_options.shared_option
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SharedStockOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`SharedOptions <highcharts_stock.global_options.shared_options.Sha
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SharedOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -40,7 +40,7 @@ class: :class:`EMASeries <highcharts_stock.options.series.averages.EMASeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: EMASeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`SMASeries <highcharts_stock.options.series.averages.SMASeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SMASeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`TEMASeries <highcharts_stock.options.series.averages.TEMASeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TEMASeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -94,7 +94,7 @@ class: :class:`VWAPSeries <highcharts_stock.options.series.averages.VWAPSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VWAPSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -112,7 +112,7 @@ class: :class:`WMASeries <highcharts_stock.options.series.averages.WMASeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: WMASeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

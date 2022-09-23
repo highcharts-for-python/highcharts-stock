@@ -22,7 +22,7 @@ class: :class:`LegendTitle <highcharts_stock.options.legend.title.LegendTitle>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LegendTitle
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
