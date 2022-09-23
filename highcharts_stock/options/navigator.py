@@ -4,9 +4,8 @@ from decimal import Decimal
 from validator_collection import validators
 
 from highcharts_stock import errors
-from highcharts_stock.decorators import class_sensitive
+from highcharts_stock.decorators import class_sensitive, validate_types
 from highcharts_stock.metaclasses import HighchartsMeta
-from highcharts_stock.options.series.base import SeriesBase
 from highcharts_stock.utility_classes.gradients import Gradient
 from highcharts_stock.utility_classes.patterns import Pattern
 from highcharts_stock.options.axes.x_axis import XAxis
@@ -387,7 +386,7 @@ class Navigator(HighchartsMeta):
         self._outline_width = validators.numeric(value, allow_empty = True)
 
     @property
-    def series(self) -> Optional[SeriesBase]:
+    def series(self):
         """Options for the navigator series (the series of data drawn in the navigator).
         Defaults to :obj:`None <python:None>`, which is equivalent to:
 
@@ -411,9 +410,10 @@ class Navigator(HighchartsMeta):
         return self._series
 
     @series.setter
-    @class_sensitive(SeriesBase)
     def series(self, value):
-        self._series = value
+        from highcharts_stock.options.series.base import SeriesBase
+
+        self._series = validate_types(value, SeriesBase)
 
     @property
     def x_axis(self) -> Optional[XAxis]:

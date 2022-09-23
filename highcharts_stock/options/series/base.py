@@ -3,15 +3,13 @@ from decimal import Decimal
 
 from validator_collection import validators
 
+from highcharts_python.options.series.base import SeriesBase as OriginalSeriesBase
+
 from highcharts_stock import errors
 from highcharts_stock.decorators import validate_types
 from highcharts_stock.utility_functions import mro__to_untrimmed_dict
-from highcharts_stock.options.series.base import SeriesBase as OriginalSeriesBase
-
 from highcharts_stock.options.plot_options.series import SeriesOptions
 from highcharts_stock.options.plot_options.base import NavigatorIndicatorOptions
-
-from highcharts_stock.options.series.series_generator import INDICATOR_LIST
 
 
 class IndicatorFactoryMixin(object):
@@ -90,6 +88,8 @@ class IndicatorFactoryMixin(object):
         :rtype: :class:`IndicatorSeriesBase <highcharts_stock.options.series.base.IndicatorSeriesBase>`
           descendant corresponding to ``indicator_name``
         """
+        from highcharts_stock.options.series.series_generator import INDICATOR_LIST
+
         if not self.id:
             raise errors.HighchartsValueError('series does not have an .id '
                                               'specified. Cannot add an '

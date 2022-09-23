@@ -32,6 +32,7 @@ Highcharts Stock for Python
 
   Home <self>
   Quickstart: Patterns and Best Practices <quickstart>
+  Supported Visualizations <visualizations>
   FAQ <faq>
   Toolkit Components and Roadmap <toolkit>
   Using Highcharts for Python <using>

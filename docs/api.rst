@@ -135,12 +135,17 @@ Core Components
   * - :mod:`.global_options.language.navigation <highcharts_stock.global_options.language.navigation>`
     - :class:`NavigationLanguageOptions <highcharts_stock.global_options.language.navigation.NavigationLanguageOptions>`
       :class:`PopupLanguageOptions <highcharts_stock.global_options.language.navigation.PopupLanguageOptions>`
+  * - :mod:`.global_options.language.stock_tools <highcharts_stock.global_options.language.stock_tools>`
+    - :class:`StockToolsLanguageOptions <highcharts_stock.global_options.language.stock_tools.StockToolsLanguageOptions>`
+      :class:`StockToolsGUI <highcharts_stock.global_options.language.stock_tools.StockToolsGUI>`
   * - :mod:`.global_options.shared_options <highcharts_stock.global_options.shared_options>`
-    - :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+    - :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
+      :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
   * - :mod:`.headless_export <highcharts_stock.headless_export>`
     - :class:`ExportServer <highcharts_stock.headless_export.ExportServer>`
   * - :mod:`.options <highcharts_stock.options>`
-    - :class:`HighchartsOptions <highcharts_stock.options.HighchartsOptions>`
+    - :class:`HighchartsStockOptions <highcharts_stock.options.HighchartsStockOptions>`
+      :class:`HighchartsOptions <highcharts_stock.options.HighchartsOptions>`
       :class:`Options <highcharts_stock.options.Options>`
   * - :mod:`.options.accessibility <highcharts_stock.options.accessibility>`
     - :class:`Accessibility <highcharts_stock.options.accessibility.Accessibility>`
@@ -177,6 +182,35 @@ Core Components
   * - :mod:`.options.annotations.shape_options <highcharts_stock.options.annotations.shape_options>`
     - :class:`AnnotationShape <highcharts_stock.options.annotations.shape_options.AnnotationShape>`
       :class:`ShapeOptions <highcharts_stock.options.annotations.shape_options.ShapeOptions>`
+  * - :mod:`.options.annotations.stock_tools <highcharts_stock.options.annotations.stock_tools>`
+    - :class:`CrookedLineAnnotation <highcharts_stock.options.annotations.stock_tools.CrookedLineAnnotation>`
+      :class:`ElliottWaveAnnotation <highcharts_stock.options.annotations.stock_tools.ElliottWaveAnnotation>`
+      :class:`FibonacciAnnotation <highcharts_stock.options.annotations.stock_tools.FibonacciAnnotation>`
+      :class:`FibonacciTimeZonesAnnotation <highcharts_stock.options.annotations.stock_tools.FibonacciTimeZonesAnnotation>`
+      :class:`InfinityLineAnnotation <highcharts_stock.options.annotations.stock_tools.InfinityLineAnnotation>`
+      :class:`MeasureAnnotation <highcharts_stock.options.annotations.stock_tools.MeasureAnnotation>`
+      :class:`PitchforkAnnotation <highcharts_stock.options.annotations.stock_tools.PitchforkAnnotation>`
+      :class:`TimeCyclesAnnotation <highcharts_stock.options.annotations.stock_tools.TimeCyclesAnnotation>`
+      :class:`TunnelAnnotation <highcharts_stock.options.annotations.stock_tools.TunnelAnnotation>`
+      :class:`VerticalLineAnnotation <highcharts_stock.options.annotations.stock_tools.VerticalLineAnnotation>`
+  * - :mod:`.options.annotations.stock_tools.crooked_line <highcharts_stock.options.annotations.stock_tools.crooked_line>`
+    - :class:`CrookedLineTypeOptions <highcharts_stock.options.annotations.stock_tools.crooked_line.CrookedLineTypeOptions>`
+      :class:`InfinityLineTypeOptions <highcharts_stock.options.annotations.stock_tools.crooked_line.InfinityLineTypeOptions>`
+  * - :mod:`.options.annotations.stock_tools.elliot_wave <highcharts_stock.options.annotations.stock_tools.elliott_wave>`
+    - :class:`ElliottWaveTypeOptions <highcharts_stock.options.annotations.stock_tools.elliott_wave.ElliottWaveTypeOptions>`
+  * - :mod:`.options.annotations.stock_tools.fibonacci <highcharts_stock.options.annotations.stock_tools.fibonacci>`
+    - :class:`FibonacciTypeOptions <highcharts_stock.options.annotations.stock_tools.fibonacci.FibonacciTypeOptions>`
+      :class:`FibonacciTimeZonesTypeOptions <highcharts_stock.options.annotations.stock_tools.fibonacci.FibonacciTimeZonesTypeOptions>`
+  * - :mod:`.options.annotations.stock_tools.measure <highcharts_stock.options.annotations.stock_tools.measure>`
+    -
+  * - :mod:`.options.annotations.stock_tools.pitchfork <highcharts_stock.options.annotations.stock_tools.pitchfork>`
+    -
+  * - :mod:`.options.annotations.stock_tools.time_cycles <highcharts_stock.options.annotations.stock_tools.time_cycles>`
+    -
+  * - :mod:`.options.annotations.stock_tools.tunnel <highcharts_stock.options.annotations.stock_tools.tunnel>`
+    -
+  * - :mod:`.options.annotations.stock_tools.vertical_line <highcharts_stock.options.annotations.stock_tools.vertical_line>`
+    -
   * - :mod:`.options.axes <highcharts_stock.options.axes>`
     -
   * - :mod:`.options.axes.accessibility <highcharts_stock.options.axes.accessibility>`
