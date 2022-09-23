@@ -321,6 +321,9 @@ Core Components
       :class:`EllipseAnnotationBinding <highcharts_stock.options.navigation.bindings.EllipseAnnotationBinding>`
       :class:`CircleAnnotationBinding <highcharts_stock.options.navigation.bindings.CircleAnnotationBinding>`
       :class:`Binding <highcharts_stock.options.navigation.bindings.Binding>`
+  * - :mod:`.options.navigator <highcharts_stock.options.navigator>`
+    - :class:`Navigator <highcharts_stock.options.navigator.Navigator>`
+      :class:`HandleOptions <highcharts_stock.options.navigator.HandleOptions>`
   * - :mod:`.options.no_data <highcharts_stock.options.no_data>`
     - :class:`NoData <highcharts_stock.options.no_data.NoData>`
   * - :mod:`.options.pane <highcharts_stock.options.pane>`
