@@ -16,8 +16,10 @@
   base
   boxplot
   bullet
+  candlestick
   cartesian
   connections
+  hlc
   pie
   range
   single_point
@@ -56,6 +58,8 @@ Sub-components
     - :class:`BoxPlotData <highcharts_stock.options.series.data.boxplot.BoxPlotData>`
   * - :mod:`.options.series.data.bullet <highcharts_stock.options.series.data.bullet>`
     - :class:`BulletData <highcharts_stock.options.series.data.bullet.BulletData>`
+  * - :mod:`.options.series.data.candlestick <highcharts_stock.options.series.data.candlestick>`
+    - :class:`CandlestickData <highcharts_stock.options.series.data.candlestick.CandlestickData>`
   * - :mod:`.options.series.data.cartesian <highcharts_stock.options.series.data.cartesian>`
     - :class:`CartesianData <highcharts_stock.options.series.data.cartesian.CartesianData>`
       :class:`Cartesian3DData <highcharts_stock.options.series.data.cartesian.Cartesian3DData>`
@@ -65,6 +69,9 @@ Sub-components
       :class:`WeightedConnectionData <highcharts_stock.options.series.data.connections.WeightedConnectionData>`
       :class:`OutgoingWeightedConnectionData <highcharts_stock.options.series.data.connections.OutgoingWeightedConnectionData>`
       :class:`ConnectionBase <highcharts_stock.options.series.data.connections.ConnectionBase>`
+  * - :mod:`.options.series.data.hlc <highcharts_stock.options.series.data.hlc>`
+    - :class:`HLCData <highcharts_stock.options.series.data.hlc.HLCData>`
+      :class:`OHLCData <highcharts_stock.options.series.data.hlc.OHLCData>`
   * - :mod:`.options.series.data.pie <highcharts_stock.options.series.data.pie>`
     - :class:`PieData <highcharts_stock.options.series.data.pie.PieData>`
       :class:`VariablePieData <highcharts_stock.options.series.data.pie.VariablePieData>`

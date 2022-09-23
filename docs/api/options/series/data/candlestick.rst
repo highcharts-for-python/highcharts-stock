@@ -1,0 +1,28 @@
+##########################################################################################
+:mod:`.candlestick <highcharts_stock.options.series.data.candlestick>`
+##########################################################################################
+
+.. contents:: Module Contents
+  :local:
+  :depth: 3
+  :backlinks: entry
+
+--------------
+
+.. module:: highcharts_stock.options.series.data.candlestick
+
+********************************************************************************************************************
+class: :class:`CandlestickData <highcharts_stock.options.series.data.candlestick.CandlestickData>`
+********************************************************************************************************************
+
+.. autoclass:: CandlestickData
+  :members:
+  :inherited-members:
+
+  .. collapse:: Class Inheritance
+
+    .. inheritance-diagram:: CandlestickData
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta
+      :parts: -1
+
+  |

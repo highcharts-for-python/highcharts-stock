@@ -10,7 +10,7 @@ from highcharts_stock.options.plot_options.momentum import (MomentumOptions,
 class MomentumSeries(NavigatorIndicatorSeries, MomentumOptions):
     """Options to configure a Momentum :term:`indicator <techincal indicator>`.
 
-    .. figure:: ../../../_static/momentum-example.png
+    .. figure:: ../../../../_static/momentum-example.png
       :alt: Momentum Example Chart
       :align: center
 
@@ -124,7 +124,7 @@ class OBVSeries(NavigatorIndicatorSeries, OBVOptions):
     """Options to configure an On-Balance Volume :term:`indicator <techincal indicator>`,
     which uses volume flow to predict changes.
 
-    .. figure:: ../../../_static/obv-example.png
+    .. figure:: ../../../../_static/obv-example.png
       :alt: OBV Example Chart
       :align: center
 
@@ -237,7 +237,7 @@ class OBVSeries(NavigatorIndicatorSeries, OBVOptions):
 class ROCSeries(NavigatorIndicatorSeries, ROCOptions):
     """Options to configure a Rate of Change :term:`indicator <techincal indicator>`.
 
-    .. figure:: ../../../_static/roc-example.png
+    .. figure:: ../../../../_static/roc-example.png
       :alt: Rate of Change Example Chart
       :align: center
 
@@ -365,7 +365,7 @@ class RSISeries(NavigatorIndicatorSeries, RSIOptions):
     :term:`indicator <techincal indicator>` that measures the speed and magnitude of
     recent value changes to evaluate over-valued or under-valued conditions.
 
-    .. figure:: ../../../_static/rsi-example.png
+    .. figure:: ../../../../_static/rsi-example.png
       :alt: Relative Strength Index Example Chart
       :align: center
 

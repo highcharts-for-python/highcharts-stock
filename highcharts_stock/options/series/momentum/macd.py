@@ -8,7 +8,7 @@ class MACDSeries(NavigatorIndicatorSeries, MACDOptions):
     """Options to configure a Moving Average Convergence/Divergence, a momentum
     :term:`indicator <techincal indicator>`.
 
-    .. figure:: ../../../_static/macd-example.png
+    .. figure:: ../../../../_static/macd-example.png
       :alt: Moving Average Convergence/Divergence (MACD) Example Chart
       :align: center
 

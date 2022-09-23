@@ -9,7 +9,7 @@ class KlingerSeries(NavigatorIndicatorSeries, KlingerOptions):
     trend of money flow while remaining sensitive enough to detect short-term
     fluctuations.
 
-    .. figure:: ../../../_static/klinger-example.png
+    .. figure:: ../../../../_static/klinger-example.png
       :alt: Klinger Example Chart
       :align: center
 

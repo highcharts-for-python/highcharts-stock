@@ -8,7 +8,7 @@ class SupertrendSeries(IndicatorSeriesBase, SupertrendOptions):
     """Options to configure a Supertrend, a momentum
     :term:`indicator <techincal indicator>` used to help identify buy/sell signals.
 
-    .. figure:: ../../../_static/supertrend-example.png
+    .. figure:: ../../../../_static/supertrend-example.png
       :alt: Supertrend Example Chart
       :align: center
 

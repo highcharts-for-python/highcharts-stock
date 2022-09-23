@@ -8,7 +8,7 @@ class AOSeries(IndicatorSeriesBase, AOOptions):
     """Options to configure an Awesome :term:`Oscillator`, used within the financial
     markets to confirm or disprove trends on price charts
 
-    .. figure:: ../../../_static/awesome-oscillator-example.png
+    .. figure:: ../../../../_static/awesome-oscillator-example.png
       :alt: Awesome Oscillator (AO) Example Chart
       :align: center
 

@@ -8,7 +8,7 @@ class IKHSeries(NavigatorIndicatorSeries, IKHOptions):
     """Options to configure a Ichimoku Kinko Hyo (IKH, or "ichimoku"), a momentum
     :term:`indicator <techincal indicator>`.
 
-    .. figure:: ../../../_static/ikh-example.png
+    .. figure:: ../../../../_static/ikh-example.png
       :alt: Ichimoku Kinko Hyo (IKH) Example Chart
       :align: center
 

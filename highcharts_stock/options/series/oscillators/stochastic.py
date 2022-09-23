@@ -8,7 +8,7 @@ from highcharts_stock.options.plot_options.oscillators.stochastic import (Stocha
 class StochasticSeries(IndicatorSeriesBase, StochasticOptions):
     """Configuration for a Stochastic :term:`Oscillator`.
 
-    .. figure:: ../../../_static/stochastic-example.png
+    .. figure:: ../../../../_static/stochastic-example.png
       :alt: Stochsatic Oscillator Example Chart
       :align: center
 
@@ -120,7 +120,7 @@ class StochasticSeries(IndicatorSeriesBase, StochasticOptions):
 class SlowStochasticSeries(IndicatorSeriesBase, SlowStochasticOptions):
     """Configuration for a Slow Stochastic :term:`Oscillator`.
 
-    .. figure:: ../../../_static/slow-stochastic-example.png
+    .. figure:: ../../../../_static/slow-stochastic-example.png
       :alt: Slow Stochsatic Oscillator Example Chart
       :align: center
 

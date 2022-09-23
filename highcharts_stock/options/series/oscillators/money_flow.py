@@ -9,7 +9,7 @@ class MFISeries(NavigatorIndicatorSeries, MFIOptions):
     """Options to configure a Money Flow Index :term:`oscillator`, which uses price and
     volume data to identify over-bought or over-sold signals in an asset.
 
-    .. figure:: ../../../_static/mfi-example.png
+    .. figure:: ../../../../_static/mfi-example.png
       :alt: Money Flow Index Example Chart
       :align: center
 
@@ -123,7 +123,7 @@ class CMFSeries(NavigatorIndicatorSeries, CMFOptions):
     which uses price and
     volume data to identify over-bought or over-sold signals in an asset.
 
-    .. figure:: ../../../_static/cmf-example.png
+    .. figure:: ../../../../_static/cmf-example.png
       :alt: Chaikin Money Flow Example Chart
       :align: center
 

@@ -10,30 +10,46 @@
 .. toctree::
   :titlesonly:
 
+  abands
+  ad
   arcdiagram
   area
+  aroon
+  atr
+  averages
   bar
   base
   bellcurve
   boxplot
   bubble
   bullet
+  candlestick
   data/index
   dependencywheel
+  disparity_index
+  dmi
   dumbbell
+  flags
   funnel
   gauge
   heatmap
   histogram
+  hlc
   item
   labels
+  linear_regressions
+  momentum/index
   networkgraph
+  oscillators/index
   organization
   packedbubble
   pareto
   pie
+  pivot_points
   points
   polygon
+  price_envelopes
+  psar
   pyramid
   sankey
   scatter
@@ -42,9 +58,11 @@
   sunburst
   timeline
   treemap
+  vbp
   vector
   venn
   wordcloud
+  zigzag
 
 -------------------------
 
