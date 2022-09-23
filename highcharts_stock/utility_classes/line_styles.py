@@ -3,7 +3,7 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_stock import constants
+from highcharts_stock import constants, errors
 from highcharts_stock.metaclasses import HighchartsMeta
 
 

@@ -22,6 +22,8 @@
   gradients
   javascript_functions
   jitter
+  last_price
+  line_styles
   markers
   menus
   nodes
@@ -81,6 +83,7 @@ Sub-components
       :class:`ClusterEvents <highcharts_stock.utility_classes.events.ClusterEvents>`
       :class:`AxisEvents <highcharts_stock.utility_classes.events.AxisEvents>`
       :class:`MouseEvents <highcharts_stock.utility_classes.events.MouseEvents>`
+      :class:`RangeSelectorEvents <highcharts_stock.utility_classes.events.RangeSelectorEvents>`
   * - :mod:`.utility_classes.gradients <highcharts_stock.utility_classes.gradients>`
     - :class:`Gradient <highcharts_stock.utility_classes.gradients.Gradient>`
       :class:`LinearGradient <highcharts_stock.utility_classes.gradients.LinearGradient>`
@@ -90,6 +93,12 @@ Sub-components
       :class:`JavaScriptClass <highcharts_stock.utility_classes.javascript_functions.JavaScriptClass>`
   * - :mod:`.utility_classes.jitter <highcharts_stock.utility_classes.jitter>`
     - :class:`Jitter <highcharts_stock.utility_classes.jitter.Jitter>`
+  * - :mod:`.utility_classes.last_price <highcharts_stock.utility_classes.last_price>`
+    - :class:`LastPriceOptions <highcharts_stock.utility_classes.last_price.LastPriceOptions>`
+  * - :mod:`.utility_classes.line_styles <highcharts_stock.utility_classes.line_styles>`
+    - :class:`LineStylesWidth <highcharts_stock.utility_classes.line_styles.LineStylesWidth>`
+      :class:`LineStylesColorWidth <highcharts_stock.utility_classes.line_styles.LineStylesColorWidth>`
+      :class:`LineStylesColorWidthDash <highcharts_stock.utility_classes.line_styles.LineStylesColorWidthDash>`
   * - :mod:`.utility_classes.markers <highcharts_stock.utility_classes.markers>`
     - :class:`Marker <highcharts_stock.utility_classes.markers.Marker>`
   * - :mod:`.utility_classes.menus <highcharts_stock.utility_classes.menus>`

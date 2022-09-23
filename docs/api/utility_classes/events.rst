@@ -152,3 +152,21 @@ class: :class:`MouseEvents <highcharts_stock.utility_classes.events.MouseEvents>
       :parts: -1
 
   |
+
+----------------
+
+********************************************************************************************************************
+class: :class:`RangeSelectorEvents <highcharts_stock.utility_classes.events.RangeSelectorEvents>`
+********************************************************************************************************************
+
+.. autoclass:: RangeSelectorEvents
+  :members:
+  :inherited-members:
+
+  .. collapse:: Class Inheritance
+
+    .. inheritance-diagram:: RangeSelectorEvents
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :parts: -1
+
+  |

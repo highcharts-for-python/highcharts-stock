@@ -871,6 +871,12 @@ Core Components
       :class:`JavaScriptClass <highcharts_stock.utility_classes.javascript_functions.JavaScriptClass>`
   * - :mod:`.utility_classes.jitter <highcharts_stock.utility_classes.jitter>`
     - :class:`Jitter <highcharts_stock.utility_classes.jitter.Jitter>`
+  * - :mod:`.utility_classes.last_price <highcharts_stock.utility_classes.last_price>`
+    - :class:`LastPriceOptions <highcharts_stock.utility_classes.last_price.LastPriceOptions>`
+  * - :mod:`.utility_classes.line_styles <highcharts_stock.utility_classes.line_styles>`
+    - :class:`LineStylesWidth <highcharts_stock.utility_classes.line_styles.LineStylesWidth>`
+      :class:`LineStylesColorWidth <highcharts_stock.utility_classes.line_styles.LineStylesColorWidth>`
+      :class:`LineStylesColorWidthDash <highcharts_stock.utility_classes.line_styles.LineStylesColorWidthDash>`
   * - :mod:`.utility_classes.markers <highcharts_stock.utility_classes.markers>`
     - :class:`Marker <highcharts_stock.utility_classes.markers.Marker>`
   * - :mod:`.utility_classes.menus <highcharts_stock.utility_classes.menus>`
