@@ -202,15 +202,28 @@ Core Components
     - :class:`FibonacciTypeOptions <highcharts_stock.options.annotations.stock_tools.fibonacci.FibonacciTypeOptions>`
       :class:`FibonacciTimeZonesTypeOptions <highcharts_stock.options.annotations.stock_tools.fibonacci.FibonacciTimeZonesTypeOptions>`
   * - :mod:`.options.annotations.stock_tools.measure <highcharts_stock.options.annotations.stock_tools.measure>`
-    -
+    - :class:`MeasureTypeOptions <highcharts_stock.options.annotations.stock_tools.measure.MeasureTypeOptions>`
+      :class:`MeasureLabelOptions <highcharts_stock.options.annotations.stock_tools.measure.MeasureLabelOptions>`
+      :class:`MeasureLabelStyle <highcharts_stock.options.annotations.stock_tools.measure.MeasureLabelStyle>`
   * - :mod:`.options.annotations.stock_tools.pitchfork <highcharts_stock.options.annotations.stock_tools.pitchfork>`
-    -
+    - :class:`PitchforkTypeOptions <highcharts_stock.options.annotations.stock_tools.pitchfork.PitchforkTypeOptions>`
   * - :mod:`.options.annotations.stock_tools.time_cycles <highcharts_stock.options.annotations.stock_tools.time_cycles>`
-    -
+    - :class:`TimeCyclesTypeOptions <highcharts_stock.options.annotations.stock_tools.time_cycles.TimeCyclesTypeOptions>`
   * - :mod:`.options.annotations.stock_tools.tunnel <highcharts_stock.options.annotations.stock_tools.tunnel>`
-    -
+    - :class:`TunnelTypeOptions <highcharts_stock.options.annotations.stock_tools.tunnel.TunnelTypeOptions>`
   * - :mod:`.options.annotations.stock_tools.vertical_line <highcharts_stock.options.annotations.stock_tools.vertical_line>`
+    - :class:`VerticalLineTypeOptions <highcharts_stock.options.annotations.stock_tools.vertical_line.VerticalLineTypeOptions>`
+      :class:`VerticalLineConnector <highcharts_stock.options.annotations.stock_tools.vertical_line.VerticalLineConnector>`
+  * - :mod:`.options.annotations.stock_tools.type_options <highcharts_stock.options.annotations.stock_tools.type_options>`
     -
+  * - :mod:`.options.annotations.stock_tools.type_options.line <highcharts_stock.options.annotations.stock_tools.type_options.line>`
+    - :class:`LineFillOnly <highcharts_stock.options.annotations.stock_tools.type_options.line.LineFillOnly>`
+      :class:`LineStrokeWidth <highcharts_stock.options.annotations.stock_tools.type_options.line.LineStrokeWidth>`
+      :class:`LineStrokeWidthStroke <highcharts_stock.options.annotations.stock_tools.type_options.line.LineStrokeWidthStroke>`
+  * - :mod:`.options.annotations.stock_tools.type_options.points <highcharts_stock.options.annotations.stock_tools.type_options.points>`
+    - :class:`StockToolsPoint <highcharts_stock.options.annotations.stock_tools.type_options.points.StockToolsPoint>`
+      :class:`LabeledStockToolsPoint <highcharts_stock.options.annotations.stock_tools.type_options.points.LabeledStockToolsPoint>`
+      :class:`StockToolsXPoint <highcharts_stock.options.annotations.stock_tools.type_options.points.StockToolsXPoint>`
   * - :mod:`.options.axes <highcharts_stock.options.axes>`
     -
   * - :mod:`.options.axes.accessibility <highcharts_stock.options.axes.accessibility>`
@@ -238,6 +251,9 @@ Core Components
   * - :mod:`.options.axes.plot_bands <highcharts_stock.options.axes.plot_bands>`
     - :class:`PlotBand <highcharts_stock.options.axes.plot_bands.PlotBand>`
       :class:`PlotLine <highcharts_stock.options.axes.plot_bands.PlotLine>`
+  * - :mod:`.options.axes.resize <highcharts_stock.options.axes.resize>`
+    - :class:`ResizeOptions <highcharts_stock.options.axes.resize.ResizeOptions>`
+      :class:`ControlledAxis <highcharts_stock.options.axes.resize.ControlledAxis>`
   * - :mod:`.options.axes.title <highcharts_stock.options.axes.title>`
     - :class:`AxisTitle <highcharts_stock.options.axes.title.AxisTitle>`
   * - :mod:`.options.axes.x_axis <highcharts_stock.options.axes.x_axis>`

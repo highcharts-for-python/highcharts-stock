@@ -21,6 +21,7 @@
   numeric
   parallel_axes
   plot_bands
+  resize
   title
   x_axis
   y_axis
@@ -38,41 +39,41 @@ Sub-components
 
   * - Module
     - Classes / Functions
-  * - :mod:`.global_options <highcharts_stock.global_options>`
+  * - :mod:`.options.axes <highcharts_stock.options.axes>`
     -
-  * - :mod:`.global_options.language <highcharts_stock.global_options.language>`
-    - :class:`Language <highcharts_stock.global_options.language.Language>`
-  * - :mod:`.global_options.language.accessibility <highcharts_stock.global_options.language.accessibility>`
-    - :class:`AccessibilityLanguageOptions <highcharts_stock.global_options.language.accessibility.AccessibilityLanguageOptions>`
-  * - :mod:`.global_options.language.accessibility.announce_new_data <highcharts_stock.global_options.language.accessibility.announce_new_data>`
-    - :class:`AnnounceNewDataLanguageOptions <highcharts_stock.global_options.language.accessibility.announce_new_data.AnnounceNewDataLanguageOptions>`
-  * - :mod:`.global_options.language.accessibility.axis <highcharts_stock.global_options.language.accessibility.axis>`
-    - :class:`AxisLanguageOptions <highcharts_stock.global_options.language.accessibility.axis.AxisLanguageOptions>`
-  * - :mod:`.chart_types <highcharts_stock.global_options.language.accessibility.chart_types>`
-    - :class:`ChartTypesLanguageOptions <highcharts_stock.global_options.language.accessibility.chart_types.ChartTypesLanguageOptions>`
-  * - :mod:`.exporting <highcharts_stock.global_options.language.accessibility.exporting>`
-    - :class:`ExportingLanguageOptions <highcharts_stock.global_options.language.accessibility.exporting.ExportingLanguageOptions>`
-  * - :mod:`.legend <highcharts_stock.global_options.language.accessibility.legend>`
-    - :class:`LegendLanguageOptions <highcharts_stock.global_options.language.accessibility.legend.LegendLanguageOptions>`
-  * - :mod:`.range_selector <highcharts_stock.global_options.language.accessibility.range_selector>`
-    - :class:`RangeSelectorLanguageOptions <highcharts_stock.global_options.language.accessibility.range_selector.RangeSelectorLanguageOptions>`
-  * - :mod:`.screen_reader_section <highcharts_stock.global_options.language.accessibility.screen_reader_section>`
-    - :class:`ScreenReaderSectionLanguageOptions <highcharts_stock.global_options.language.accessibility.screen_reader_section.ScreenReaderSectionLanguageOptions>`
-      :class:`ScreenReaderSectionAnnotationLanguage <highcharts_stock.global_options.language.accessibility.screen_reader_section.ScreenReaderSectionAnnotationLanguage>`
-  * - :mod:`.series <highcharts_stock.global_options.language.accessibility.series>`
-    - :class:`SeriesLanguageOptions <highcharts_stock.global_options.language.accessibility.series.SeriesLanguageOptions>`
-      :class:`SeriesSummaryLanguageOptions <highcharts_stock.global_options.language.accessibility.series.SeriesSummaryLanguageOptions>`
-      :class:`SeriesTypeDescriptions <highcharts_stock.global_options.language.accessibility.series.SeriesTypeDescriptions>`
-  * - :mod:`.sonification <highcharts_stock.global_options.language.accessibility.sonification>`
-    - :class:`SonificationLanguageOptions <highcharts_stock.global_options.language.accessibility.sonification.SonificationLanguageOptions>`
-  * - :mod:`.table <highcharts_stock.global_options.language.accessibility.table>`
-    - :class:`TableLanguageOptions <highcharts_stock.global_options.language.accessibility.table.TableLanguageOptions>`
-  * - :mod:`.zoom <highcharts_stock.global_options.language.accessibility.zoom>`
-    - :class:`ZoomLanguageOptions <highcharts_stock.global_options.language.accessibility.zoom.ZoomLanguageOptions>`
-  * - :mod:`.global_options.language.export_data <highcharts_stock.global_options.language.export_data>`
-    -  :class:`ExportDataLanguageOptions <highcharts_stock.global_options.language.export_data.ExportDataLanguageOptions>`
-  * - :mod:`.global_options.language.navigation <highcharts_stock.global_options.language.navigation>`
-    - :class:`NavigationLanguageOptions <highcharts_stock.global_options.language.navigation.NavigationLanguageOptions>`
-      :class:`PopupLanguageOptions <highcharts_stock.global_options.language.navigation.PopupLanguageOptions>`
-  * - :mod:`.global_options.shared_options <highcharts_stock.global_options.shared_options>`
-    - :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+  * - :mod:`.options.axes.accessibility <highcharts_stock.options.axes.accessibility>`
+    - :class:`AxisAccessibility <highcharts_stock.options.axes.accessibility.AxisAccessibility>`
+  * - :mod:`.options.axes.breaks <highcharts_stock.options.axes.breaks>`
+    - :class:`AxisBreak <highcharts_stock.options.axes.breaks.AxisBreak>`
+  * - :mod:`.options.axes.color_axis <highcharts_stock.options.axes.color_axis>`
+    - :class:`ColorAxis <highcharts_stock.options.axes.color_axis.ColorAxis>`
+  * - :mod:`.options.axes.crosshair <highcharts_stock.options.axes.crosshair>`
+    - :class:`CrosshairOptions <highcharts_stock.options.axes.crosshair.CrosshairOptions>`
+  * - :mod:`.options.axes.data_classes <highcharts_stock.options.axes.data_classes>`
+    - :class:`DataClass <highcharts_stock.options.axes.data_classes.DataClass>`
+  * - :mod:`.options.axes.generic <highcharts_stock.options.axes.generic>`
+    - :class:`GenericAxis <highcharts_stock.options.axes.generic.GenericAxis>`
+  * - :mod:`.options.axes.labels <highcharts_stock.options.axes.labels>`
+    - :class:`AxisLabelOptions <highcharts_stock.options.axes.labels.AxisLabelOptions>`
+      :class:`PlotBandLabel <highcharts_stock.options.axes.labels.PlotBandLabel>`
+      :class:`PlotLineLabel <highcharts_stock.options.axes.labels.PlotLineLabel>`
+  * - :mod:`.options.axes.markers <highcharts_stock.options.axes.markers>`
+    - :class:`AxisMarker <highcharts_stock.options.axes.markers.AxisMarker>`
+  * - :mod:`.options.axes.numeric <highcharts_stock.options.axes.numeric>`
+    - :class:`NumericAxis <highcharts_stock.options.axes.numeric.NumericAxis>`
+  * - :mod:`.options.axes.parallel_axes <highcharts_stock.options.axes.parallel_axes>`
+    - :class:`ParallelAxesOptions <highcharts_stock.options.axes.parallel_axes.ParallelAxesOptions>`
+  * - :mod:`.options.axes.plot_bands <highcharts_stock.options.axes.plot_bands>`
+    - :class:`PlotBand <highcharts_stock.options.axes.plot_bands.PlotBand>`
+      :class:`PlotLine <highcharts_stock.options.axes.plot_bands.PlotLine>`
+  * - :mod:`.options.axes.resize <highcharts_stock.options.axes.resize>`
+    - :class:`ResizeOptions <highcharts_stock.options.axes.resize.ResizeOptions>`
+      :class:`ControlledAxis <highcharts_stock.options.axes.resize.ControlledAxis>`
+  * - :mod:`.options.axes.title <highcharts_stock.options.axes.title>`
+    - :class:`AxisTitle <highcharts_stock.options.axes.title.AxisTitle>`
+  * - :mod:`.options.axes.x_axis <highcharts_stock.options.axes.x_axis>`
+    - :class:`XAxis <highcharts_stock.options.axes.x_axis.XAxis>`
+  * - :mod:`.options.axes.y_axis <highcharts_stock.options.axes.y_axis>`
+    - :class:`YAxis <highcharts_stock.options.axes.y_axis.YAxis>`
+  * - :mod:`.options.axes.z_axis <highcharts_stock.options.axes.z_axis>`
+    - :class:`ZAxis <highcharts_stock.options.axes.z_axis.ZAxis>`

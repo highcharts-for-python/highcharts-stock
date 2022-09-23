@@ -60,5 +60,9 @@ Sub-components
   * - :mod:`.global_options.language.navigation <highcharts_stock.global_options.language.navigation>`
     - :class:`NavigationLanguageOptions <highcharts_stock.global_options.language.navigation.NavigationLanguageOptions>`
       :class:`PopupLanguageOptions <highcharts_stock.global_options.language.navigation.PopupLanguageOptions>`
+  * - :mod:`.global_options.language.stock_tools <highcharts_stock.global_options.language.stock_tools>`
+    - :class:`StockToolsLanguageOptions <highcharts_stock.global_options.language.stock_tools.StockToolsLanguageOptions>`
+      :class:`StockToolsGUI <highcharts_stock.global_options.language.stock_tools.StockToolsGUI>`
   * - :mod:`.global_options.shared_options <highcharts_stock.global_options.shared_options>`
-    - :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+    - :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
+      :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
