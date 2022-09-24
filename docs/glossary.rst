@@ -24,7 +24,7 @@ Glossary
 
       * :term:`Event Handler`
       * :term:`Formatter`
-      * :class:`highcharts_stock.utility_classes.javascript_functions.CallbackFunction>`
+      * :class:`CallbackFunction <highcharts_stock.utility_classes.javascript_functions.CallbackFunction>`
 
   Cartesian Charts
     Cartesian charts are :term:`charts` that typically feature two or more axes, by common
@@ -267,6 +267,25 @@ Glossary
       Typically, JSON can be converted to JavaScript object literal notation easily...but
       the opposite does not hold true.
 
+  Metaclass
+    A Python class that is used to define properties and methods - including abstract
+    properties or methods which are not implemented in the metaclass itself - which are
+    then inherited by sub-classes that derive from the metaclass.
+
+    Metaclasses are typically used as good :iabbr:`DRY (Don't Repeat Yourself)`
+    programming and to ensure a consistent interface (standard methods) across multiple
+    classes in your code.
+
+    In the **Highcharts for Python** toolkit, metaclasses are defined in the
+    :mod:`.metaclasses <highcharts_stock.metaclasses>` module, and most inherit from the
+    :class:`.metaclasses.HighchartsMeta <highcharts_stock.metaclasses.HighchartsMeta>`
+    class.
+
+    .. seealso::
+
+      * :mod:`.metaclasses <highcharts_stock.metaclasses>`
+      * :class:`HighchartsMeta <highcharts_stock.metaclasses.HighchartsMeta>`
+
   Metric
     The value of a measurement. Think of it as a "type" of number. A metric might be
     "number of miles", or "dollars spent", or "temperature". It is a value that can be
@@ -297,6 +316,23 @@ Glossary
 
       * :class:`NetworkGraphOptions <highcharts_stock.options.plot_options.networkgraph.NetworkGraphOptions>`
       * :class:`NetworkGraphSeries <highcharts_stock.options.series.networkgraph.NetworkGraphSeries>`
+
+  Oscillator
+
+      .. caution::
+
+        Oscillators are only available in **Highcharts Stock for Python**.
+
+    An oscillator is a type of :term:`technical indicator` that is used to analyze bands
+    and trend evolutions. Oscillators typically are visualized by adding high and low
+    bands around the :term:`series` being analyzed and then adding a trendline calculation
+    that fluctuates between these bands.
+
+    .. seealso::
+
+      * :term:`Technical Indicator`
+      * :doc:`Supported Visualizations <visualizations>` > :ref:`Technical Indicators <technical_indicator_visualizations>`
+      * :doc:`Using Highcharts Stock for Python <using>` > :ref:`Using Technical Indicators <using_technical_indicators>`
 
   Plot Band
     A banded area displayed on a :term:`chart <charts>` bounded by two points on an axis.
@@ -370,6 +406,25 @@ Glossary
 
       Think of a "series" as one line on a line chart.
 
+  Shared Options
+    Shared Options are global configurations that are applied to all Highcharts
+    visualizations that are displayed at the same time (on one web page, typically). They
+    are typically used to practice good :iabbr:`DRY (Don't Repeat Yourself)` programming
+    and to minimize the amount of code rendered in the page itself.
+
+    In the **Highcharts for Python** toolkit, shared options are managed through the
+    :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+    and
+    :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
+    classes.
+
+    .. seealso::
+
+      * :doc:`Using Highcharts Stock for Python <using>` > :ref:`Using Shared Options <shared_options>`
+      * :mod:`.global_options.shared_options` <highcharts_stock.global_options.shared_options>
+      * :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
+      * :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+
   SolidGauge
     A solid gauge is a circular gauge where the value is indicated by a filled arc,
     and the color of the arc may variate with the value.
@@ -425,6 +480,31 @@ Glossary
 
       * :class:`SunburstOptions <highcharts_stock.options.plot_options.sunburst.SunburstOptions>`
       * :class:`SunburstSeries <highcharts_stock.options.series.sunburst.SunburstSeries>`
+
+  Technical Indicator
+
+      .. caution::
+
+        Technical indicators are only available in **Highcharts Stock for Python**.
+
+    Technical indicators are analyses performed on another :term:`series` that can provide
+    additional insights. For example, by looking at a linear regression of a time series
+    you can gain insight into the overarching trend of the data.
+
+    **Highcharts Stock for Python** supports over 50 different technical indicators.
+    Indicators differ from typical :term:`series` in that they do not accept data of their
+    own. They do not have a ``.data`` property, and do not receive their own data points.
+    Instead, they are automatically calculated by
+    `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ by linking the
+    indicator series to a main series on the chart itself.
+
+    .. seealso::
+
+      * :doc:`Supported Visualizations <visualizations>` > :ref:`Technical Indicators <technical_indicator_visualizations>`
+      * :doc:`Using Highcharts Stock for Python <using>` > :ref:`Using Technical Indicators <using_technical_indicators>`
+      * :meth:`SeriesBase.add_indicator() <highcharts_stock.options.series.SeriesBase.add_indicator>`
+      * :meth:`SeriesBase.get_indicator() <highcharts_stock.options.series.SeriesBase.get_indicator>`
+      * :meth:`Chart.add_indicator() <highcharts_stock.chart.Chart.add_indicator>`
 
   Untrimmed
 
