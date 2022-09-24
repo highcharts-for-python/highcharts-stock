@@ -136,13 +136,18 @@ Key Highcharts Stock for Python Features
   and JSON serialization, or impossible to maintain / copy-pasted "spaghetti code".
 * **Comprehensive Highcharts support**. Every single Highcharts chart type and every
   single configuration option is supported in **Highcharts Stock for Python**. This
-  includes the over 60 data visualization types supported by
+  includes the over 70 data visualization types supported by
   `Highcharts JS <https://www.highcharts.com/product/highcharts/>`__ and the
-  over 40 technical indicator visualizations available in
+  50+ technical indicator visualizations available in
   `Highcharts Stock <https://www.highcharts.com/product/stock/>`__, with full support for
   the rich JavaScript formatter (JS :term:`callback functions <callback function>`)
   capabilities that are often needed to get the most out of Highcharts' visualization and
   interaction capabilities.
+
+  .. seealso::
+
+    * :doc:`Supported Visualizations <visualizations>`
+
 * **Simple JavaScript Code Generation**. With one method call, produce production-ready
   JavaScript code to render your interactive visualizations using Highcharts' rich
   capabilities.
@@ -153,9 +158,7 @@ Key Highcharts Stock for Python Features
   server as needed.
 * **Integration with Pandas and PySpark**. With two lines of code, produce a high-end
   interactive visualization of your Pandas or PySpark dataframe.
-* Leverage Highcharts visualization templates in your Python code to eliminate "fiddly"
-  configuration tweaks.
-* **Consistent code style**. For Python developers, switching between Pythonic code
+* **Consistent Code Style**. For Python developers, switching between Pythonic code
   conventions and JavaScript code conventions can be...annoying. So
   **Highcharts for Python** applies Pythonic syntax with automatic conversion between
   Pythonic ``snake_case`` notation and JavaScript ``camelCase`` styles.
@@ -180,9 +183,6 @@ Hello World, and Basic Usage
 
     from highcharts_stock import highcharts
 
-  .. seealso::
-
-    * :ref:`Importing Your Configuration Objects <importing_config_objects>`
 
 2. Create Your Chart
 ================================
@@ -232,10 +232,6 @@ Hello World, and Basic Usage
     my_chart = highcharts.Chart.from_series(my_series)
 
 
-  .. seealso::
-
-    * :ref:`Instantiating Your Highcharts for Python Objects <instantiating>`
-
 3. Configure Global Settings (optional)
 =============================================
 
@@ -255,10 +251,6 @@ Hello World, and Basic Usage
 
     # from a HighchartsOptions configuration object
     my_global_settings = SharedStockOptions.from_options(my_options)
-
-  .. seealso::
-
-    * :ref:`Configuring Global Settings for Your Charts <global_settings>`
 
 
 4. Configure Your Chart / Global Settings
@@ -304,9 +296,6 @@ Hello World, and Basic Usage
     my_credits = Credits(text = 'Chris Modzelewski', enabled = True, href = 'https://www.highcharts.com')
     my_chart.options.credits = my_credits
 
-  .. seealso::
-
-    * :ref:`Configuring Your Charts <configuring>`
 
 5. Generate the JavaScript Code for Your Chart
 =================================================
@@ -322,9 +311,6 @@ that will render the chart wherever it is you want it to go:
     # to a file (and as a string)
     js_as_str = my_chart.to_js_literal(filename = 'my_target_file.js')
 
-  .. seealso::
-
-    * :ref:`Rendering Your Charts <rendering>`
 
 6. Generate the JavaScript Code for Your Global Settings (optional)
 =========================================================================
@@ -337,9 +323,6 @@ that will render the chart wherever it is you want it to go:
     # to a file (and as a string)
     global_settings_js = my_global_settings.to_js_literal('my_target_file.js')
 
-  .. seealso::
-
-    * :ref:`Rendering Your Charts <rendering>`
 
 7. Generate a Static Version of Your Chart
 ==============================================
@@ -352,10 +335,6 @@ that will render the chart wherever it is you want it to go:
     # to an image file (and as in-memory bytes)
     my_image_bytes = my_chart.download_chart(filename = 'my_target_file.png',
                                              format = 'png')
-
-  .. seealso::
-
-    * :ref:`Exporting Your Chart <exporting>`
 
 --------------
 

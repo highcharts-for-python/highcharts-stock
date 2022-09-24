@@ -72,33 +72,39 @@ Populating Series with Data
 
   .. tab:: from CSV
 
-    .. collapse:: Create a New Series...
+    .. tabs::
 
-      .. include:: using/populating_series_data/_new_from_csv.rst
+      .. tab:: Create a New Series
 
-    .. collapse:: Update an Existing Series...
+        .. include:: using/populating_series_data/_new_from_csv.rst
 
-      .. include:: using/populating_series_data/_load_from_csv.rst
+      .. tab:: Update an Existing Series
+
+        .. include:: using/populating_series_data/_load_from_csv.rst
 
   .. tab:: from Pandas
 
-    .. collapse:: Create a New Series...
+    .. tabs::
 
-      .. include:: using/populating_series_data/_new_from_pandas.rst
+      .. tab:: Create a New Series
 
-    .. collapse:: Update an Existing Series...
+        .. include:: using/populating_series_data/_new_from_pandas.rst
 
-      .. include:: using/populating_series_data/_load_from_pandas.rst
+      .. tab:: Update an Existing Series
+
+        .. include:: using/populating_series_data/_load_from_pandas.rst
 
   .. tab:: from PySpark
 
-    .. collapse:: Create a New Series...
+    .. tabs::
 
-      .. include:: using/populating_series_data/_new_from_pyspark.rst
+      .. tab:: Create a New Series
 
-    .. collapse:: Update an Existing Series...
+        .. include:: using/populating_series_data/_new_from_pyspark.rst
 
-      .. include:: using/populating_series_data/_load_from_pyspark.rst
+      .. tab:: Update an Existing Series
+
+        .. include:: using/populating_series_data/_load_from_pyspark.rst
 
 Adding Technical Indicators
 ================================

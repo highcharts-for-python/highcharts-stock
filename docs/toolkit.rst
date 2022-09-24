@@ -69,7 +69,8 @@ The **Highcharts for Python** toolkit includes two categories of tools:
     .. note::
 
       All extensions to **Highcharts for Python** support visualizations produced in any
-      of the core libraries.
+      of the core libraries. For more information, please see
+      :doc:`Supported Visualizations <visualizations>`.
 
 ------------
 
