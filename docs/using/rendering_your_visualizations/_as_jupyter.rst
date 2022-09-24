@@ -23,7 +23,7 @@
   # your shared options
   my_chart.display(global_options = my_shared_options)
 
-.. collapse:: Signature for the :meth:`Chart.display() <highcharts_stock.chart.Chart.display>` method
+.. collapse:: Method Signature
 
   .. method:: display(self, global_options = None)
     :noindex:

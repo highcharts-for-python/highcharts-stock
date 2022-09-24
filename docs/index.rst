@@ -199,13 +199,31 @@ Hello World, and Basic Usage
     my_chart = highcharts.Chart.from_dict(my_dict_obj)
 
     # from a Pandas dataframe
-    my_chart = highcharts.Chart.from_pandas(df)
+    my_chart = highcharts.Chart.from_pandas(df,
+                                            property_map = {
+                                                'x': 'transactionDate',
+                                                'y': 'invoiceAmt',
+                                                'id': 'id'
+                                            },
+                                            series_type = 'line')
 
     # from a PySpark dataframe
-    my_chart = highcharts.Chart.from_pyspark(df)
+    my_chart = highcharts.Chart.from_pyspark(df,
+                                             property_map = {
+                                                 'x': 'transactionDate',
+                                                 'y': 'invoiceAmt',
+                                                 'id': 'id'
+                                             },
+                                             series_type = 'line')
 
     # from a CSV
-    my_chart = highcharts.Chart.from_csv('/some_file_location/filename.csv')
+    my_chart = highcharts.Chart.from_csv('/some_file_location/filename.csv'
+                                         column_property_map = {
+                                            'x': 0,
+                                            'y': 4,
+                                            'id': 14
+                                         },
+                                         series_type = 'line')
 
     # from a HighchartsOptions configuration object
     my_chart = highcharts.Chart.from_options(my_options)
@@ -223,8 +241,8 @@ Hello World, and Basic Usage
 
   .. code-block:: python
 
-    # Import SharedOptions
-    from highcharts_stock.global_options.shared_options import SharedOptions
+    # Import SharedStockOptions
+    from highcharts_stock.global_options.shared_options import SharedStockOptions
 
     # from a JavaScript file
     my_global_settings = SharedStockOptions.from_js_literal('my_js_literal.js')

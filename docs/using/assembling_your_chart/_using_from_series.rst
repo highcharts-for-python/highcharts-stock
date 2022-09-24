@@ -12,7 +12,7 @@
 
   my_chart = Chart.from_series(my_series1, my_series2, options = None)
 
-.. collapse:: Signature for ``.from_series()``
+.. collapse:: Method Signature
 
   .. method:: .from_series(cls, *series, kwargs = None)
     :noindex:

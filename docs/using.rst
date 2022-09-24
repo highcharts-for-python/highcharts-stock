@@ -822,10 +822,6 @@ property will be set to ``True``, unless explicitly overridden in your code.
 
 ---------------------------
 
-********************************************
-Downloading Your Visualizations
-********************************************
-
 .. sidebar:: Highcharts Export Server
 
   Highsoft - the developers of `Highcharts JS <https://www.highcharts.com>`__ - are kind
@@ -840,6 +836,10 @@ Downloading Your Visualizations
   supplying it as the ``server_instance`` keyword argument to the ``.download_chart()``
   method.
 
+********************************************
+Downloading Your Visualizations
+********************************************
+
 Sometimes you are not looking to produce an interactive web-based visualization of your
 data, but instead are looking to produce a static image of your visualization that can
 be downloaded, emailed, or embedded in some other documents.
@@ -851,6 +851,10 @@ When you have defined a :class:`Chart <highcharts_stock.chart.Chart>` instance, 
 download a static version of that chart or persist it to a file in your runtime
 environment. The actual file itself is produced using a
 :term:`Highcharts Export Server <Export Server>`.
+
+|
+
+|
 
 .. tabs::
 

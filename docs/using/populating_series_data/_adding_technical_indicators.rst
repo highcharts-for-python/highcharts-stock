@@ -22,7 +22,7 @@
 
       my_chart = my_series.add_indicator(my_chart, indicator_name = 'sma')
 
-    .. collapse:: Signature for the ``Series.add_indicator()`` method
+    .. collapse:: Method Signature
 
       .. method:: .add_indicator(chart, indicator_name, indicator_kwargs = None)
         :noindex:
@@ -65,7 +65,7 @@
       my_chart2.add_indicator(indicator_name = 'sma',
                               series = my_series)
 
-    .. collapse:: Signature for the ``Chart.add_indicator()`` method
+    .. collapse:: Method Signature
 
       .. method:: .add_indicator(indicator_name, series, indicator_kwargs = None)
         :noindex:

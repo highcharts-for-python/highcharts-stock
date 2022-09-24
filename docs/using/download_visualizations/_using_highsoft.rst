@@ -21,7 +21,7 @@
       filename = '/images/my-chart-file.png'
   )
 
-.. collapse:: Signature for ``.download_chart()``
+.. collapse:: Method Signature
 
   .. seealso::
 

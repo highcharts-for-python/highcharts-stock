@@ -13,7 +13,7 @@
   my_series = LineSeries()
   my_chart.add_series(my_series)
 
-.. collapse:: Signature for ``.add_series()``
+.. collapse:: Method Signature
 
   .. method:: .add_series(self, *series)
     :noindex:

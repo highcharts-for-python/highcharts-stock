@@ -53,4 +53,4 @@
 
   .. seealso::
 
-    * :doc:`Using Highcharts Stock for Python <using>` > :ref:`Using Technical Indicators <using_technical_indicators>`
+    * :doc:`Using Highcharts Stock for Python </using>` > :ref:`Using Technical Indicators <using_technical_indicators>`

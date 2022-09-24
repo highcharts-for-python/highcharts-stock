@@ -35,7 +35,7 @@
   please see
   :class:`headless_export.ExportServer <highcharts_stock.headless_export.ExportServer>`.
 
-.. collapse:: Signature for ``.download_chart()``
+.. collapse:: Method Signature
 
   .. seealso::
 

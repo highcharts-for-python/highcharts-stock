@@ -22,35 +22,37 @@ Standardizing Your Charts
 
 .. tabs::
 
-  .. tab:: Using Shared Options
+  .. tab:: Shared Options
 
     .. tabs::
 
       .. tab:: with JS Literal
 
-        .. include:: using/shared_options/_with_js_literal.rst
+         .. include:: using/shared_options/_with_js_literal.rst
 
-      .. tab:: with ``.copy()``
+      .. tab:: with JSON
 
-        .. include:: using/shared_options/_with_copy.rst
+         .. include:: using/shared_options/_with_json.rst
 
       .. tab:: with :class:`dict <python:dict>`
 
-        .. include:: using/shared_options/_with_dict.rst
+         .. include:: using/shared_options/_with_dict.rst
 
-  .. tab:: Using Templates
+  .. tab:: Templates
 
-    .. tab:: with JS Literal
+    .. tabs::
 
-      .. include:: using/templates/_with_js_literal.rst
+      .. tab:: via JS Literal
 
-    .. tab:: with ``.copy()``
+        .. include:: using/templates/_with_js_literal.rst
 
-      .. include:: using/templates/_with_copy.rst
+      .. tab:: via ``.copy()``
 
-    .. tab:: with :class:`dict <python:dict>`
+        .. include:: using/templates/_with_copy.rst
 
-      .. include:: using/templates/_with_dict.rst
+      .. tab:: via :class:`dict <python:dict>`
+
+        .. include:: using/templates/_with_dict.rst
 
 ---------------------
 
@@ -60,11 +62,11 @@ Populating Series with Data
 
 .. tabs::
 
-  .. tab:: with ``.data``
+  .. tab:: w/ ``.data``
 
     .. include:: using/populating_series_data/_with_data_property.rst
 
-  .. tab:: with ``.from_array()``
+  .. tab:: w/ ``.from_array()``
 
     .. include:: using/populating_series_data/_with_from_array.rst
 
@@ -96,7 +98,7 @@ Populating Series with Data
 
     .. collapse:: Update an Existing Series...
 
-      .. include:: using/populating_series_data/_load_from_pysparkpyspark.rst
+      .. include:: using/populating_series_data/_load_from_pyspark.rst
 
 Adding Technical Indicators
 ================================
