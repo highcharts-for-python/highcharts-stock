@@ -109,26 +109,26 @@ Core Components
     - :class:`AnnounceNewDataLanguageOptions <highcharts_stock.global_options.language.accessibility.announce_new_data.AnnounceNewDataLanguageOptions>`
   * - :mod:`.global_options.language.accessibility.axis <highcharts_stock.global_options.language.accessibility.axis>`
     - :class:`AxisLanguageOptions <highcharts_stock.global_options.language.accessibility.axis.AxisLanguageOptions>`
-  * - :mod:`global_options.language.accessibility.chart_types <highcharts_stock.global_options.language.accessibility.chart_types>`
+  * - :mod:`.global_options.language.accessibility.chart_types <highcharts_stock.global_options.language.accessibility.chart_types>`
     - :class:`ChartTypesLanguageOptions <highcharts_stock.global_options.language.accessibility.chart_types.ChartTypesLanguageOptions>`
-  * - :mod:`global_options.language.accessibility.exporting <highcharts_stock.global_options.language.accessibility.exporting>`
+  * - :mod:`.global_options.language.accessibility.exporting <highcharts_stock.global_options.language.accessibility.exporting>`
     - :class:`ExportingLanguageOptions <highcharts_stock.global_options.language.accessibility.exporting.ExportingLanguageOptions>`
-  * - :mod:`global_options.language.accessibility.legend <highcharts_stock.global_options.language.accessibility.legend>`
+  * - :mod:`.global_options.language.accessibility.legend <highcharts_stock.global_options.language.accessibility.legend>`
     - :class:`LegendLanguageOptions <highcharts_stock.global_options.language.accessibility.legend.LegendLanguageOptions>`
-  * - :mod:`global_options.language.accessibility.range_selector <highcharts_stock.global_options.language.accessibility.range_selector>`
+  * - :mod:`.global_options.language.accessibility.range_selector <highcharts_stock.global_options.language.accessibility.range_selector>`
     - :class:`RangeSelectorLanguageOptions <highcharts_stock.global_options.language.accessibility.range_selector.RangeSelectorLanguageOptions>`
-  * - :mod:`global_options.language.accessibility.screen_reader_section <highcharts_stock.global_options.language.accessibility.screen_reader_section>`
+  * - :mod:`.global_options.language.accessibility.screen_reader_section <highcharts_stock.global_options.language.accessibility.screen_reader_section>`
     - :class:`ScreenReaderSectionLanguageOptions <highcharts_stock.global_options.language.accessibility.screen_reader_section.ScreenReaderSectionLanguageOptions>`
       :class:`ScreenReaderSectionAnnotationLanguage <highcharts_stock.global_options.language.accessibility.screen_reader_section.ScreenReaderSectionAnnotationLanguage>`
-  * - :mod:`global_options.language.accessibility.series <highcharts_stock.global_options.language.accessibility.series>`
+  * - :mod:`.global_options.language.accessibility.series <highcharts_stock.global_options.language.accessibility.series>`
     - :class:`SeriesLanguageOptions <highcharts_stock.global_options.language.accessibility.series.SeriesLanguageOptions>`
       :class:`SeriesSummaryLanguageOptions <highcharts_stock.global_options.language.accessibility.series.SeriesSummaryLanguageOptions>`
       :class:`SeriesTypeDescriptions <highcharts_stock.global_options.language.accessibility.series.SeriesTypeDescriptions>`
-  * - :mod:`global_options.language.accessibility.sonification <highcharts_stock.global_options.language.accessibility.sonification>`
+  * - :mod:`.global_options.language.accessibility.sonification <highcharts_stock.global_options.language.accessibility.sonification>`
     - :class:`SonificationLanguageOptions <highcharts_stock.global_options.language.accessibility.sonification.SonificationLanguageOptions>`
-  * - :mod:`global_options.language.accessibility.table <highcharts_stock.global_options.language.accessibility.table>`
+  * - :mod:`.global_options.language.accessibility.table <highcharts_stock.global_options.language.accessibility.table>`
     - :class:`TableLanguageOptions <highcharts_stock.global_options.language.accessibility.table.TableLanguageOptions>`
-  * - :mod:`global_options.language.accessibility.zoom <highcharts_stock.global_options.language.accessibility.zoom>`
+  * - :mod:`.global_options.language.accessibility.zoom <highcharts_stock.global_options.language.accessibility.zoom>`
     - :class:`ZoomLanguageOptions <highcharts_stock.global_options.language.accessibility.zoom.ZoomLanguageOptions>`
   * - :mod:`.global_options.language.export_data <highcharts_stock.global_options.language.export_data>`
     - :class:`ExportDataLanguageOptions <highcharts_stock.global_options.language.export_data.ExportDataLanguageOptions>`
@@ -143,6 +143,8 @@ Core Components
       :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
   * - :mod:`.headless_export <highcharts_stock.headless_export>`
     - :class:`ExportServer <highcharts_stock.headless_export.ExportServer>`
+  * - :mod:`.highcharts <highcharts_stock.highcharts>`
+    - (most classes from across the library)
   * - :mod:`.options <highcharts_stock.options>`
     - :class:`HighchartsStockOptions <highcharts_stock.options.HighchartsStockOptions>`
       :class:`HighchartsOptions <highcharts_stock.options.HighchartsOptions>`
@@ -912,6 +914,7 @@ Core Components
   api/chart
   api/global_options/index
   api/headless_export
+  api/highcharts
   api/options/index
   api/utility_classes/index
 
