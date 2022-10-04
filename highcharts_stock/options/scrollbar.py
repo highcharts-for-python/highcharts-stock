@@ -263,7 +263,7 @@ class Scrollbar(HighchartsMeta):
 
     @min_width.setter
     def min_width(self, value):
-        self._min_widdth = validators.numeric(value, allow_empty = True)
+        self._min_width = validators.numeric(value, allow_empty = True)
 
     @property
     def rifle_color(self) -> Optional[str | Gradient | Pattern]:
