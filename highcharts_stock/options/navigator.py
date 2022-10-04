@@ -10,6 +10,7 @@ from highcharts_stock.utility_classes.gradients import Gradient
 from highcharts_stock.utility_classes.patterns import Pattern
 from highcharts_stock.options.axes.x_axis import XAxis
 from highcharts_stock.options.axes.y_axis import YAxis
+from highcharts_stock.utility_functions import validate_color
 
 
 class HandleOptions(HighchartsMeta):
@@ -297,32 +298,8 @@ class Navigator(HighchartsMeta):
     def mask_fill(self, value):
         if not value:
             self._mask_fill = None
-        elif isinstance(value, (Gradient, Pattern)):
-            self._mask_fill = value
-        elif isinstance(value, (dict, str)) and 'linearGradient' in value:
-            try:
-                self._mask_fill = Gradient.from_json(value)
-            except ValueError:
-                if isinstance(value, dict):
-                    self._mask_fill = Gradient.from_dict(value)
-                else:
-                    self._mask_fill = validators.string(value)
-        elif isinstance(value, dict) and 'linear_gradient' in value:
-            self._mask_fill = Gradient(**value)
-        elif isinstance(value, (dict, str)) and 'patternOptions' in value:
-            try:
-                self._mask_fill = Pattern.from_json(value)
-            except ValueError:
-                if isinstance(value, dict):
-                    self._mask_fill = Pattern.from_dict(value)
-                else:
-                    self._mask_fill = validators.string(value)
-        elif isinstance(value, dict) and 'pattern_options' in value:
-            self._mask_fill = Pattern(**value)
         else:
-            raise errors.HighchartsValueError(f'Unable to resolve value to a string, '
-                                              f'Gradient, or Pattern. Value received '
-                                              f'was: {value}')
+            self._mask_fill = validate_color(value)
 
     @property
     def mask_inside(self) -> Optional[bool]:
