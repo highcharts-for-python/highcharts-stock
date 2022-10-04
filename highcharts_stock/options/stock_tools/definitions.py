@@ -301,7 +301,7 @@ class FlagsDefinitions(HighchartsMeta):
         self.items = kwargs.get('items', None)
         self.flag_circlepin = kwargs.get('flag_circlepin', None)
         self.flag_diamondpin = kwargs.get('flag_diamondpin', None)
-        self.flag_simplepin = kwargs.get('flag_simplein', None)
+        self.flag_simplepin = kwargs.get('flag_simplepin', None)
         self.flag_squarepin = kwargs.get('flag_squarepin', None)
 
     @property
@@ -384,7 +384,7 @@ class FlagsDefinitions(HighchartsMeta):
             'items': as_dict.get('items', None),
             'flag_circlepin': as_dict.get('flagCirclepin', None),
             'flag_diamondpin': as_dict.get('flagDiamondpin', None),
-            'flag_simplepin': as_dict.get('flagSimplein', None),
+            'flag_simplepin': as_dict.get('flagSimplepin', None),
             'flag_squarepin': as_dict.get('flagSquarepin', None),
         }
 
@@ -395,7 +395,7 @@ class FlagsDefinitions(HighchartsMeta):
             'items': self.items,
             'flagCirclepin': self.flag_circlepin,
             'flagDiamondpin': self.flag_diamondpin,
-            'flagSimplepin': self.flag_simplein,
+            'flagSimplepin': self.flag_simplepin,
             'flagSquarepin': self.flag_squarepin,
         }
 
