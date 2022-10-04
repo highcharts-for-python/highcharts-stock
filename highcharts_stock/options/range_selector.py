@@ -510,7 +510,7 @@ class RangeSelector(HighchartsMeta):
     def input_date_format(self) -> Optional[str]:
         """The (JavaScript) date format in which dates in the input boxes are displayed
         when the input boxes are *not* selected for editing. Defaults to
-        ``''%b %e, %Y'``.
+        ``'%b %e, %Y'``.
 
         .. note::
 
@@ -571,6 +571,11 @@ class RangeSelector(HighchartsMeta):
         :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
         """
         return self._input_edit_date_format
+
+    @input_edit_date_format.setter
+    def input_edit_date_format(self, value):
+        self._input_edit_date_format = validators.string(value, allow_empty = True)
+
 
     @property
     def input_enabled(self) -> Optional[bool]:
