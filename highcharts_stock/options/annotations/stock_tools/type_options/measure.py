@@ -155,7 +155,7 @@ class MeasureLabelOptions(HighchartsMeta):
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
-            'enabled': self.enbaled,
+            'enabled': self.enabled,
             'formatter': self.formatter,
             'style': self.style
         }

@@ -37,7 +37,7 @@ class FibonacciTypeOptions(HighchartsMeta):
         self.y_axis = kwargs.get('y_axis', None)
 
     @property
-    def background_colors(self) -> Optional[str]:
+    def background_colors(self) -> Optional[List[str]]:
         """An array of colors to apply to the backgorund of fibonacci annotations.
 
         Defaults to:
@@ -270,35 +270,6 @@ class FibonacciTimeZonesTypeOptions(HighchartsMeta):
         self._line = value
 
     @property
-    def line_color(self) -> Optional[str]:
-        """The color of the line. Defaults to ``'#999999'``.
-
-        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
-        """
-        return self._line_color
-
-    @line_color.setter
-    def line_color(self, value):
-        self._line_color = validators.string(value, allow_empty = True)
-
-    @property
-    def line_colors(self) -> Optional[List[str]]:
-        """Array of colors for the lines.
-
-        :rtype: :class:`list <python:list>` of :class:`str <python:str>`, or
-          :obj:`None <python:None>`
-        """
-        return self._line_colors
-
-    @line_colors.setter
-    def line_colors(self, value):
-        if not value:
-            self._line_colors = None
-        else:
-            value = validators.iterable(value, allow_empty = True)
-            self._line_colors = [validators.string(x) for x in value]
-
-    @property
     def points(self) -> Optional[List[StockToolsXPoint]]:
         """Collection of annotation points for the stock tool type.
 
@@ -374,12 +345,7 @@ class FibonacciTimeZonesTypeOptions(HighchartsMeta):
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
         kwargs = {
-            'background_colors': as_dict.get('backgroundColors', None),
-            'height': as_dict.get('height', None),
-            'labels': as_dict.get('labels', None),
             'line': as_dict.get('line', None),
-            'line_color': as_dict.get('lineColor', None),
-            'line_colors': as_dict.get('lineColors', None),
             'points': as_dict.get('points', None),
             'x_axis': as_dict.get('xAxis', None),
             'y_axis': as_dict.get('yAxis', None),
@@ -389,12 +355,7 @@ class FibonacciTimeZonesTypeOptions(HighchartsMeta):
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
-            'backgroundColors': self.background_colors,
-            'height': self.height,
-            'labels': self.labels,
             'line': self.line,
-            'lineColor': self.line_color,
-            'lineColors': self.line_colors,
             'points': self.points,
             'xAxis': self.x_axis,
             'yAxis': self.y_axis,
