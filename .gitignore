@@ -130,3 +130,7 @@ dmypy.json
 
 # VENV
 .py310/
+
+# temp files
+~$*.*
+tests/input_files/headless_export/output/

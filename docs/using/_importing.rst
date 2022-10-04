@@ -15,7 +15,7 @@
       # Import classes using precise module indications. For example:
       from highcharts_stock.chart import Chart
       from highcharts_stock.global_options.shared_options import SharedStockOptions
-      from highcharts_stock.options import HighchartsOptions
+      from highcharts_stock.options import HighchartsStockOptions
       from highcharts_stock.options.plot_options.bar import BarOptions
       from highcharts_stock.options.series.bar import BarSeries
 
@@ -36,6 +36,6 @@
       # You can now access specific classes without individual import statements.
       highcharts.Chart
       highcharts.SharedStockOptions
-      highcharts.HighchartsOptions
+      highcharts.HighchartsStockOptions
       highcharts.BarOptions
       highcharts.BarSeries
