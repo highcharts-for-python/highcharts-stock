@@ -202,7 +202,7 @@ class StockBaseOptions(HighchartsMeta):
 
           .. seealso::
 
-            * :meth:`.last_price_visible <highcharts_stock.options.plot_options.indicators.IndicatorOptions.last_price_visible>`
+            * :meth:`.last_visible_price <highcharts_stock.options.plot_options.indicators.IndicatorOptions.last_visible_price>`
 
 
         :rtype: :class:`LastPriceOptions <highcharts_stock.utility_classes.last_price.LastPriceOptions>`
@@ -216,7 +216,7 @@ class StockBaseOptions(HighchartsMeta):
         self._last_price = value
 
     @property
-    def last_price_visible(self) -> Optional[LastPriceOptions]:
+    def last_visible_price(self) -> Optional[LastPriceOptions]:
         """Configuration of a line marking the last price from all visible data points.
         Defaults to :obj:`None <python:None>`.
 
@@ -224,15 +224,15 @@ class StockBaseOptions(HighchartsMeta):
 
             * :meth:`.last_price <highcharts_stock.options.plot_options.indicators.IndicatorOptions.last_price>`
 
-        :rtype: :class:`LastPriceOptions <highcharts_stock.utility_classes.last_price_visible.LastPriceOptions>`
+        :rtype: :class:`LastPriceOptions <highcharts_stock.utility_classes.last_visible_price.LastPriceOptions>`
           or :obj:`None <python:None>`
         """
-        return self._last_price_visible
+        return self._last_visible_price
 
-    @last_price_visible.setter
+    @last_visible_price.setter
     @class_sensitive(LastPriceOptions)
-    def last_price_visible(self, value):
-        self._last_price_visible = value
+    def last_visible_price(self, value):
+        self._last_visible_price = value
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -268,7 +268,6 @@ class NonIndicatorOptions(StockBaseOptions):
     """Base class for Stock Plot Options, with navigator options."""
 
     def __init__(self, **kwargs):
-        print('EXECUTING NON INDICATOR BASE INIT')
         self._compare = None
         self._compare_base = None
         self._navigator_options = None
