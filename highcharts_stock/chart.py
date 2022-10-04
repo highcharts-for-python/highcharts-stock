@@ -21,19 +21,11 @@ class Chart(ChartBase):
     """Python representation of a Highcharts ``Chart`` object."""
 
     def __init__(self, **kwargs):
-        self._callback = None
-        self._container = None
-        self._options = None
-        self._variable_name = None
-
         self._is_stock_chart = None
 
-        self.callback = kwargs.get('callback', None)
-        self.container = kwargs.get('container', None)
-        self.options = kwargs.get('options', None)
-        self.variable_name = kwargs.get('variable_name', None)
-
         self.is_stock_chart = kwargs.get('is_stock_chart', False)
+
+        super().__init__(**kwargs)
 
     def _repr_html_(self):
         """Produce the HTML representation of the chart.
@@ -60,6 +52,22 @@ class Chart(ChartBase):
         html_str = container_str + script_str
 
         return html_str
+
+    @property
+    def is_stock_chart(self) -> bool:
+        """If ``True``, indicates that the chart should be rendered as a
+        `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ chart. If
+        ``False``, the chart will be rendered using the standard
+        `Highcharts JS <https://www.highcharts.com/products/highcharts/>`__ constructor.
+        Defaults to ``False``.
+
+        :rtype: :class:`bool <python:bool>`
+        """
+        return self._is_stock_chart
+
+    @is_stock_chart.setter
+    def is_stock_chart(self, value):
+        self._is_stock_chart = bool(value)
 
     @property
     def options(self) -> Optional[HighchartsOptions | HighchartsStockOptions]:

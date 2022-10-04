@@ -282,7 +282,7 @@ def compare_js_literals(original, new):
 
         if new[counter] != char:
             print(f'\nMISMATCH FOUND AT ORIGINAL CHARACTER: {counter}')
-            print(f'-- ORIGINAL: {original[min_index:max_index]}')
+            print(f'-- ORIGINAL: {original[min_index:max_index]}\n\n')
             print(f'-- NEW: {new[min_index:max_index]}')
             break
 

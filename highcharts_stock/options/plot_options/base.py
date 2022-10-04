@@ -268,6 +268,7 @@ class NonIndicatorOptions(StockBaseOptions):
     """Base class for Stock Plot Options, with navigator options."""
 
     def __init__(self, **kwargs):
+        print('EXECUTING NON INDICATOR BASE INIT')
         self._compare = None
         self._compare_base = None
         self._navigator_options = None

@@ -292,7 +292,7 @@ class PlotOptions(PlotOptionsBase):
 
         :rtype: :class:`AOOptions` or :obj:`None <python:None>`
         """
-        return self._aa
+        return self._ao
 
     @ao.setter
     @class_sensitive(AOOptions)

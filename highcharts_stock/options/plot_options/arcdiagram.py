@@ -87,10 +87,6 @@ class ArcDiagramOptions(ArcDiagramBase, NonIndicatorOptions):
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
-        untrimmed = {}
-        parent_as_dict = mro__to_untrimmed_dict(self, in_cls = in_cls) or {}
-
-        for key in parent_as_dict:
-            untrimmed[key] = parent_as_dict[key]
+        untrimmed = mro__to_untrimmed_dict(self, in_cls = in_cls) or {}
 
         return untrimmed
