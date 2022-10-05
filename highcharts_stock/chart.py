@@ -113,7 +113,8 @@ class Chart(ChartBase):
             'variable_name': as_dict.get('variable_name',
                                          None) or as_dict.get('variableName', None),
 
-            'is_stock_chart': as_dict.get('is_stock_chart', False),
+            'is_stock_chart': as_dict.get('is_stock_chart',
+                                          None) or as_dict.get('isStockChart', False)
         }
 
         return kwargs
