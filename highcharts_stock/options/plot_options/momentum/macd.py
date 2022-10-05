@@ -128,7 +128,7 @@ class MACDLineOptions(HighchartsMeta):
     @zones.setter
     @class_sensitive(Zone, force_iterable = True)
     def zones(self, value):
-        self_zones = value
+        self._zones = value
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):

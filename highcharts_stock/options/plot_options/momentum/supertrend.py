@@ -23,6 +23,15 @@ class SupertrendParameters(ParameterBase):
         super().__init__(**kwargs)
 
     @property
+    def index(self):
+        """Does not apply, so raises an :exc:`AttributeError <python:AttributeError>`."""
+        raise AttributeError(f"{self.__class__.__name__} has no attribute 'index'")
+
+    @index.setter
+    def index(self, value):
+        raise AttributeError(f"{self.__class__.__name__} has no attribute 'index'")
+
+    @property
     def multiplier(self) -> Optional[int]:
         """The multiplier applied to the indicator calculation. Defaults to ``3``.
 
