@@ -26,7 +26,11 @@ class StockBaseOptions(HighchartsMeta):
         self._last_price = None
         self._last_visible_price = None
 
-        self.compare_start = kwargs.get('compare_start', None)
+        try:
+            self.compare_start = kwargs.get('compare_start', None)
+        except AttributeError:
+            pass
+
         self.cumulative = kwargs.get('cumulative', None)
         self.data_as_columns = kwargs.get('data_as_columns', None)
         self.data_grouping = kwargs.get('data_grouping', None)
@@ -250,8 +254,13 @@ class StockBaseOptions(HighchartsMeta):
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
+        try:
+            compare_start = self.compare_start
+        except AttributeError:
+            compare_start = None
+
         untrimmed = {
-            'compareStart': self.compare_start,
+            'compareStart': compare_start,
             'cumulative': self.cumulative,
             'dataAsColumns': self.data_as_columns,
             'dataGrouping': self.data_grouping,

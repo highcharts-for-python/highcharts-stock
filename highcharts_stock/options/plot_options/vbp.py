@@ -8,6 +8,7 @@ from highcharts_python.metaclasses import HighchartsMeta
 
 from highcharts_stock.options.plot_options.indicators import ComparableIndicatorOptions
 from highcharts_stock.options.plot_options.momentum import OBVParameters
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 
 class VBPParameters(OBVParameters):
@@ -240,6 +241,17 @@ class VBPOptions(ComparableIndicatorOptions):
         super().__init__(**kwargs)
 
     @property
+    def compare_start(self):
+        """Does not apply, so raises an :exc:`AttributeError <python:AttributeError>`."""
+        raise AttributeError(f"{self.__class__.__name__} has no attribute "
+                             f"'compare_start'")
+
+    @compare_start.setter
+    def compare_start(self, value):
+        raise AttributeError(f"{self.__class__.__name__} has no attribute "
+                             f"'compare_start'")
+
+    @property
     def params(self) -> Optional[VBPParameters]:
         """Parameters used in calculating the indicator's data points.
 
@@ -359,7 +371,6 @@ class VBPOptions(ComparableIndicatorOptions):
             'point_start': as_dict.get('pointStart', None),
             'stacking': as_dict.get('stacking', None),
 
-            'compare_start': as_dict.get('compareStart', None),
             'compare_to_main': as_dict.get('compareToMain', None),
             'cumulative': as_dict.get('cumulative', None),
             'data_as_columns': as_dict.get('dataAsColumns', None),
@@ -389,7 +400,7 @@ class VBPOptions(ComparableIndicatorOptions):
             'zoneLines': self.zone_lines,
         }
 
-        parent_as_dict = super()._to_untrimmed_dict(in_cls = in_cls)
+        parent_as_dict = mro__to_untrimmed_dict(self, in_cls = in_cls)
 
         for key in parent_as_dict:
             untrimmed[key] = parent_as_dict[key]
