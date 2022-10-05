@@ -4,7 +4,7 @@ import pytest
 
 from json.decoder import JSONDecodeError
 
-from highcharts_stock.options.plot_options.oscillators.ppo import PPOOptions as cls
+from highcharts_stock.options.series.oscillators.ppo import PPOSeries as cls
 
 from highcharts_stock import errors
 from tests.fixtures import input_files, check_input_file, to_camelCase, to_js_dict, \
@@ -17,28 +17,28 @@ STANDARD_PARAMS = [
 
 
 @pytest.mark.parametrize('kwargs, error', STANDARD_PARAMS)
-def test_PPOOptions__init__(kwargs, error):
+def test_PPOSeries__init__(kwargs, error):
     Class__init__(cls, kwargs, error)
 
 
 @pytest.mark.parametrize('kwargs, error', STANDARD_PARAMS)
-def test_PPOOptions__to_untrimmed_dict(kwargs, error):
+def test_PPOSeries__to_untrimmed_dict(kwargs, error):
     Class__to_untrimmed_dict(cls, kwargs, error)
 
 
 @pytest.mark.parametrize('kwargs, error',  STANDARD_PARAMS)
-def test_PPOOptions_from_dict(kwargs, error):
+def test_PPOSeries_from_dict(kwargs, error):
     Class_from_dict(cls, kwargs, error)
 
 
 @pytest.mark.parametrize('kwargs, error',  STANDARD_PARAMS)
-def test_PPOOptions_to_dict(kwargs, error):
+def test_PPOSeries_to_dict(kwargs, error):
     Class_to_dict(cls, kwargs, error)
 
 
 @pytest.mark.parametrize('filename, as_file, error', [
-    ('plot_options/oscillators/ppo/01.js', False, None),
-    ('plot_options/oscillators/ppo/error-01.js',
+    ('series/oscillators/ppo/01.js', False, None),
+    ('series/oscillators/ppo/error-01.js',
      False,
      (errors.HighchartsValueError,
       errors.HighchartsParseError,
@@ -46,8 +46,8 @@ def test_PPOOptions_to_dict(kwargs, error):
       TypeError,
       ValueError)),
 
-    ('plot_options/oscillators/ppo/01.js', True, None),
-    ('plot_options/oscillators/ppo/error-01.js',
+    ('series/oscillators/ppo/01.js', True, None),
+    ('series/oscillators/ppo/error-01.js',
      True,
      (errors.HighchartsValueError,
       errors.HighchartsParseError,
@@ -56,5 +56,5 @@ def test_PPOOptions_to_dict(kwargs, error):
       ValueError)),
 
 ])
-def test_PPOOptions_from_js_literal(input_files, filename, as_file, error):
+def test_PPOSeries_from_js_literal(input_files, filename, as_file, error):
     Class_from_js_literal(cls, input_files, filename, as_file, error)

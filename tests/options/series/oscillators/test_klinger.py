@@ -4,7 +4,7 @@ import pytest
 
 from json.decoder import JSONDecodeError
 
-from highcharts_stock.options.plot_options.oscillators.klinger import KlingerOptions as cls
+from highcharts_stock.options.series.oscillators.klinger import KlingerSeries as cls
 
 from highcharts_stock import errors
 from tests.fixtures import input_files, check_input_file, to_camelCase, to_js_dict, \
@@ -17,28 +17,28 @@ STANDARD_PARAMS = [
 
 
 @pytest.mark.parametrize('kwargs, error', STANDARD_PARAMS)
-def test_KlingerOptions__init__(kwargs, error):
+def test_KlingerSeries__init__(kwargs, error):
     Class__init__(cls, kwargs, error)
 
 
 @pytest.mark.parametrize('kwargs, error', STANDARD_PARAMS)
-def test_KlingerOptions__to_untrimmed_dict(kwargs, error):
+def test_KlingerSeries__to_untrimmed_dict(kwargs, error):
     Class__to_untrimmed_dict(cls, kwargs, error)
 
 
 @pytest.mark.parametrize('kwargs, error',  STANDARD_PARAMS)
-def test_KlingerOptions_from_dict(kwargs, error):
+def test_KlingerSeries_from_dict(kwargs, error):
     Class_from_dict(cls, kwargs, error)
 
 
 @pytest.mark.parametrize('kwargs, error',  STANDARD_PARAMS)
-def test_KlingerOptions_to_dict(kwargs, error):
+def test_KlingerSeries_to_dict(kwargs, error):
     Class_to_dict(cls, kwargs, error)
 
 
 @pytest.mark.parametrize('filename, as_file, error', [
-    ('plot_options/oscillators/klinger/01.js', False, None),
-    ('plot_options/oscillators/klinger/error-01.js',
+    ('series/oscillators/klinger/01.js', False, None),
+    ('series/oscillators/klinger/error-01.js',
      False,
      (errors.HighchartsValueError,
       errors.HighchartsParseError,
@@ -46,8 +46,8 @@ def test_KlingerOptions_to_dict(kwargs, error):
       TypeError,
       ValueError)),
 
-    ('plot_options/oscillators/klinger/01.js', True, None),
-    ('plot_options/oscillators/klinger/error-01.js',
+    ('series/oscillators/klinger/01.js', True, None),
+    ('series/oscillators/klinger/error-01.js',
      True,
      (errors.HighchartsValueError,
       errors.HighchartsParseError,
@@ -56,5 +56,5 @@ def test_KlingerOptions_to_dict(kwargs, error):
       ValueError)),
 
 ])
-def test_KlingerOptions_from_js_literal(input_files, filename, as_file, error):
+def test_KlingerSeries_from_js_literal(input_files, filename, as_file, error):
     Class_from_js_literal(cls, input_files, filename, as_file, error)
