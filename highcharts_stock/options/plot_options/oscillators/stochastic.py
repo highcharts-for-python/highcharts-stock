@@ -12,6 +12,13 @@ from highcharts_stock.utility_classes.line_styles import LineStylesColorWidth
 
 class StochasticParameters(ParameterBase):
 
+    def __init__(self, **kwargs):
+        self._periods = None
+
+        self.periods = kwargs.get('periods', None)
+
+        super().__init__(**kwargs)
+
     @property
     def index(self):
         """Does not apply, so raises an :exc:`AttributeError <python:AttributeError>`."""
@@ -73,6 +80,9 @@ class StochasticParameters(ParameterBase):
 
 
 class SlowStochasticParameters(StochasticParameters):
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
     @property
     def periods(self) -> Optional[List[int]]:

@@ -14,7 +14,7 @@ class MFIParameters(ParameterBase):
         self._decimals = None
         self._volume_series_id = None
 
-        self.decimals = kwargs.get('deicmals', None)
+        self.decimals = kwargs.get('decimals', None)
         self.volume_series_id = kwargs.get('volume_series_id', None)
 
         super().__init__(**kwargs)
