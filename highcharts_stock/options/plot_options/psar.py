@@ -16,7 +16,7 @@ class PSARParameters(ParameterBase):
         self._initial_acceleration_factor = None
         self._max_acceleration_factor = None
 
-        self.decimals = kwargs.get('deicmals', None)
+        self.decimals = kwargs.get('decimals', None)
         self.increment = kwargs.get('increment', None)
         self.initial_acceleration_factor = kwargs.get('initial_acceleration_factor', None)
         self.max_acceleration_factor = kwargs.get('max_acceleration_factor', None)
