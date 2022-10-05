@@ -17,7 +17,7 @@ class VBPParameters(OBVParameters):
 
         self.ranges = kwargs.get('ranges', None)
 
-        super().__init__(self, **kwargs)
+        super().__init__(**kwargs)
 
     @property
     def ranges(self) -> Optional[int]:
