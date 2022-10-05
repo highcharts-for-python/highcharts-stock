@@ -51,6 +51,8 @@ class DisparityIndexParameters(ParameterBase):
                 raise errors.HighchartsValueError(f'average expects a recognized average '
                                                   f'indicator. Received: "{value}"')
 
+            self._average = value
+
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
         kwargs = {
