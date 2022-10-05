@@ -12,6 +12,7 @@ from highcharts_stock.utility_classes.events import SeriesEvents as cls5
 from highcharts_stock.utility_classes.events import ClusterEvents as cls6
 from highcharts_stock.utility_classes.events import AxisEvents as cls7
 from highcharts_stock.utility_classes.events import MouseEvents as cls8
+from highcharts_stock.utility_classes.events import RangeSelectorEvents as cls9
 
 from highcharts_stock import errors
 from tests.fixtures import input_files, check_input_file, to_camelCase, to_js_dict, \
@@ -506,3 +507,52 @@ def test_MouseEvents_to_dict(kwargs, error):
 ])
 def test_MouseEvents_from_js_literal(input_files, filename, as_file, error):
     Class_from_js_literal(cls8, input_files, filename, as_file, error)
+
+
+##### NEXT CLASS
+
+STANDARD_PARAMS_9 = [
+    ({}, None),
+    ({
+      'click': """function(event) { return true; }""",
+    }, None),
+]
+
+
+@pytest.mark.parametrize('kwargs, error', STANDARD_PARAMS_9)
+def test_RangeSelectorEvents__init__(kwargs, error):
+    Class__init__(cls9, kwargs, error)
+
+
+@pytest.mark.parametrize('kwargs, error', STANDARD_PARAMS_9)
+def test_RangeSelectorEvents__to_untrimmed_dict(kwargs, error):
+    Class__to_untrimmed_dict(cls9, kwargs, error)
+
+
+@pytest.mark.parametrize('kwargs, error',  STANDARD_PARAMS_9)
+def test_RangeSelectorEvents_from_dict(kwargs, error):
+    Class_from_dict(cls9, kwargs, error)
+
+
+@pytest.mark.parametrize('kwargs, error',  STANDARD_PARAMS_9)
+def test_RangeSelectorEvents_to_dict(kwargs, error):
+    Class_to_dict(cls9, kwargs, error)
+
+
+@pytest.mark.parametrize('filename, as_file, error', [
+    ('utility_classes/events/09.js', False, None),
+    ('utility_classes/events/error-09.js', False, (errors.HighchartsValueError,
+                                                   errors.HighchartsParseError,
+                                                   JSONDecodeError,
+                                                   TypeError,
+                                                   ValueError)),
+
+    ('utility_classes/events/09.js', True, None),
+    ('utility_classes/events/error-09.js', True, (errors.HighchartsValueError,
+                                                  errors.HighchartsParseError,
+                                                  JSONDecodeError,
+                                                  TypeError,
+                                                  ValueError)),
+])
+def test_RangeSelectorEvents_from_js_literal(input_files, filename, as_file, error):
+    Class_from_js_literal(cls9, input_files, filename, as_file, error)
