@@ -12,7 +12,6 @@
     styles: 'some-style-goes-here'
   },
 
-  compareStart: true,
   compareToMain: true,
   name: 'Some-Name-Goes-Here',
   params: {
