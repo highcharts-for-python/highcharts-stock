@@ -157,7 +157,7 @@ class PlotOptions(PlotOptionsBase):
         self._keltnerchannels = None
         self._klinger = None
         self._linearregression = None
-        self._linearregressionngle = None
+        self._linearregressionangle = None
         self._linearregressionintercept = None
         self._linearregressionslope = None
         self._macd = None
@@ -212,7 +212,7 @@ class PlotOptions(PlotOptionsBase):
         self.keltnerchannels = kwargs.get('keltnerchannels', None)
         self.klinger = kwargs.get('klinger', None)
         self.linearregression = kwargs.get('linearregression', None)
-        self.linearregressionngle = kwargs.get('linearregressionngle', None)
+        self.linearregressionangle = kwargs.get('linearregressionangle', None)
         self.linearregressionintercept = kwargs.get('linearregressionintercept', None)
         self.linearregressionslope = kwargs.get('linearregressionslope', None)
         self.macd = kwargs.get('macd', None)
@@ -2584,7 +2584,7 @@ class PlotOptions(PlotOptionsBase):
             'keltnerchannels': as_dict.get('keltnerchannels', None),
             'klinger': as_dict.get('klinger', None),
             'linearregression': as_dict.get('linearregression', None),
-            'linearregressionngle': as_dict.get('linearregressionngle', None),
+            'linearregressionangle': as_dict.get('linearregressionangle', None),
             'linearregressionintercept': as_dict.get('linearregressionintercept', None),
             'linearregressionslope': as_dict.get('linearregressionslope', None),
             'macd': as_dict.get('macd', None),
@@ -2644,7 +2644,7 @@ class PlotOptions(PlotOptionsBase):
             'keltnerchannels': self.keltnerchannels,
             'klinger': self.klinger,
             'linearregression': self.linearregression,
-            'linearregressionngle': self.linearregressionngle,
+            'linearregressionangle': self.linearregressionangle,
             'linearregressionintercept': self.linearregressionintercept,
             'linearregressionslope': self.linearregressionslope,
             'macd': self.macd,

@@ -757,6 +757,7 @@ class HighchartsStockOptions(HighchartsOptions):
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
         as_dict = validators.dict(as_dict, allow_empty = True) or {}
+
         kwargs_dict = {
             'accessibility': as_dict.get('accessibility', None),
             'annotations': as_dict.get('annotations', None),
@@ -768,6 +769,7 @@ class HighchartsStockOptions(HighchartsOptions):
             'credits': as_dict.get('credits', None),
             'data': as_dict.get('data', None),
             'defs': as_dict.get('defs', None),
+            'drilldown': as_dict.get('drilldown', None),
             'exporting': as_dict.get('exporting', None),
             'language': as_dict.get('lang', None),
             'legend': as_dict.get('legend', None),
@@ -775,6 +777,7 @@ class HighchartsStockOptions(HighchartsOptions):
             'navigation': as_dict.get('navigation', None),
             'navigator': as_dict.get('navigator', None),
             'no_data': as_dict.get('noData', None),
+            'pane': as_dict.get('pane', None),
             'plot_options': as_dict.get('plotOptions', None),
             'range_selector': as_dict.get('rangeSelector', None),
             'responsive': as_dict.get('responsive', None),
@@ -786,10 +789,11 @@ class HighchartsStockOptions(HighchartsOptions):
             'title': as_dict.get('title', None),
             'tooltip': as_dict.get('tooltip', None),
             'x_axis': as_dict.get('xAxis', None),
-            'y_axis': as_dict.get('yAxis', None)
+            'y_axis': as_dict.get('yAxis', None),
+            'z_axis': as_dict.get('zAxis', None),
         }
 
-        return cls(**kwargs_dict)
+        return kwargs_dict
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
@@ -803,6 +807,7 @@ class HighchartsStockOptions(HighchartsOptions):
             'credits': self.credits,
             'data': self.data,
             'defs': self.defs,
+            'drilldown': self.drilldown,
             'exporting': self.exporting,
             'lang': self.language,
             'legend': self.legend,
@@ -810,6 +815,7 @@ class HighchartsStockOptions(HighchartsOptions):
             'navigation': self.navigation,
             'navigator': self.navigator,
             'noData': self.no_data,
+            'pane': self.pane,
             'plotOptions': self.plot_options,
             'rangeSelector': self.range_selector,
             'responsive': self.responsive,
