@@ -53,6 +53,8 @@ class PivotPointsParameters(ParameterBase):
                                                   f'"fibonacci", or "camarilla". '
                                                   f'Received: "{value}"')
 
+            self._algorithm = value
+
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
         kwargs = {
