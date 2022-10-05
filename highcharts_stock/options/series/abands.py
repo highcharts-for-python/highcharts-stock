@@ -217,6 +217,9 @@ class BBSeries(NavigatorIndicatorSeries, BBOptions):
             'point_start': as_dict.get('pointStart', None),
             'stacking': as_dict.get('stacking', None),
 
+            'compare': as_dict.get('compare', None),
+            'compare_base': as_dict.get('compareBase', None),
+
             'compare_start': as_dict.get('compareStart', None),
             'compare_to_main': as_dict.get('compareToMain', None),
             'cumulative': as_dict.get('cumulative', None),
