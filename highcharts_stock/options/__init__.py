@@ -92,7 +92,7 @@ class HighchartsStockOptions(HighchartsOptions):
         self._accessibility = value
 
     @property
-    def annotations(self) -> Optional[Annotation]:
+    def annotations(self) -> Optional[List[Annotation]]:
         """A basic type of an annotation. It allows adding custom labels or shapes. The
         items can be tied to points, axis coordinates or chart pixel coordinates.
 
@@ -181,7 +181,7 @@ class HighchartsStockOptions(HighchartsOptions):
         self._chart = value
 
     @property
-    def color_axis(self) -> Optional[ColorAxis]:
+    def color_axis(self) -> Optional[List[ColorAxis]]:
         """A color axis for series.
 
         Visually, the color axis will appear as a gradient or as separate items inside the
