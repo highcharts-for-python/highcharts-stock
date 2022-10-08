@@ -243,6 +243,8 @@ class PlotOptions(PlotOptionsBase):
 
         super().__init__(**kwargs)
 
+    # Highcharts Stock Properties
+
     @property
     def abands(self) -> Optional[AbandsOptions]:
         """Configuration for :term:`Acceleration Bands`, a :term:`technical indicator` which
@@ -1252,6 +1254,8 @@ class PlotOptions(PlotOptionsBase):
     @class_sensitive(ZigZagOptions)
     def zigzag(self, value):
         self._zigzag = value
+
+    # Highcharts Properties
 
     @property
     def arcdiagram(self) -> Optional[ArcDiagramOptions]:
