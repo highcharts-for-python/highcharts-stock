@@ -272,14 +272,16 @@ Core Components
   * - :mod:`.options.chart <highcharts_stock.options.chart>`
     - :class:`ChartOptions <highcharts_stock.options.chart.ChartOptions>`
       :class:`PanningOptions <highcharts_stock.options.chart.PanningOptions>`
-  * - :mod:`.chart.options_3d <highcharts_stock.options.chart.options_3d>`
+  * - :mod:`.options.chart.options_3d <highcharts_stock.options.chart.options_3d>`
     - :class:`Options3D <highcharts_stock.options.chart.options_3d.Options3D>`
       :class:`Frame <highcharts_stock.options.chart.options_3d.Frame>`
       :class:`PanelOptions <highcharts_stock.options.chart.options_3d.PanelOptions>`
-  * - :mod:`.chart.reset_zoom_button <highcharts_stock.options.chart.reset_zoom_button>`
+  * - :mod:`.options.chart.reset_zoom_button <highcharts_stock.options.chart.reset_zoom_button>`
     - :class:`ResetZoomButtonOptions <highcharts_stock.options.chart.reset_zoom_button.ResetZoomButtonOptions>`
   * - :mod:`.chart.scrollable_plot_area <highcharts_stock.options.chart.scrollable_plot_area>`
     - :class:`ScrollablePlotArea <highcharts_stock.options.chart.scrollable_plot_area.ScrollablePlotArea>`
+  * - :mod:`.options.chart.zooming <highcharts_stock.options.chart.zooming>`
+    - :class:`ZoomingOptions <highcharts_stock.options.chart.zooming.ZoomingOptions>`
   * - :mod:`.options.credits <highcharts_stock.options.credits>`
     - :class:`Credits <highcharts_stock.options.credits.Credits>`
       :class:`CreditStyleOptions <highcharts_stock.options.credits.CreditStyleOptions>`
