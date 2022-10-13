@@ -57,5 +57,23 @@
     style: 'style-string-goes-here',
     styledMode: false,
     type: 'line',
-    width: 50
+    width: 50,
+    zooming: {
+      key: 'alt',
+      pinchType: 'xy',
+      resetButton: {
+          position: {
+            align: 'center',
+            verticalAlign: 'top',
+            x: -10,
+            y: 10
+          },
+          relativeTo: 'plot',
+          theme: {
+              'fill': '#ccc'
+          }
+      },
+      singleTouch: false,
+      type: 'xy'
+    }
 }
