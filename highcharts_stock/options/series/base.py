@@ -77,7 +77,16 @@ class IndicatorFactoryMixin(object):
 
         :param indicator_name: The name of the indicator that should be added to the
           series and chart. For the list of supported indicators, please review the
-          :ref:`Indicator List <indicator_list>`.
+          :ref:`Indicator List <technical_indicators>`.
+          
+          .. note::
+          
+            ``indicator_name`` is case-insensitive, and you can use either:
+            
+              * the full indicator name as provided in the 
+                :ref:`Indicator List <technical_indicators>`, or
+              * the abbreviated form that precedes ``Series`` in the series class name
+
         :type indicator_name: :class:`str <python:str>`
 
         :param indicator_kwargs: Keyword arguments to apply when instantiating the new
@@ -98,8 +107,8 @@ class IndicatorFactoryMixin(object):
         indicator_name = validators.string(indicator_name, allow_empty = False)
         indicator_name = indicator_name.lower()
         if indicator_name not in INDICATOR_LIST:
-            raise errors.HighchartsValueError(f'indicator_name expects a valid indicator '
-                                              f'name. Did not recognize: '
+            raise errors.HighchartsValueError(f'indicator_name expects a valid '
+                                              f'indicator name. Did not recognize: '
                                               f'"{indicator_name}"')
 
         indicator_kwargs = validators.dict(indicator_kwargs, allow_empty = True) or {}
