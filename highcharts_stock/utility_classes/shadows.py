@@ -1,1 +1,1 @@
-from highcharts_python.utility_classes.shadows import *
+from highcharts_core.utility_classes.shadows import *

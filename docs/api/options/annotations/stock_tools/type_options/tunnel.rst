@@ -22,7 +22,7 @@ class: :class:`TunnelTypeOptions <highcharts_stock.options.annotations.stock_too
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TunnelTypeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

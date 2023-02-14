@@ -1,1 +1,1 @@
-from highcharts_python.options.accessibility.series import *
+from highcharts_core.options.accessibility.series import *

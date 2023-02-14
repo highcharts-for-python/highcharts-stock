@@ -29,7 +29,7 @@ class: :class:`MomentumSeries <highcharts_stock.options.series.momentum.Momentum
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MomentumSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -47,7 +47,7 @@ class: :class:`OBVSeries <highcharts_stock.options.series.momentum.OBVSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: OBVSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -65,7 +65,7 @@ class: :class:`ROCSeries <highcharts_stock.options.series.momentum.ROCSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ROCSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -83,7 +83,7 @@ class: :class:`RSISeries <highcharts_stock.options.series.momentum.RSISeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: RSISeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

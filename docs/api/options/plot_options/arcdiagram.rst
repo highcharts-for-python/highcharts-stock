@@ -22,7 +22,7 @@ class: :class:`ArcDiagramOptions <highcharts_stock.options.plot_options.arcdiagr
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ArcDiagramOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

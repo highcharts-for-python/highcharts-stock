@@ -22,7 +22,7 @@ class: :class:`ADOptions <highcharts_stock.options.plot_options.ad.ADOptions>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ADOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`ADParameters <highcharts_stock.options.plot_options.ad.ADParamete
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ADParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

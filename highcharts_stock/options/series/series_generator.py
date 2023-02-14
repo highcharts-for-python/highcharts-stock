@@ -338,7 +338,7 @@ INDICATOR_LIST = {
     'keltnerchannels': KeltnerChannelsSeries,
     'keltner channels': KeltnerChannelsSeries,
     'klinger': KlingerSeries,
-    'klinger oscillator': KlingerSeries,'
+    'klinger oscillator': KlingerSeries,
     'linearregression': LinearRegressionSeries,
     'linear regression': LinearRegressionSeries,
     'linearregressionngle': LinearRegressionAngleSeries,

@@ -22,7 +22,7 @@ class: :class:`Marker <highcharts_stock.utility_classes.markers.Marker>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Marker
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

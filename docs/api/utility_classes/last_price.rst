@@ -22,7 +22,7 @@ class: :class:`LastPriceOptions <highcharts_stock.utility_classes.last_price.Las
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LastPriceOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

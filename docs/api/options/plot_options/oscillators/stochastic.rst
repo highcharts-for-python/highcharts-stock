@@ -22,7 +22,7 @@ class: :class:`StochasticOptions <highcharts_stock.options.plot_options.oscillat
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: StochasticOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`StochasticParameters <highcharts_stock.options.plot_options.oscil
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: StochasticParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`StochasticStyleOptions <highcharts_stock.options.plot_options.osc
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: StochasticStyleOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`SlowStochasticOptions <highcharts_stock.options.plot_options.osci
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SlowStochasticOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -94,7 +94,7 @@ class: :class:`SlowStochasticParameters <highcharts_stock.options.plot_options.o
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SlowStochasticParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -1,6 +1,6 @@
-from highcharts_python.options.plot_options.dumbbell import \
+from highcharts_core.options.plot_options.dumbbell import \
     DumbbellOptions as DumbbellBase
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_core.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.plot_options.base import NonIndicatorOptions
 

@@ -22,7 +22,7 @@ class: :class:`Credits <highcharts_stock.options.credits.Credits>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Credits
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`CreditStyleOptions <highcharts_stock.options.credits.CreditStyleO
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CreditStyleOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

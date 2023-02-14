@@ -22,7 +22,7 @@ class: :class:`NoData <highcharts_stock.options.no_data.NoData>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: NoData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

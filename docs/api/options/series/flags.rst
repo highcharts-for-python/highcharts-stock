@@ -22,7 +22,7 @@ class: :class:`FlagsSeries <highcharts_stock.options.series.flags.FlagsSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: FlagsSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

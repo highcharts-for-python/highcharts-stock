@@ -22,7 +22,7 @@ class: :class:`YAxis <highcharts_stock.options.axes.y_axis.YAxis>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: YAxis
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

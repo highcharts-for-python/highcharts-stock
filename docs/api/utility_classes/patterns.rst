@@ -22,7 +22,7 @@ class: :class:`Pattern <highcharts_stock.utility_classes.patterns.Pattern>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Pattern
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`PatternOptions <highcharts_stock.utility_classes.patterns.Pattern
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PatternOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

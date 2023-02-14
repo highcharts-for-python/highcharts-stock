@@ -1,6 +1,6 @@
 from typing import Optional
 
-from highcharts_python.options.navigation import Navigation as NavigationBase
+from highcharts_core.options.navigation import Navigation as NavigationBase
 
 from highcharts_stock.decorators import class_sensitive
 from highcharts_stock.options.annotations import NavigationAnnotationOptions

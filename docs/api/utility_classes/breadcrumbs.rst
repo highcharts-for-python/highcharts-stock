@@ -22,7 +22,7 @@ class: :class:`BreadcrumbOptions <highcharts_stock.utility_classes.breadcrumbs.B
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BreadcrumbOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`Separator <highcharts_stock.utility_classes.breadcrumbs.Separator
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Separator
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

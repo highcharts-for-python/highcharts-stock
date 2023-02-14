@@ -22,7 +22,7 @@ class: :class:`ClusterOptions <highcharts_stock.utility_classes.clusters.Cluster
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ClusterOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`VectorLayoutAlgorithm <highcharts_stock.utility_classes.clusters.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VectorLayoutAlgorithm
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -43,7 +43,7 @@ from highcharts_stock.options.range_selector import RangeSelector
 from highcharts_stock.options.scrollbar import Scrollbar
 from highcharts_stock.options.stock_tools import StockTools
 
-from highcharts_python.options import Options, HighchartsOptions
+from highcharts_core.options import Options, HighchartsOptions
 
 
 class HighchartsStockOptions(HighchartsOptions):

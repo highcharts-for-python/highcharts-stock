@@ -22,7 +22,7 @@ class: :class:`VBPSeries <highcharts_stock.options.series.vbp.VBPSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VBPSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

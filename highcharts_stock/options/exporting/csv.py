@@ -1,1 +1,1 @@
-from highcharts_python.options.exporting.csv import *
+from highcharts_core.options.exporting.csv import *

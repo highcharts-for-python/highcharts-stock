@@ -22,7 +22,7 @@ class: :class:`PriceEnvelopesOptions <highcharts_stock.options.plot_options.pric
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PriceEnvelopesOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`PriceEnvelopesParameters <highcharts_stock.options.plot_options.p
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PriceEnvelopesParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`PriceEnvelopesStyleOptions <highcharts_stock.options.plot_options
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PriceEnvelopesStyleOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

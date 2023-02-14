@@ -22,7 +22,7 @@ class: :class:`VerticalLineTypeOptions <highcharts_stock.options.annotations.sto
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VerticalLineTypeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`VerticalLineConnector <highcharts_stock.options.annotations.stock
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VerticalLineConnector
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

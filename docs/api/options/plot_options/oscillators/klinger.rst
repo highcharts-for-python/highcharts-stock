@@ -22,7 +22,7 @@ class: :class:`KlingerOptions <highcharts_stock.options.plot_options.oscillators
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: KlingerOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`KlingerParameters <highcharts_stock.options.plot_options.oscillat
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: KlingerParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`KlingerLineOptions <highcharts_stock.options.plot_options.oscilla
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: KlingerLineOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

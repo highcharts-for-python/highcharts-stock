@@ -1,6 +1,6 @@
 from typing import Optional
 
-from highcharts_python.utility_classes.events import *
+from highcharts_core.utility_classes.events import *
 
 from highcharts_stock.utility_classes.javascript_functions import CallbackFunction
 from highcharts_stock.metaclasses import HighchartsMeta

@@ -1,5 +1,5 @@
-from highcharts_python.options.plot_options.item import ItemOptions as ItemBase
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_core.options.plot_options.item import ItemOptions as ItemBase
+from highcharts_core.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.plot_options.base import NonIndicatorOptions
 

@@ -22,7 +22,7 @@ class: :class:`NavigationLanguageOptions <highcharts_stock.global_options.langua
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: NavigationLanguageOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`PopupLanguageOptions <highcharts_stock.global_options.language.na
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PopupLanguageOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

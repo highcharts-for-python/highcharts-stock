@@ -1,5 +1,5 @@
 """Defines a set of constants that are used throughout the library."""
-from highcharts_python.constants import *
+from highcharts_core.constants import *
 
 
 STOCK_INCLUDE_STR = """<script src="https://code.highcharts.com/stock/highstock.js"/>

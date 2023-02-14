@@ -22,7 +22,7 @@ class: :class:`DumbbellOptions <highcharts_stock.options.plot_options.dumbbell.D
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DumbbellOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`LollipopOptions <highcharts_stock.options.plot_options.dumbbell.L
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LollipopOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

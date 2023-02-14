@@ -22,7 +22,7 @@ class: :class:`ExportingCSV <highcharts_stock.options.exporting.csv.ExportingCSV
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ExportingCSV
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`CSVAnnotationOptions <highcharts_stock.options.exporting.csv.CSVA
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CSVAnnotationOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
