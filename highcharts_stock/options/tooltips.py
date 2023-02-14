@@ -1,1 +1,1 @@
-from highcharts_python.options.tooltips import *
+from highcharts_core.options.tooltips import *

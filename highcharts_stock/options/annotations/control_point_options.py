@@ -1,1 +1,1 @@
-from highcharts_python.options.annotations.control_point_options import *
+from highcharts_core.options.annotations.control_point_options import *

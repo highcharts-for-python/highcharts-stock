@@ -22,7 +22,7 @@ class: :class:`Responsive <highcharts_stock.options.responsive.Responsive>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Responsive
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`ResponsiveRules <highcharts_stock.options.responsive.ResponsiveRu
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ResponsiveRules
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`Condition <highcharts_stock.options.responsive.Condition>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Condition
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -3,7 +3,7 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python.options.series.base import SeriesBase as OriginalSeriesBase
+from highcharts_core.options.series.base import SeriesBase as OriginalSeriesBase
 
 from highcharts_stock import errors
 from highcharts_stock.decorators import validate_types

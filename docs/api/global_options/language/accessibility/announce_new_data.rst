@@ -22,7 +22,7 @@ class: :class:`AnnounceNewDataLanguageOptions <highcharts_stock.global_options.l
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AnnounceNewDataLanguageOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

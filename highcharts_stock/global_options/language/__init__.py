@@ -2,7 +2,7 @@ from typing import Optional
 
 from validator_collection import validators
 
-from highcharts_python.global_options.language import Language as LanguageCore
+from highcharts_core.global_options.language import Language as LanguageCore
 
 from highcharts_stock.decorators import class_sensitive
 from highcharts_stock.global_options.language.stock_tools import StockToolsLanguageOptions

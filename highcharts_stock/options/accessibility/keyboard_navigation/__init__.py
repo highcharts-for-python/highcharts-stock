@@ -1,1 +1,1 @@
-from highcharts_python.options.accessibility.keyboard_navigation import *
+from highcharts_core.options.accessibility.keyboard_navigation import *

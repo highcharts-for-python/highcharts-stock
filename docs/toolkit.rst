@@ -7,7 +7,7 @@ The Toolkit's Contents
 ****************************
 
 The **Highcharts for Python** toolkit features a number of separate Python
-libraries which extend the core **Highcharts for Python** (``highcharts-python``) library.
+libraries which extend the core **Highcharts for Python** (``highcharts-core``) library.
 This pattern actually maps quite naturally to the Highcharts JS design, where multiple
 other modules extend the core Highcharts JS library.
 
@@ -26,7 +26,7 @@ The **Highcharts for Python** toolkit includes two categories of tools:
       functionality in the
       `Highcharts JS <https://www.highcharts.com/blog/products/#highcharts>`_ JavaScript
       library. For more details, please see the relevant
-      `Highcharts for Python documentation <https://highcharts-python.readthedocs.io>`__.
+      `Highcharts for Python documentation <https://highcharts-core.readthedocs.io>`__.
     * **Highcharts Stock for Python**: This is the Python wrapper for the
       `Highcharts Stock <https://www.highcharts.com/blog/products/#highcharts-stock>`_
       JavaScript library, which provides extensive visualizations for time series and
@@ -118,4 +118,4 @@ Additional Tools Needed?
 
 Are you looking for additional tools that are not already part of the
 **Highcharts for Python** toolkit? Drop us a note with a feature request in our
-`Github Issues Page <https://github.com/hcpllc/highcharts-python/issues>`_.
+`Github Issues Page <https://github.com/highcharts-for-python/highcharts-core/issues>`_.

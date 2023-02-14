@@ -1,1 +1,1 @@
-from highcharts_python.options.boost import *
+from highcharts_core.options.boost import *

@@ -22,7 +22,7 @@ class: :class:`WordcloudOptions <highcharts_stock.options.plot_options.wordcloud
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: WordcloudOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`RotationOptions <highcharts_stock.options.plot_options.wordcloud.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: RotationOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

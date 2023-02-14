@@ -51,7 +51,7 @@ class: :class:`HighchartsMaOptions <highcharts_stock.options.HighchartsStockOpti
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: HighchartsStockOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
 -----------------------
@@ -67,7 +67,7 @@ class: :class:`HighchartsOptions <highcharts_stock.options.HighchartsOptions>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: HighchartsOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
 -----------------------

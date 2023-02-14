@@ -2,9 +2,9 @@ from typing import Optional
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.options.annotations.shape_options import ShapeOptionsBase
-from highcharts_python.options.annotations.label_options import LabelOptions
+from highcharts_core.decorators import class_sensitive
+from highcharts_core.options.annotations.shape_options import ShapeOptionsBase
+from highcharts_core.options.annotations.label_options import LabelOptions
 
 from highcharts_stock.options.annotations.stock_tools.type_options.crooked_line import CrookedLineTypeOptions
 

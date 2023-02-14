@@ -22,7 +22,7 @@ class: :class:`LinearRegressionOptions <highcharts_stock.options.plot_options.li
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LinearRegressionOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`LinearRegressionAngleOptions <highcharts_stock.options.plot_optio
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LinearRegressionAngleOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`LinearRegressionInterceptOptions <highcharts_stock.options.plot_o
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LinearRegressionInterceptOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`LinearRegressionSlopeOptions <highcharts_stock.options.plot_optio
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LinearRegressionSlopeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -94,7 +94,7 @@ class: :class:`TrendlineOptions <highcharts_stock.options.plot_options.linear_re
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TrendlineOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -112,7 +112,7 @@ class: :class:`LinearRegressionParameters <highcharts_stock.options.plot_options
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LinearRegressionParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -130,7 +130,7 @@ class: :class:`TrendlineParameters <highcharts_stock.options.plot_options.linear
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TrendlineParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

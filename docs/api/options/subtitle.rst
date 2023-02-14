@@ -22,7 +22,7 @@ class: :class:`Subtitle <highcharts_stock.options.subtitle.Subtitle>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Subtitle
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

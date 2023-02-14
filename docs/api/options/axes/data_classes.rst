@@ -22,7 +22,7 @@ class: :class:`DataClass <highcharts_stock.options.axes.data_classes.DataClass>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DataClass
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

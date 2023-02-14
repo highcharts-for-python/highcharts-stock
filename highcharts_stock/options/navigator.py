@@ -45,7 +45,7 @@ class HandleOptions(HighchartsMeta):
 
     @background_color.setter
     def background_color(self, value):
-        from highcharts_python import utility_functions
+        from highcharts_core import utility_functions
         self._background_color = utility_functions.validate_color(value)
 
     @property
@@ -61,7 +61,7 @@ class HandleOptions(HighchartsMeta):
 
     @border_color.setter
     def border_color(self, value):
-        from highcharts_python import utility_functions
+        from highcharts_core import utility_functions
         self._border_color = utility_functions.validate_color(value)
 
     @property
@@ -346,7 +346,7 @@ class Navigator(HighchartsMeta):
 
     @outline_color.setter
     def outline_color(self, value):
-        from highcharts_python import utility_functions
+        from highcharts_core import utility_functions
         self._outline_color = utility_functions.validate_color(value)
 
     @property

@@ -1,1 +1,1 @@
-from highcharts_python.global_options.language.accessibility.table import *
+from highcharts_core.global_options.language.accessibility.table import *

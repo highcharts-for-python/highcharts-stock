@@ -14,7 +14,7 @@ Highcharts for Python vs Highcharts Stock for Python
 
 **What is the difference between Highcharts for Python and Highcharts Stock for Python?**
 
-The `Highcharts for Python <https://highcharts-python.readthedocs.io/>`__ library supports
+The `Highcharts for Python <https://highcharts-core.readthedocs.io/>`__ library supports
 `Highcharts JS <https://www.highcharts.com/products/highcharts/>`__, which is the core
 data visualization library developed by `Highsoft <https://www.highcharts.com/>`__. It
 provides over 60 different visualization types.

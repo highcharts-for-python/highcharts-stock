@@ -22,7 +22,7 @@ class: :class:`ScreenReaderSection <highcharts_stock.options.accessibility.scree
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ScreenReaderSection
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

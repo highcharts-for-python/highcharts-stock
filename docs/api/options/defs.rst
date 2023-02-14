@@ -22,7 +22,7 @@ class: :class:`MarkerDefinition <highcharts_stock.options.defs.MarkerDefinition>
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MarkerDefinition
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`MarkerASTNode <highcharts_stock.options.defs.MarkerASTNode>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MarkerASTNode
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -59,7 +59,7 @@ class: :class:`MarkerAttributeObject <highcharts_stock.options.defs.MarkerAttrib
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MarkerAttributeObject
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

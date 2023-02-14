@@ -1,1 +1,1 @@
-from highcharts_python.options.drilldown import *
+from highcharts_core.options.drilldown import *

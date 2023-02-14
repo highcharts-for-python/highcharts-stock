@@ -3,9 +3,9 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python import constants
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
+from highcharts_core import constants
+from highcharts_core.decorators import class_sensitive
+from highcharts_core.metaclasses import HighchartsMeta
 
 from highcharts_stock import errors
 from highcharts_stock.options.navigator import Navigator

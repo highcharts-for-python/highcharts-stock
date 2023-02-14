@@ -31,7 +31,7 @@ class: :class:`AroonOscillatorSeries <highcharts_stock.options.series.oscillator
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AroonOscillatorSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -51,7 +51,7 @@ class: :class:`APOSeries <highcharts_stock.options.series.oscillators.APOSeries>
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: APOSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -71,7 +71,7 @@ class: :class:`CCISeries <highcharts_stock.options.series.oscillators.CCISeries>
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CCISeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -91,7 +91,7 @@ class: :class:`ChaikinSeries <highcharts_stock.options.series.oscillators.Chaiki
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ChaikinSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -111,7 +111,7 @@ class: :class:`CMOSeries <highcharts_stock.options.series.oscillators.CMOSeries>
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CMOSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -131,7 +131,7 @@ class: :class:`DPOSeries <highcharts_stock.options.series.oscillators.DPOSeries>
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DPOSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -151,7 +151,7 @@ class: :class:`TRIXSeries <highcharts_stock.options.series.oscillators.TRIXSerie
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TRIXSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -171,7 +171,7 @@ class: :class:`WilliamsRSeries <highcharts_stock.options.series.oscillators.Will
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: WilliamsRSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`PPOSeries <highcharts_stock.options.series.oscillators.ppo.PPOSer
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PPOSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

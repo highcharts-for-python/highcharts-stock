@@ -1,1 +1,1 @@
-from highcharts_python.global_options.language.accessibility.range_selector import *
+from highcharts_core.global_options.language.accessibility.range_selector import *

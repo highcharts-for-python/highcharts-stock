@@ -22,7 +22,7 @@ class: :class:`Bindings <highcharts_stock.options.navigation.bindings.Bindings>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Bindings
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`RectangleAnnotationBinding <highcharts_stock.options.navigation.b
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: RectangleAnnotationBinding
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`LabelAnnotationBinding <highcharts_stock.options.navigation.bindi
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LabelAnnotationBinding
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`EllipseAnnotationBinding <highcharts_stock.options.navigation.bin
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: EllipseAnnotationBinding
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -94,7 +94,7 @@ class: :class:`CircleAnnotationBinding <highcharts_stock.options.navigation.bind
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CircleAnnotationBinding
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -112,7 +112,7 @@ class: :class:`Binding <highcharts_stock.options.navigation.bindings.Binding>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Binding
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

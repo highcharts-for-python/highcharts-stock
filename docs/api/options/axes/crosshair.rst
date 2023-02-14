@@ -22,7 +22,7 @@ class: :class:`CrosshairOptions <highcharts_stock.options.axes.crosshair.Crossha
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CrosshairOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

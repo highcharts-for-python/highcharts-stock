@@ -1,1 +1,1 @@
-from highcharts_python.options.chart.zooming import *
+from highcharts_core.options.chart.zooming import *

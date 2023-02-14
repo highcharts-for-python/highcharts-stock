@@ -2,7 +2,7 @@ from typing import Optional
 
 from validator_collection import validators
 
-from highcharts_python.utility_classes.data_grouping import DataGroupingOptions as DataGroupingBase
+from highcharts_core.utility_classes.data_grouping import DataGroupingOptions as DataGroupingBase
 
 from highcharts_stock.decorators import validate_types
 from highcharts_stock.utility_classes.javascript_functions import CallbackFunction
@@ -24,7 +24,7 @@ class DataGroupingOptions(DataGroupingBase):
 
     .. caution::
 
-      In `Highcharts for Python <https://highcharts-python.readthedocs.io>`__ and
+      In `Highcharts for Python <https://highcharts-core.readthedocs.io>`__ and
       `Highcharts JS <https://www.highcharts.com>`__, usage of the data grouping requires
       the ``modules/datagrouping.js`` JavaScript module. In
       **Highcharts Stock for Python**, it is included by default.
@@ -99,7 +99,7 @@ class DataGroupingOptions(DataGroupingBase):
           ``this.dataGroupInfo``. It can be used to extract information from the raw data.
 
         :rtype: :class:`str <python:str>` or
-          :class:`CallbackFunction <highcharts_python.utility_classes.javascript_functions.CallbackFunction>`
+          :class:`CallbackFunction <highcharts_core.utility_classes.javascript_functions.CallbackFunction>`
           or :obj:`None <python:None>`
         """
         return self._approximation

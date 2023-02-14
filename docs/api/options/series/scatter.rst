@@ -22,7 +22,7 @@ class: :class:`ScatterSeries <highcharts_stock.options.series.scatter.ScatterSer
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ScatterSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`Scatter3DSeries <highcharts_stock.options.series.scatter.Scatter3
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Scatter3DSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

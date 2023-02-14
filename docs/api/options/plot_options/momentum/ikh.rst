@@ -22,7 +22,7 @@ class: :class:`IKHOptions <highcharts_stock.options.plot_options.momentum.ikh.IK
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: IKHOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`IKHParameters <highcharts_stock.options.plot_options.momentum.ikh
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: IKHParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`SenkouSpanOptions <highcharts_stock.options.plot_options.momentum
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SenkouSpanOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`IKHLineOptions <highcharts_stock.options.plot_options.momentum.ik
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: IKHLineOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
