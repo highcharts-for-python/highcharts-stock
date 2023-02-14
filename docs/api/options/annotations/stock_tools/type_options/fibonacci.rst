@@ -22,7 +22,7 @@ class: :class:`FibonacciTypeOptions <highcharts_stock.options.annotations.stock_
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: FibonacciTypeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`FibonacciTimeZonesTypeOptions <highcharts_stock.options.annotatio
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: FibonacciTimeZonesTypeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

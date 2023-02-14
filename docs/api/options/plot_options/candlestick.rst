@@ -22,7 +22,7 @@ class: :class:`CandlestickOptions <highcharts_stock.options.plot_options.candles
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CandlestickOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`HollowCandlestickOptions <highcharts_stock.options.plot_options.c
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: HollowCandlestickOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`HeikinAshiOptions <highcharts_stock.options.plot_options.candlest
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: HeikinAshiOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

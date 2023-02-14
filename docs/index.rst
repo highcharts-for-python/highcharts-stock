@@ -45,7 +45,7 @@ Highcharts Stock for Python
   Licensing <license>
 
 The **Highcharts Stock for Python** is an extension to the
-`Highcharts for Python <https://highcharts-core.readthedocs.io>`__ library, and provides
+`Highcharts for Python <https://highcharts-python.readthedocs.io>`__ library, and provides
 a Python wrapper for the fantastic
 `Highcharts Stock <https://www.highcharts.com/products/stock/>`__
 JavaScript data visualization library. **Highcharts Stock for Python** also supports

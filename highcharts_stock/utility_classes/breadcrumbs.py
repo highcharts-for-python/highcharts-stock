@@ -1,1 +1,1 @@
-from highcharts_core.utility_classes.breadcrumbs import *
+from highcharts_python.utility_classes.breadcrumbs import *

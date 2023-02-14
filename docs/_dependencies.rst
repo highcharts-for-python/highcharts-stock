@@ -28,7 +28,7 @@
         Not technically a Python dependency, but obviously **Highcharts Stock for Python**
         will not work properly if your rendering layer does not leverage Highcharts Stock.
 
-    * `highcharts-core <https://highcharts-core.readthedocs.io>`_ v.1.0.0 or higher
+    * `highcharts-python <https://highcharts-python.readthedocs.io>`_ v.1.0.0 or higher
     * `esprima-python <https://github.com/Kronuz/esprima-python>`_ v.4.0 or higher
     * `requests <https://requests.readthedocs.io/en/latest/>`_ v.2.28 or higher
     * `validator-collection <https://validator-collection.readthedocs.io/en/latest/>`_

@@ -22,7 +22,7 @@ class: :class:`ElliottWaveTypeOptions <highcharts_stock.options.annotations.stoc
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ElliottWaveTypeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

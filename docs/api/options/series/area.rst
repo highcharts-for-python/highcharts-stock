@@ -22,7 +22,7 @@ class: :class:`AreaSeries <highcharts_stock.options.series.area.AreaSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AreaSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`AreaRangeSeries <highcharts_stock.options.series.area.AreaRangeSe
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AreaRangeSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`AreaSplineSeries <highcharts_stock.options.series.area.AreaSpline
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AreaSplineSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`AreaSplineRangeSeries <highcharts_stock.options.series.area.AreaS
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AreaSplineRangeSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -94,7 +94,7 @@ class: :class:`LineSeries <highcharts_stock.options.series.area.LineSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LineSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -112,7 +112,7 @@ class: :class:`StreamGraphSeries <highcharts_stock.options.series.area.StreamGra
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: StreamGraphSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

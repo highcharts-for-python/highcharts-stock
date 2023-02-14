@@ -1,1 +1,1 @@
-from highcharts_core.options.plot_options.data_sorting import *
+from highcharts_python.options.plot_options.data_sorting import *

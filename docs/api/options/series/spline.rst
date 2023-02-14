@@ -22,7 +22,7 @@ class: :class:`SplineSeries <highcharts_stock.options.series.spline.SplineSeries
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SplineSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

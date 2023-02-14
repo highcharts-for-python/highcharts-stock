@@ -22,7 +22,7 @@ class: :class:`StockToolsPoint <highcharts_stock.options.annotations.stock_tools
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: StockToolsPoint
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`LabeledStockToolsPoint <highcharts_stock.options.annotations.stoc
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LabeledStockToolsPoint
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`StockToolsXPoint <highcharts_stock.options.annotations.stock_tool
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: StockToolsXPoint
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`PriceEnvelopesSeries <highcharts_stock.options.series.price_envel
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PriceEnvelopesSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

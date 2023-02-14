@@ -22,7 +22,7 @@ class: :class:`PSAROptions <highcharts_stock.options.plot_options.psar.PSAROptio
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PSAROptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`PSARParameters <highcharts_stock.options.plot_options.psar.PSARPa
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PSARParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -1,1 +1,1 @@
-from highcharts_core.options.time import *
+from highcharts_python.options.time import *

@@ -1,1 +1,1 @@
-from highcharts_core.metaclasses import *
+from highcharts_python.metaclasses import *

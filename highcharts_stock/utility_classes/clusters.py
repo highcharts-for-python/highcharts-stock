@@ -1,1 +1,1 @@
-from highcharts_core.utility_classes.clusters import *
+from highcharts_python.utility_classes.clusters import *

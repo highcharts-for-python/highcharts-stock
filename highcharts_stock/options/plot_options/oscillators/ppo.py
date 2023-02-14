@@ -2,7 +2,7 @@ from typing import Optional, List
 
 from validator_collection import validators
 
-from highcharts_core.decorators import class_sensitive
+from highcharts_python.decorators import class_sensitive
 
 from highcharts_stock.options.plot_options.indicators import ParameterBase, ComparableIndicatorOptions
 

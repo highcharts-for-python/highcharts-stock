@@ -30,7 +30,7 @@ class: :class:`Language <highcharts_stock.global_options.language.Language>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Language
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

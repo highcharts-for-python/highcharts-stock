@@ -22,7 +22,7 @@ class: :class:`AroonSeries <highcharts_stock.options.series.aroon.AroonSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AroonSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

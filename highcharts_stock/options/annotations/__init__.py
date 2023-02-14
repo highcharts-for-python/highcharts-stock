@@ -1,7 +1,7 @@
 from typing import Optional
 
 
-from highcharts_core.options.annotations import Annotation as AnnotationBase
+from highcharts_python.options.annotations import Annotation as AnnotationBase
 
 from highcharts_stock.decorators import class_sensitive
 from highcharts_stock.options.annotations.stock_tools import CrookedLineAnnotation

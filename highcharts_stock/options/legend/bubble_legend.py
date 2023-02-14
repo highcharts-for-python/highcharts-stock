@@ -1,1 +1,1 @@
-from highcharts_core.options.legend.bubble_legend import *
+from highcharts_python.options.legend.bubble_legend import *

@@ -629,18 +629,13 @@ def Class_to_dict(cls, kwargs, error):
         if checkers.is_type(instance, ('MarkerAttributeObject')):
             check_dicts = False
         if check_dicts:
-            if 'contextButton' in result or 'context_button' in result:
-                assert len(result) == len(expected) + 1
-            else:
-                assert len(expected) == len(result)
+            assert len(expected) == len(result)
             for key in expected:
                 print(f'CHECKING: {key}')
                 if key == 'patternOptions':
                     print('running special check for patternOptions')
                     assert does_kwarg_value_match_result(expected[key],
                                                          result.get('pattern')) is True
-                elif key in ['contextButton', 'context_button']:
-                    continue
                 else:
                     assert does_kwarg_value_match_result(expected[key],
                                                          result.get(key)) is True

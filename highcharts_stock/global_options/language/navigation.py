@@ -1,1 +1,1 @@
-from highcharts_core.global_options.language.navigation import *
+from highcharts_python.global_options.language.navigation import *

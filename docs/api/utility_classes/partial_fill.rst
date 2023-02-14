@@ -22,7 +22,7 @@ class: :class:`PartialFillOptions <highcharts_stock.utility_classes.partial_fill
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PartialFillOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

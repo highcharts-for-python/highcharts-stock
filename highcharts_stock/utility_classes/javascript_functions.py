@@ -1,1 +1,1 @@
-from highcharts_core.utility_classes.javascript_functions import *
+from highcharts_python.utility_classes.javascript_functions import *

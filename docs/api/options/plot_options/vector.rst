@@ -22,7 +22,7 @@ class: :class:`VectorOptions <highcharts_stock.options.plot_options.vector.Vecto
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VectorOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

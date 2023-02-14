@@ -1,1 +1,1 @@
-from highcharts_core.options.exporting.pdf_font import *
+from highcharts_python.options.exporting.pdf_font import *

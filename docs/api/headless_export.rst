@@ -22,7 +22,7 @@ class: :class:`ExportServer <highcharts_stock.headless_export.ExportServer>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ExportServer
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

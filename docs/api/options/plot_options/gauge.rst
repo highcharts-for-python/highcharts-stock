@@ -22,7 +22,7 @@ class: :class:`GaugeOptions <highcharts_stock.options.plot_options.gauge.GaugeOp
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: GaugeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`SolidGaugeOptions <highcharts_stock.options.plot_options.gauge.So
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SolidGaugeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`PivotOptions <highcharts_stock.options.plot_options.gauge.PivotOp
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PivotOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`DialOptions <highcharts_stock.options.plot_options.gauge.DialOpti
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DialOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

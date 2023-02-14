@@ -22,7 +22,7 @@ class: :class:`MeasureTypeOptions <highcharts_stock.options.annotations.stock_to
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MeasureTypeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`MeasureLabelOptions <highcharts_stock.options.annotations.stock_t
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MeasureLabelOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`MeasureLabelStyle <highcharts_stock.options.annotations.stock_too
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MeasureLabelStyle
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

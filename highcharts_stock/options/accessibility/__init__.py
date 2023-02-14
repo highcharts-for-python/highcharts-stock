@@ -1,2 +1,2 @@
-from highcharts_core.options.accessibility import (CustomAccessibilityComponents,
+from highcharts_python.options.accessibility import (CustomAccessibilityComponents,
                                                      Accessibility)

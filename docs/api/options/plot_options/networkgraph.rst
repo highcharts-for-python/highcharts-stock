@@ -22,7 +22,7 @@ class: :class:`NetworkGraphOptions <highcharts_stock.options.plot_options.networ
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: NetworkGraphOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`LayoutAlgorithm <highcharts_stock.options.plot_options.networkgra
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LayoutAlgorithm
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

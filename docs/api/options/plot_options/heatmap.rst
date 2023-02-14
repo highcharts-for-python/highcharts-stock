@@ -22,7 +22,7 @@ class: :class:`HeatmapOptions <highcharts_stock.options.plot_options.heatmap.Hea
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: HeatmapOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`TilemapOptions <highcharts_stock.options.plot_options.heatmap.Til
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TilemapOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

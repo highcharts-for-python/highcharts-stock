@@ -22,7 +22,7 @@ class: :class:`ZoomingOptions <highcharts_stock.options.chart.zooming.ZoomingOpt
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ZoomingOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

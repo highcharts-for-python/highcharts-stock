@@ -35,9 +35,9 @@ Test Organization
 Each individual test module (e.g. ``test_chart.py``) corresponds to a
 conceptual grouping of functionality. For example:
 
-* ``tests/test_chart.py`` tests the contents of the :mod:`highcharts_core.chart` module.
+* ``tests/test_chart.py`` tests the contents of the :mod:`highcharts_python.chart` module.
 * ``tests/options/annotations/test_annotations.py`` tests the contents of
-  ``highcharts_core.options/annotations/__init__.py``.
+  ``highcharts_python.options/annotations/__init__.py``.
 
 Test Design
 =====================
@@ -66,7 +66,7 @@ Installing with the Test Suite
 
     .. code-block:: bash
 
-      $ pip install highcharts-core[tests]
+      $ pip install highcharts-python[tests]
 
   .. tab:: From Local Development Environment
 
@@ -88,8 +88,8 @@ test suite.
 
   .. code-block:: bash
 
-    highcharts-stock $ cd tests/
-    highcharts-stock/tests/ $ pytest --help
+    highcharts-python $ cd tests/
+    highcharts-python/tests/ $ pytest --help
 
 Configuration File
 ===================

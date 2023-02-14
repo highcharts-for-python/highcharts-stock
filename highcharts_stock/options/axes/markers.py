@@ -1,1 +1,1 @@
-from highcharts_core.options.axes.markers import *
+from highcharts_python.options.axes.markers import *

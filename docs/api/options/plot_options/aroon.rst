@@ -22,7 +22,7 @@ class: :class:`AroonOptions <highcharts_stock.options.plot_options.aroon.AroonOp
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AroonOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`AroonLineStyleOptions <highcharts_stock.options.plot_options.aroo
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AroonLineStyleOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

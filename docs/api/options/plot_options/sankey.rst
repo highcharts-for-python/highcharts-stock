@@ -22,7 +22,7 @@ class: :class:`SankeyOptions <highcharts_stock.options.plot_options.sankey.Sanke
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SankeyOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

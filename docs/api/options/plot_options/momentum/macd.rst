@@ -22,7 +22,7 @@ class: :class:`MACDOptions <highcharts_stock.options.plot_options.momentum.macd.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MACDOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`MACDParameters <highcharts_stock.options.plot_options.momentum.ma
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MACDParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`MACDLineOptions <highcharts_stock.options.plot_options.momentum.m
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MACDLineOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

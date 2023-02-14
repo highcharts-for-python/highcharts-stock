@@ -3,10 +3,10 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_core.options.plot_options.bar import SeriesOptions as SeriesBase
-from highcharts_core.utility_classes.gradients import Gradient
-from highcharts_core.utility_classes.patterns import Pattern
-from highcharts_core.utility_functions import mro__to_untrimmed_dict, validate_color
+from highcharts_python.options.plot_options.bar import SeriesOptions as SeriesBase
+from highcharts_python.utility_classes.gradients import Gradient
+from highcharts_python.utility_classes.patterns import Pattern
+from highcharts_python.utility_functions import mro__to_untrimmed_dict, validate_color
 
 from highcharts_stock import errors
 from highcharts_stock.options.plot_options.base import NonIndicatorOptions

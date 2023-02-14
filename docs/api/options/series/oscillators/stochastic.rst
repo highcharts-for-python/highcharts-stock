@@ -22,7 +22,7 @@ class: :class:`StochasticSeries <highcharts_stock.options.series.oscillators.sto
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: StochasticSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`SlowStochasticSeries <highcharts_stock.options.series.oscillators
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SlowStochasticSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

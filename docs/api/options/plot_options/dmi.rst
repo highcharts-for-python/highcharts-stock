@@ -22,7 +22,7 @@ class: :class:`DMIOptions <highcharts_stock.options.plot_options.dmi.DMIOptions>
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DMIOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`DMIStyleOptions <highcharts_stock.options.plot_options.dmi.DMISty
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DMIStyleOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

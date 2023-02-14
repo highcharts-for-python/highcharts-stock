@@ -1,4 +1,4 @@
-from highcharts_core.options.plot_options.treemap import TreemapOptions as TreemapBase
+from highcharts_python.options.plot_options.treemap import TreemapOptions as TreemapBase
 
 from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 from highcharts_stock.options.plot_options.base import NonIndicatorOptions

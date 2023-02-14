@@ -22,7 +22,7 @@ class: :class:`LinearRegressionSeries <highcharts_stock.options.series.linear_re
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LinearRegressionSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`LinearRegressionAngleSeries <highcharts_stock.options.series.line
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LinearRegressionAngleSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`LinearRegressionInterceptSeries <highcharts_stock.options.series.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LinearRegressionInterceptSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`LinearRegressionSlopeSeries <highcharts_stock.options.series.line
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LinearRegressionSlopeSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -94,7 +94,7 @@ class: :class:`TrendlineSeries <highcharts_stock.options.series.linear_regressio
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: TrendlineSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

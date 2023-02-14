@@ -22,7 +22,7 @@ class: :class:`MACDSeries <highcharts_stock.options.series.momentum.macd.MACDSer
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: MACDSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

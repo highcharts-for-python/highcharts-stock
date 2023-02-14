@@ -1,7 +1,7 @@
 from typing import Optional
 
-from highcharts_core.decorators import class_sensitive
-from highcharts_core.metaclasses import HighchartsMeta
+from highcharts_python.decorators import class_sensitive
+from highcharts_python.metaclasses import HighchartsMeta
 
 from highcharts_stock.options.plot_options.indicators import ParameterBase, ComparableIndicatorOptions
 from highcharts_stock.options.plot_options.oscillators import WilliamsRParameters as DMIParameters

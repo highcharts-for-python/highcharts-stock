@@ -22,7 +22,7 @@ class: :class:`IndicatorOptions <highcharts_stock.options.plot_options.indicator
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: IndicatorOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`ComparableIndicatorOptions <highcharts_stock.options.plot_options
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ComparableIndicatorOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`ParameterBase <highcharts_stock.options.plot_options.indicators.P
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ParameterBase
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

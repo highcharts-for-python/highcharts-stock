@@ -22,7 +22,7 @@ class: :class:`LegendLanguageOptions <highcharts_stock.global_options.language.a
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LegendLanguageOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

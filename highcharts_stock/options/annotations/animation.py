@@ -1,1 +1,1 @@
-from highcharts_core.options.annotations.animation import *
+from highcharts_python.options.annotations.animation import *

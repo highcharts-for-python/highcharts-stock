@@ -22,7 +22,7 @@ class: :class:`CallbackFunction <highcharts_stock.utility_classes.javascript_fun
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CallbackFunction
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`JavaScriptClass <highcharts_stock.utility_classes.javascript_func
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: JavaScriptClass
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`AreaOptions <highcharts_stock.options.plot_options.area.AreaOptio
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AreaOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`AreaRangeOptions <highcharts_stock.options.plot_options.area.Area
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AreaRangeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`AreaSplineOptions <highcharts_stock.options.plot_options.area.Are
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AreaSplineOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`AreaSplineRangeOptions <highcharts_stock.options.plot_options.are
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AreaSplineRangeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -94,7 +94,7 @@ class: :class:`LineOptions <highcharts_stock.options.plot_options.area.LineOptio
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LineOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -112,7 +112,7 @@ class: :class:`StreamGraphOptions <highcharts_stock.options.plot_options.area.St
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: StreamGraphOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

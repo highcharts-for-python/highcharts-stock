@@ -22,7 +22,7 @@ class: :class:`OrganizationOptions <highcharts_stock.options.plot_options.organi
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: OrganizationOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

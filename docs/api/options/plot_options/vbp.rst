@@ -22,7 +22,7 @@ class: :class:`VBPOptions <highcharts_stock.options.plot_options.vbp.VBPOptions>
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VBPOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`VBPParameters <highcharts_stock.options.plot_options.vbp.VBPParam
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VBPParameters
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`ZoneLinesOptions <highcharts_stock.options.plot_options.vbp.ZoneL
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ZoneLinesOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`VolumeDivisionOptions <highcharts_stock.options.plot_options.vbp.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VolumeDivisionOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -94,7 +94,7 @@ class: :class:`VolumeDivisionStyles <highcharts_stock.options.plot_options.vbp.V
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VolumeDivisionStyles
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

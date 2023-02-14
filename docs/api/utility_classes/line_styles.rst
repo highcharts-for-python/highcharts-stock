@@ -22,7 +22,7 @@ class: :class:`LineStylesWidth <highcharts_stock.utility_classes.line_styles.Lin
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LineStylesWidth
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`LineStylesColorWidth <highcharts_stock.utility_classes.line_style
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LineStylesColorWidth
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`LineStylesColorWidthDash <highcharts_stock.utility_classes.line_s
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LineStylesColorWidthDash
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

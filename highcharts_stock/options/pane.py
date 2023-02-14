@@ -1,1 +1,1 @@
-from highcharts_core.options.pane import *
+from highcharts_python.options.pane import *

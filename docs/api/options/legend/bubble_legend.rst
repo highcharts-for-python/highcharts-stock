@@ -22,7 +22,7 @@ class: :class:`BubbleLegend <highcharts_stock.options.legend.bubble_legend.Bubbl
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BubbleLegend
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`BubbleLegendRange <highcharts_stock.options.legend.bubble_legend.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BubbleLegendRange
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`BubbleLegendLabelOptions <highcharts_stock.options.legend.bubble_
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BubbleLegendLabelOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

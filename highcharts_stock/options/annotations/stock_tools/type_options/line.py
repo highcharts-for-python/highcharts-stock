@@ -2,7 +2,7 @@ from typing import Optional
 
 from validator_collection import validators
 
-from highcharts_core.metaclasses import HighchartsMeta
+from highcharts_python.metaclasses import HighchartsMeta
 
 
 class LineFillOnly(HighchartsMeta):

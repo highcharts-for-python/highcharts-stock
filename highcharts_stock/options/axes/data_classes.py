@@ -1,1 +1,1 @@
-from highcharts_core.options.axes.data_classes import *
+from highcharts_python.options.axes.data_classes import *

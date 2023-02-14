@@ -27,7 +27,7 @@ class: :class:`StockTools <highcharts_stock.options.stock_tools.StockTools>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: StockTools
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -45,7 +45,7 @@ class: :class:`StockToolsGUI <highcharts_stock.options.stock_tools.StockToolsGUI
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: StockToolsGUI
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

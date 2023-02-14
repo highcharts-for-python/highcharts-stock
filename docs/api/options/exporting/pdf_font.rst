@@ -22,7 +22,7 @@ class: :class:`PDFFontOptions <highcharts_stock.options.exporting.pdf_font.PDFFo
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PDFFontOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

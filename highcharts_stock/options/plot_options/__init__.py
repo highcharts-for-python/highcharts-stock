@@ -1,7 +1,7 @@
 from typing import Optional
 
-from highcharts_core.decorators import class_sensitive
-from highcharts_core.options.plot_options import PlotOptions as PlotOptionsBase
+from highcharts_python.decorators import class_sensitive
+from highcharts_python.options.plot_options import PlotOptions as PlotOptionsBase
 
 from highcharts_stock.options.plot_options.arcdiagram import ArcDiagramOptions
 from highcharts_stock.options.plot_options.area import AreaOptions

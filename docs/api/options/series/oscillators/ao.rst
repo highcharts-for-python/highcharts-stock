@@ -22,7 +22,7 @@ class: :class:`AOSeries <highcharts_stock.options.series.oscillators.ao.AOSeries
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AOSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

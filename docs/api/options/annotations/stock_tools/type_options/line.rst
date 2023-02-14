@@ -22,7 +22,7 @@ class: :class:`LineFillOnly <highcharts_stock.options.annotations.stock_tools.ty
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LineFillOnly
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`LineStrokeWidth <highcharts_stock.options.annotations.stock_tools
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LineStrokeWidth
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`LineStrokeWidthStroke <highcharts_stock.options.annotations.stock
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LineStrokeWidthStroke
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

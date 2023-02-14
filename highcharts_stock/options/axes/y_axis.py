@@ -3,7 +3,7 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_core.options.axes.y_axis import YAxis as YAxisBase
+from highcharts_python.options.axes.y_axis import YAxis as YAxisBase
 
 from highcharts_stock import errors
 from highcharts_stock.decorators import class_sensitive

@@ -22,7 +22,7 @@ class: :class:`Gradient <highcharts_stock.utility_classes.gradients.Gradient>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Gradient
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`LinearGradient <highcharts_stock.utility_classes.gradients.Linear
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LinearGradient
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`RadialGradient <highcharts_stock.utility_classes.gradients.Radial
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: RadialGradient
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -1,1 +1,1 @@
-from highcharts_core.options.axes.plot_bands import *
+from highcharts_python.options.axes.plot_bands import *

@@ -22,7 +22,7 @@ class: :class:`CrookedLineTypeOptions <highcharts_stock.options.annotations.stoc
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: CrookedLineTypeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`InfinityLineTypeOptions <highcharts_stock.options.annotations.sto
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: InfinityLineTypeOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

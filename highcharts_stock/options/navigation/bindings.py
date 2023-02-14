@@ -1,1 +1,1 @@
-from highcharts_core.options.navigation.bindings import *
+from highcharts_python.options.navigation.bindings import *

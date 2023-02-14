@@ -3,13 +3,13 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_core import errors
-from highcharts_core.decorators import class_sensitive
-from highcharts_core.utility_classes.gradients import Gradient
-from highcharts_core.utility_classes.patterns import Pattern
-from highcharts_core.options.plot_options.drag_drop import DragDropOptions
-from highcharts_core.options.plot_options.series import SeriesBaseOptions as SeriesBase
-from highcharts_core.utility_functions import mro__to_untrimmed_dict
+from highcharts_python import errors
+from highcharts_python.decorators import class_sensitive
+from highcharts_python.utility_classes.gradients import Gradient
+from highcharts_python.utility_classes.patterns import Pattern
+from highcharts_python.options.plot_options.drag_drop import DragDropOptions
+from highcharts_python.options.plot_options.series import SeriesBaseOptions as SeriesBase
+from highcharts_python.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.plot_options.base import NonIndicatorOptions
 
@@ -216,7 +216,7 @@ class SeriesOptions(SeriesBaseOptions):
 
     @negative_color.setter
     def negative_color(self, value):
-        from highcharts_core import utility_functions
+        from highcharts_python import utility_functions
         self._negative_color = utility_functions.validate_color(value)
 
     @property

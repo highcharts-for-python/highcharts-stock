@@ -1,1 +1,1 @@
-from highcharts_core.global_options.language.accessibility.screen_reader_section import *
+from highcharts_python.global_options.language.accessibility.screen_reader_section import *

@@ -3,7 +3,7 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_core.options.axes.color_axis import ColorAxis as ColorAxisBase
+from highcharts_python.options.axes.color_axis import ColorAxis as ColorAxisBase
 
 
 class ColorAxis(ColorAxisBase):

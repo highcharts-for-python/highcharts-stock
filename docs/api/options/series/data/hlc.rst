@@ -22,7 +22,7 @@ class: :class:`HLCData <highcharts_stock.options.series.data.hlc.HLCData>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: HLCData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`OHLCData <highcharts_stock.options.series.data.hlc.OHLCData>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: OHLCData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

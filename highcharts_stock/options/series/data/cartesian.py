@@ -1,1 +1,1 @@
-from highcharts_core.options.series.data.cartesian import *
+from highcharts_python.options.series.data.cartesian import *

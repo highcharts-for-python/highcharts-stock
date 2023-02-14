@@ -22,7 +22,7 @@ class: :class:`PyramidOptions <highcharts_stock.options.plot_options.pyramid.Pyr
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PyramidOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`Pyramid3DOptions <highcharts_stock.options.plot_options.pyramid.P
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: Pyramid3DOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

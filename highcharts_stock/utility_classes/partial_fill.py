@@ -1,1 +1,1 @@
-from highcharts_core.utility_classes.partial_fill import *
+from highcharts_python.utility_classes.partial_fill import *

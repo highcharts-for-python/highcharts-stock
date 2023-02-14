@@ -1,1 +1,1 @@
-from highcharts_core.utility_classes.zones import *
+from highcharts_python.utility_classes.zones import *

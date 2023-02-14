@@ -22,7 +22,7 @@ class: :class:`BellCurveOptions <highcharts_stock.options.plot_options.bellcurve
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BellCurveOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

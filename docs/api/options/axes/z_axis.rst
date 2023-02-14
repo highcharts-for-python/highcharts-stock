@@ -22,7 +22,7 @@ class: :class:`ZAxis <highcharts_stock.options.axes.z_axis.ZAxis>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ZAxis
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -1,1 +1,1 @@
-from highcharts_core.options.axes.breaks import *
+from highcharts_python.options.axes.breaks import *

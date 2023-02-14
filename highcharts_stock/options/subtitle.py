@@ -1,1 +1,1 @@
-from highcharts_core.options.subtitle import *
+from highcharts_python.options.subtitle import *

@@ -22,7 +22,7 @@ class: :class:`HLCOptions <highcharts_stock.options.plot_options.hlc.HLCOptions>
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: HLCOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`OHLCOptions <highcharts_stock.options.plot_options.hlc.OHLCOption
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: OHLCOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

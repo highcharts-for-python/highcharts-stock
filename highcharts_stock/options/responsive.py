@@ -1,1 +1,1 @@
-from highcharts_core.options.responsive import *
+from highcharts_python.options.responsive import *

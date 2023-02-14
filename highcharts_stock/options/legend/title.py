@@ -1,1 +1,1 @@
-from highcharts_core.options.legend.title import *
+from highcharts_python.options.legend.title import *

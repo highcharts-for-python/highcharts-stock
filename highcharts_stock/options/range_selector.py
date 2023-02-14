@@ -152,7 +152,7 @@ class RangeSelectorButton(HighchartsMeta):
     def data_grouping(self) -> Optional[DataGroupingOptions]:
         """A custom configuration for the grouping of data that applies to a given button.
 
-        :rtype: :class:`DataGroupingOptions <highcharts_core.utility_classes.DataGroupingOptions>`
+        :rtype: :class:`DataGroupingOptions <highcharts_python.utility_classes.DataGroupingOptions>`
           or :obj:`None <python:None>`
         """
         return self._data_grouping

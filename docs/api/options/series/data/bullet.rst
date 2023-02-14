@@ -22,7 +22,7 @@ class: :class:`BulletData <highcharts_stock.options.series.data.bullet.BulletDat
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BulletData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -22,7 +22,7 @@ class: :class:`StockToolsLanguageOptions <highcharts_stock.global_options.langua
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: StockToolsLanguageOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`StockToolsGUI <highcharts_stock.global_options.language.stock_too
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: StockToolsGUI
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |

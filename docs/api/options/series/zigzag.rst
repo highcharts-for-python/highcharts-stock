@@ -22,7 +22,7 @@ class: :class:`ZigZagSeries <highcharts_stock.options.series.zigzag.ZigZagSeries
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ZigZagSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
       :parts: -1
 
   |
