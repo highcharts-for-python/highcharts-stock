@@ -130,6 +130,7 @@ os:
 git:
   quiet: true
 
+install: skip
 before_script:
   - curl -Os --retry 5 https://uploader.codecov.io/latest/linux/codecov
   - chmod +x codecov
