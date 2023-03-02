@@ -21,6 +21,7 @@ os:
   - linux
 git:
   quiet: true
+install: pip --version
 stages:
   - name: install_develop_requirements
     if: branch = develop
