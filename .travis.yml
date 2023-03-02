@@ -24,7 +24,6 @@ git:
 install:
   - pip install -r requirements.dev.txt
 before_script:
-  - mkdir /home/travis/build/highcharts-for-python/highcharts-stock/tests/input_files/headless_export/output/
   - curl -Os --retry 5 https://uploader.codecov.io/latest/linux/codecov
   - chmod +x codecov
 script: tox -- -v -nauto 
