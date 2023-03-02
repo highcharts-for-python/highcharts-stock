@@ -25,7 +25,8 @@ git:
 install: 
   - |
     if [[ $TRAVIS_BRANCH == "develop" ]]; then 
-      git clone git@github.com:highcharts-for-python/highcharts-core.git
+      cd ../
+      git clone https://${CI_GH_TOKEN}@highcharts-for-python/highcharts-core.git highcharts-for-python/highcharts-core
       cd highcharts-core
       git fetch
       git checkout develop
@@ -45,6 +46,7 @@ install:
       pip install validator-collection==1.5.0
       pip install -e . 
       cd ../
+      cd highcharts-stock
     fi
   - if [[ $TRAVIS_BRANCH == "master" ]]; then pip install -r requirements.dev.txt; fi
 before_script:
