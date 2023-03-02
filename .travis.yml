@@ -24,6 +24,7 @@ git:
 stages:
   - name: install_develop_dependencies
     if: branch = develop
+    install:
     - pip --version
     - git clone git@github.com:highcharts-for-python/highcharts-core.git
     - cd highcharts-core
@@ -47,6 +48,7 @@ stages:
     - cd ../
   - name: install_release_dependencies
     if: branch = master
+    install:
     - pip install -r requirements.dev.txt
   - name: run_tests
     before_script:
