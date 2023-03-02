@@ -21,11 +21,11 @@ os:
   - linux
 git:
   quiet: true
+install: pip --version
 stages:
   - name: install_develop_dependencies
     if: branch = develop
-    install:
-    - pip --version
+    before_install:
     - git clone git@github.com:highcharts-for-python/highcharts-core.git
     - cd highcharts-core
     - git fetch
@@ -48,8 +48,7 @@ stages:
     - cd ../
   - name: install_release_dependencies
     if: branch = master
-    install:
-    - pip install -r requirements.dev.txt
+    install: pip install -r requirements.dev.txt
   - name: run_tests
     before_script:
     - curl -Os --retry 5 https://uploader.codecov.io/latest/linux/codecov
