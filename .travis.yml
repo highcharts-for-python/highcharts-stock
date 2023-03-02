@@ -26,7 +26,7 @@ install:
   - |
     if [[ $TRAVIS_BRANCH == "develop" ]]; then 
       cd ../
-      git clone https://${CI_GH_TOKEN}@github.com/highcharts-for-python/highcharts-core.git highcharts-for-python/highcharts-core
+      git clone https://${CI_GH_USER}:${CI_GH_TOKEN}@github.com/highcharts-for-python/highcharts-core.git highcharts-for-python/highcharts-core
       cd highcharts-core
       git fetch
       git checkout develop
