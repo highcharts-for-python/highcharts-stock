@@ -22,32 +22,30 @@ os:
 git:
   quiet: true
 
-install:
-  - if [[$TRAVIS_BRANCH == "develop"]]; then
-    git clone git@github.com:highcharts-for-python/highcharts-core.git;
-    cd highcharts-core;
-    git fetch;
-    git checkout develop;
-    pip install esprima==4.0.1;
-    pip install pytest==7.1.2;
-    pip install pytest-cov==3.0.0;
-    pip install pytest-xdist==2.5.0;
-    pip install python-dotenv>=0.20.0;
-    pip install pytz==2022.1;
-    pip install Sphinx==6.1.3;
-    pip install sphinx-rtd-theme==1.2.0;
-    pip install sphinx-toolbox==3.4.0;
-    pip install sphinx-tabs==3.4.1;
-    pip install tox==4.4.6;
-    pip install requests==2.28.1;
-    pip install urllib3==1.26.9;
-    pip install validator-collection==1.5.0;
-    pip install -e . ;
-    cd ../;
-    fi
-  - if [[$TRAVIS_BRANCH == "master"]]; then
-    pip install -r requirements.dev.txt;
-    fi
+install: |
+         if [[ $TRAVIS_BRANCH == "develop" ]]; then
+           git clone git@github.com:highcharts-for-python/highcharts-core.git;
+           cd highcharts-core;
+           git fetch;
+           git checkout develop;
+           pip install esprima==4.0.1;
+           pip install pytest==7.1.2;
+           pip install pytest-cov==3.0.0;
+           pip install pytest-xdist==2.5.0;
+           pip install python-dotenv>=0.20.0;
+           pip install pytz==2022.1;
+           pip install Sphinx==6.1.3;
+           pip install sphinx-rtd-theme==1.2.0;
+           pip install sphinx-toolbox==3.4.0;
+           pip install sphinx-tabs==3.4.1;
+           pip install tox==4.4.6;
+           pip install requests==2.28.1;
+           pip install urllib3==1.26.9;
+           pip install validator-collection==1.5.0;
+           pip install -e . ;
+           cd ../;
+          fi
+  - if [[ $TRAVIS_BRANCH == "master" ]]; then pip install -r requirements.dev.txt; fi
 before_script:
   - curl -Os --retry 5 https://uploader.codecov.io/latest/linux/codecov
   - chmod +x codecov
