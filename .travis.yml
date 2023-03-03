@@ -49,8 +49,8 @@ before_script:
   - chmod +x codecov
 script:
   - cd tests
-  - if [[ $HCP_BASIC_PYTEST == "true"]; then pytest -v nauto; fi
+  - if [[ $HCP_BASIC_PYTEST == "true" ]]; then pytest -v nauto; fi
   - if [[ -e .coverage ]]; then pytest -v -nauto --cov ./highcharts_stock --cov-config ../setup.cfg; fi
-  - if [[ -e .docs]]; then sphinx-build -b html . _build/html; fi
+  - if [[ -e .docs ]]; then sphinx-build -b html . _build/html; fi
 after_success:
   - if [[ -e .coverage ]]; then ./codecov -t $CODECOV_TOKEN; fi
