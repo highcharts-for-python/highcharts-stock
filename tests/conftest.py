@@ -36,10 +36,10 @@ def pytest_addoption(parser):
                            "via the Highsoft-provided Export Server."))
     parser.addoption("--pyspark",
                      action="store",
-                     default="true",
+                     default="false",
                      help=("pyspark: set to 'false' to disable tests of pyspark-related"
                            " functionality, or 'true' to enable those tests. Defaults to"
-                           " 'true'"))
+                           " 'false'"))
 
 
 def pytest_runtest_makereport(item, call):
