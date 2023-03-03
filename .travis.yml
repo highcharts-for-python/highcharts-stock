@@ -50,7 +50,7 @@ before_script:
 script:
   - cd tests
   - if [[ $HCP_BASIC_PYTEST == "true" ]]; then pytest -v -nauto --no-cov; fi
-  - if [[ -e .coverage ]]; then pytest -v -nauto --cov ../highcharts_stock --cov-config ../../setup.cfg; fi
-  - if [[ -e .docs ]]; then cd ../docs; sphinx-build -b html . _build/html; fi
+  - if [[ $TOXENV == "coverage" ]]; then pytest -v -nauto --cov ../highcharts_stock --cov-config ../../setup.cfg; fi
+  - if [[ $TOXENV == "docs" ]]; then cd ../docs; sphinx-build -b html . _build/html; fi
 after_success:
-  - if [[ -e .coverage ]]; then ./codecov -t $CODECOV_TOKEN; fi
+  - if [[ $TOXENV == "coverage" ]]; then cd ../; ./codecov -t $CODECOV_TOKEN; fi
