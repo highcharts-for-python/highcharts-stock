@@ -4,8 +4,8 @@ Highcharts Stock for Python
 
 **High-end time series data visualization for the Python ecosystem**
 
-The **Highcharts Stock for Python** is an extension to the
-`Highcharts for Python <https://highcharts-core.readthedocs.io>`__ library, and provides
+**Highcharts Stock for Python** is an extension to the
+`Highcharts Core for Python <https://highcharts-core.readthedocs.io>`__ library, and provides
 a Python wrapper for the fantastic
 `Highcharts Stock <https://www.highcharts.com/products/stock/>`__
 JavaScript data visualization library. **Highcharts Stock for Python** also supports
@@ -70,7 +70,7 @@ capabilities to simplify integration with Javascript frontend frameworks (React,
 VueJS, etc.). But facilitating that with Highcharts has historically been very difficult.
 Part of this difficulty is because the Highcharts JavaScript suite - while supporting JSON as a
 serialization/deserialization format - leverages
-:term:`JavaScript object literals <JavaScript Object Literal Notation>` to expose the
+JavaScript object literals to expose the
 full power and interactivity of its data visualizations. And while it's easy to serialize
 JSON from Python, serializing and deserializing to/from JavaScript object literal notation
 is much more complicated. This means that Python developers looking to integrate with
@@ -86,7 +86,7 @@ the `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ extension,
 designed to provide extensive time series data visualization capabilities optimized for
 asset (e.g. stock) price data visualization, with extensive technical indicators and
 robust interactivity. For ease of use, it also includes the full functionality of
-**Highcharts for Python** as well.
+**Highcharts Core for Python** as well.
 
 Key Highcharts Stock for Python Features
 ==============================================
@@ -105,7 +105,7 @@ Key Highcharts Stock for Python Features
 
   .. seealso::
 
-    * :doc:`Supported Visualizations <visualizations>`
+    * `Supported Visualizations <https://highcharts-stock.readthedocs.io/en/latest/visualizations.html>`__
 
 * **Simple JavaScript Code Generation**. With one method call, produce production-ready
   JavaScript code to render your interactive visualizations using Highcharts' rich
@@ -295,12 +295,23 @@ that will render the chart wherever it is you want it to go:
 
 --------------
 
-*********************
-Questions and Issues
-*********************
+***********************
+Getting Help/Support
+***********************
 
-You can ask questions and report issues on the project's
-`Github Issues Page <https://github.com/hcpllc/highcharts-stock/issues>`_
+The **Highcharts for Python** toolkit comes with all of the great support that you are used to from working with the 
+Highcharts JavaScript libraries. When you license the toolkit, you are welcome to use any of the following tools to get 
+help using the toolkit. In particular, you can:
+
+  * Use the `Highcharts Forums <https://highcharts.com/forum>`__
+  * Use `Stack Overflow <https://stackoverflow.com/questions/tagged/highcharts-for-python>`__ with the 
+    ``highcharts-for-python`` tag
+  * `Report bugs or feature requests in the library's Github repository <https://github.com/highcharts-for-python/highcharts-stock/issues>`__
+  * `File a support ticket with us on our support page <https://www.highchartspython.com/get-help>`__
+  * Schedule a live chat or video call with us on our `support page <https://www.highchartspython.com/get-help>`__
+  * Just send us an email at `support@highchartspython.com <malito:support@highchartspython.com>`__
+
+**FOR MORE INFORMATION:** https://www.highchartspython.com/get-help
 
 -----------------
 
@@ -309,7 +320,7 @@ Contributing
 *********************
 
 We welcome contributions and pull requests! For more information, please see the
-:doc:`Contributor Guide <contributing>`. And thanks to all those who've already
+`Contributor Guide <https://highcharts-stock.readthedocs.io/en/latest/contributing.html>`. And thanks to all those who've already
 contributed:
 
 .. include:: _contributors.rst
