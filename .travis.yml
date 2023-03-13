@@ -1,0 +1,59 @@
+language: python
+job:
+  include:
+    #- python: "3.8"
+    #  env: 
+    #    - TOXENV=py39
+    #    - HCP_BASIC_PYTEST=true
+    #- python: "3.9"
+    #  env: 
+    #    - TOXENV=py39
+    #    - HCP_BASIC_PYTEST=true
+    - python: "3.10"
+      dist: focal
+      env: 
+        - TOXENV=py310
+        - HCP_BASIC_PYTEST=true
+    - python: "3.11"
+      dist: bionic
+      env: 
+        - HCP_BASIC_PYTEST=true
+        - TOXENV=py311
+    - python: "3.10"
+      dist: focal
+      env: TOXENV=coverage
+    - python: "3.10"
+      dist: focal
+      env: TOXENV=docs
+os:
+  - linux
+git:
+  quiet: true
+
+install: 
+  - pip install -r requirements.travis.txt
+  - |
+    if [[ $TRAVIS_BRANCH == "develop" ]]; then 
+      cd ../
+      git clone https://${CI_GH_USER}:${CI_GH_TOKEN}@github.com/highcharts-for-python/highcharts-core.git highcharts-core
+      cd highcharts-core
+      git fetch
+      git checkout develop
+      pip install -e . 
+      cd ../
+      cd highcharts-stock
+    fi
+  - if [[ $TRAVIS_BRANCH == "master" ]]; then pip install -r requirements.dev.txt; fi
+before_script:
+  - curl -Os --retry 5 https://uploader.codecov.io/latest/linux/codecov
+  - chmod +x codecov
+script:
+  - cd tests
+  - if [[ $HCP_BASIC_PYTEST == "true" ]]; then pytest -v -nauto --no-cov; fi
+  - |
+    if [[ $TOXENV == "coverage" ]]; then 
+      pytest -v -nauto --cov ../highcharts_stock --cov-config ../setup.cfg
+    fi
+  - if [[ $TOXENV == "docs" ]]; then cd ../docs; sphinx-build -b html . _build/html; fi
+after_success:
+  - if [[ $TOXENV == "coverage" ]]; then cd ../; ./codecov -t $CODECOV_TOKEN; fi

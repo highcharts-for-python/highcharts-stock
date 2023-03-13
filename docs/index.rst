@@ -1,9 +1,10 @@
-.. image:: _static/highcharts-python-logo.png
-  :alt: Highcharts for Python - High-end Data Visualization for the Python Ecosystem
+.. image:: _static/highcharts-for-python-light-150x149.png
+  :alt: Highcharts Stock for Python - High-end Time-series Data Visualization for the Python Ecosystem
   :align: right
   :width: 200
   :height: 100
 
+|
 |
 
 ###################################################
@@ -11,17 +12,6 @@ Highcharts Stock for Python
 ###################################################
 
 **High-end time series data visualization for the Python ecosystem**
-
-.. sidebar:: Version Compatibility
-
-  **Highcharts Stock for Python** is designed to be compatible with:
-
-    * Python 3.9 or higher,
-    * Highcharts JS 10.2 or higher,
-    * Highcharts for Python 1.0.0 or higher,
-    * Jupyter Notebook 6.4 or higher,
-    * Pandas 1.3 or higher
-    * PySpark 3.3 or higher
 
 .. include:: _unit_tests_code_coverage.rst
 
@@ -38,14 +28,27 @@ Highcharts Stock for Python
   Using Highcharts for Python <using>
   API Reference <api>
   Error Reference <errors>
+  Getting Help <support>
   Contributor Guide <contributing>
   Testing Reference <testing>
   Release History <history>
   Glossary <glossary>
-  Licensing <license>
+  License <license>
+
+.. sidebar:: Version Compatibility
+
+  **Highcharts Stock for Python** is designed to be compatible with:
+
+    * Python 3.10 or higher,
+    * Highcharts JS 10.2 or higher,
+    * Highcharts Core for Python 1.0 or higher,
+    * Jupyter Notebook 6.4 or higher,
+    * IPython 8.10 or higher,
+    * Pandas 1.3 or higher
+    * PySpark 3.3 or higher
 
 The **Highcharts Stock for Python** is an extension to the
-`Highcharts for Python <https://highcharts-core.readthedocs.io>`__ library, and provides
+`Highcharts Core for Python <https://highcharts-core.readthedocs.io>`__ library, and provides
 a Python wrapper for the fantastic
 `Highcharts Stock <https://www.highcharts.com/products/stock/>`__
 JavaScript data visualization library. **Highcharts Stock for Python** also supports
@@ -335,12 +338,11 @@ that will render the chart wherever it is you want it to go:
 
 --------------
 
-*********************
-Questions and Issues
-*********************
+***********************
+Getting Help/Support
+***********************
 
-You can ask questions and report issues on the project's
-`Github Issues Page <https://github.com/hcpllc/highcharts-stock/issues>`_
+.. include:: _support.rst
 
 -----------------
 
