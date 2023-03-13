@@ -1,5 +1,5 @@
-var someVariableName = new Highcharts.stockChart(renderTo = 'some-div-id',
-options = {
+var someVariableName = new Highcharts.stockChart('some-div-id',
+{
   accessibility: {
       announceNewData: {
           announcementFormatter: function() { return true; },
@@ -36757,4 +36757,4 @@ options = {
     }
   ]
 },
-callback = function() { return true; });
+function() { return true; });
