@@ -140,7 +140,37 @@ Hello World, and Basic Usage
 1. Import Highcharts Stock for Python
 ==========================================
 
-.. include:: using/_importing.rst
+.. code-block:: python
+
+  # BEST PRACTICE!
+  # PRECISE LOCATION PATTERN
+  # This method of importing Highcharts Stock for Python objects yields the fastest
+  # performance for the import statement. However, it is more verbose and requires
+  # you to navigate the extensive `Highcharts Stock for Python API.
+
+  # Import classes using precise module indications. For example:
+  from highcharts_stock.chart import Chart
+  from highcharts_stock.global_options.shared_options import SharedStockOptions
+  from highcharts_stock.options import HighchartsStockOptions
+  from highcharts_stock.options.plot_options.bar import BarOptions
+  from highcharts_stock.options.series.bar import BarSeries
+
+  # CATCH-ALL IMPORT PATTERN
+  # This method of importing **Highcharts Stock for Python** classes has relatively slow
+  # performance because it imports hundreds of different classes from across the entire
+  # library. This performance impact may be acceptable to you in your use-case, but
+  # do use at your own risk.
+
+  # Import objects from the catch-all ".highcharts" module.
+  from highcharts_stock import highcharts
+
+  # You can now access specific classes without individual import statements.
+  highcharts.Chart
+  highcharts.SharedStockOptions
+  highcharts.HighchartsStockOptions
+  highcharts.BarOptions
+  highcharts.BarSeries
+
 
 2. Create Your Chart
 ================================
