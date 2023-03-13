@@ -23,7 +23,7 @@ library features native integration with:
   * **PySpark**. Automatically produce data visualizations from data in a PySpark
     dataframe.
 
-**COMPLETE DOCUMENTATION:** http://highcharts-stock.readthedocs.org/en/latest/index.html
+**COMPLETE DOCUMENTATION:** https://highcharts-stock.readthedocs.org/en/latest/index.html
 
 --------------------
 
@@ -99,11 +99,13 @@ Key Highcharts Stock for Python Features
   `Highcharts JS <https://www.highcharts.com/product/highcharts/>`__ and the
   50+ technical indicator visualizations available in
   `Highcharts Stock <https://www.highcharts.com/product/stock/>`__, with full support for
-  the rich JavaScript formatter (JS :term:`callback functions <callback function>`)
+  the rich JavaScript formatter (JS `callback functions`)
   capabilities that are often needed to get the most out of Highcharts' visualization and
   interaction capabilities.
 
-  .. seealso::
+  .. note::
+
+    **See Also:**
 
     * `Supported Visualizations <https://highcharts-stock.readthedocs.io/en/latest/visualizations.html>`__
 
@@ -112,8 +114,7 @@ Key Highcharts Stock for Python Features
   capabilities.
 * **Easy Chart Download**. With one method call, produce high-end static
   visualizations that can be downloaded or shared as files with your audience. Produce
-  static charts using the Highsoft-provided
-  :term:`Highcharts Export Server <Export Server>`, or using your own private export
+  static charts using the Highsoft-provided **Highcharts Export Server**, or using your own private export
   server as needed.
 * **Integration with Pandas and PySpark**. With two lines of code, produce a high-end
   interactive visualization of your Pandas or PySpark dataframe.
@@ -128,7 +129,7 @@ Key Highcharts Stock for Python Features
 ===================================================
 
 For a discussion of **Highcharts Stock for Python** in comparison to alternatives, please see
-the **COMPLETE DOCUMENTATION:** http://highcharts-stock.readthedocs.org/en/latest/index.html
+the **COMPLETE DOCUMENTATION:** https://highcharts-stock.readthedocs.org/en/latest/index.html
 
 ---------------------
 
@@ -320,10 +321,7 @@ Contributing
 *********************
 
 We welcome contributions and pull requests! For more information, please see the
-`Contributor Guide <https://highcharts-stock.readthedocs.io/en/latest/contributing.html>`. And thanks to all those who've already
-contributed:
-
-.. include:: _contributors.rst
+`Contributor Guide <https://highcharts-stock.readthedocs.io/en/latest/contributing.html>`__. And thanks to all those who've already contributed!
 
 -------------------
 
@@ -331,7 +329,7 @@ contributed:
 Testing
 *********************
 
-We use `TravisCI <http://travisci.org>`_ for our build automation and
+We use `TravisCI <https://travisci.org>`_ for our build automation and
 `ReadTheDocs <https://readthedocs.org>`_ for our documentation.
 
 Detailed information about our test suite and how to run tests locally can be
