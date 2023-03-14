@@ -4,8 +4,8 @@ Highcharts Stock for Python
 
 **High-end time series data visualization for the Python ecosystem**
 
-The **Highcharts Stock for Python** is an extension to the
-`Highcharts for Python <https://highcharts-core.readthedocs.io>`__ library, and provides
+**Highcharts Stock for Python** is an extension to the
+`Highcharts Core for Python <https://core-docs.highchartspython.com>`__ library, and provides
 a Python wrapper for the fantastic
 `Highcharts Stock <https://www.highcharts.com/products/stock/>`__
 JavaScript data visualization library. **Highcharts Stock for Python** also supports
@@ -23,7 +23,7 @@ library features native integration with:
   * **PySpark**. Automatically produce data visualizations from data in a PySpark
     dataframe.
 
-**COMPLETE DOCUMENTATION:** http://highcharts-stock.readthedocs.org/en/latest/index.html
+**COMPLETE DOCUMENTATION:** https://stock-docs.highchartspython.com/en/latest/index.html
 
 --------------------
 
@@ -70,7 +70,7 @@ capabilities to simplify integration with Javascript frontend frameworks (React,
 VueJS, etc.). But facilitating that with Highcharts has historically been very difficult.
 Part of this difficulty is because the Highcharts JavaScript suite - while supporting JSON as a
 serialization/deserialization format - leverages
-:term:`JavaScript object literals <JavaScript Object Literal Notation>` to expose the
+JavaScript object literals to expose the
 full power and interactivity of its data visualizations. And while it's easy to serialize
 JSON from Python, serializing and deserializing to/from JavaScript object literal notation
 is much more complicated. This means that Python developers looking to integrate with
@@ -86,7 +86,7 @@ the `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ extension,
 designed to provide extensive time series data visualization capabilities optimized for
 asset (e.g. stock) price data visualization, with extensive technical indicators and
 robust interactivity. For ease of use, it also includes the full functionality of
-**Highcharts for Python** as well.
+**Highcharts Core for Python** as well.
 
 Key Highcharts Stock for Python Features
 ==============================================
@@ -99,21 +99,22 @@ Key Highcharts Stock for Python Features
   `Highcharts JS <https://www.highcharts.com/product/highcharts/>`__ and the
   50+ technical indicator visualizations available in
   `Highcharts Stock <https://www.highcharts.com/product/stock/>`__, with full support for
-  the rich JavaScript formatter (JS :term:`callback functions <callback function>`)
+  the rich JavaScript formatter (JS `callback functions`)
   capabilities that are often needed to get the most out of Highcharts' visualization and
   interaction capabilities.
 
-  .. seealso::
+  .. note::
 
-    * :doc:`Supported Visualizations <visualizations>`
+    **See Also:**
+
+    * `Supported Visualizations <https://stock-docs.highchartspython.com/en/latest/visualizations.html>`__
 
 * **Simple JavaScript Code Generation**. With one method call, produce production-ready
   JavaScript code to render your interactive visualizations using Highcharts' rich
   capabilities.
 * **Easy Chart Download**. With one method call, produce high-end static
   visualizations that can be downloaded or shared as files with your audience. Produce
-  static charts using the Highsoft-provided
-  :term:`Highcharts Export Server <Export Server>`, or using your own private export
+  static charts using the Highsoft-provided **Highcharts Export Server**, or using your own private export
   server as needed.
 * **Integration with Pandas and PySpark**. With two lines of code, produce a high-end
   interactive visualization of your Pandas or PySpark dataframe.
@@ -128,7 +129,7 @@ Key Highcharts Stock for Python Features
 ===================================================
 
 For a discussion of **Highcharts Stock for Python** in comparison to alternatives, please see
-the **COMPLETE DOCUMENTATION:** http://highcharts-stock.readthedocs.org/en/latest/index.html
+the **COMPLETE DOCUMENTATION:** https://stock-docs.highchartspython.com/en/latest/index.html
 
 ---------------------
 
@@ -139,7 +140,37 @@ Hello World, and Basic Usage
 1. Import Highcharts Stock for Python
 ==========================================
 
-.. include:: using/_importing.rst
+.. code-block:: python
+
+  # BEST PRACTICE!
+  # PRECISE LOCATION PATTERN
+  # This method of importing Highcharts Stock for Python objects yields the fastest
+  # performance for the import statement. However, it is more verbose and requires
+  # you to navigate the extensive `Highcharts Stock for Python API.
+
+  # Import classes using precise module indications. For example:
+  from highcharts_stock.chart import Chart
+  from highcharts_stock.global_options.shared_options import SharedStockOptions
+  from highcharts_stock.options import HighchartsStockOptions
+  from highcharts_stock.options.plot_options.bar import BarOptions
+  from highcharts_stock.options.series.bar import BarSeries
+
+  # CATCH-ALL IMPORT PATTERN
+  # This method of importing **Highcharts Stock for Python** classes has relatively slow
+  # performance because it imports hundreds of different classes from across the entire
+  # library. This performance impact may be acceptable to you in your use-case, but
+  # do use at your own risk.
+
+  # Import objects from the catch-all ".highcharts" module.
+  from highcharts_stock import highcharts
+
+  # You can now access specific classes without individual import statements.
+  highcharts.Chart
+  highcharts.SharedStockOptions
+  highcharts.HighchartsStockOptions
+  highcharts.BarOptions
+  highcharts.BarSeries
+
 
 2. Create Your Chart
 ================================
@@ -295,12 +326,23 @@ that will render the chart wherever it is you want it to go:
 
 --------------
 
-*********************
-Questions and Issues
-*********************
+***********************
+Getting Help/Support
+***********************
 
-You can ask questions and report issues on the project's
-`Github Issues Page <https://github.com/hcpllc/highcharts-stock/issues>`_
+The **Highcharts for Python** toolkit comes with all of the great support that you are used to from working with the 
+Highcharts JavaScript libraries. When you license the toolkit, you are welcome to use any of the following tools to get 
+help using the toolkit. In particular, you can:
+
+  * Use the `Highcharts Forums <https://highcharts.com/forum>`__
+  * Use `Stack Overflow <https://stackoverflow.com/questions/tagged/highcharts-for-python>`__ with the 
+    ``highcharts-for-python`` tag
+  * `Report bugs or request features <https://github.com/highcharts-for-python/highcharts-stock/issues>`__ in the 
+    library's Github repository 
+  * `File a support ticket <https://www.highchartspython.com/get-help>`__ with us
+  * `Schedule a live chat or video call <https://www.highchartspython.com/get-help>`__ with us
+
+**FOR MORE INFORMATION:** https://www.highchartspython.com/get-help
 
 -----------------
 
@@ -309,10 +351,7 @@ Contributing
 *********************
 
 We welcome contributions and pull requests! For more information, please see the
-:doc:`Contributor Guide <contributing>`. And thanks to all those who've already
-contributed:
-
-.. include:: _contributors.rst
+`Contributor Guide <https://stock-docs.highchartspython.com/en/latest/contributing.html>`__. And thanks to all those who've already contributed!
 
 -------------------
 
@@ -320,7 +359,7 @@ contributed:
 Testing
 *********************
 
-We use `TravisCI <http://travisci.org>`_ for our build automation and
+We use `TravisCI <https://travisci.org>`_ for our build automation and
 `ReadTheDocs <https://readthedocs.org>`_ for our documentation.
 
 Detailed information about our test suite and how to run tests locally can be

@@ -13,7 +13,7 @@ from highcharts_stock.options.series.series_generator import (create_series_obj,
                                                               SERIES_CLASSES,
                                                               STOCK_SERIES_LIST,
                                                               INDICATOR_LIST)
-from highcharts_stock.global_options.shared_options import SharedStockOptions
+from highcharts_stock.global_options.shared_options import SharedStockOptions, SharedOptions
 from highcharts_stock.options import HighchartsStockOptions
 
 
@@ -27,31 +27,84 @@ class Chart(ChartBase):
 
         super().__init__(**kwargs)
 
-    def _repr_html_(self):
-        """Produce the HTML representation of the chart.
+    def _jupyter_include_scripts(self):
+        """Return the JavaScript code that is used to load the Highcharts JS libraries.
 
         .. note::
 
-          Currently includes *all* `Highcharts JS <https://www.highcharts.com/>`__ or
-          `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ modules
+          Currently includes *all* `Highcharts JS <https://www.highcharts.com/>`_ modules
           in the HTML. This issue will be addressed when roadmap issue :issue:`2` is
           released.
 
-        :returns: The HTML representation of the chart.
         :rtype: :class:`str <python:str>`
         """
-        if self.options.chart:
-            height = self.options.chart.height or 400
+        js_str = ''
+        if self.is_stock_chart:
+            for item in constants.STOCK_INCLUDE_LIBS:
+                js_str += utility_functions.jupyter_add_script(item)
+                js_str += """.then(() => {"""
+
+            for item in constants.STOCK_INCLUDE_LIBS:
+                js_str += """});"""
+
         else:
-            height = 400
+            for item in constants.INCLUDE_LIBS:
+                js_str += utility_functions.jupyter_add_script(item)
+                js_str += """.then(() => {"""
 
-        container_str = f"""<div id=\"{self.container}\" style=\"width:100%; height:{height};\"></div>\n"""
-        as_str = self.to_js_literal()
-        script_str = '<script>\n' + as_str + '\n</script>'
+            for item in constants.INCLUDE_LIBS:
+                js_str += """});"""
 
-        html_str = container_str + script_str
+        return js_str
 
-        return html_str
+    def _jupyter_javascript(self, 
+                            global_options = None, 
+                            container = None,
+                            retries = 3,
+                            interval = 1000):
+        """Return the JavaScript code which Jupyter Labs will need to render the chart.
+
+        :param global_options: The :term:`shared options` to use when rendering the chart.
+          Defaults to :obj:`None <python:None>`
+        :type global_options: :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+          or :obj:`None <python:None>`
+          
+        :param container: The ID to apply to the HTML container when rendered in Jupyter Labs. Defaults to
+          :obj:`None <python:None>`, which applies the :meth:`.container <highcharts_core.chart.Chart.container>` 
+          property if set, and ``'highcharts_target_div'`` if not set.
+        :type container: :class:`str <python:str>` or :obj:`None <python:None>`
+
+        :param retries: The number of times to retry rendering the chart. Used to avoid race conditions with the 
+          Highcharts script. Defaults to 3.
+        :type retries: :class:`int <python:int>`
+        
+        :param interval: The number of milliseconds to wait between retrying rendering the chart. Defaults to 1000 (1 
+          seocnd).
+        :type interval: :class:`int <python:int>`
+
+        :rtype: :class:`str <python:str>`
+        """
+        original_container = self.container
+        self.container = container or self.container or 'highcharts_target_div'
+        
+        if global_options is not None:
+            global_options = validate_types(global_options,
+                                            types = (SharedStockOptions, SharedOptions))
+
+        js_str = ''
+        js_str += utility_functions.get_retryHighcharts()
+
+        if global_options:
+            js_str += '\n' + utility_functions.prep_js_for_jupyter(global_options.to_js_literal()) + '\n'
+
+        js_str += utility_functions.prep_js_for_jupyter(self.to_js_literal(),
+                                                        container = self.container,
+                                                        retries = retries,
+                                                        interval = interval)
+
+        self.container = original_container
+
+        return js_str
 
     @property
     def is_stock_chart(self) -> bool:
@@ -162,19 +215,23 @@ class Chart(ChartBase):
 
         container_as_str = ''
         if self.container:
-            container_as_str = f"""renderTo = '{self.container}'"""
-            signature_elements += 1
+            container_as_str = f"""'{self.container}'"""
+        else:
+            container_as_str = """null"""
+        signature_elements += 1
 
         options_as_str = ''
         if self.options:
             options_as_str = self.options.to_js_literal(encoding = encoding)
-            options_as_str = f"""options = {options_as_str}"""
-            signature_elements += 1
+            options_as_str = f"""{options_as_str}"""
+        else:
+            options_as_str = """{}"""
+        signature_elements += 1
 
         callback_as_str = ''
         if self.callback:
             callback_as_str = self.callback.to_js_literal(encoding = encoding)
-            callback_as_str = f"""callback = {callback_as_str}"""
+            callback_as_str = f"""{callback_as_str}"""
             signature_elements += 1
 
         signature = """new Highcharts.chart("""
@@ -298,6 +355,9 @@ class Chart(ChartBase):
 
         """
         new_series = []
+        if not checkers.is_iterable(series):
+            series = [series]
+
         for item in series:
             item_series = create_series_obj(item)
             new_series.append(item_series)
@@ -426,39 +486,10 @@ class Chart(ChartBase):
         kwargs = validators.dict(kwargs, allow_empty = True) or {}
         instance = cls(**kwargs)
 
-        instance.add_series(series)
-
-    def display(self, global_options = None):
-        """Display the chart in `Jupyter Labs <https://jupyter.org/>`_ or
-        `Jupyter Notebooks <https://jupyter.org/>`_.
-
-        :raises HighchartsDependencyError: if
-          `ipython <https://ipython.readthedocs.io/en/stable/>`_ is not available in the
-          runtime environment
-        """
-        try:
-            from IPython import display
-        except ImportError:
-            raise errors.HighchartsDependencyError('Unable to import IPython.display. '
-                                                   'Make sure that it is available in '
-                                                   'your runtime environment. To install,'
-                                                   'use: pip install ipython')
-
-        if global_options is not None:
-            global_options = validate_types(global_options,
-                                            types = SharedStockOptions)
-
-        if self.is_stock_chart:
-            include_str = constants.STOCK_INCLUDE_STR
+        if checkers.is_iterable(series):
+            instance.add_series(*series)
         else:
-            include_str = constants.INCLUDE_STR
-
-        html_str = include_str + '\n'
-        if global_options:
-            html_str += global_options._repr_html_() + '\n'
-        html_str += self._repr_html_()
-
-        display.display_html(html_str, raw = True)
+            instance.add_series(series)
 
     @staticmethod
     def _get_options_obj(series_type, options_kwargs):
