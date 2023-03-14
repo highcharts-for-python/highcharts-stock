@@ -48,7 +48,7 @@ Highcharts Stock for Python
     * PySpark 3.3 or higher
 
 The **Highcharts Stock for Python** is an extension to the
-`Highcharts Core for Python <https://highcharts-core.readthedocs.io>`__ library, and provides
+`Highcharts Core for Python <https://core-docs.highchartspython.com>`__ library, and provides
 a Python wrapper for the fantastic
 `Highcharts Stock <https://www.highcharts.com/products/stock/>`__
 JavaScript data visualization library. **Highcharts Stock for Python** also supports

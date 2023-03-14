@@ -70,7 +70,7 @@ path = "highcharts_stock/__version__.py"
 
 [project.urls]
 "Homepage" = "https://www.highchartspython.com"
-"Documentation" = "https://highcharts-stock.readthedocs.io/en/latest/"
+"Documentation" = "https://stock-docs.highchartspython.com/en/latest/"
 "Support" = "https://www.highchartspython.com/get-help"
 "Source Code" = "https://github.com/highcharts-for-python/highcharts-stock"
 "History" = "https://github.com/highcharts-for-python/highcharts-stock/blob/master/CHANGES.rst"

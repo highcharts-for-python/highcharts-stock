@@ -24,7 +24,7 @@ class DataGroupingOptions(DataGroupingBase):
 
     .. caution::
 
-      In `Highcharts for Python <https://highcharts-core.readthedocs.io>`__ and
+      In `Highcharts for Python <https://core-docs.highchartspython.com>`__ and
       `Highcharts JS <https://www.highcharts.com>`__, usage of the data grouping requires
       the ``modules/datagrouping.js`` JavaScript module. In
       **Highcharts Stock for Python**, it is included by default.

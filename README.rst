@@ -5,7 +5,7 @@ Highcharts Stock for Python
 **High-end time series data visualization for the Python ecosystem**
 
 **Highcharts Stock for Python** is an extension to the
-`Highcharts Core for Python <https://highcharts-core.readthedocs.io>`__ library, and provides
+`Highcharts Core for Python <https://core-docs.highchartspython.com>`__ library, and provides
 a Python wrapper for the fantastic
 `Highcharts Stock <https://www.highcharts.com/products/stock/>`__
 JavaScript data visualization library. **Highcharts Stock for Python** also supports
@@ -23,7 +23,7 @@ library features native integration with:
   * **PySpark**. Automatically produce data visualizations from data in a PySpark
     dataframe.
 
-**COMPLETE DOCUMENTATION:** https://highcharts-stock.readthedocs.org/en/latest/index.html
+**COMPLETE DOCUMENTATION:** https://stock-docs.highchartspython.com/en/latest/index.html
 
 --------------------
 
@@ -107,7 +107,7 @@ Key Highcharts Stock for Python Features
 
     **See Also:**
 
-    * `Supported Visualizations <https://highcharts-stock.readthedocs.io/en/latest/visualizations.html>`__
+    * `Supported Visualizations <https://stock-docs.highchartspython.com/en/latest/visualizations.html>`__
 
 * **Simple JavaScript Code Generation**. With one method call, produce production-ready
   JavaScript code to render your interactive visualizations using Highcharts' rich
@@ -129,7 +129,7 @@ Key Highcharts Stock for Python Features
 ===================================================
 
 For a discussion of **Highcharts Stock for Python** in comparison to alternatives, please see
-the **COMPLETE DOCUMENTATION:** https://highcharts-stock.readthedocs.org/en/latest/index.html
+the **COMPLETE DOCUMENTATION:** https://stock-docs.highchartspython.com/en/latest/index.html
 
 ---------------------
 
@@ -351,7 +351,7 @@ Contributing
 *********************
 
 We welcome contributions and pull requests! For more information, please see the
-`Contributor Guide <https://highcharts-stock.readthedocs.io/en/latest/contributing.html>`__. And thanks to all those who've already contributed!
+`Contributor Guide <https://stock-docs.highchartspython.com/en/latest/contributing.html>`__. And thanks to all those who've already contributed!
 
 -------------------
 
