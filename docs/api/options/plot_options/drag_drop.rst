@@ -22,7 +22,7 @@ class: :class:`DragDropOptions <highcharts_stock.options.plot_options.drag_drop.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DragDropOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`HighLowDragDropOptions <highcharts_stock.options.plot_options.dra
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: HighLowDragDropOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`BoxPlotDragDropOptions <highcharts_stock.options.plot_options.dra
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BoxPlotDragDropOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`BulletDragDropOptions <highcharts_stock.options.plot_options.drag
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BulletDragDropOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -94,7 +94,7 @@ class: :class:`GuideBox <highcharts_stock.options.plot_options.drag_drop.GuideBo
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: GuideBox
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -112,7 +112,7 @@ class: :class:`GuideBoxOptions <highcharts_stock.options.plot_options.drag_drop.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: GuideBoxOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -130,7 +130,7 @@ class: :class:`DragHandle <highcharts_stock.options.plot_options.drag_drop.DragH
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DragHandle
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

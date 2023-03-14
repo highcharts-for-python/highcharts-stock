@@ -3,10 +3,10 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.options.axes.crosshair import CrosshairOptions
-from highcharts_python.utility_classes.javascript_functions import CallbackFunction
+from highcharts_core.decorators import class_sensitive
+from highcharts_core.metaclasses import HighchartsMeta
+from highcharts_core.options.axes.crosshair import CrosshairOptions
+from highcharts_core.utility_classes.javascript_functions import CallbackFunction
 
 from highcharts_stock import errors
 from highcharts_stock.options.annotations.stock_tools.type_options.line import LineFillOnly, LineStrokeWidthStroke
@@ -155,7 +155,7 @@ class MeasureLabelOptions(HighchartsMeta):
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
-            'enabled': self.enbaled,
+            'enabled': self.enabled,
             'formatter': self.formatter,
             'style': self.style
         }

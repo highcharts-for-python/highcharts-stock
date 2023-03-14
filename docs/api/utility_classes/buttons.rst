@@ -22,7 +22,7 @@ class: :class:`ExportingButtons <highcharts_stock.utility_classes.buttons.Export
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ExportingButtons
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`ContextButtonConfiguration <highcharts_stock.utility_classes.butt
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ContextButtonConfiguration
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`ButtonConfiguration <highcharts_stock.utility_classes.buttons.But
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ButtonConfiguration
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`ButtonTheme <highcharts_stock.utility_classes.buttons.ButtonTheme
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: ButtonTheme
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

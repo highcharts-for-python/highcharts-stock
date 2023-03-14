@@ -2,7 +2,7 @@ from typing import Optional
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
+from highcharts_core.decorators import class_sensitive
 
 from highcharts_stock.options.plot_options.indicators import ParameterBase, ComparableIndicatorOptions
 from highcharts_stock.options.plot_options.ad import ADParameters as CMFParameters
@@ -14,7 +14,7 @@ class MFIParameters(ParameterBase):
         self._decimals = None
         self._volume_series_id = None
 
-        self.decimals = kwargs.get('deicmals', None)
+        self.decimals = kwargs.get('decimals', None)
         self.volume_series_id = kwargs.get('volume_series_id', None)
 
         super().__init__(**kwargs)

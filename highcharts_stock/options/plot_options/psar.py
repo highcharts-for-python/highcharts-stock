@@ -3,7 +3,7 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
+from highcharts_core.decorators import class_sensitive
 
 from highcharts_stock.options.plot_options.indicators import ParameterBase, ComparableIndicatorOptions
 
@@ -16,7 +16,7 @@ class PSARParameters(ParameterBase):
         self._initial_acceleration_factor = None
         self._max_acceleration_factor = None
 
-        self.decimals = kwargs.get('deicmals', None)
+        self.decimals = kwargs.get('decimals', None)
         self.increment = kwargs.get('increment', None)
         self.initial_acceleration_factor = kwargs.get('initial_acceleration_factor', None)
         self.max_acceleration_factor = kwargs.get('max_acceleration_factor', None)

@@ -1,1 +1,1 @@
-from highcharts_python.options.legend.navigation import *
+from highcharts_core.options.legend.navigation import *

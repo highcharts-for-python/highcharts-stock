@@ -1,1 +1,1 @@
-from highcharts_python.options.axes.accessibility import *
+from highcharts_core.options.axes.accessibility import *

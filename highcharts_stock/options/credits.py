@@ -1,1 +1,1 @@
-from highcharts_python.options.credits import *
+from highcharts_core.options.credits import *

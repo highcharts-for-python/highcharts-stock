@@ -152,7 +152,7 @@ class RangeSelectorButton(HighchartsMeta):
     def data_grouping(self) -> Optional[DataGroupingOptions]:
         """A custom configuration for the grouping of data that applies to a given button.
 
-        :rtype: :class:`DataGroupingOptions <highcharts_python.utility_classes.DataGroupingOptions>`
+        :rtype: :class:`DataGroupingOptions <highcharts_core.utility_classes.DataGroupingOptions>`
           or :obj:`None <python:None>`
         """
         return self._data_grouping
@@ -510,7 +510,7 @@ class RangeSelector(HighchartsMeta):
     def input_date_format(self) -> Optional[str]:
         """The (JavaScript) date format in which dates in the input boxes are displayed
         when the input boxes are *not* selected for editing. Defaults to
-        ``''%b %e, %Y'``.
+        ``'%b %e, %Y'``.
 
         .. note::
 
@@ -571,6 +571,11 @@ class RangeSelector(HighchartsMeta):
         :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
         """
         return self._input_edit_date_format
+
+    @input_edit_date_format.setter
+    def input_edit_date_format(self, value):
+        self._input_edit_date_format = validators.string(value, allow_empty = True)
+
 
     @property
     def input_enabled(self) -> Optional[bool]:

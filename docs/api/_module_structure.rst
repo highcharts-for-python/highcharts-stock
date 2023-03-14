@@ -43,7 +43,7 @@ classes and modules.
 
     # APPROACH #1: Import the highcharts module, and access its child classes directly.
     #              for example by now calling highcharts.Chart().
-    from highcharts_python import highcharts
+    from highcharts_core import highcharts
 
     my_chart = highcharts.Chart()
     my_shared_options = highcharts.SharedStockOptions()

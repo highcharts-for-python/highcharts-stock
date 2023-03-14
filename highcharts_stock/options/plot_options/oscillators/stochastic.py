@@ -2,8 +2,8 @@ from typing import Optional, List
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
+from highcharts_core.decorators import class_sensitive
+from highcharts_core.metaclasses import HighchartsMeta
 
 from highcharts_stock import errors
 from highcharts_stock.options.plot_options.indicators import ParameterBase, ComparableIndicatorOptions
@@ -11,6 +11,13 @@ from highcharts_stock.utility_classes.line_styles import LineStylesColorWidth
 
 
 class StochasticParameters(ParameterBase):
+
+    def __init__(self, **kwargs):
+        self._periods = None
+
+        self.periods = kwargs.get('periods', None)
+
+        super().__init__(**kwargs)
 
     @property
     def index(self):
@@ -73,6 +80,9 @@ class StochasticParameters(ParameterBase):
 
 
 class SlowStochasticParameters(StochasticParameters):
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
     @property
     def periods(self) -> Optional[List[int]]:

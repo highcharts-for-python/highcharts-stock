@@ -1,1 +1,1 @@
-from highcharts_python.options.legend.accessibility import *
+from highcharts_core.options.legend.accessibility import *

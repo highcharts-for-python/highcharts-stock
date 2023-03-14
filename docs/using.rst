@@ -15,7 +15,7 @@ Introduction to Highcharts Stock and Highcharts for Python
 .. sidebar:: The Highcharts for Python Toolkit
 
   The **Highcharts Stock for Python** library is part of the broader
-  `Highcharts for Python <https://highcharts-python.readthedocs.io/>`_ toolkit. The core
+  `Highcharts for Python <https://core-docs.highchartspython.com/>`_ toolkit. The core
   toolkit provides Python wrappers for
   `Highcharts JS <https://www.highcharts.com/products/highcharts/>`__, while
   **Highcharts Stock for Python** extends the core library with support for

@@ -14,7 +14,7 @@ class ADSeries(NavigatorIndicatorSeries, ADOptions):
       :align: center
 
     """
-    def __init__(**kwargs):
+    def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
     @classmethod

@@ -22,7 +22,7 @@ class: :class:`LegendNavigation <highcharts_stock.options.legend.navigation.Lege
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LegendNavigation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

@@ -1,1 +1,1 @@
-from highcharts_python.options.axes.crosshair import *
+from highcharts_core.options.axes.crosshair import *

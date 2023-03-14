@@ -3,9 +3,9 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python import constants
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
+from highcharts_core import constants
+from highcharts_core.decorators import class_sensitive
+from highcharts_core.metaclasses import HighchartsMeta
 
 from highcharts_stock import errors
 from highcharts_stock.options.navigator import Navigator
@@ -26,7 +26,11 @@ class StockBaseOptions(HighchartsMeta):
         self._last_price = None
         self._last_visible_price = None
 
-        self.compare_start = kwargs.get('compare_start', None)
+        try:
+            self.compare_start = kwargs.get('compare_start', None)
+        except AttributeError:
+            pass
+
         self.cumulative = kwargs.get('cumulative', None)
         self.data_as_columns = kwargs.get('data_as_columns', None)
         self.data_grouping = kwargs.get('data_grouping', None)
@@ -202,7 +206,7 @@ class StockBaseOptions(HighchartsMeta):
 
           .. seealso::
 
-            * :meth:`.last_price_visible <highcharts_stock.options.plot_options.indicators.IndicatorOptions.last_price_visible>`
+            * :meth:`.last_visible_price <highcharts_stock.options.plot_options.indicators.IndicatorOptions.last_visible_price>`
 
 
         :rtype: :class:`LastPriceOptions <highcharts_stock.utility_classes.last_price.LastPriceOptions>`
@@ -216,7 +220,7 @@ class StockBaseOptions(HighchartsMeta):
         self._last_price = value
 
     @property
-    def last_price_visible(self) -> Optional[LastPriceOptions]:
+    def last_visible_price(self) -> Optional[LastPriceOptions]:
         """Configuration of a line marking the last price from all visible data points.
         Defaults to :obj:`None <python:None>`.
 
@@ -224,15 +228,15 @@ class StockBaseOptions(HighchartsMeta):
 
             * :meth:`.last_price <highcharts_stock.options.plot_options.indicators.IndicatorOptions.last_price>`
 
-        :rtype: :class:`LastPriceOptions <highcharts_stock.utility_classes.last_price_visible.LastPriceOptions>`
+        :rtype: :class:`LastPriceOptions <highcharts_stock.utility_classes.last_visible_price.LastPriceOptions>`
           or :obj:`None <python:None>`
         """
-        return self._last_price_visible
+        return self._last_visible_price
 
-    @last_price_visible.setter
+    @last_visible_price.setter
     @class_sensitive(LastPriceOptions)
-    def last_price_visible(self, value):
-        self._last_price_visible = value
+    def last_visible_price(self, value):
+        self._last_visible_price = value
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -250,8 +254,13 @@ class StockBaseOptions(HighchartsMeta):
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
+        try:
+            compare_start = self.compare_start
+        except AttributeError:
+            compare_start = None
+
         untrimmed = {
-            'compareStart': self.compare_start,
+            'compareStart': compare_start,
             'cumulative': self.cumulative,
             'dataAsColumns': self.data_as_columns,
             'dataGrouping': self.data_grouping,

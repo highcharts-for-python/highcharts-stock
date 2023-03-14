@@ -358,21 +358,21 @@ Preparing Your Development Environment
 
 In order to prepare your local development environment, you should:
 
-#. Fork the `Git repository <https://github.com/hcp-llc/highcharts-python>`_.
+#. Fork the `Git repository <https://github.com/highcharts-for-python/highcharts-stock>`_.
 #. Clone your forked repository.
 #. Set up a virtual environment (optional).
 #. Install development dependencies:
 
   .. code-block:: bash
 
-    highcharts-python/ $ pip install -r requirements.dev.txt
+    highcharts-stock/ $ pip install -r requirements.dev.txt
 
 And you should be good to go!
 
 Ideas and Feature Requests
 ============================
 
-Check for open `issues <https://github.com/insightindustry/highcharts-python/issues>`_
+Check for open `issues <https://github.com/highcharts-for-python/highcharts-stock/issues>`_
 or create a new issue to start a discussion around a bug or feature idea.
 
 Testing
@@ -405,8 +405,8 @@ In order to build documentation locally, you can do so from the command line usi
 
 .. code-block:: bash
 
-  highcharts-python/ $ cd docs
-  highcharts-python/docs $ make html
+  highcharts-stock/ $ cd docs
+  highcharts-stock/docs $ make html
 
 .. caution::
 
@@ -428,7 +428,7 @@ available at:
 
   .. code-block:: bash
 
-    highcharts-python/docs/_build/html/index.html
+    highcharts-stock/docs/_build/html/index.html
 
 .. note::
 

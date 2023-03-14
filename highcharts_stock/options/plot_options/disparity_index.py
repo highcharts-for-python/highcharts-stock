@@ -2,7 +2,7 @@ from typing import Optional
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
+from highcharts_core.decorators import class_sensitive
 
 from highcharts_stock import errors
 from highcharts_stock.options.plot_options.indicators import ComparableIndicatorOptions, ParameterBase
@@ -50,6 +50,8 @@ class DisparityIndexParameters(ParameterBase):
             if value not in ['sma', 'ema', 'dema', 'tema', 'wma']:
                 raise errors.HighchartsValueError(f'average expects a recognized average '
                                                   f'indicator. Received: "{value}"')
+
+            self._average = value
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):

@@ -22,7 +22,7 @@ class: :class:`AbandsSeries <highcharts_stock.options.series.abands.AbandsSeries
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AbandsSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`BBSeries <highcharts_stock.options.series.abands.BBSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BBSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`KeltnerChannelsSeries <highcharts_stock.options.series.abands.Kel
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: KeltnerChannelsSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`PCSeries <highcharts_stock.options.series.abands.PCSeries>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PCSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

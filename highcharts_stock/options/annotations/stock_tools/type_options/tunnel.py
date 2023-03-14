@@ -3,9 +3,9 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.options.annotations.control_point_options import AnnotationControlPointOption
+from highcharts_core.decorators import class_sensitive
+from highcharts_core.metaclasses import HighchartsMeta
+from highcharts_core.options.annotations.control_point_options import AnnotationControlPointOption
 
 from highcharts_stock import errors
 from highcharts_stock.options.annotations.stock_tools.type_options.line import LineStrokeWidth
@@ -62,7 +62,7 @@ class TunnelTypeOptions(HighchartsMeta):
     def height_control_point(self) -> Optional[AnnotationControlPointOption]:
         """The control point configuration for the annotation's height.
 
-        :rtype: :class:`AnnotationControlPointOption <highcharts_python.options.annotations.control_point_options.AnnotationControlPointOption>`
+        :rtype: :class:`AnnotationControlPointOption <highcharts_core.options.annotations.control_point_options.AnnotationControlPointOption>`
           or :obj:`None <python:None>`
         """
         return self._height_control_point

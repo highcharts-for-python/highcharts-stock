@@ -77,3 +77,5 @@ class LastPriceOptions(HighchartsMeta):
             'enabled': self.enabled,
             'label': self.label,
         }
+
+        return untrimmed

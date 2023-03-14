@@ -2,12 +2,13 @@ from typing import Optional
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.options.plot_options.series import SeriesOptions
+from highcharts_core.decorators import class_sensitive
+from highcharts_core.metaclasses import HighchartsMeta
+from highcharts_core.options.plot_options.series import SeriesOptions
 
 from highcharts_stock import errors
 from highcharts_stock.options.plot_options.base import StockBaseOptions
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 
 class ParameterBase(HighchartsMeta):
@@ -17,8 +18,14 @@ class ParameterBase(HighchartsMeta):
         self._index = None
         self._period = None
 
-        self.index = kwargs.get('index', None)
-        self.period = kwargs.get('period', None)
+        try:
+            self.index = kwargs.get('index', None)
+        except AttributeError:
+            pass
+        try:
+            self.period = kwargs.get('period', None)
+        except AttributeError:
+            pass
 
     @property
     def index(self) -> Optional[int]:
@@ -88,7 +95,11 @@ class IndicatorOptions(SeriesOptions, StockBaseOptions):
         self._name = None
         self._params = None
 
-        self.compare_start = kwargs.get('compare_start', None)
+        try:
+            self.compare_start = kwargs.get('compare_start', None)
+        except AttributeError:
+            pass
+
         self.compare_to_main = kwargs.get('compare_to_main', None)
         self.name = kwargs.get('name', None)
         self.params = kwargs.get('params', None)
@@ -225,14 +236,19 @@ class IndicatorOptions(SeriesOptions, StockBaseOptions):
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
+        try:
+            compare_start = self.compare_start
+        except AttributeError:
+            compare_start = None
+
         untrimmed = {
-            'compareStart': self.compare_start,
+            'compareStart': compare_start,
             'compareToMain': self.compare_to_main,
             'name': self.name,
             'params': self.params,
         }
 
-        parent_as_dict = super()._to_untrimmed_dict(in_cls = in_cls)
+        parent_as_dict = mro__to_untrimmed_dict(self, in_cls = in_cls)
 
         for key in parent_as_dict:
             untrimmed[key] = parent_as_dict[key]
@@ -398,10 +414,10 @@ class ComparableIndicatorOptions(IndicatorOptions):
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
             'compare': self.compare,
-            'comareBase': self.compare_base
+            'compareBase': self.compare_base
         }
 
-        parent_as_dict = super()._to_untrimmed_dict(in_cls = in_cls)
+        parent_as_dict = mro__to_untrimmed_dict(self, in_cls = in_cls)
 
         for key in parent_as_dict:
             untrimmed[key] = parent_as_dict[key]

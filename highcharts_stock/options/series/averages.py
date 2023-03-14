@@ -216,6 +216,9 @@ class EMASeries(NavigatorIndicatorSeries, EMAOptions):
             'x_axis': as_dict.get('xAxis', None),
             'y_axis': as_dict.get('yAxis', None),
             'z_index': as_dict.get('zIndex', None),
+
+            'navigator_options': as_dict.get('navigatorOptions', None),
+            'show_in_navigator': as_dict.get('showInNavigator', None),
         }
 
         return kwargs
@@ -323,6 +326,9 @@ class SMASeries(NavigatorIndicatorSeries, SMAOptions):
             'x_axis': as_dict.get('xAxis', None),
             'y_axis': as_dict.get('yAxis', None),
             'z_index': as_dict.get('zIndex', None),
+
+            'navigator_options': as_dict.get('navigatorOptions', None),
+            'show_in_navigator': as_dict.get('showInNavigator', None),
         }
 
         return kwargs
@@ -538,6 +544,9 @@ class VWAPSeries(NavigatorIndicatorSeries, VWAPOptions):
             'x_axis': as_dict.get('xAxis', None),
             'y_axis': as_dict.get('yAxis', None),
             'z_index': as_dict.get('zIndex', None),
+
+            'navigator_options': as_dict.get('navigatorOptions', None),
+            'show_in_navigator': as_dict.get('showInNavigator', None),
         }
 
         return kwargs
@@ -645,6 +654,9 @@ class WMASeries(NavigatorIndicatorSeries, WMAOptions):
             'x_axis': as_dict.get('xAxis', None),
             'y_axis': as_dict.get('yAxis', None),
             'z_index': as_dict.get('zIndex', None),
+
+            'navigator_options': as_dict.get('navigatorOptions', None),
+            'show_in_navigator': as_dict.get('showInNavigator', None),
         }
 
         return kwargs

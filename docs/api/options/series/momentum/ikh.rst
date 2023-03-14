@@ -22,7 +22,7 @@ class: :class:`IKHSeries <highcharts_stock.options.series.momentum.ikh.IKHSeries
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: IKHSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

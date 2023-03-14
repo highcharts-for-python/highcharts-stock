@@ -22,7 +22,7 @@ class: :class:`DisparityIndexSeries <highcharts_stock.options.series.disparity_i
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DisparityIndexSeries
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

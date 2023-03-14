@@ -28,7 +28,7 @@ class: :class:`KeyboardNavigation <highcharts_stock.options.accessibility.keyboa
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: KeyboardNavigation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

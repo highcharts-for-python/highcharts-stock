@@ -22,7 +22,7 @@ class: :class:`SunburstData <highcharts_stock.options.series.data.sunburst.Sunbu
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SunburstData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

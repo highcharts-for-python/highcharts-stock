@@ -1,14 +1,15 @@
 from typing import Optional
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.utility_functions import validate_color
-from highcharts_python.utility_classes.gradients import Gradient
-from highcharts_python.utility_classes.patterns import Pattern
+from highcharts_core.decorators import class_sensitive
+from highcharts_core.metaclasses import HighchartsMeta
+from highcharts_core.utility_functions import validate_color
+from highcharts_core.utility_classes.gradients import Gradient
+from highcharts_core.utility_classes.patterns import Pattern
 
 from highcharts_stock.options.plot_options.indicators import IndicatorOptions, ComparableIndicatorOptions
 from highcharts_stock.options.plot_options.oscillators import WilliamsRParameters as PCParameters
 from highcharts_stock.utility_classes.line_styles import LineStylesWidth
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 
 class AbandsStyleOptions(HighchartsMeta):
@@ -201,7 +202,7 @@ class AbandsOptions(IndicatorOptions):
             'topLine': self.top_line,
         }
 
-        parent_as_dict = super()._to_untrimmed_dict(in_cls = in_cls)
+        parent_as_dict = mro__to_untrimmed_dict(self, in_cls = in_cls)
 
         for key in parent_as_dict:
             untrimmed[key] = parent_as_dict[key]
@@ -382,6 +383,10 @@ class BBOptions(ComparableIndicatorOptions):
             'bottom_line': as_dict.get('bottomLine', None),
             'fill_color': as_dict.get('fillColor', None),
             'top_line': as_dict.get('topLine', None),
+
+            'compare': as_dict.get('compare', None),
+            'compare_base': as_dict.get('compareBase', None),
+
         }
 
         return kwargs

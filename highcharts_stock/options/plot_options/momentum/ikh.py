@@ -2,11 +2,11 @@ from typing import Optional
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.utility_classes.gradients import Gradient
-from highcharts_python.utility_classes.patterns import Pattern
-from highcharts_python.utility_functions import validate_color
+from highcharts_core.decorators import class_sensitive
+from highcharts_core.metaclasses import HighchartsMeta
+from highcharts_core.utility_classes.gradients import Gradient
+from highcharts_core.utility_classes.patterns import Pattern
+from highcharts_core.utility_functions import validate_color
 
 from highcharts_stock.options.plot_options.indicators import IndicatorOptions
 from highcharts_stock.options.plot_options.oscillators import WilliamsRParameters

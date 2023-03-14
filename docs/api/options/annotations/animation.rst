@@ -22,7 +22,7 @@ class: :class:`AnnotationAnimation <highcharts_stock.options.annotations.animati
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AnnotationAnimation
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

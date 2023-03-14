@@ -1,10 +1,11 @@
 from typing import Optional
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
+from highcharts_core.decorators import class_sensitive
+from highcharts_core.metaclasses import HighchartsMeta
 
 from highcharts_stock.options.plot_options.indicators import ComparableIndicatorOptions
 from highcharts_stock.utility_classes.line_styles import LineStylesColorWidth
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict
 
 
 class AroonLineStyleOptions(HighchartsMeta):
@@ -166,7 +167,7 @@ class AroonOptions(ComparableIndicatorOptions):
             'aroonDown': self.aroon_down,
         }
 
-        parent_as_dict = super()._to_untrimmed_dict(in_cls = in_cls)
+        parent_as_dict = mro__to_untrimmed_dict(self, in_cls = in_cls)
 
         for key in parent_as_dict:
             untrimmed[key] = parent_as_dict[key]

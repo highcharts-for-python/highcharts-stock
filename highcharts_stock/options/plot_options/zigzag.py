@@ -3,7 +3,7 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
+from highcharts_core.decorators import class_sensitive
 
 from highcharts_stock.options.plot_options.indicators import ParameterBase, ComparableIndicatorOptions
 
@@ -23,13 +23,31 @@ class ZigZagParameters(ParameterBase):
         self.low_index = kwargs.get('low_index', None)
 
     @property
+    def index(self):
+        """Does not apply, so raises an :exc:`AttributeError <python:AttributeError>`."""
+        raise AttributeError(f"{self.__class__.__name__} has no attribute 'index'")
+
+    @index.setter
+    def index(self, value):
+        raise AttributeError(f"{self.__class__.__name__} has no attribute 'index'")
+
+    @property
+    def period(self):
+        """Does not apply, so raises an :exc:`AttributeError <python:AttributeError>`."""
+        raise AttributeError(f"{self.__class__.__name__} has no attribute 'period'")
+
+    @period.setter
+    def period(self, value):
+        raise AttributeError(f"{self.__class__.__name__} has no attribute 'period'")
+
+    @property
     def deviation(self) -> Optional[int | float | Decimal]:
         """The threshold used for the value change. Defaults to ``1``, which means the
         indicator will ignore all value movements less than 1%.
 
         :rtype: numeric or :obj:`None <python:None>`
         """
-        return self.deviation
+        return self._deviation
 
     @deviation.setter
     def deviation(self, value):

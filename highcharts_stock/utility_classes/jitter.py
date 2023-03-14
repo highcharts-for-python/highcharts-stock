@@ -1,1 +1,1 @@
-from highcharts_python.utility_classes.jitter import *
+from highcharts_core.utility_classes.jitter import *

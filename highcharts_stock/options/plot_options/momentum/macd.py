@@ -3,9 +3,9 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
-from highcharts_python.metaclasses import HighchartsMeta
-from highcharts_python.utility_classes.zones import Zone
+from highcharts_core.decorators import class_sensitive
+from highcharts_core.metaclasses import HighchartsMeta
+from highcharts_core.utility_classes.zones import Zone
 
 from highcharts_stock.options.plot_options.indicators import ParameterBase, ComparableIndicatorOptions
 from highcharts_stock.utility_classes.line_styles import LineStylesColorWidth
@@ -128,7 +128,7 @@ class MACDLineOptions(HighchartsMeta):
     @zones.setter
     @class_sensitive(Zone, force_iterable = True)
     def zones(self, value):
-        self_zones = value
+        self._zones = value
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):

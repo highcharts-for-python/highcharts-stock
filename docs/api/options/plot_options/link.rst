@@ -22,7 +22,7 @@ class: :class:`LinkOptions <highcharts_stock.options.plot_options.link.LinkOptio
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: LinkOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

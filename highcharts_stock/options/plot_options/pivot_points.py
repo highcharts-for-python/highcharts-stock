@@ -2,7 +2,7 @@ from typing import Optional
 
 from validator_collection import validators
 
-from highcharts_python.decorators import class_sensitive
+from highcharts_core.decorators import class_sensitive
 
 from highcharts_stock import errors
 from highcharts_stock.options.plot_options.indicators import ParameterBase, ComparableIndicatorOptions
@@ -52,6 +52,8 @@ class PivotPointsParameters(ParameterBase):
                 raise errors.HighchartsValueError(f'algorithm expects either "standard", '
                                                   f'"fibonacci", or "camarilla". '
                                                   f'Received: "{value}"')
+
+            self._algorithm = value
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):

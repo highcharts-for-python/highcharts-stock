@@ -1,0 +1,3 @@
+{
+  click: 'invalid value'
+}

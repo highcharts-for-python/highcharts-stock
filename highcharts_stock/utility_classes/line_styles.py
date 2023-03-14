@@ -68,9 +68,8 @@ class LineStylesColorWidth(LineStylesWidth):
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
         kwargs = {
-            'line_width': as_dict.get('line_width', None),
-
-            'line_color': as_dict.get('line_color', None),
+            'line_width': as_dict.get('lineWidth', None),
+            'line_color': as_dict.get('lineColor', None),
         }
 
         return kwargs

@@ -1,0 +1,23 @@
+{
+  barBackgroundColor: '#ccc',
+  barBorderColor: '#777',
+  barBorderRadius: 'invalid value',
+  barBorderWidth: 2,
+  buttonArrowColor: '#333',
+  buttonBackgroundColor: '#ccc',
+  buttonBorderColor: '#000',
+  buttonBorderRadius: 2,
+  buttonBorderWidth: 3,
+  enabled: true,
+  height: 120,
+  liveRedraw: false,
+  margin: 6,
+  minWidth: 8,
+  rifleColor: '#ccc',
+  showFull: false,
+  trackBackgroundColor: '#ccc',
+  trackBorderColor: '#fff',
+  trackBorderRadius: 0,
+  trackBorderWidth: 2,
+  zIndex: 3
+}

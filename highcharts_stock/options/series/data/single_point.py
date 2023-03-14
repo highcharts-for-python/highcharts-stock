@@ -1,1 +1,1 @@
-from highcharts_python.options.series.data.single_point import *
+from highcharts_core.options.series.data.single_point import *

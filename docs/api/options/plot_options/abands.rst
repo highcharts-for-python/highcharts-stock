@@ -22,7 +22,7 @@ class: :class:`AbandsOptions <highcharts_stock.options.plot_options.abands.Aband
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AbandsOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -40,7 +40,7 @@ class: :class:`BBOptions <highcharts_stock.options.plot_options.abands.BBOptions
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: BBOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -58,7 +58,7 @@ class: :class:`KeltnerChannelsOptions <highcharts_stock.options.plot_options.aba
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: KeltnerChannelsOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -76,7 +76,7 @@ class: :class:`PCOptions <highcharts_stock.options.plot_options.abands.PCOptions
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: PCOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
@@ -94,7 +94,7 @@ class: :class:`AbandsStyleOptions <highcharts_stock.options.plot_options.abands.
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: AbandsStyleOptions
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_python.metaclasses.HighchartsMeta
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

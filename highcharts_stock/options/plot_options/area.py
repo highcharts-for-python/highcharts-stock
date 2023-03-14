@@ -1,8 +1,8 @@
 from typing import Optional
 
-from highcharts_python.options.plot_options.area import AreaOptions as AreaBase, \
+from highcharts_core.options.plot_options.area import AreaOptions as AreaBase, \
                                                         LineOptions as LineBase
-from highcharts_python.utility_functions import mro__to_untrimmed_dict
+from highcharts_core.utility_functions import mro__to_untrimmed_dict
 
 from highcharts_stock.options.plot_options.base import NonIndicatorOptions
 
@@ -167,6 +167,8 @@ class LineOptions(LineBase, NonIndicatorOptions):
 
         self.use_ohlc_data = kwargs.get('use_ohlc_data', None)
 
+        super().__init__(**kwargs)
+
     @property
     def use_ohlc_data(self) -> Optional[bool]:
         """If ``True``, generates a Line :term:`series` from :term:`OHLC`-style data.
@@ -236,11 +238,15 @@ class LineOptions(LineBase, NonIndicatorOptions):
             'crop_threshold': as_dict.get('cropThreshold', None),
             'data_sorting': as_dict.get('dataSorting', None),
             'drag_drop': as_dict.get('dragDrop', None),
+            'fill_color': as_dict.get('fillColor', None),
+            'fill_opacity': as_dict.get('fillOpacity', None),
             'find_nearest_point_by': as_dict.get('findNearestPointBy', None),
             'get_extremes_from_all': as_dict.get('getExtremesFromAll', None),
             'linecap': as_dict.get('linecap', None),
+            'line_color': as_dict.get('lineColor', None),
             'line_width': as_dict.get('lineWidth', None),
             'negative_color': as_dict.get('negativeColor', None),
+            'negative_fill_color': as_dict.get('negativeFillColor', None),
             'point_interval': as_dict.get('pointInterval', None),
             'point_interval_unit': as_dict.get('pointIntervalUnit', None),
             'point_placement': as_dict.get('pointPlacement', None),
@@ -250,6 +256,7 @@ class LineOptions(LineBase, NonIndicatorOptions):
             'soft_threshold': as_dict.get('softThreshold', None),
             'stacking': as_dict.get('stacking', None),
             'step': as_dict.get('step', None),
+            'track_by_area': as_dict.get('trackByArea', None),
             'zone_axis': as_dict.get('zoneAxis', None),
             'zones': as_dict.get('zones', None),
 

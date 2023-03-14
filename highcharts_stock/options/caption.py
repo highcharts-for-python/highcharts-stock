@@ -1,1 +1,1 @@
-from highcharts_python.options.caption import *
+from highcharts_core.options.caption import *

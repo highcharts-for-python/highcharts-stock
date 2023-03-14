@@ -2,8 +2,8 @@ from typing import Optional
 
 from validator_collection import validators, checkers
 
-from highcharts_python.options import HighchartsOptions
-from highcharts_python.chart import Chart as ChartBase
+from highcharts_core.options import HighchartsOptions
+from highcharts_core.chart import Chart as ChartBase
 
 from highcharts_stock import constants, errors
 from highcharts_stock.decorators import validate_types
@@ -13,7 +13,7 @@ from highcharts_stock.options.series.series_generator import (create_series_obj,
                                                               SERIES_CLASSES,
                                                               STOCK_SERIES_LIST,
                                                               INDICATOR_LIST)
-from highcharts_stock.global_options.shared_options import SharedStockOptions
+from highcharts_stock.global_options.shared_options import SharedStockOptions, SharedOptions
 from highcharts_stock.options import HighchartsStockOptions
 
 
@@ -21,45 +21,106 @@ class Chart(ChartBase):
     """Python representation of a Highcharts ``Chart`` object."""
 
     def __init__(self, **kwargs):
-        self._callback = None
-        self._container = None
-        self._options = None
-        self._variable_name = None
-
         self._is_stock_chart = None
-
-        self.callback = kwargs.get('callback', None)
-        self.container = kwargs.get('container', None)
-        self.options = kwargs.get('options', None)
-        self.variable_name = kwargs.get('variable_name', None)
 
         self.is_stock_chart = kwargs.get('is_stock_chart', False)
 
-    def _repr_html_(self):
-        """Produce the HTML representation of the chart.
+        super().__init__(**kwargs)
+
+    def _jupyter_include_scripts(self):
+        """Return the JavaScript code that is used to load the Highcharts JS libraries.
 
         .. note::
 
-          Currently includes *all* `Highcharts JS <https://www.highcharts.com/>`__ or
-          `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ modules
+          Currently includes *all* `Highcharts JS <https://www.highcharts.com/>`_ modules
           in the HTML. This issue will be addressed when roadmap issue :issue:`2` is
           released.
 
-        :returns: The HTML representation of the chart.
         :rtype: :class:`str <python:str>`
         """
-        if self.options.chart:
-            height = self.options.chart.height or 400
+        js_str = ''
+        if self.is_stock_chart:
+            for item in constants.STOCK_INCLUDE_LIBS:
+                js_str += utility_functions.jupyter_add_script(item)
+                js_str += """.then(() => {"""
+
+            for item in constants.STOCK_INCLUDE_LIBS:
+                js_str += """});"""
+
         else:
-            height = 400
+            for item in constants.INCLUDE_LIBS:
+                js_str += utility_functions.jupyter_add_script(item)
+                js_str += """.then(() => {"""
 
-        container_str = f"""<div id=\"{self.container}\" style=\"width:100%; height:{height};\"></div>\n"""
-        as_str = self.to_js_literal()
-        script_str = '<script>\n' + as_str + '\n</script>'
+            for item in constants.INCLUDE_LIBS:
+                js_str += """});"""
 
-        html_str = container_str + script_str
+        return js_str
 
-        return html_str
+    def _jupyter_javascript(self, 
+                            global_options = None, 
+                            container = None,
+                            retries = 3,
+                            interval = 1000):
+        """Return the JavaScript code which Jupyter Labs will need to render the chart.
+
+        :param global_options: The :term:`shared options` to use when rendering the chart.
+          Defaults to :obj:`None <python:None>`
+        :type global_options: :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
+          or :obj:`None <python:None>`
+          
+        :param container: The ID to apply to the HTML container when rendered in Jupyter Labs. Defaults to
+          :obj:`None <python:None>`, which applies the :meth:`.container <highcharts_core.chart.Chart.container>` 
+          property if set, and ``'highcharts_target_div'`` if not set.
+        :type container: :class:`str <python:str>` or :obj:`None <python:None>`
+
+        :param retries: The number of times to retry rendering the chart. Used to avoid race conditions with the 
+          Highcharts script. Defaults to 3.
+        :type retries: :class:`int <python:int>`
+        
+        :param interval: The number of milliseconds to wait between retrying rendering the chart. Defaults to 1000 (1 
+          seocnd).
+        :type interval: :class:`int <python:int>`
+
+        :rtype: :class:`str <python:str>`
+        """
+        original_container = self.container
+        self.container = container or self.container or 'highcharts_target_div'
+        
+        if global_options is not None:
+            global_options = validate_types(global_options,
+                                            types = (SharedStockOptions, SharedOptions))
+
+        js_str = ''
+        js_str += utility_functions.get_retryHighcharts()
+
+        if global_options:
+            js_str += '\n' + utility_functions.prep_js_for_jupyter(global_options.to_js_literal()) + '\n'
+
+        js_str += utility_functions.prep_js_for_jupyter(self.to_js_literal(),
+                                                        container = self.container,
+                                                        retries = retries,
+                                                        interval = interval)
+
+        self.container = original_container
+
+        return js_str
+
+    @property
+    def is_stock_chart(self) -> bool:
+        """If ``True``, indicates that the chart should be rendered as a
+        `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ chart. If
+        ``False``, the chart will be rendered using the standard
+        `Highcharts JS <https://www.highcharts.com/products/highcharts/>`__ constructor.
+        Defaults to ``False``.
+
+        :rtype: :class:`bool <python:bool>`
+        """
+        return self._is_stock_chart
+
+    @is_stock_chart.setter
+    def is_stock_chart(self, value):
+        self._is_stock_chart = bool(value)
 
     @property
     def options(self) -> Optional[HighchartsOptions | HighchartsStockOptions]:
@@ -105,7 +166,8 @@ class Chart(ChartBase):
             'variable_name': as_dict.get('variable_name',
                                          None) or as_dict.get('variableName', None),
 
-            'is_stock_chart': as_dict.get('is_stock_chart', False),
+            'is_stock_chart': as_dict.get('is_stock_chart',
+                                          None) or as_dict.get('isStockChart', False)
         }
 
         return kwargs
@@ -153,19 +215,23 @@ class Chart(ChartBase):
 
         container_as_str = ''
         if self.container:
-            container_as_str = f"""renderTo = '{self.container}'"""
-            signature_elements += 1
+            container_as_str = f"""'{self.container}'"""
+        else:
+            container_as_str = """null"""
+        signature_elements += 1
 
         options_as_str = ''
         if self.options:
             options_as_str = self.options.to_js_literal(encoding = encoding)
-            options_as_str = f"""options = {options_as_str}"""
-            signature_elements += 1
+            options_as_str = f"""{options_as_str}"""
+        else:
+            options_as_str = """{}"""
+        signature_elements += 1
 
         callback_as_str = ''
         if self.callback:
             callback_as_str = self.callback.to_js_literal(encoding = encoding)
-            callback_as_str = f"""callback = {callback_as_str}"""
+            callback_as_str = f"""{callback_as_str}"""
             signature_elements += 1
 
         signature = """new Highcharts.chart("""
@@ -276,19 +342,22 @@ class Chart(ChartBase):
 
     def add_series(self, *series):
         """Adds ``series`` to the
-        :meth:`Chart.options.series <highcharts_python.options.HighchartsOptions.series>`
+        :meth:`Chart.options.series <highcharts_core.options.HighchartsOptions.series>`
         property.
 
         :param series: One or more :term:`series` instances (descended from
-          :class:`SeriesBase <highcharts_python.options.series.base.SeriesBase>`) or an
+          :class:`SeriesBase <highcharts_core.options.series.base.SeriesBase>`) or an
           instance (e.g. :class:`dict <python:dict>`, :class:`str <python:str>`, etc.)
           coercable to one
         :type series: one or more
-          :class:`SeriesBase <highcharts_python.options.series.base.SeriesBase>`
+          :class:`SeriesBase <highcharts_core.options.series.base.SeriesBase>`
           or coercable
 
         """
         new_series = []
+        if not checkers.is_iterable(series):
+            series = [series]
+
         for item in series:
             item_series = create_series_obj(item)
             new_series.append(item_series)
@@ -387,15 +456,15 @@ class Chart(ChartBase):
 
     @classmethod
     def from_series(cls, *series, kwargs = None):
-        """Creates a new :class:`Chart <highcharts_python.chart.Chart>` instance populated
+        """Creates a new :class:`Chart <highcharts_core.chart.Chart>` instance populated
         with ``series``.
 
         :param series: One or more :term:`series` instances (descended from
-          :class:`SeriesBase <highcharts_python.options.series.base.SeriesBase>`) or an
+          :class:`SeriesBase <highcharts_core.options.series.base.SeriesBase>`) or an
           instance (e.g. :class:`dict <python:dict>`, :class:`str <python:str>`, etc.)
           coercable to one
         :type series: one or more
-          :class:`SeriesBase <highcharts_python.options.series.base.SeriesBase>`
+          :class:`SeriesBase <highcharts_core.options.series.base.SeriesBase>`
           or
           :class:`IndicatorSeriesBase <highcharts_stock.options.series.base.IndicatorSeriesBase>`
           coercable
@@ -406,50 +475,21 @@ class Chart(ChartBase):
           .. warning::
 
             If ``kwargs`` sets the
-            :meth:`options.series <highcharts_python.options.HighchartsOptions.series>`
+            :meth:`options.series <highcharts_core.options.HighchartsOptions.series>`
             property, that setting will be *overridden* by the contents of ``series``.
 
         :type kwargs: :class:`dict <python:dict>`
 
-        :returns: A new :class:`Chart <highcharts_python.chart.Chart>` instance
-        :rtype: :class:`Chart <highcharts_python.chart.Chart>`
+        :returns: A new :class:`Chart <highcharts_core.chart.Chart>` instance
+        :rtype: :class:`Chart <highcharts_core.chart.Chart>`
         """
         kwargs = validators.dict(kwargs, allow_empty = True) or {}
         instance = cls(**kwargs)
 
-        instance.add_series(series)
-
-    def display(self, global_options = None):
-        """Display the chart in `Jupyter Labs <https://jupyter.org/>`_ or
-        `Jupyter Notebooks <https://jupyter.org/>`_.
-
-        :raises HighchartsDependencyError: if
-          `ipython <https://ipython.readthedocs.io/en/stable/>`_ is not available in the
-          runtime environment
-        """
-        try:
-            from IPython import display
-        except ImportError:
-            raise errors.HighchartsDependencyError('Unable to import IPython.display. '
-                                                   'Make sure that it is available in '
-                                                   'your runtime environment. To install,'
-                                                   'use: pip install ipython')
-
-        if global_options is not None:
-            global_options = validate_types(global_options,
-                                            types = SharedStockOptions)
-
-        if self.is_stock_chart:
-            include_str = constants.STOCK_INCLUDE_STR
+        if checkers.is_iterable(series):
+            instance.add_series(*series)
         else:
-            include_str = constants.INCLUDE_STR
-
-        html_str = include_str + '\n'
-        if global_options:
-            html_str += global_options._repr_html_() + '\n'
-        html_str += self._repr_html_()
-
-        display.display_html(html_str, raw = True)
+            instance.add_series(series)
 
     @staticmethod
     def _get_options_obj(series_type, options_kwargs):
@@ -505,13 +545,13 @@ class Chart(ChartBase):
                  double_wrapper_character_when_nested = False,
                  escape_character = "\\",
                  is_stock_chart = False):
-        """Create a new :class:`Chart <highcharts_python.chart.Chart>` instance with
+        """Create a new :class:`Chart <highcharts_core.chart.Chart>` instance with
         data populated from a CSV string or file.
 
           .. note::
 
             For an example
-            :class:`LineSeries <highcharts_python.options.series.area.LineSeries>`, the
+            :class:`LineSeries <highcharts_core.options.series.area.LineSeries>`, the
             minimum code required would be:
 
               .. code-block:: python
@@ -653,9 +693,9 @@ class Chart(ChartBase):
           instantiated as a **Highcharts Stock for Python** chart. Defaults to ``False``.
         :type is_stock_chart: :class:`bool <python:bool>`
 
-        :returns: A :class:`Chart <highcharts_python.chart.Chart>` instance with its
+        :returns: A :class:`Chart <highcharts_core.chart.Chart>` instance with its
           data populated from the CSV data.
-        :rtype: :class:`Chart <highcharts_python.chart.Chart>`
+        :rtype: :class:`Chart <highcharts_core.chart.Chart>`
 
         :raises HighchartsCSVDeserializationError: if ``property_column_map`` references
           CSV columns by their label, but the CSV data does not contain a header row
@@ -694,7 +734,7 @@ class Chart(ChartBase):
                     series_kwargs = None,
                     options_kwargs = None,
                     chart_kwargs = None):
-        """Create a :class:`Chart <highcharts_python.chart.Chart>` instance whose
+        """Create a :class:`Chart <highcharts_core.chart.Chart>` instance whose
         data is populated from a `pandas <https://pandas.pydata.org/>`_
         :class:`DataFrame <pandas:DataFrame>`.
 
@@ -747,9 +787,9 @@ class Chart(ChartBase):
 
         :type chart_kwargs: :class:`dict <python:dict>` or :obj:`None <python:None>`
 
-        :returns: A :class:`Chart <highcharts_python.chart.Chart>` instance with its
+        :returns: A :class:`Chart <highcharts_core.chart.Chart>` instance with its
           data populated from the data in ``df``.
-        :rtype: :class:`Chart <highcharts_python.chart.Chart>`
+        :rtype: :class:`Chart <highcharts_core.chart.Chart>`
 
         :raises HighchartsPandasDeserializationError: if ``property_map`` references
           a column that does not exist in the data frame
@@ -782,7 +822,7 @@ class Chart(ChartBase):
                      series_kwargs = None,
                      options_kwargs = None,
                      chart_kwargs = None):
-        """Create a :class:`Chart <highcharts_python.chart.Chart>` instance whose
+        """Create a :class:`Chart <highcharts_core.chart.Chart>` instance whose
         data is populated from a
         `PySpark <https://spark.apache.org/docs/latest/api/python/>`_
         :class:`DataFrame <pyspark:pyspark.sql.DataFrame>`.
@@ -836,9 +876,9 @@ class Chart(ChartBase):
 
         :type chart_kwargs: :class:`dict <python:dict>` or :obj:`None <python:None>`
 
-        :returns: A :class:`Chart <highcharts_python.chart.Chart>` instance with its
+        :returns: A :class:`Chart <highcharts_core.chart.Chart>` instance with its
           data populated from the data in ``df``.
-        :rtype: :class:`Chart <highcharts_python.chart.Chart>`
+        :rtype: :class:`Chart <highcharts_core.chart.Chart>`
 
         :raises HighchartsPySparkDeserializationError: if ``property_map`` references
           a column that does not exist in the data frame
@@ -868,12 +908,12 @@ class Chart(ChartBase):
     def from_options(cls,
                      options,
                      chart_kwargs = None):
-        """Create a :class:`Chart <highcharts_python.chart.Chart>` instance from a
-        :class:`HighchartsOptions <highcharts_python.options.HighchartsOptions>` object.
+        """Create a :class:`Chart <highcharts_core.chart.Chart>` instance from a
+        :class:`HighchartsOptions <highcharts_core.options.HighchartsOptions>` object.
 
         :param options: The configuration options to use to instantiate the chart.
         :type options:
-          :class:`HighchartsOptions <highcharts_python.options.HighchartsOptions>` or
+          :class:`HighchartsOptions <highcharts_core.options.HighchartsOptions>` or
           coercable
 
         :param chart_kwargs: An optional :class:`dict <python:dict>` containing keyword
@@ -887,8 +927,8 @@ class Chart(ChartBase):
 
         :type chart_kwargs: :class:`dict <python:dict>` or :obj:`None <python:None>`
 
-        :returns: The :class:`Chart <highcharts_python.chart.Chart>` instance
-        :rtype: :class:`Chart <highcharts_python.chart.Chart>`
+        :returns: The :class:`Chart <highcharts_core.chart.Chart>` instance
+        :rtype: :class:`Chart <highcharts_core.chart.Chart>`
         """
         chart_kwargs = validators.dict(chart_kwargs, allow_empty = True) or {}
         if checkers.is_type(options, 'HighchartsStockOptions'):

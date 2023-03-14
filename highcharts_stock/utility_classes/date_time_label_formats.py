@@ -1,1 +1,1 @@
-from highcharts_python.utility_classes.date_time_label_formats import *
+from highcharts_core.utility_classes.date_time_label_formats import *
