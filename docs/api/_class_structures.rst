@@ -12,7 +12,7 @@ Can you imagine propagating changes in seven places (on average) in your code? T
 be a maintenance nightmare! And it is exactly the kind of maintenance nightmare that class
 inheritance was designed to fix.
 
-For that reason, the **Highcharts for Python** toolkit's classes have a deeply nested
+For that reason, the **Highcharts for Python Toolkit** classes have a deeply nested
 inheritance structure. This is important to understand both for evaluating
 :func:`isinstance() <python:isinstance>` checks in your code, or for understanding how to
 further subclass Highcharts for Python components.

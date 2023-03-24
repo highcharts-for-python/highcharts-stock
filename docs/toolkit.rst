@@ -2,6 +2,12 @@
 Toolkit Components and Product Roadmap
 ###############################################
 
+.. contents::
+  :depth: 3
+  :backlinks: entry
+
+--------------
+
 ****************************
 The Toolkit's Contents
 ****************************

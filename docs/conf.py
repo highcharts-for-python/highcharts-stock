@@ -69,7 +69,9 @@ html_static_path = ['_static']
 html_theme_options = {
     'navigation_depth': 3,
     'display_version': True,
-    'prev_next_buttons_location': 'both'
+    'prev_next_buttons_location': 'both',
+    'style_external_links': False,
+    'style_nav_header_background': 'rgb(70, 70, 92)'
 }
 
 html_logo = '_static/highcharts-for-python-light-150x149.png'
@@ -95,6 +97,7 @@ intersphinx_mapping = {
     'ipython': ('https://ipython.readthedocs.io/en/stable/', None),
     'pandas': ('https://pandas.pydata.org/pandas-docs/stable/', None),
     'pyspark': ('https://spark.apache.org/docs/latest/api/python/', None),
+    'highcharts_core': ('https://core-docs.highchartspython.com/en/latest/', None),
 }
 
 # -- Options for todo extension ----------------------------------------------
@@ -108,7 +111,7 @@ inheritance_graph_attrs = {
 }
 
 suppress_warnings = [
-    'ref.term',
+    # 'ref.term',
     'ref.ref',
     'toc.not_readable'
 ]
