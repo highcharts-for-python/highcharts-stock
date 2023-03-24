@@ -22,7 +22,7 @@ Standard Methods
 =======================================
 
 Every single object supported by the
-`Highcharts Stock API <https://api.highcharts.com/highstock/>`__ corresponds to a Python
+`Highcharts Stock JavaScript API <https://api.highcharts.com/highstock/>`__ corresponds to a Python
 class in **Highcharts Stock for Python**. These classes generally inherit from the
 :class:`HighchartsMeta <highcharts_stock.metaclasses.HighchartsMeta>` metaclass, which
 provides each class with a number of standard methods.
@@ -72,11 +72,11 @@ Class Structures and Inheritance
   methods or properties from parent classes when properties or methods share names
   across multiple parents.
 
-  I know this is an anti-pattern, but it was a necessary one to minimize code duplication
-  and maximize consistency. For that reason, I implemented it properly *despite* the
-  anti-pattern, using some advanced Python concepts to navigate the Python MRO
-  (Method Resolution Order) system cleanly. However, an awareness of the pattern used
-  may prove helpful if your code inherits from the Highcharts Stock for Python classes.
+  We know this the diamond of death is an anti-pattern, but it was a necessary one to 
+  minimize code duplication and maximize consistency. For that reason, we implemented it 
+  properly *despite* the anti-pattern, using some advanced Python concepts to navigate the 
+  Python MRO (Method Resolution Order) system cleanly. However, an awareness of the pattern 
+  used may prove helpful if your code inherits from the Highcharts for Python classes.
 
   .. seealso::
 

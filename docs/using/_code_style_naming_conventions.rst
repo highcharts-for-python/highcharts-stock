@@ -18,7 +18,7 @@ with Highcharts Stock forces us to context switch, increases cognitive load, and
 easy place for us to overlook things and make a mistake that can be quite annoying to
 track down and fix later.
 
-Therefore, when designing the **Highcharts for Python** toolkit, we made several carefully
+Therefore, when designing the **Highcharts for Python Toolkit**, we made several carefully
 considered design choices when it comes to naming conventions:
 
 #. All **Highcharts for Python** classes follow the Pythonic ``PascalCase`` class-naming
@@ -26,15 +26,16 @@ considered design choices when it comes to naming conventions:
 #. All **Highcharts for Python** properties and methods follow the Pythonic
    ``snake_case`` property/method/variable/function-naming convention.
 #. All *inputs* to properties and methods support *both* ``snake_case`` and
-   ``camelCase`` (aka ``mixedCase``) convention by default. This means that you can take
-   something directly from Highcharts JavaScript code and supply it to the
-   **Highcharts for Python** toolkit without having to convert case or conventions. But if
-   you are constructing and configuring something directly in Python using explicit
-   :ref:`deserialization methods <deserialization_methods>`, you can use ``snake_case``
-   if you prefer (and most Python developers will prefer).
+   ``camelCase`` (aka ``mixedCase``) convention by default. 
+   
+   This means that you can take something directly from Highcharts JavaScript code and 
+   supply it to the **Highcharts for Python Toolkit** without having to convert case or 
+   conventions. But if you are constructing and configuring something directly in Python 
+   using explicit :ref:`deserialization methods <deserialization_methods>`, you can use 
+   ``snake_case`` if you prefer (and most Python developers will prefer).
 
    For example, if you supply a JSON file to a ``from_json()`` method, that file can
-   leverage Highcharts JS natural ``camelCase`` convention OR Highcharts for Python's
+   leverage Highcharts (JS) natural ``camelCase`` convention OR Highcharts for Python's
    ``snake_case`` convention.
 
    .. warning::
@@ -45,7 +46,7 @@ considered design choices when it comes to naming conventions:
      methods expect ``snake_case`` properties to be supplied as keywords.
 
 #. All *outputs* from serialization methods (e.g. ``to_dict()`` or ``to_js_literal()``)
-   will produce outputs that are Highcharts JS-compatible, meaning that they apply the
+   will produce outputs that are Highcharts (JS)-compatible, meaning that they apply the
    ``camelCase`` convention.
 
 .. tip::
