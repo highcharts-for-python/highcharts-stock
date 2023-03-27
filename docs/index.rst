@@ -25,7 +25,7 @@ Highcharts Stock for Python
   Supported Visualizations <visualizations>
   FAQ <faq>
   Toolkit Components and Roadmap <toolkit>
-  Using Highcharts for Python <using>
+  Using Highcharts Stock for Python <using>
   API Reference <api>
   Error Reference <errors>
   Getting Help <support>
@@ -96,10 +96,10 @@ which together provides comprehensive support across the entire
   * - **Highcharts Stock for Python**
     - `Highcharts Stock (JS) <https://www.highcharts.com/products/stock/>`__
     - the time series visualization extension to Highcharts Core
-  * - `Highcharts Maps <https://maps-docs.highchartspython.com/>`__ 
+  * - `Highcharts Maps for Python <https://maps-docs.highchartspython.com/>`__ 
     - `Highcharts Maps (JS) <https://www.highcharts.com/products/maps/>`__
     - the map visualization extension to Highcharts Core
-  * - `Highcharts Gantt <https://gantt-docs.highchartspython.com/>`__
+  * - `Highcharts Gantt for Python <https://gantt-docs.highchartspython.com/>`__
     - `Highcharts Gantt (JS) <https://www.highcharts.com/products/gantt/>`__
     - the Gantt charting extension to Highcharts Core
   * - (all libraries in the Python toolkit)

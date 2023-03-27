@@ -150,9 +150,10 @@ Basic Design Conventions
 
 * Separate a function or method's final (or default) ``return`` from the rest of
   the code with a blank line (except for single-line functions/methods).
-* Because `Highcharts JS <https://www.highcharts.com>`__ repeats many of the same properties and groups of properties,
-  be sure to practice :iabbr:`DRY (Do Not Repeat Yourself)`. Use inheritance to your
-  advantage, and don't be afraid of the :term:`diamond of death` inheritance problem.
+* Because `Highcharts (JS) <https://www.highcharts.com>`__ repeats many of the same 
+  properties and groups of properties, be sure to practice :iabbr:`DRY (Do Not Repeat Yourself)`. 
+  Use inheritance to your advantage, and don't be afraid of the :term:`diamond of death` 
+  inheritance problem.
 
   .. seealso::
 
@@ -213,16 +214,17 @@ Docstrings
 Design Patterns and Standards
 ***************************************************
 
-`Highcharts <https://www.highcharts.com>`__ is a large, robust, and complicated suite of 
-JavaScript libraries. If in doubt, take a look at the extensive 
-`documentation <https://www.highcharts.com/docs/index>`_ and in particular the 
-`API reference <https://api.highcharts.com/highcharts>`_.  Because 
-**Highcharts for Python** wraps the Highcharts JS API, its design is heavily shaped by 
+`Highcharts (JS) <https://www.highcharts.com>`__ is a large, robust, and complicated
+JavaScript library. If in doubt, take a look at their extensive
+`documentation <https://www.highcharts.com/docs/index>`_ and in particular their
+`API reference <https://api.highcharts.com/highcharts>`_. Because
+**Highcharts for Python** wraps the Highcharts JS API, its design is heavily shaped by
 Highcharts JS' own design - as one should expect.
 
 However, one of the main goals of **Highcharts for Python** is to make the Highcharts JS
-library a little more Pythonic to make it easier for Python developers to leverage it. 
-Here are the notable design patterns that have been adopted that you should be aware of:
+library a little more Pythonic in terms of its design to make it easier for Python
+developers to leverage it. Here are the notable design patterns that have been adopted
+that you should be aware of:
 
 Code Style: Python vs JavaScript Naming Conventions
 =======================================================
@@ -234,7 +236,7 @@ Standard Methods: :class:`HighchartsMeta <highcharts_stock.metaclasses.Highchart
 
 Every single object supported by the Highcharts JS API corresponds to a Python class in
 **Highcharts for Python**. You can find the complete list in our comprehensive
-:doc:`Highcharts for Python API Reference <api>`.
+:doc:`Highcharts Stock for Python API Reference <api>`.
 
 These classes generally inherit from the :class:`HighchartsMeta` metaclass, which provides
 each class with a number of standard methods. These methods are the "workhorses" of
@@ -294,10 +296,10 @@ So this is a classic example of where we can apply the principle of
 reduce the number of properties from about 15,000 to about 1,900. Not bad!
 
 However, this significant reduction *does* require us to use multiple inheritance in some
-cases, paritcularly in the :mod:`.options.series <highcharts_core.options.series>`
+cases, paritcularly in the :mod:`.options.series <highcharts_stock.options.series>`
 classes (which inherit from both the corresponding type-specific options in
-:mod:`.options.plot_options <highcharts_core.options.plot_options>`) *and* from the
-generic :class:`SeriesBase <highcharts_core.options.series.base.SeriesBase>` class).
+:mod:`.options.plot_options <highcharts_stock.options.plot_options>`) *and* from the
+generic :class:`SeriesBase <highcharts_stock.options.series.base.SeriesBase>` class).
 
 To solve the :term:`diamond of death` problem, we implemented a number of private
 helper methods to assist in navigating the MRO:
