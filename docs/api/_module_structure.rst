@@ -1,6 +1,6 @@
 
 The structure of the **Highcharts Stock for Python** library closely matches the structure
-of the `Highcharts Stock <https://api.highcharts.com/highstock/>`__ options object (see the relevant
+of the `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ options object (see the relevant
 `reference documentation <https://api.highcharts.com/highstock/>`_).
 
 At the root of the library - importable from ``highcharts_stock`` - you will find the

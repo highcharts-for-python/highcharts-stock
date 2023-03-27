@@ -32,9 +32,9 @@ way that `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ is an
 .. tip::
 
   **Highcharts Stock for Python** *includes* all of the functionality from
-  **Highcharts Core for Python** using the exact same API. As a result, the best practice is
-  that if your application needs any of the features included in
-  **Highcharts Stock for Python**, just use that library.
+  `Highcharts Core for Python <https://core-docs.highchartspython.com/>`__ using the exact same 
+  API. As a result, the best practice is that if your application needs any of the features 
+  included in **Highcharts Stock for Python**, just use that library.
 
 **Can I use the Navigator or Stock Tools on non-Stock charts?**
 

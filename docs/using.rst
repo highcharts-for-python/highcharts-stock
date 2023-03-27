@@ -97,7 +97,7 @@ Standard Methods
 =======================================
 
 Every single object supported by the Highcharts JavaScript API corresponds to a Python 
-class in the **Highcharts Stock for Python Toolkit**. You can find the complete list in our 
+class in **Highcharts Stock for Python**. You can find the complete list in our 
 comprehensive :doc:`Highcharts Stock for Python API Reference <api>`.
 
 These classes generally inherit from the
@@ -156,7 +156,7 @@ Class Structures and Inheritance
   the process of inheriting methods or properties from parent classes when properties or
   methods share names across multiple parents.
 
-  We know this the diamond of death is an anti-pattern, but it was a necessary one to 
+  We know the diamond of death is an anti-pattern, but it was a necessary one to 
   minimize code duplication and maximize consistency. For that reason, we implemented it 
   properly *despite* the anti-pattern, using some advanced Python concepts to navigate the 
   Python MRO (Method Resolution Order) system cleanly. However, an awareness of the pattern 
