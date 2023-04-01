@@ -5,7 +5,7 @@ from validator_collection import validators, checkers
 from highcharts_core.options import HighchartsOptions
 from highcharts_core.chart import Chart as ChartBase
 
-from highcharts_stock import constants, errors
+from highcharts_stock import constants, errors, utility_functions
 from highcharts_stock.decorators import validate_types
 from highcharts_stock.js_literal_functions import serialize_to_js_literal
 from highcharts_stock.headless_export import ExportServer
