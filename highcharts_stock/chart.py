@@ -436,7 +436,7 @@ class Chart(ChartBase):
 
                 if not contains_series_id:
                     raise errors.HighchartsValueError(f'chart does not contain a series '
-                                                      f'with an id: "{value}"')
+                                                      f'with an id: "{series_id}"')
         else:
             series_obj = create_series_obj(series)
             if not series_obj.id:
@@ -941,7 +941,8 @@ class Chart(ChartBase):
               or 'rangeSelector' in options
               or 'range_selector' in options
               or 'stockTools' in options
-              or 'stock_tools' in options):
+              or 'stock_tools' in options
+              or chart_kwargs['is_stock_chart'] is True):
             options = validate_types(options, HighchartsStockOptions)
             chart_kwargs['is_stock_chart'] = True
         else:
