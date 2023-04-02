@@ -5,7 +5,7 @@ from validator_collection import validators, checkers
 from highcharts_core.options import HighchartsOptions
 from highcharts_core.chart import Chart as ChartBase
 
-from highcharts_stock import constants, errors
+from highcharts_stock import constants, errors, utility_functions
 from highcharts_stock.decorators import validate_types
 from highcharts_stock.js_literal_functions import serialize_to_js_literal
 from highcharts_stock.headless_export import ExportServer
@@ -40,11 +40,17 @@ class Chart(ChartBase):
         """
         js_str = ''
         if self.is_stock_chart:
-            for item in constants.STOCK_INCLUDE_LIBS:
+            if hasattr(self.options, 'stock_tools') and self.options.stock_tools:
+                INCLUDE_LIBS = constants.STOCK_INCLUDE_LIBS
+                INCLUDE_LIBS.extend(constants.STOCK_TOOLS_INCLUDE_LIBS)
+            else:
+                INCLUDE_LIBS = [x for x in constants.STOCK_INCLUDE_LIBS]
+            
+            for item in INCLUDE_LIBS:
                 js_str += utility_functions.jupyter_add_script(item)
                 js_str += """.then(() => {"""
 
-            for item in constants.STOCK_INCLUDE_LIBS:
+            for item in INCLUDE_LIBS:
                 js_str += """});"""
 
         else:
@@ -436,7 +442,7 @@ class Chart(ChartBase):
 
                 if not contains_series_id:
                     raise errors.HighchartsValueError(f'chart does not contain a series '
-                                                      f'with an id: "{value}"')
+                                                      f'with an id: "{series_id}"')
         else:
             series_obj = create_series_obj(series)
             if not series_obj.id:
@@ -941,7 +947,8 @@ class Chart(ChartBase):
               or 'rangeSelector' in options
               or 'range_selector' in options
               or 'stockTools' in options
-              or 'stock_tools' in options):
+              or 'stock_tools' in options
+              or chart_kwargs['is_stock_chart'] is True):
             options = validate_types(options, HighchartsStockOptions)
             chart_kwargs['is_stock_chart'] = True
         else:
