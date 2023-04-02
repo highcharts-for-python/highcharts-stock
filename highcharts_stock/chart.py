@@ -40,11 +40,17 @@ class Chart(ChartBase):
         """
         js_str = ''
         if self.is_stock_chart:
-            for item in constants.STOCK_INCLUDE_LIBS:
+            if hasattr(self.options, 'stock_tools') and self.options.stock_tools:
+                INCLUDE_LIBS = constants.STOCK_INCLUDE_LIBS
+                INCLUDE_LIBS.extend(constants.STOCK_TOOLS_INCLUDE_LIBS)
+            else:
+                INCLUDE_LIBS = [x for x in constants.STOCK_INCLUDE_LIBS]
+            
+            for item in INCLUDE_LIBS:
                 js_str += utility_functions.jupyter_add_script(item)
                 js_str += """.then(() => {"""
 
-            for item in constants.STOCK_INCLUDE_LIBS:
+            for item in INCLUDE_LIBS:
                 js_str += """});"""
 
         else:
