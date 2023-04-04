@@ -1,3 +1,11 @@
+Release 1.0.0-rc5
+=========================================
+
+* Added CSS overrides to documentation for better accessibility.
+* Added jQuery to documentation to address issue in Sphinx 6.0 and Sphinx RTD Theme.
+
+-----------------------
+
 Release 1.0.0-rc4
 =========================================
 
@@ -8,6 +16,7 @@ Release 1.0.0-rc4
 * Fixed ``Chart.from_options()`` typo.
 
 ------------------------
+
 Release 1.0.0-rc3
 =========================================
 
