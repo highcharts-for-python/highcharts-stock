@@ -1,3 +1,10 @@
+Release 1.0.0-rc6
+=========================================
+
+* Further tweaks to documentation CSS for better accessibility.
+
+---------------
+
 Release 1.0.0-rc5
 =========================================
 
