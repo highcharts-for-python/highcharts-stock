@@ -1,3 +1,11 @@
+Release 1.0.0-rc7
+=========================================
+
+* Added support for additional ``.from_array()`` patterns to HLC-and-related visualizations.
+* Fixed Jupyter display functionality to align signature to new release of Highcharts Core for Python.
+
+---------------
+
 Release 1.0.0-rc6
 =========================================
 

@@ -25,9 +25,53 @@ class HLCSeries(SeriesBase, HLCOptions):
         :obj:`None <python:None>`.
 
         While the series type returns a collection of :class:`HLCData` instances,
-        it accepts as input three different types of data:
+        it accepts as input different types of data:
 
         .. tabs::
+        
+          .. tab:: 6D Collection
+
+            .. code-block::
+
+              series = HLCSeries()
+              series.data = [
+                  [1463753252, 7, 2, 0, 4, 12345678],
+                  [1563753252, 1, 4, 2, 8, 2345678],
+                  [1663753252, 3, 3, 9, 3, 3456789]
+              ]
+
+            A six-dimensional collection of numerical values representing (in order) the
+            ``x`` value, the ``open`` value, the ``high`` value, the ``low`` value,
+            the ``close`` value, and a ``volume`` value.
+
+            .. tip::
+
+              The ``x`` value is always expected to be a timestamp expressed in
+              milliseconds since 1970. If a :class:`datetime <python:datetime.datetime>`
+              or coercable is supplied, **Highcharts for Python** will automatically
+              coerce it to a POSIX timestamp (milliseconds since 1970).
+
+          .. tab:: 5D Collection
+
+            .. code-block::
+
+              series = HLCSeries()
+              series.data = [
+                  [1463753252, 7, 2, 0, 4],
+                  [1563753252, 1, 4, 2, 8],
+                  [1663753252, 3, 3, 9, 3]
+              ]
+
+            A five-dimensional collection of numerical values representing (in order) the
+            ``x`` value, the ``open`` value, the ``high`` value, the ``low`` value, and
+            the ``close`` value.
+
+            .. tip::
+
+              The ``x`` value is always expected to be a timestamp expressed in
+              milliseconds since 1970. If a :class:`datetime <python:datetime.datetime>`
+              or coercable is supplied, **Highcharts for Python** will automatically
+              coerce it to a POSIX timestamp (milliseconds since 1970).
 
           .. tab:: 4D Collection
 
@@ -230,6 +274,28 @@ class OHLCSeries(SeriesBase, OHLCOptions):
         it accepts as input three different types of data:
 
         .. tabs::
+
+          .. tab:: 6D Collection
+
+            .. code-block::
+
+              series = OHLCSeries()
+              series.data = [
+                  [1463753252, 7, 2, 0, 4, 12345678],
+                  [1563753252, 1, 4, 2, 8, 2345678],
+                  [1663753252, 3, 3, 9, 3, 3456789]
+              ]
+
+            A six-dimensional collection of numerical values representing (in order) the
+            ``x`` value, the ``open`` value, the ``high`` value, the ``low`` value,
+            the ``close`` value, and a ``volume`` value.
+
+            .. tip::
+
+              The ``x`` value is always expected to be a timestamp expressed in
+              milliseconds since 1970. If a :class:`datetime <python:datetime.datetime>`
+              or coercable is supplied, **Highcharts for Python** will automatically
+              coerce it to a POSIX timestamp (milliseconds since 1970).
 
           .. tab:: 5D Collection
 

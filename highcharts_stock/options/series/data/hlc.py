@@ -203,19 +203,31 @@ class HLCData(DataBase):
             elif item is None or isinstance(item, constants.EnforcedNullType):
                 as_obj = cls()
             elif checkers.is_iterable(item):
-                if len(item) == 4:
+                if len(item) == 6:
+                    as_obj = cls(x = item[0],
+                                 high = item[2],
+                                 low = item[3],
+                                 close = item[4])
+                elif len(item) == 5:
+                    as_obj = cls(x = item[0],
+                                 high = item[2],
+                                 low = item[3],
+                                 close = item[4])
+                elif len(item) == 4:
                     as_obj = cls(x = item[0],
                                  high = item[1],
                                  low = item[2],
                                  close = item[3])
-                elif len(item == 3):
+                elif len(item) == 3:
                     as_obj = cls(high = item[0],
                                  low = item[1],
                                  close = item[2])
                 else:
                     raise errors.HighchartsValueError(f'HLCData.from_array() '
-                                                      f'expects either a 4-member '
-                                                      f'iterable, a 3-member iterable, '
+                                                      f'expects either a 6-member '
+                                                      f'iterable, a 5-member iterable ',
+                                                      f'a 4-member iterable, '
+                                                      f'a 3-member iterable, '
                                                       f'an iterable of data point '
                                                       f'objects, or instances coercable '
                                                       f'to data point objects. Received: '
@@ -328,21 +340,28 @@ class OHLCData(HLCData):
             elif item is None or isinstance(item, constants.EnforcedNullType):
                 as_obj = cls()
             elif checkers.is_iterable(item):
-                if len(item) == 5:
+                if len(item) == 6:
                     as_obj = cls(x = item[0],
                                  open = item[1],
                                  high = item[2],
                                  low = item[3],
                                  close = item[4])
-                elif len(item == 4):
+                elif len(item) == 5:
+                    as_obj = cls(x = item[0],
+                                 open = item[1],
+                                 high = item[2],
+                                 low = item[3],
+                                 close = item[4])
+                elif len(item) == 4:
                     as_obj = cls(open = item[0],
                                  high = item[1],
                                  low = item[2],
                                  close = item[3])
                 else:
                     raise errors.HighchartsValueError(f'OHLCData.from_array() '
-                                                      f'expects either a 5-member '
-                                                      f'iterable, a 4-member iterable, '
+                                                      f'expects either a 6-member '
+                                                      f'iterable, a 5-member iterable, '
+                                                      f'a 4-member iterable, '
                                                       f'an iterable of data point '
                                                       f'objects, or instances coercable '
                                                       f'to data point objects. Received: '
