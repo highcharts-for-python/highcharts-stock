@@ -32,7 +32,7 @@ keywords = [
 ]
 
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Environment :: Web Environment",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
@@ -75,7 +75,7 @@ path = "highcharts_stock/__version__.py"
 "Source Code" = "https://github.com/highcharts-for-python/highcharts-stock"
 "History" = "https://github.com/highcharts-for-python/highcharts-stock/blob/master/CHANGES.rst"
 "Bug Tracker" = "https://github.com/highcharts-for-python/highcharts-stock/issues"
-# TODO: Add a Sponsor section
+"Demo" = "https://github.com/highcharts-for-python/highcharts-for-python-demos"
 #"Sponsor" = "https://github.com/sponsors/highcharts-for-python"
 
 [project.optional-dependencies]
