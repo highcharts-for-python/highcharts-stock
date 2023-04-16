@@ -1,3 +1,10 @@
+Release 1.0.1
+=========================================
+
+* **DOCUMENTATION:** Added documentation of "hard" dependencies in the README.
+
+---------------------------
+
 Release 1.0.0
 =========================================
 

@@ -73,6 +73,21 @@ To install **Highcharts Stock for Python**, just execute:
 
     $ pip install highcharts-stock
 
+Before you install, please be aware of the following "hard" dependencies:
+
+  * Python 3.10 or higher
+  * Highcharts Stock (JS) v.10.2 or higher (not technically a Python dependency, but 
+    it won't work with earlier versions of Highcharts Stock)
+  * `Highcharts Core for Python <https://core-docs.highchartspython.com/en/latest/>`__ v.1.0 or higher
+  * `esprima-python <https://github.com/Kronuz/esprima-python>`__ v.4.0 or higher
+  * `requests <https://requests.readthedocs.io/en/latest/>`__ v.2.28 or higher
+  * `validator-collection <https://validator-collection.readthedocs.io/en/latest/>`__
+    v.1.5 or higher
+
+You can find more information about soft and development dependencies in the
+`complete documentation <https://stock-docs.highchartspython.com/en/latest/#dependencies>`__.
+
+
 -------------
 
 *********************************
