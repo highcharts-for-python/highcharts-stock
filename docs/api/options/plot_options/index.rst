@@ -62,6 +62,7 @@
   spline
   sunburst
   timeline
+  treegraph
   treemap
   vbp
   vector
@@ -323,6 +324,9 @@ Sub-components
     - :class:`SunburstOptions <highcharts_stock.options.plot_options.sunburst.SunburstOptions>`
   * - :mod:`.options.plot_options.timeline <highcharts_stock.options.plot_options.timeline>`
     - :class:`TimelineOptions <highcharts_stock.options.plot_options.timeline.TimelineOptions>`
+  * - :mod:`.options.plot_options.treegraph <highcharts_stock.options.plot_options.treegraph>`
+    - :class:`TreegraphOptions <highcharts_stock.options.plot_options.treegraph.TreegraphOptions>`
+      :class:`TreegraphEvents <highcharts_stock.options.plot_options.treegraph.TreegraphEvents>`
   * - :mod:`.options.plot_options.treemap <highcharts_stock.options.plot_options.treemap>`
     - :class:`TreemapOptions <highcharts_stock.options.plot_options.treemap.TreemapOptions>`
   * - :mod:`.options.plot_options.vbp <highcharts_stock.options.plot_options.vbp>`

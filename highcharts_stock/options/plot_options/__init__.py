@@ -46,6 +46,7 @@ from highcharts_stock.options.plot_options.area import StreamGraphOptions
 from highcharts_stock.options.plot_options.sunburst import SunburstOptions
 from highcharts_stock.options.plot_options.heatmap import TilemapOptions
 from highcharts_stock.options.plot_options.timeline import TimelineOptions
+from highcharts_stock.options.plot_options.treegraph import TreegraphOptions
 from highcharts_stock.options.plot_options.treemap import TreemapOptions
 from highcharts_stock.options.plot_options.pie import VariablePieOptions
 from highcharts_stock.options.plot_options.bar import VariwideOptions
@@ -2552,6 +2553,7 @@ class PlotOptions(PlotOptionsBase):
             'sunburst': as_dict.get('sunburst', None),
             'tilemap': as_dict.get('tilemap', None),
             'timeline': as_dict.get('timeline', None),
+            'treegraph': as_dict.get('treegraph', None),
             'treemap': as_dict.get('treemap', None),
             'variablepie': as_dict.get('variablepie', None),
             'variwide': as_dict.get('variwide', None),
@@ -2720,6 +2722,7 @@ class PlotOptions(PlotOptionsBase):
             'sunburst': self.sunburst,
             'tilemap': self.tilemap,
             'timeline': self.timeline,
+            'treegraph': self.treegraph,
             'treemap': self.treemap,
             'variablepie': self.variablepie,
             'variwide': self.variwide,

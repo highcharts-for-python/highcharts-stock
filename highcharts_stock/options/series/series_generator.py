@@ -54,6 +54,7 @@ from highcharts_stock.options.series.scatter import Scatter3DSeries
 from highcharts_stock.options.series.spline import SplineSeries
 from highcharts_stock.options.series.sunburst import SunburstSeries
 from highcharts_stock.options.series.timeline import TimelineSeries
+from highcharts_stock.options.series.treegraph import TreegraphSeries
 from highcharts_stock.options.series.treemap import TreemapSeries
 from highcharts_stock.options.series.vector import VectorSeries
 from highcharts_stock.options.series.venn import VennSeries
@@ -164,6 +165,7 @@ SERIES_CLASSES = {
     'spline': SplineSeries,
     'sunburst': SunburstSeries,
     'timeline': TimelineSeries,
+    'treegraph': TreegraphSeries,
     'treemap': TreemapSeries,
     'vector': VectorSeries,
     'venn': VennSeries,

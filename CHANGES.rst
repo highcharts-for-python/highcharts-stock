@@ -7,6 +7,7 @@ Release 2.0.0
   * Added ``options.scrollbar.buttons_enabled`` property.
 
 * **FIXED:** Broken heatmap and tilemap documentation links.
+* **FIXED:** Fixed missing ``TreegraphOptions`` / ``TreegraphSeries`` series type.
 
 -------------------------------
 
