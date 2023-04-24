@@ -32,6 +32,7 @@ from highcharts_stock.options.plot_options.networkgraph import NetworkGraphOptio
 from highcharts_stock.options.plot_options.organization import OrganizationOptions
 from highcharts_stock.options.plot_options.packedbubble import PackedBubbleOptions
 from highcharts_stock.options.plot_options.pareto import ParetoOptions
+from highcharts_stock.options.plot_options.pictorial import PictorialOptions
 from highcharts_stock.options.plot_options.pie import PieOptions
 from highcharts_stock.options.plot_options.polygon import PolygonOptions
 from highcharts_stock.options.plot_options.pyramid import PyramidOptions
@@ -1939,6 +1940,28 @@ class PlotOptions(PlotOptionsBase):
         self._pareto = value
 
     @property
+    def pictorial(self) -> Optional[PictorialOptions]:
+        """General options to apply to all Pictorial series types.
+
+        A pictorial series uses vector images to represent the data, with the data's shape
+        determined by the ``path`` parameter.
+
+        .. figure:: ../../../_static/pictorial-example.png
+          :alt: Pictorial Example Chart
+          :align: center
+
+
+        :rtype: :class:`PictorialOptions <highcharts_stock.options.plot_options.pictorial.PictorialOptions>` or
+          :obj:`None <python:None>`
+        """
+        return self._pictorial
+
+    @pictorial.setter
+    @class_sensitive(PictorialOptions)
+    def pictorial(self, value):
+        self._pictorial = value
+
+    @property
     def pie(self) -> Optional[PieOptions]:
         """General options to apply to all Pie series types.
 
@@ -2271,6 +2294,27 @@ class PlotOptions(PlotOptionsBase):
         self._timeline = value
 
     @property
+    def treegraph(self) -> Optional[TreegraphOptions]:
+        """General options to apply to all :term:`Treegraph` series types.
+        
+        A treegraph visualizes a relationship between ancestors and descendants with a clear parent-child relationship,
+        e.g. a family tree or a directory structure.
+        
+        .. figure:: ../../../_static/treegraph-example.png
+          :alt: Treegraph Example Chart
+          :align: center
+        
+        :rtype: :class:`TreegraphOptions <highcharts_stock.options.plot_options.treegraph.TreegraphOptions>` or 
+          :obj:`None <python:None>`
+        """
+        return self._treegraph
+    
+    @treegraph.setter
+    @class_sensitive(TreegraphOptions)
+    def treegraph(self, value):
+        self._treegraph = value
+
+    @property
     def treemap(self) -> Optional[TreemapOptions]:
         """General options to apply to all Treemap series types.
 
@@ -2539,6 +2583,7 @@ class PlotOptions(PlotOptionsBase):
             'organization': as_dict.get('organization', None),
             'packedbubble': as_dict.get('packedbubble', None),
             'pareto': as_dict.get('pareto', None),
+            'pictorial': as_dict.get('pictorial', None),
             'pie': as_dict.get('pie', None),
             'polygon': as_dict.get('polygon', None),
             'pyramid': as_dict.get('pyramid', None),
@@ -2708,6 +2753,7 @@ class PlotOptions(PlotOptionsBase):
             'organization': self.organization,
             'packedbubble': self.packedbubble,
             'pareto': self.pareto,
+            'pictorial': self.pictorial,
             'pie': self.pie,
             'polygon': self.polygon,
             'pyramid': self.pyramid,

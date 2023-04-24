@@ -520,6 +520,8 @@ Core Components
       :class:`ParentNodeOptions <highcharts_stock.options.plot_options.packedbubble.ParentNodeOptions>`
   * - :mod:`.options.plot_options.pareto <highcharts_stock.options.plot_options.pareto>`
     - :class:`ParetoOptions <highcharts_stock.options.plot_options.pareto.ParetoOptions>`
+  * - :mod:`.options.plot_options.pictorial <highcharts_stock.options.plot_options.pictorial>`
+    - :class:`PictorialOptions <highcharts_stock.options.plot_options.pictorial.PictorialOptions>`
   * - :mod:`.options.plot_options.pie <highcharts_stock.options.plot_options.pie>`
     - :class:`PieOptions <highcharts_stock.options.plot_options.pie.PieOptions>`
       :class:`VariablePieOptions <highcharts_stock.options.plot_options.pie.VariablePieOptions>`
@@ -771,6 +773,9 @@ Core Components
     - :class:`PackedBubbleSeries <highcharts_stock.options.series.packedbubble.PackedBubbleSeries>`
   * - :mod:`.options.series.pareto <highcharts_stock.options.series.pareto>`
     - :class:`ParetoSeries <highcharts_stock.options.series.pareto.ParetoSeries>`
+  * - :mod:`.options.series.pictorial <highcharts_stock.options.series.pictorial>`
+    - :class:`PictorialSeries <highcharts_stock.options.series.pictorial.PictorialSeries>`
+      :class:`PictorialPaths <highcharts_stock.options.series.pictorial.PictorialPaths>`
   * - :mod:`.options.series.pie <highcharts_stock.options.series.pie>`
     - :class:`PieSeries <highcharts_stock.options.series.pie.PieSeries>`
       :class:`VariablePieSeries <highcharts_stock.options.series.pie.VariablePieSeries>`

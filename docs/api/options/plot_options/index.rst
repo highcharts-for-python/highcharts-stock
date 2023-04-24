@@ -49,6 +49,7 @@
   oscillators/index
   packedbubble
   pareto
+  pictorial
   pie
   pivot_points
   points
@@ -289,6 +290,8 @@ Sub-components
       :class:`ParentNodeOptions <highcharts_stock.options.plot_options.packedbubble.ParentNodeOptions>`
   * - :mod:`.options.plot_options.pareto <highcharts_stock.options.plot_options.pareto>`
     - :class:`ParetoOptions <highcharts_stock.options.plot_options.pareto.ParetoOptions>`
+  * - :mod:`.options.plot_options.pictorial <highcharts_stock.options.plot_options.pictorial>`
+    - :class:`PictorialOptions <highcharts_stock.options.plot_options.pictorial.PictorialOptions>`
   * - :mod:`.options.plot_options.pie <highcharts_stock.options.plot_options.pie>`
     - :class:`PieOptions <highcharts_stock.options.plot_options.pie.PieOptions>`
       :class:`VariablePieOptions <highcharts_stock.options.plot_options.pie.VariablePieOptions>`

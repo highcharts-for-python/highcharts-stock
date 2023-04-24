@@ -43,6 +43,7 @@ from highcharts_stock.options.series.networkgraph import NetworkGraphSeries
 from highcharts_stock.options.series.organization import OrganizationSeries
 from highcharts_stock.options.series.packedbubble import PackedBubbleSeries
 from highcharts_stock.options.series.pareto import ParetoSeries
+from highcharts_stock.options.series.pictorial import PictorialSeries
 from highcharts_stock.options.series.pie import PieSeries
 from highcharts_stock.options.series.pie import VariablePieSeries
 from highcharts_stock.options.series.polygon import PolygonSeries
@@ -154,6 +155,7 @@ SERIES_CLASSES = {
     'organization': OrganizationSeries,
     'packedbubble': PackedBubbleSeries,
     'pareto': ParetoSeries,
+    'pictorial': PictorialSeries,
     'pie': PieSeries,
     'variablepie': VariablePieSeries,
     'polygon': PolygonSeries,
