@@ -859,6 +859,8 @@ Core Components
     - :class:`DataGroupingOptions <highcharts_stock.utility_classes.data_grouping.DataGroupingOptions>`
   * - :mod:`.utility_classes.data_labels <highcharts_stock.utility_classes.data_labels>`
     - :class:`DataLabel <highcharts_stock.utility_classes.data_labels.DataLabel>`
+      :class:`OrganizationDataLabel <highcharts_stock.utility_classes.data_labels.OrganizationDataLabel>`
+      :class:`SunburstDataLabel <highcharts_stock.utility_classes.data_labels.SunburstDataLabel>`
       :class:`NodeDataLabel <highcharts_stock.utility_classes.data_labels.NodeDataLabel>`
       :class:`Filter <highcharts_stock.utility_classes.data_labels.Filter>`
   * - :mod:`.utility_classes.date_time_label_formats <highcharts_stock.utility_classes.date_time_label_formats>`
