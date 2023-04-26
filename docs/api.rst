@@ -430,9 +430,9 @@ Core Components
       :class:`SolidGaugeOptions <highcharts_stock.options.plot_options.gauge.SolidGaugeOptions>`
   * - :mod:`.options.plot_options.generic <highcharts_stock.options.plot_options.generic>`
     - :class:`GenericTypeOptions <highcharts_stock.options.plot_options.generic.GenericTypeOptions>`
-  * - :mod:`.options.plot_options.Heatmap <highcharts_stock.options.plot_options.Heatmap>`
-    - :class:`HeatmapOptions <highcharts_stock.options.plot_options.Heatmap.HeatmapOptions>`
-      :class:`TilemapOptions <highcharts_stock.options.plot_options.Tilemap.TilemapOptions>`
+  * - :mod:`.options.plot_options.heatmap <highcharts_stock.options.plot_options.heatmap>`
+    - :class:`HeatmapOptions <highcharts_stock.options.plot_options.heatmap.HeatmapOptions>`
+      :class:`TilemapOptions <highcharts_stock.options.plot_options.heatmap.TilemapOptions>`
   * - :mod:`.options.plot_options.histogram <highcharts_stock.options.plot_options.histogram>`
     - :class:`HistogramOptions <highcharts_stock.options.plot_options.histogram.HistogramOptions>`
   * - :mod:`.options.plot_options.hlc <highcharts_stock.options.plot_options.hlc>`
@@ -520,6 +520,8 @@ Core Components
       :class:`ParentNodeOptions <highcharts_stock.options.plot_options.packedbubble.ParentNodeOptions>`
   * - :mod:`.options.plot_options.pareto <highcharts_stock.options.plot_options.pareto>`
     - :class:`ParetoOptions <highcharts_stock.options.plot_options.pareto.ParetoOptions>`
+  * - :mod:`.options.plot_options.pictorial <highcharts_stock.options.plot_options.pictorial>`
+    - :class:`PictorialOptions <highcharts_stock.options.plot_options.pictorial.PictorialOptions>`
   * - :mod:`.options.plot_options.pie <highcharts_stock.options.plot_options.pie>`
     - :class:`PieOptions <highcharts_stock.options.plot_options.pie.PieOptions>`
       :class:`VariablePieOptions <highcharts_stock.options.plot_options.pie.VariablePieOptions>`
@@ -549,12 +551,17 @@ Core Components
       :class:`Scatter3DOptions <highcharts_stock.options.plot_options.scatter.Scatter3DOptions>`
   * - :mod:`.options.plot_options.series <highcharts_stock.options.plot_options.series>`
     - :class:`SeriesOptions <highcharts_stock.options.plot_options.series.SeriesOptions>`
+  * - :mod:`.options.plot_options.sonification <highcharts_stock.options.plot_options.sonification>`
+    - :class:`SeriesSonification <highcharts_stock.options.plot_options.sonification.SeriesSonification>`
   * - :mod:`.options.plot_options.spline <highcharts_stock.options.plot_options.spline>`
     - :class:`SplineOptions <highcharts_stock.options.plot_options.spline.SplineOptions>`
   * - :mod:`.options.plot_options.sunburst <highcharts_stock.options.plot_options.sunburst>`
     - :class:`SunburstOptions <highcharts_stock.options.plot_options.sunburst.SunburstOptions>`
   * - :mod:`.options.plot_options.timeline <highcharts_stock.options.plot_options.timeline>`
     - :class:`TimelineOptions <highcharts_stock.options.plot_options.timeline.TimelineOptions>`
+  * - :mod:`.options.plot_options.treegraph <highcharts_stock.options.plot_options.treegraph>`
+    - :class:`TreegraphOptions <highcharts_stock.options.plot_options.treegraph.TreegraphOptions>`
+      :class:`TreegraphEvents <highcharts_stock.options.plot_options.treegraph.TreegraphEvents>`
   * - :mod:`.options.plot_options.treemap <highcharts_stock.options.plot_options.treemap>`
     - :class:`TreemapOptions <highcharts_stock.options.plot_options.treemap.TreemapOptions>`
   * - :mod:`.options.plot_options.vbp <highcharts_stock.options.plot_options.vbp>`
@@ -682,6 +689,8 @@ Core Components
       :class:`SinglePointBase <highcharts_stock.options.series.data.single_point.SinglePointBase>`
   * - :mod:`.options.series.data.sunburst <highcharts_stock.options.series.data.sunburst>`
     - :class:`SunburstData <highcharts_stock.options.series.data.sunburst.SunburstData>`
+  * - :mod:`.options.series.data.treegraph <highcharts_stock.options.series.data.treegraph>`
+    - :class:`TreegraphData <highcharts_stock.options.series.data.treegraph.TreegraphData>`
   * - :mod:`.options.series.data.treemap <highcharts_stock.options.series.data.treemap>`
     - :class:`TreemapData <highcharts_stock.options.series.data.treemap.TreemapData>`
   * - :mod:`.options.series.data.vector <highcharts_stock.options.series.data.vector>`
@@ -766,6 +775,9 @@ Core Components
     - :class:`PackedBubbleSeries <highcharts_stock.options.series.packedbubble.PackedBubbleSeries>`
   * - :mod:`.options.series.pareto <highcharts_stock.options.series.pareto>`
     - :class:`ParetoSeries <highcharts_stock.options.series.pareto.ParetoSeries>`
+  * - :mod:`.options.series.pictorial <highcharts_stock.options.series.pictorial>`
+    - :class:`PictorialSeries <highcharts_stock.options.series.pictorial.PictorialSeries>`
+      :class:`PictorialPaths <highcharts_stock.options.series.pictorial.PictorialPaths>`
   * - :mod:`.options.series.pie <highcharts_stock.options.series.pie>`
     - :class:`PieSeries <highcharts_stock.options.series.pie.PieSeries>`
       :class:`VariablePieSeries <highcharts_stock.options.series.pie.VariablePieSeries>`
@@ -793,6 +805,8 @@ Core Components
     - :class:`SunburstSeries <highcharts_stock.options.series.sunburst.SunburstSeries>`
   * - :mod:`.options.series.timeline <highcharts_stock.options.series.timeline>`
     - :class:`TimelineSeries <highcharts_stock.options.series.timeline.TimelineSeries>`
+  * - :mod:`.options.series.treegraph <highcharts_stock.options.series.treegraph>`
+    - :class:`TreegraphSeries <highcharts_stock.options.series.treegraph.TreegraphSeries>`
   * - :mod:`.options.series.treemap <highcharts_stock.options.series.treemap>`
     - :class:`TreemapSeries <highcharts_stock.options.series.treemap.TreemapSeries>`
   * - :mod:`.options.series.vbp <highcharts_stock.options.series.vbp>`
@@ -805,6 +819,22 @@ Core Components
     - :class:`WordcloudSeries <highcharts_stock.options.series.wordcloud.WordcloudSeries>`
   * - :mod:`.options.series.zigzag <highcharts_stock.options.series.zigzag>`
     - :class:`ZigZagSeries <highcharts_stock.options.series.zigzag.ZigZagSeries>`
+  * - :mod:`.options.sonification <highcharts_stock.options.sonification>`
+    - :class:`SonificationOptions <highcharts_stock.options.sonification.SonificationOptions>`
+  * - :mod:`.options.sonification.grouping <highcharts_stock.options.sonification.grouping>`
+    - :class:`PointGrouping <highcharts_stock.options.sonification.grouping.SonificationGrouping>`
+  * - :mod:`.options.sonification.mapping <highcharts_stock.options.sonification.mapping>`
+    - :class:`SonificationMapping <highcharts_stock.options.sonification.mapping.SonificationMapping>`
+      :class:`AudioParameter <highcahrts_core.options.sonification.mapping.AudioParameter>`
+      :class:`AudioFilter <highcharts_stock.options.sonification.mapping.AudioFilter>`
+      :class:`PitchParameter <highcharts_stock.options.sonification.mapping.PitchParameter>`
+      :class:`TremoloEffect <highcahrts_core.options.sonification.mapping.TremoloEffect>`
+  * - :mod:`.options.sonification.track_configurations <highcharts_stock.options.sonification.track_configurations>`
+    - :class:`InstrumentTrackConfiguration <highcharts_stock.options.sonification.track_configurations.InstrumentTrackConfiguration>`
+      :class:`SpeechTrackConfiguration <highcharts_stock.options.sonification.track_configurations.SpeechTrackConfiguration>`
+      :class:`ContextTrackConfiguration <highcharts_stock.options.sonification.track_configurations.ContextTrackConfiguration>`
+      :class:`TrackConfigurationBase <highcharts_stock.options.sonification.track_configurations.TrackConfigurationBase>`
+      :class:`ActiveWhen <highcharts_stock.options.sonification.track_configurations.ActiveWhen>`
   * - :mod:`.options.stock_tools <highcharts_stock.options.stock_tools>`
     - :class:`StockTools <highcharts_stock.options.stock_tools.StockTools>`
       :class:`StockToolsGUI <highcharts_stock.options.stock_tools.StockToolsGUI>`
@@ -852,6 +882,8 @@ Core Components
     - :class:`DataGroupingOptions <highcharts_stock.utility_classes.data_grouping.DataGroupingOptions>`
   * - :mod:`.utility_classes.data_labels <highcharts_stock.utility_classes.data_labels>`
     - :class:`DataLabel <highcharts_stock.utility_classes.data_labels.DataLabel>`
+      :class:`OrganizationDataLabel <highcharts_stock.utility_classes.data_labels.OrganizationDataLabel>`
+      :class:`SunburstDataLabel <highcharts_stock.utility_classes.data_labels.SunburstDataLabel>`
       :class:`NodeDataLabel <highcharts_stock.utility_classes.data_labels.NodeDataLabel>`
       :class:`Filter <highcharts_stock.utility_classes.data_labels.Filter>`
   * - :mod:`.utility_classes.date_time_label_formats <highcharts_stock.utility_classes.date_time_label_formats>`

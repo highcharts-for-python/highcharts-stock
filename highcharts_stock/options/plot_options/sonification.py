@@ -1,0 +1,1 @@
+from highcharts_core.options.plot_options.sonification import SeriesSonification

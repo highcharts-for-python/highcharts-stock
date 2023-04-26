@@ -43,6 +43,7 @@ from highcharts_stock.options.series.networkgraph import NetworkGraphSeries
 from highcharts_stock.options.series.organization import OrganizationSeries
 from highcharts_stock.options.series.packedbubble import PackedBubbleSeries
 from highcharts_stock.options.series.pareto import ParetoSeries
+from highcharts_stock.options.series.pictorial import PictorialSeries
 from highcharts_stock.options.series.pie import PieSeries
 from highcharts_stock.options.series.pie import VariablePieSeries
 from highcharts_stock.options.series.polygon import PolygonSeries
@@ -54,6 +55,7 @@ from highcharts_stock.options.series.scatter import Scatter3DSeries
 from highcharts_stock.options.series.spline import SplineSeries
 from highcharts_stock.options.series.sunburst import SunburstSeries
 from highcharts_stock.options.series.timeline import TimelineSeries
+from highcharts_stock.options.series.treegraph import TreegraphSeries
 from highcharts_stock.options.series.treemap import TreemapSeries
 from highcharts_stock.options.series.vector import VectorSeries
 from highcharts_stock.options.series.venn import VennSeries
@@ -153,6 +155,7 @@ SERIES_CLASSES = {
     'organization': OrganizationSeries,
     'packedbubble': PackedBubbleSeries,
     'pareto': ParetoSeries,
+    'pictorial': PictorialSeries,
     'pie': PieSeries,
     'variablepie': VariablePieSeries,
     'polygon': PolygonSeries,
@@ -164,6 +167,7 @@ SERIES_CLASSES = {
     'spline': SplineSeries,
     'sunburst': SunburstSeries,
     'timeline': TimelineSeries,
+    'treegraph': TreegraphSeries,
     'treemap': TreemapSeries,
     'vector': VectorSeries,
     'venn': VennSeries,

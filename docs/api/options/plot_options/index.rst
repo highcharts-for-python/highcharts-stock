@@ -49,6 +49,7 @@
   oscillators/index
   packedbubble
   pareto
+  pictorial
   pie
   pivot_points
   points
@@ -59,9 +60,11 @@
   sankey
   scatter
   series
+  sonification
   spline
   sunburst
   timeline
+  treegraph
   treemap
   vbp
   vector
@@ -198,9 +201,9 @@ Sub-components
       :class:`SolidGaugeOptions <highcharts_stock.options.plot_options.gauge.SolidGaugeOptions>`
   * - :mod:`.options.plot_options.generic <highcharts_stock.options.plot_options.generic>`
     - :class:`GenericTypeOptions <highcharts_stock.options.plot_options.generic.GenericTypeOptions>`
-  * - :mod:`.options.plot_options.Heatmap <highcharts_stock.options.plot_options.Heatmap>`
-    - :class:`HeatmapOptions <highcharts_stock.options.plot_options.Heatmap.HeatmapOptions>`
-      :class:`TilemapOptions <highcharts_stock.options.plot_options.Tilemap.TilemapOptions>`
+  * - :mod:`.options.plot_options.heatmap <highcharts_stock.options.plot_options.heatmap>`
+    - :class:`HeatmapOptions <highcharts_stock.options.plot_options.heatmap.HeatmapOptions>`
+      :class:`TilemapOptions <highcharts_stock.options.plot_options.heatmap.TilemapOptions>`
   * - :mod:`.options.plot_options.histogram <highcharts_stock.options.plot_options.histogram>`
     - :class:`HistogramOptions <highcharts_stock.options.plot_options.histogram.HistogramOptions>`
   * - :mod:`.options.plot_options.hlc <highcharts_stock.options.plot_options.hlc>`
@@ -288,6 +291,8 @@ Sub-components
       :class:`ParentNodeOptions <highcharts_stock.options.plot_options.packedbubble.ParentNodeOptions>`
   * - :mod:`.options.plot_options.pareto <highcharts_stock.options.plot_options.pareto>`
     - :class:`ParetoOptions <highcharts_stock.options.plot_options.pareto.ParetoOptions>`
+  * - :mod:`.options.plot_options.pictorial <highcharts_stock.options.plot_options.pictorial>`
+    - :class:`PictorialOptions <highcharts_stock.options.plot_options.pictorial.PictorialOptions>`
   * - :mod:`.options.plot_options.pie <highcharts_stock.options.plot_options.pie>`
     - :class:`PieOptions <highcharts_stock.options.plot_options.pie.PieOptions>`
       :class:`VariablePieOptions <highcharts_stock.options.plot_options.pie.VariablePieOptions>`
@@ -317,12 +322,17 @@ Sub-components
       :class:`Scatter3DOptions <highcharts_stock.options.plot_options.scatter.Scatter3DOptions>`
   * - :mod:`.options.plot_options.series <highcharts_stock.options.plot_options.series>`
     - :class:`SeriesOptions <highcharts_stock.options.plot_options.series.SeriesOptions>`
+  * - :mod:`.options.plot_options.sonification <highcharts_stock.options.plot_options.sonification>`
+    - :class:`SeriesSonification <highcharts_stock.options.plot_options.sonification.SeriesSonification>`
   * - :mod:`.options.plot_options.spline <highcharts_stock.options.plot_options.spline>`
     - :class:`SplineOptions <highcharts_stock.options.plot_options.spline.SplineOptions>`
   * - :mod:`.options.plot_options.sunburst <highcharts_stock.options.plot_options.sunburst>`
     - :class:`SunburstOptions <highcharts_stock.options.plot_options.sunburst.SunburstOptions>`
   * - :mod:`.options.plot_options.timeline <highcharts_stock.options.plot_options.timeline>`
     - :class:`TimelineOptions <highcharts_stock.options.plot_options.timeline.TimelineOptions>`
+  * - :mod:`.options.plot_options.treegraph <highcharts_stock.options.plot_options.treegraph>`
+    - :class:`TreegraphOptions <highcharts_stock.options.plot_options.treegraph.TreegraphOptions>`
+      :class:`TreegraphEvents <highcharts_stock.options.plot_options.treegraph.TreegraphEvents>`
   * - :mod:`.options.plot_options.treemap <highcharts_stock.options.plot_options.treemap>`
     - :class:`TreemapOptions <highcharts_stock.options.plot_options.treemap.TreemapOptions>`
   * - :mod:`.options.plot_options.vbp <highcharts_stock.options.plot_options.vbp>`

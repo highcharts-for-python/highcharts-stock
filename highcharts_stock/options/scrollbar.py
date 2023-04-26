@@ -34,6 +34,7 @@ class Scrollbar(HighchartsMeta):
         self._button_border_color = None
         self._button_border_radius = None
         self._button_border_width = None
+        self._buttons_enabled = None
         self._enabled = None
         self._height = None
         self._live_redraw = None
@@ -56,6 +57,7 @@ class Scrollbar(HighchartsMeta):
         self.button_border_color = kwargs.get('button_border_color', None)
         self.button_border_radius = kwargs.get('button_border_radius', None)
         self.button_border_width = kwargs.get('button_border_width', None)
+        self.buttons_enabled = kwargs.get('buttons_enabled', None)
         self.enabled = kwargs.get('enabled', None)
         self.height = kwargs.get('height', None)
         self.live_redraw = kwargs.get('live_redraw', None)
@@ -189,6 +191,23 @@ class Scrollbar(HighchartsMeta):
         self._button_border_width = validators.numeric(value,
                                                        allow_empty = True,
                                                        minimum = 0)
+
+    @property
+    def buttons_enabled(self) -> Optional[bool]:
+        """If ``True``, will display buttons at the start/end of the scrollbar. Defaults to ``True``.
+        
+        .. versionadded:: Highcharts Stock for Python v.2.0.0 + Highcharts Stock (JS) v.11
+
+        :rtype: :class:`bool <python:bool>`
+        """
+        return self._buttons_enabled
+
+    @buttons_enabled.setter
+    def buttons_enabled(self, value):
+        if value is None:
+            self._buttons_enabled = None
+        else:
+            self._buttons_enabled = bool(value)
 
     @property
     def enabled(self) -> Optional[bool]:
@@ -374,6 +393,7 @@ class Scrollbar(HighchartsMeta):
             'button_border_color': as_dict.get('buttonBorderColor', None),
             'button_border_radius': as_dict.get('buttonBorderRadius', None),
             'button_border_width': as_dict.get('buttonBorderWidth', None),
+            'buttons_enabled': as_dict.get('buttonsEnabled', None),
             'enabled': as_dict.get('enabled', None),
             'height': as_dict.get('height', None),
             'live_redraw': as_dict.get('liveRedraw', None),
@@ -401,6 +421,7 @@ class Scrollbar(HighchartsMeta):
             'buttonBorderColor': self.button_border_color,
             'buttonBorderRadius': self.button_border_radius,
             'buttonBorderWidth': self.button_border_width,
+            'buttonsEnabled': self.buttons_enabled,
             'enabled': self.enabled,
             'height': self.height,
             'liveRedraw': self.live_redraw,
