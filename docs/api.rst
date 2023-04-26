@@ -551,6 +551,8 @@ Core Components
       :class:`Scatter3DOptions <highcharts_stock.options.plot_options.scatter.Scatter3DOptions>`
   * - :mod:`.options.plot_options.series <highcharts_stock.options.plot_options.series>`
     - :class:`SeriesOptions <highcharts_stock.options.plot_options.series.SeriesOptions>`
+  * - :mod:`.options.plot_options.sonification <highcharts_stock.options.plot_options.sonification>`
+    - :class:`SeriesSonification <highcharts_stock.options.plot_options.sonification.SeriesSonification>`
   * - :mod:`.options.plot_options.spline <highcharts_stock.options.plot_options.spline>`
     - :class:`SplineOptions <highcharts_stock.options.plot_options.spline.SplineOptions>`
   * - :mod:`.options.plot_options.sunburst <highcharts_stock.options.plot_options.sunburst>`
@@ -817,6 +819,22 @@ Core Components
     - :class:`WordcloudSeries <highcharts_stock.options.series.wordcloud.WordcloudSeries>`
   * - :mod:`.options.series.zigzag <highcharts_stock.options.series.zigzag>`
     - :class:`ZigZagSeries <highcharts_stock.options.series.zigzag.ZigZagSeries>`
+  * - :mod:`.options.sonification <highcharts_stock.options.sonification>`
+    - :class:`SonificationOptions <highcharts_stock.options.sonification.SonificationOptions>`
+  * - :mod:`.options.sonification.grouping <highcharts_stock.options.sonification.grouping>`
+    - :class:`PointGrouping <highcharts_stock.options.sonification.grouping.SonificationGrouping>`
+  * - :mod:`.options.sonification.mapping <highcharts_stock.options.sonification.mapping>`
+    - :class:`SonificationMapping <highcharts_stock.options.sonification.mapping.SonificationMapping>`
+      :class:`AudioParameter <highcahrts_core.options.sonification.mapping.AudioParameter>`
+      :class:`AudioFilter <highcharts_stock.options.sonification.mapping.AudioFilter>`
+      :class:`PitchParameter <highcharts_stock.options.sonification.mapping.PitchParameter>`
+      :class:`TremoloEffect <highcahrts_core.options.sonification.mapping.TremoloEffect>`
+  * - :mod:`.options.sonification.track_configurations <highcharts_stock.options.sonification.track_configurations>`
+    - :class:`InstrumentTrackConfiguration <highcharts_stock.options.sonification.track_configurations.InstrumentTrackConfiguration>`
+      :class:`SpeechTrackConfiguration <highcharts_stock.options.sonification.track_configurations.SpeechTrackConfiguration>`
+      :class:`ContextTrackConfiguration <highcharts_stock.options.sonification.track_configurations.ContextTrackConfiguration>`
+      :class:`TrackConfigurationBase <highcharts_stock.options.sonification.track_configurations.TrackConfigurationBase>`
+      :class:`ActiveWhen <highcharts_stock.options.sonification.track_configurations.ActiveWhen>`
   * - :mod:`.options.stock_tools <highcharts_stock.options.stock_tools>`
     - :class:`StockTools <highcharts_stock.options.stock_tools.StockTools>`
       :class:`StockToolsGUI <highcharts_stock.options.stock_tools.StockToolsGUI>`

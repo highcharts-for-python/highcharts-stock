@@ -60,6 +60,7 @@
   sankey
   scatter
   series
+  sonification
   spline
   sunburst
   timeline
@@ -321,6 +322,8 @@ Sub-components
       :class:`Scatter3DOptions <highcharts_stock.options.plot_options.scatter.Scatter3DOptions>`
   * - :mod:`.options.plot_options.series <highcharts_stock.options.plot_options.series>`
     - :class:`SeriesOptions <highcharts_stock.options.plot_options.series.SeriesOptions>`
+  * - :mod:`.options.plot_options.sonification <highcharts_stock.options.plot_options.sonification>`
+    - :class:`SeriesSonification <highcharts_stock.options.plot_options.sonification.SeriesSonification>`
   * - :mod:`.options.plot_options.spline <highcharts_stock.options.plot_options.spline>`
     - :class:`SplineOptions <highcharts_stock.options.plot_options.spline.SplineOptions>`
   * - :mod:`.options.plot_options.sunburst <highcharts_stock.options.plot_options.sunburst>`
