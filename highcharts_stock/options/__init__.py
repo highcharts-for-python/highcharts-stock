@@ -783,6 +783,7 @@ class HighchartsStockOptions(HighchartsOptions):
             'responsive': as_dict.get('responsive', None),
             'scrollbar': as_dict.get('scrollbar', None),
             'series': as_dict.get('series', None),
+            'sonification': as_dict.get('sonification', None),
             'stock_tools': as_dict.get('stockTools', None),
             'subtitle': as_dict.get('subtitle', None),
             'time': as_dict.get('time', None),
