@@ -44,6 +44,7 @@
   organization
   packedbubble
   pareto
+  pictorial
   pie
   pivot_points
   points
@@ -57,6 +58,7 @@
   spline
   sunburst
   timeline
+  treegraph
   treemap
   vbp
   vector
@@ -181,6 +183,8 @@ Sub-components
       :class:`SinglePointBase <highcharts_stock.options.series.data.single_point.SinglePointBase>`
   * - :mod:`.options.series.data.sunburst <highcharts_stock.options.series.data.sunburst>`
     - :class:`SunburstData <highcharts_stock.options.series.data.sunburst.SunburstData>`
+  * - :mod:`.options.series.data.treegraph <highcharts_stock.options.series.data.treegraph>`
+    - :class:`TreegraphData <highcharts_stock.options.series.data.treegraph.TreegraphData>`
   * - :mod:`.options.series.data.treemap <highcharts_stock.options.series.data.treemap>`
     - :class:`TreemapData <highcharts_stock.options.series.data.treemap.TreemapData>`
   * - :mod:`.options.series.data.vector <highcharts_stock.options.series.data.vector>`
@@ -265,6 +269,9 @@ Sub-components
     - :class:`PackedBubbleSeries <highcharts_stock.options.series.packedbubble.PackedBubbleSeries>`
   * - :mod:`.options.series.pareto <highcharts_stock.options.series.pareto>`
     - :class:`ParetoSeries <highcharts_stock.options.series.pareto.ParetoSeries>`
+  * - :mod:`.options.series.pictorial <highcharts_stock.options.series.pictorial>`
+    - :class:`PictorialSeries <highcharts_stock.options.series.pictorial.PictorialSeries>`
+      :class:`PictorialPaths <highcharts_stock.options.series.pictorial.PictorialPaths>`
   * - :mod:`.options.series.pie <highcharts_stock.options.series.pie>`
     - :class:`PieSeries <highcharts_stock.options.series.pie.PieSeries>`
       :class:`VariablePieSeries <highcharts_stock.options.series.pie.VariablePieSeries>`
@@ -292,6 +299,8 @@ Sub-components
     - :class:`SunburstSeries <highcharts_stock.options.series.sunburst.SunburstSeries>`
   * - :mod:`.options.series.timeline <highcharts_stock.options.series.timeline>`
     - :class:`TimelineSeries <highcharts_stock.options.series.timeline.TimelineSeries>`
+  * - :mod:`.options.series.treegraph <highcharts_stock.options.series.treegraph>`
+    - :class:`TreegraphSeries <highcharts_stock.options.series.treegraph.TreegraphSeries>`
   * - :mod:`.options.series.treemap <highcharts_stock.options.series.treemap>`
     - :class:`TreemapSeries <highcharts_stock.options.series.treemap.TreemapSeries>`
   * - :mod:`.options.series.vbp <highcharts_stock.options.series.vbp>`

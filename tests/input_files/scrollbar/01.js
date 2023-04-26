@@ -8,6 +8,7 @@
   buttonBorderColor: '#000',
   buttonBorderRadius: 2,
   buttonBorderWidth: 3,
+  buttonsEnabled: true,
   enabled: true,
   height: 120,
   liveRedraw: false,
