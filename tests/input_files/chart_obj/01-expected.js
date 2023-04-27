@@ -1,4 +1,4 @@
-var someVariableName = new Highcharts.stockChart('some-div-id',
+var someVariableName = Highcharts.stockChart('some-div-id',
 {
   accessibility: {
       announceNewData: {

@@ -1,3 +1,11 @@
+Release 1.1.1
+=========================================
+
+* **FIXED:** Problem when producing a JS literal, with the JS code inserting an unnecessary ``new``.
+* **ENHANCEMENT:** Added more elegant error handling when something goes wrong displaying a chart in Jupyter.
+
+---------------------------
+
 Release 1.1.0
 =========================================
 
