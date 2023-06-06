@@ -72,6 +72,14 @@ class AbandsOptions(IndicatorOptions):
         super().__init__(**kwargs)
 
     @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'plotOptions.abands'
+
+    @property
     def bottom_line(self) -> Optional[AbandsStyleOptions]:
         """Styles for the bottom line.
 
@@ -220,6 +228,14 @@ class PCOptions(AbandsOptions):
 
     """
     @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'plotOptions.pc'
+
+    @property
     def params(self) -> Optional[PCParameters]:
         """Parameters used in calculating the indicator's data points.
 
@@ -241,7 +257,6 @@ class KeltnerChannelsOptions(AbandsOptions):
       :align: center
 
     """
-    pass
 
 
 class BBOptions(ComparableIndicatorOptions):

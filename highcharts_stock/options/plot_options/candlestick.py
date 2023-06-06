@@ -33,6 +33,14 @@ class CandlestickOptions(BaseBarOptions, NonIndicatorOptions):
         super().__init__(**kwargs)
 
     @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'plotOptions.candlestick'
+
+    @property
     def point_val_key(self) -> Optional[str]:
         """Indicates which value position should be represented as the y-axis value of the
         data point. Defaults to ``'close'``.
@@ -216,7 +224,13 @@ class HollowCandlestickOptions(CandlestickOptions):
       :align: center
 
     """
-    pass
+    @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'plotOptions.hollowcandlestick'
 
 
 class HeikinAshiOptions(CandlestickOptions):
@@ -230,4 +244,10 @@ class HeikinAshiOptions(CandlestickOptions):
       :align: center
 
     """
-    pass
+    @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'plotOptions.heikinashi'

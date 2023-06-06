@@ -208,6 +208,14 @@ class Navigator(HighchartsMeta):
         self.y_axis = kwargs.get('y_axis', None)
 
     @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+        
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'navigator'
+
+    @property
     def adapt_to_updated_data(self) -> Optional[bool]:
         """If ``True``, the navigator and scroll will adapt to updated data in the base
         X-axis. Defaults to :obj:`None <python:None>`, which behaves as ``False``.
