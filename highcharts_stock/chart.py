@@ -4,10 +4,10 @@ from validator_collection import validators, checkers
 
 from highcharts_core.options import HighchartsOptions
 from highcharts_core.chart import Chart as ChartBase
+from highcharts_core.metaclasses import HighchartsMeta
 
 from highcharts_stock import constants, errors, utility_functions
 from highcharts_stock.decorators import validate_types
-from highcharts_stock.metaclasses import HighchartsMeta
 from highcharts_stock.js_literal_functions import serialize_to_js_literal
 from highcharts_stock.headless_export import ExportServer
 from highcharts_stock.options.series.series_generator import (create_series_obj,
@@ -97,30 +97,13 @@ class Chart(ChartBase):
 
         :rtype: :class:`list <python:list>`
         """
-        scripts = ['highcharts']
+        initial_scripts = ['highcharts']
         has_stock_tools = hasattr(self.options, 'stock_tools') and self.options.stock_tools
         if self.is_stock_chart or has_stock_tools:
-            scripts.append('modules/stock')
-        properties = [x for x in self.__dict__ if x.__class__.__name__ == 'property']
-        for property_name in properties:
-            property_value = getattr(self, property_name, None)
-            if property_value is None:
-                continue
-            if isinstance(property_value, HighchartsMeta):
-                additional_scripts = [x for x in property_value.get_required_modules()
-                                      if x not in scripts]
-                if additional_scripts:
-                    scripts.extend(additional_scripts)
-                    continue
-            property_name_as_camelCase = utility_functions.to_camelCase(property_name)
-            dot_path = f'{self._dot_path}.' or ''
-            dot_path += {property_name_as_camelCase}
-            scripts.extend([x for x in constants.MODULE_REQUIREMENTS.get(dot_path, [])
-                            if x not in scripts])
-        
-        if include_extension:
-            scripts = [f'{x}.js' for x in scripts]
+            initial_scripts.append('modules/stock')
 
+        scripts = self._process_required_modules(initial_scripts, include_extension)
+        
         return scripts
 
     @property
