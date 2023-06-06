@@ -1,3 +1,10 @@
+Release 1.2.0
+=========================================
+
+* **ENHANCEMENT:** Added support for the inclusion of scripts based on features used in the chart (#4).
+
+---------------------------
+
 Release 1.1.1
 =========================================
 
