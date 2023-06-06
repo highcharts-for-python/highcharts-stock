@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 
 from validator_collection import validators, checkers
 
@@ -7,6 +7,7 @@ from highcharts_core.chart import Chart as ChartBase
 
 from highcharts_stock import constants, errors, utility_functions
 from highcharts_stock.decorators import validate_types
+from highcharts_stock.metaclasses import HighchartsMeta
 from highcharts_stock.js_literal_functions import serialize_to_js_literal
 from highcharts_stock.headless_export import ExportServer
 from highcharts_stock.options.series.series_generator import (create_series_obj,
@@ -26,42 +27,6 @@ class Chart(ChartBase):
         self.is_stock_chart = kwargs.get('is_stock_chart', False)
 
         super().__init__(**kwargs)
-
-    def _jupyter_include_scripts(self):
-        """Return the JavaScript code that is used to load the Highcharts JS libraries.
-
-        .. note::
-
-          Currently includes *all* `Highcharts JS <https://www.highcharts.com/>`_ modules
-          in the HTML. This issue will be addressed when roadmap issue :issue:`2` is
-          released.
-
-        :rtype: :class:`str <python:str>`
-        """
-        js_str = ''
-        if self.is_stock_chart:
-            if hasattr(self.options, 'stock_tools') and self.options.stock_tools:
-                INCLUDE_LIBS = constants.STOCK_INCLUDE_LIBS
-                INCLUDE_LIBS.extend(constants.STOCK_TOOLS_INCLUDE_LIBS)
-            else:
-                INCLUDE_LIBS = [x for x in constants.STOCK_INCLUDE_LIBS]
-            
-            for item in INCLUDE_LIBS:
-                js_str += utility_functions.jupyter_add_script(item)
-                js_str += """.then(() => {"""
-
-            for item in INCLUDE_LIBS:
-                js_str += """});"""
-
-        else:
-            for item in constants.INCLUDE_LIBS:
-                js_str += utility_functions.jupyter_add_script(item)
-                js_str += """.then(() => {"""
-
-            for item in constants.INCLUDE_LIBS:
-                js_str += """});"""
-
-        return js_str
 
     def _jupyter_javascript(self, 
                             global_options = None, 
@@ -121,6 +86,42 @@ class Chart(ChartBase):
         self.container = original_container
 
         return js_str
+
+    def get_required_modules(self, include_extension = False) -> List[str]:
+        """Return the list of URLs from which the Highcharts JavaScript modules
+        needed to render the chart can be retrieved.
+        
+        :param include_extension: if ``True``, will return script names with the 
+          ``'.js'`` extension included. Defaults to ``False``.
+        :type include_extension: :class:`bool <python:bool>`
+
+        :rtype: :class:`list <python:list>`
+        """
+        scripts = ['highcharts']
+        has_stock_tools = hasattr(self.options, 'stock_tools') and self.options.stock_tools
+        if self.is_stock_chart or has_stock_tools:
+            scripts.append('modules/stock')
+        properties = [x for x in self.__dict__ if x.__class__.__name__ == 'property']
+        for property_name in properties:
+            property_value = getattr(self, property_name, None)
+            if property_value is None:
+                continue
+            if isinstance(property_value, HighchartsMeta):
+                additional_scripts = [x for x in property_value.get_required_modules()
+                                      if x not in scripts]
+                if additional_scripts:
+                    scripts.extend(additional_scripts)
+                    continue
+            property_name_as_camelCase = utility_functions.to_camelCase(property_name)
+            dot_path = f'{self._dot_path}.' or ''
+            dot_path += {property_name_as_camelCase}
+            scripts.extend([x for x in constants.MODULE_REQUIREMENTS.get(dot_path, [])
+                            if x not in scripts])
+        
+        if include_extension:
+            scripts = [f'{x}.js' for x in scripts]
+
+        return scripts
 
     @property
     def is_stock_chart(self) -> bool:
