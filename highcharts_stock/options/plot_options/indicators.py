@@ -107,6 +107,14 @@ class IndicatorOptions(SeriesOptions, StockBaseOptions):
         super().__init__(**kwargs)
 
     @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return f'plotOptions.{self.type}'
+    
+    @property
     def compare_to_main(self) -> Optional[bool]:
         """If ``True``, compares the indicator to the main series values. If ``False``,
         compares to the indicator values. Defaults to ``False``.
@@ -173,6 +181,7 @@ class IndicatorOptions(SeriesOptions, StockBaseOptions):
             'include_in_data_export': as_dict.get('includeInDataExport', None),
             'keys': as_dict.get('keys', None),
             'label': as_dict.get('label', None),
+            'legend_symbol': as_dict.get('legendSymbol', None),
             'linked_to': as_dict.get('linkedTo', None),
             'marker': as_dict.get('marker', None),
             'on_point': as_dict.get('onPoint', None),
@@ -215,6 +224,7 @@ class IndicatorOptions(SeriesOptions, StockBaseOptions):
             'connect_ends': as_dict.get('connectEnds', None),
             'drag_drop': as_dict.get('dragDrop', None),
             'negative_color': as_dict.get('negativeColor', None),
+            'point_description_format': as_dict.get('pointDescriptionFormat', None),
             'point_interval': as_dict.get('pointInterval', None),
             'point_interval_unit': as_dict.get('pointIntervalUnit', None),
             'point_placement': as_dict.get('pointPlacement', None),
@@ -347,6 +357,7 @@ class ComparableIndicatorOptions(IndicatorOptions):
             'include_in_data_export': as_dict.get('includeInDataExport', None),
             'keys': as_dict.get('keys', None),
             'label': as_dict.get('label', None),
+            'legend_symbol': as_dict.get('legendSymbol', None),
             'linked_to': as_dict.get('linkedTo', None),
             'marker': as_dict.get('marker', None),
             'on_point': as_dict.get('onPoint', None),
@@ -389,6 +400,7 @@ class ComparableIndicatorOptions(IndicatorOptions):
             'connect_ends': as_dict.get('connectEnds', None),
             'drag_drop': as_dict.get('dragDrop', None),
             'negative_color': as_dict.get('negativeColor', None),
+            'point_description_format': as_dict.get('pointDescriptionFormat', None),
             'point_interval': as_dict.get('pointInterval', None),
             'point_interval_unit': as_dict.get('pointIntervalUnit', None),
             'point_placement': as_dict.get('pointPlacement', None),

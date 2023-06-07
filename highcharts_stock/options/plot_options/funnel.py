@@ -43,6 +43,7 @@ class FunnelOptions(FunnelBase, NonIndicatorOptions):
             'include_in_data_export': as_dict.get('includeInDataExport', None),
             'keys': as_dict.get('keys', None),
             'label': as_dict.get('label', None),
+            'legend_symbol': as_dict.get('legendSymbol', None),
             'linked_to': as_dict.get('linkedTo', None),
             'marker': as_dict.get('marker', None),
             'on_point': as_dict.get('onPoint', None),
@@ -80,6 +81,7 @@ class FunnelOptions(FunnelBase, NonIndicatorOptions):
             'start_angle': as_dict.get('startAngle', None),
             'thickness': as_dict.get('thickness', None),
 
+            'border_radius': as_dict.get('borderRadius', None),
             'height': as_dict.get('height', None),
             'neck_height': as_dict.get('neckHeight', None),
             'neck_width': as_dict.get('neckWidth', None),

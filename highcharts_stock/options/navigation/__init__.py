@@ -9,6 +9,14 @@ from highcharts_stock.options.annotations import NavigationAnnotationOptions
 class Navigation(NavigationBase):
 
     @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'navigation'
+
+    @property
     def annotation_options(self) -> Optional[NavigationAnnotationOptions]:
         """Additional options to be applied to all annotations.
 
