@@ -81,6 +81,7 @@ class FunnelOptions(FunnelBase, NonIndicatorOptions):
             'start_angle': as_dict.get('startAngle', None),
             'thickness': as_dict.get('thickness', None),
 
+            'border_radius': as_dict.get('borderRadius', None),
             'height': as_dict.get('height', None),
             'neck_height': as_dict.get('neckHeight', None),
             'neck_width': as_dict.get('neckWidth', None),
