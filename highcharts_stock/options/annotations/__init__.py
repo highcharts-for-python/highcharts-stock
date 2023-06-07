@@ -31,6 +31,14 @@ class NavigationAnnotationOptions(AnnotationBase):
         super().__init__(**kwargs)
 
     @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'navigation.annotationOptions'
+
+    @property
     def fibonnaci_time_zones(self) -> Optional[FibonacciTimeZonesAnnotation]:
         """A :term:`Fibonacci Time Zones` annotation.
 
@@ -115,6 +123,14 @@ class Annotation(NavigationAnnotationOptions):
         self.vertical_line = kwargs.get('vertical_line', None)
 
         super().__init__(**kwargs)
+
+    @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'annotations'
 
     @property
     def crooked_line(self) -> Optional[CrookedLineAnnotation]:

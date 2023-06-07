@@ -33,6 +33,14 @@ class CandlestickOptions(BaseBarOptions, NonIndicatorOptions):
         super().__init__(**kwargs)
 
     @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'plotOptions.candlestick'
+
+    @property
     def point_val_key(self) -> Optional[str]:
         """Indicates which value position should be represented as the y-axis value of the
         data point. Defaults to ``'close'``.
@@ -109,6 +117,7 @@ class CandlestickOptions(BaseBarOptions, NonIndicatorOptions):
             'include_in_data_export': as_dict.get('includeInDataExport', None),
             'keys': as_dict.get('keys', None),
             'label': as_dict.get('label', None),
+            'legend_symbol': as_dict.get('legendSymbol', None),
             'linked_to': as_dict.get('linkedTo', None),
             'marker': as_dict.get('marker', None),
             'on_point': as_dict.get('onPoint', None),
@@ -144,6 +153,7 @@ class CandlestickOptions(BaseBarOptions, NonIndicatorOptions):
             'linecap': as_dict.get('linecap', None),
             'line_width': as_dict.get('lineWidth', None),
             'negative_color': as_dict.get('negativeColor', None),
+            'point_description_format': as_dict.get('pointDescriptionFormat', None),
             'point_interval': as_dict.get('pointInterval', None),
             'point_interval_unit': as_dict.get('pointIntervalUnit', None),
             'point_placement': as_dict.get('pointPlacement', None),
@@ -216,7 +226,13 @@ class HollowCandlestickOptions(CandlestickOptions):
       :align: center
 
     """
-    pass
+    @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'plotOptions.hollowcandlestick'
 
 
 class HeikinAshiOptions(CandlestickOptions):
@@ -230,4 +246,10 @@ class HeikinAshiOptions(CandlestickOptions):
       :align: center
 
     """
-    pass
+    @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'plotOptions.heikinashi'

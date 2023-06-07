@@ -27,6 +27,14 @@ class RangeSelectorPosition(HighchartsMeta):
         self.y = kwargs.get('y', None)
 
     @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+        
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'rangeSelector'
+
+    @property
     def align(self) -> Optional[str]:
         """The lateral alignment of the sub-component. Defaults to ``'left``` for
         buttons and ``'right'`` for the input box.
