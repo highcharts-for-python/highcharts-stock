@@ -186,6 +186,7 @@ class HeatmapSeries(SeriesBase, HeatmapOptions):
 
             'border_radius': as_dict.get('borderRadius', None),
             'colsize': as_dict.get('colsize', None),
+            'interpolation': as_dict.get('interpolation', None),
             'null_color': as_dict.get('nullColor', None),
             'point_padding': as_dict.get('pointPadding', None),
             'rowsize': as_dict.get('rowsize', None),
@@ -324,6 +325,7 @@ class TilemapSeries(HeatmapSeries, TilemapOptions):
 
             'border_radius': as_dict.get('borderRadius', None),
             'colsize': as_dict.get('colsize', None),
+            'interpolation': as_dict.get('interpolation', None),
             'null_color': as_dict.get('nullColor', None),
             'point_padding': as_dict.get('pointPadding', None),
             'rowsize': as_dict.get('rowsize', None),
