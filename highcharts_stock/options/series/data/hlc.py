@@ -123,7 +123,7 @@ class HLCData(DataBase):
         else:
             if checkers.is_datetime(value):
                 value = validators.datetime(value)
-                value = value.timestamp()
+                value = value.timestamp() * 1000
 
             self._x = validators.numeric(value)
 
