@@ -1,3 +1,10 @@
+Release 1.2.1
+=========================================
+
+* **BUGFIX:** Fixed incorrect ``datetime`` serialization to SECONDS from Unix epoch. Now serializing to JS-compatible MILLISECONDS from Unix epoch.
+
+------------------
+
 Release 1.2.0
 =========================================
 
