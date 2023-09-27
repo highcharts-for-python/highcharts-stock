@@ -6,6 +6,7 @@ from validator_collection import validators, checkers
 from highcharts_stock import constants, errors
 from highcharts_stock.decorators import class_sensitive
 from highcharts_stock.options.series.data.base import DataBase
+from highcharts_stock.options.series.data.collections import DataPointCollection
 from highcharts_stock.options.plot_options.drag_drop import DragDropOptions
 from highcharts_stock.utility_classes.data_labels import DataLabel
 
@@ -183,7 +184,47 @@ class HLCData(DataBase):
         return untrimmed
 
     @classmethod
-    def from_array(cls, value):
+    def _get_supported_dimensions(cls) -> List[int]:
+        """Returns a list of the supported dimensions for the data point.
+        
+        :rtype: :class:`list <python:list>` of :class:`int <python:int>`
+        """
+        return [6, 5, 4, 3]
+
+    @classmethod
+    def from_ndarray(cls, value):
+        """Creates a collection of data points from a `NumPy <https://numpy.org>`__ 
+        :class:`ndarray <numpy:ndarray>` instance.
+        
+        :returns: A collection of data point values.
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+        """
+        return HLCDataCollection.from_ndarray(value)
+    
+    @classmethod
+    def _get_props_from_array(cls, length = None) -> List[str]:
+        """Returns a list of the property names that can be set using the
+        :meth:`.from_array() <highcharts_core.options.series.data.base.DataBase.from_array>`
+        method.
+        
+        :param length: The length of the array, which may determine the properties to 
+          parse. Defaults to :obj:`None <python:None>`, which returns the full list of 
+          properties.
+        :type length: :class:`int <python:int>` or :obj:`None <python:None>`
+        
+        :rtype: :class:`list <python:list>` of :class:`str <python:str>`
+        """
+        prop_list = {
+            None: ['x', 'open', 'high', 'low', 'close', 'name'],
+            6: ['x', 'open', 'high', 'low', 'close', 'name'],
+            5: ['x', 'open', 'high', 'low', 'close'],
+            4: ['x', 'high', 'low', 'close'],
+            3: ['high', 'low', 'close'],
+        }
+        return prop_list[length]
+
+    @classmethod
+    def from_list(cls, value):
         if not value:
             return []
         elif checkers.is_string(value):
@@ -245,15 +286,6 @@ class HLCData(DataBase):
 
         return collection
 
-    def _get_props_from_array(self) -> List[str]:
-        """Returns a list of the property names that can be set using the
-        :meth:`.from_array() <highcharts_core.options.series.data.base.DataBase.from_array>`
-        method.
-        
-        :rtype: :class:`list <python:list>` of :class:`str <python:str>`
-        """
-        return ['x', 'high', 'low', 'close', 'name']
-
     def to_array(self, force_object = False) -> List | Dict:
         """Generate the array representation of the data point (the inversion 
         of 
@@ -301,6 +333,28 @@ class HLCData(DataBase):
             return [high, low, close]
 
         return [x, high, low, close]
+
+
+class HLCDataCollection(DataPointCollection):
+    """A collection of :class:`HLCData` objects.
+
+    .. note::
+    
+      When serializing to JS literals, if possible, the collection is serialized to a primitive
+      array to boost performance within Python *and* JavaScript. However, this may not always be
+      possible if data points have non-array-compliant properties configured (e.g. adjusting their 
+      style, names, identifiers, etc.). If serializing to a primitive array is not possible, the
+      results are serialized as JS literal objects.
+
+    """
+
+    @classmethod
+    def _get_data_point_class(cls):
+        """The Python class to use as the underlying data point within the Collection.
+        
+        :rtype: class object
+        """
+        return HLCData
 
 
 class OHLCData(HLCData):
@@ -381,7 +435,7 @@ class OHLCData(HLCData):
         return untrimmed
 
     @classmethod
-    def from_array(cls, value):
+    def from_list(cls, value):
         if not value:
             return []
         elif checkers.is_string(value):
@@ -440,14 +494,44 @@ class OHLCData(HLCData):
 
         return collection
 
-    def _get_props_from_array(self) -> List[str]:
+    @classmethod
+    def _get_supported_dimensions(cls) -> List[int]:
+        """Returns a list of the supported dimensions for the data point.
+        
+        :rtype: :class:`list <python:list>` of :class:`int <python:int>`
+        """
+        return [6, 5, 4]
+
+    @classmethod
+    def from_ndarray(cls, value):
+        """Creates a collection of data points from a `NumPy <https://numpy.org>`__ 
+        :class:`ndarray <numpy:ndarray>` instance.
+        
+        :returns: A collection of data point values.
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+        """
+        return OHLCDataCollection.from_ndarray(value)
+
+    @classmethod
+    def _get_props_from_array(cls, length = None) -> List[str]:
         """Returns a list of the property names that can be set using the
         :meth:`.from_array() <highcharts_core.options.series.data.base.DataBase.from_array>`
         method.
         
+        :param length: The length of the array, which may determine the properties to 
+          parse. Defaults to :obj:`None <python:None>`, which returns the full list of 
+          properties.
+        :type length: :class:`int <python:int>` or :obj:`None <python:None>`
+        
         :rtype: :class:`list <python:list>` of :class:`str <python:str>`
         """
-        return ['x', 'open', 'high', 'low', 'close', 'name']
+        prop_list = {
+            None: ['x', 'open', 'high', 'low', 'close', 'name'],
+            6: ['x', 'open', 'high', 'low', 'close', 'name'],
+            5: ['x', 'open', 'high', 'low', 'close'],
+            4: ['x', 'high', 'low', 'close'],
+        }
+        return prop_list[length]
 
     def to_array(self, force_object = False) -> List | Dict:
         """Generate the array representation of the data point (the inversion 
@@ -501,3 +585,27 @@ class OHLCData(HLCData):
             return [open, high, low, close]
 
         return [x, open, high, low, close]
+
+
+class OHLCDataCollection(HLCDataCollection):
+    """A collection of :class:`OHLCData` objects.
+
+    .. note::
+    
+      When serializing to JS literals, if possible, the collection is serialized to a primitive
+      array to boost performance within Python *and* JavaScript. However, this may not always be
+      possible if data points have non-array-compliant properties configured (e.g. adjusting their 
+      style, names, identifiers, etc.). If serializing to a primitive array is not possible, the
+      results are serialized as JS literal objects.
+
+    """
+
+    @classmethod
+    def _get_data_point_class(cls):
+        """The Python class to use as the underlying data point within the Collection.
+        
+        :rtype: class object
+        """
+        return OHLCData
+
+
