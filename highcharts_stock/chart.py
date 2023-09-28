@@ -550,8 +550,8 @@ class Chart(ChartBase):
     @classmethod
     def from_csv(cls,
                  as_string_or_file,
-                 property_column_map,
-                 series_type,
+                 property_column_map = None,
+                 series_type = 'line',
                  has_header_row = True,
                  series_kwargs = None,
                  options_kwargs = None,
@@ -563,7 +563,8 @@ class Chart(ChartBase):
                  wrap_all_strings = False,
                  double_wrapper_character_when_nested = False,
                  escape_character = "\\",
-                 is_stock_chart = False):
+                 series_in_rows = False,
+                 **kwargs):
         """Create a new :class:`Chart <highcharts_core.chart.Chart>` instance with
         data populated from a CSV string or file.
 
@@ -607,7 +608,8 @@ class Chart(ChartBase):
           data point property should be set to which CSV column. The keys in the
           :class:`dict <python:dict>` should correspond to properties in the data point
           class, while the value can either be a numerical index (starting with 0) or a
-          :class:`str <python:str>` indicating the label for the CSV column.
+          :class:`str <python:str>` indicating the label for the CSV column. Defaults to
+          :obj:`None <python:None>`.
 
           .. warning::
 
@@ -619,7 +621,7 @@ class Chart(ChartBase):
         :type property_column_map: :class:`dict <python:dict>`
 
         :param series_type: Indicates the series type that should be created from the CSV
-          data.
+          data. Defaults to ``'line'``.
         :type series_type: :class:`str <python:str>`
 
         :param has_header_row: If ``True``, indicates that the first row of
@@ -708,9 +710,13 @@ class Chart(ChartBase):
           which is Python's native escape character).
         :type escape_character: :class:`str <python:str>`
 
-        :param is_stock_chart: If ``True``, indicates that the chart should be
-          instantiated as a **Highcharts Stock for Python** chart. Defaults to ``False``.
-        :type is_stock_chart: :class:`bool <python:bool>`
+        :param series_in_rows: if ``True``, will attempt a streamlined cartesian series
+          with x-values taken from column names, y-values taken from row values, and
+          the series name taken from the row index. Defaults to ``False``.
+        :type series_in_rows: :class:`bool <python:bool>`
+
+        :param **kwargs: Remaining keyword arguments will be attempted on the resulting
+          :term:`series` instance and the data points it contains.
 
         :returns: A :class:`Chart <highcharts_core.chart.Chart>` instance with its
           data populated from the CSV data.
@@ -720,25 +726,51 @@ class Chart(ChartBase):
           CSV columns by their label, but the CSV data does not contain a header row
 
         """
-        chart_kwargs = validators.dict(chart_kwargs, allow_empty = True) or {}
+        series_type = validators.string(series_type, allow_empty = False)
+        series_type = series_type.lower()
+        if series_type not in SERIES_CLASSES:
+            raise errors.HighchartsValueError(f'series_type expects a valid Highcharts '
+                                              f'series type. Received: {series_type}')
 
-        options = cls._get_options_obj(series_type, options_kwargs)
+        options_kwargs = validators.dict(options_kwargs, allow_empty = True) or {}
+        chart_kwargs = validators.dict(chart_kwargs, allow_empty = True) or {}
 
         series_cls = SERIES_CLASSES.get(series_type, None)
 
-        series = series_cls.from_csv(as_string_or_file,
-                                     property_column_map,
-                                     has_header_row = has_header_row,
-                                     series_kwargs = series_kwargs,
-                                     delimiter = delimiter,
-                                     null_text = null_text,
-                                     wrapper_character = wrapper_character,
-                                     line_terminator = line_terminator,
-                                     wrap_all_strings = wrap_all_strings,
-                                     double_wrapper_character_when_nested = double_wrapper_character_when_nested,
-                                     escape_character = escape_character)
+        if series_in_rows:
+            series = series_cls.from_csv_in_rows(
+                as_string_or_file,
+                has_header_row = has_header_row,
+                series_kwargs = series_kwargs,
+                delimiter = delimiter,
+                null_text = null_text,
+                wrapper_character = wrapper_character,
+                line_terminator = line_terminator,
+                wrap_all_strings = wrap_all_strings,
+                double_wrapper_character_when_nested = double_wrapper_character_when_nested,
+                escape_character = escape_character,
+                **kwargs
+            )
+        else:
+            series = series_cls.from_csv(as_string_or_file,
+                                         property_column_map = property_column_map,
+                                         has_header_row = has_header_row,
+                                         series_kwargs = series_kwargs,
+                                         delimiter = delimiter,
+                                         null_text = null_text,
+                                         wrapper_character = wrapper_character,
+                                         line_terminator = line_terminator,
+                                         wrap_all_strings = wrap_all_strings,
+                                         double_wrapper_character_when_nested = double_wrapper_character_when_nested,
+                                         escape_character = escape_character,
+                                         **kwargs)
 
-        options.series = [series]
+        if not isinstance(series, list):
+            series = [series]
+
+        options_kwargs['series'] = series
+
+        options = cls._get_options_obj(series_type, options_kwargs)
 
         instance = cls(**chart_kwargs)
         instance.options = options
