@@ -20,6 +20,8 @@ STANDARD_PARAMS = [
       'text': 'Button Label',
       'theme': {
           'fill': '#fff',
+          'padding': None,
+          'states': None,
           'stroke': '#ccc'
       },
       'y': 0
@@ -81,6 +83,8 @@ STANDARD_PARAMS_2 = [
       'text': 'Button Label',
       'theme': {
           'fill': '#fff',
+          'padding': None,
+          'states': None,
           'stroke': '#ccc'
       },
       'title_key': 'somevalue',
