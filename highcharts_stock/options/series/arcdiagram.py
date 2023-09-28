@@ -8,8 +8,8 @@ from highcharts_stock.options.plot_options.arcdiagram import ArcDiagramOptions
 
 from highcharts_stock import errors
 from highcharts_stock.decorators import class_sensitive
-from highcharts_stock.options.series.data.arcdiagram import ArcDiagramData
-from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.arcdiagram import ArcDiagramData, ArcDiagramDataCollection
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarray
 from highcharts_stock.utility_classes.nodes import NodeOptions
 
 
@@ -37,19 +37,22 @@ class ArcDiagramSeries(SeriesBase, ArcDiagramOptions):
         super().__init__(**kwargs)
 
     @property
-    def data(self) -> Optional[List[ArcDiagramData]]:
+    def data(self) -> Optional[List[ArcDiagramData] | ArcDiagramDataCollection]:
         """The collection of data points for the series. Defaults to
         :obj:`None <python:None>`.
 
         :rtype: :class:`list <python:list>` of :class:`ArcDiagramData` or
-          :obj:`None <python:None>`
+          :class:`ArcDiagramDataCollection <highcharts_core.options.series.data.arcdiagram.ArcDiagramDataCollection>`
+          or :obj:`None <python:None>`
         """
         return self._data
 
     @data.setter
-    @class_sensitive(ArcDiagramData, force_iterable = True)
     def data(self, value):
-        self._data = value
+        if not is_ndarray(value) and not value:
+            self._data = None
+        else:
+            self._data = ArcDiagramData.from_array(value)
 
     @property
     def link_weight(self) -> Optional[int | float | Decimal]:
@@ -209,3 +212,21 @@ class ArcDiagramSeries(SeriesBase, ArcDiagramOptions):
             untrimmed[key] = parent_as_dict[key]
 
         return untrimmed
+
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return ArcDiagramDataCollection
+
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return ArcDiagramData

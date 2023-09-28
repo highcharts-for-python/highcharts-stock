@@ -1,8 +1,8 @@
 from typing import Optional, List
 
 from highcharts_stock.decorators import class_sensitive
-from highcharts_stock.options.series.data.connections import ConnectionData
-from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.connections import ConnectionData, ConnectionDataCollection
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarray
 from highcharts_stock.options.series.base import SeriesBase
 from highcharts_stock.options.plot_options.networkgraph import NetworkGraphOptions
 
@@ -23,7 +23,7 @@ class NetworkGraphSeries(SeriesBase, NetworkGraphOptions):
         super().__init__(**kwargs)
 
     @property
-    def data(self) -> Optional[List[ConnectionData]]:
+    def data(self) -> Optional[List[ConnectionData] | ConnectionDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -37,6 +37,7 @@ class NetworkGraphSeries(SeriesBase, NetworkGraphOptions):
             instances coercable to a :class:`ConnectionData` instance.
 
         :rtype: :class:`list <python:list>` of :class:`ConnectionData` or
+          :class:`ConnectionDataCollection` or
           :obj:`None <python:None>`
         """
         return self._data
@@ -150,3 +151,21 @@ class NetworkGraphSeries(SeriesBase, NetworkGraphOptions):
         untrimmed = mro__to_untrimmed_dict(self, in_cls = in_cls)
 
         return untrimmed
+
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return ConnectionDataCollection
+    
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return ConnectionData

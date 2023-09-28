@@ -1,7 +1,8 @@
 from typing import Optional, List
 
-from highcharts_stock.options.series.data.connections import OutgoingWeightedConnectionData
-from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.connections import (OutgoingWeightedConnectionData,
+                                                              OutgoingWeightedConnectionDataCollection)
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarray
 
 from highcharts_stock.options.series.dependencywheel import DependencyWheelSeries
 from highcharts_stock.options.plot_options.sankey import SankeyOptions
@@ -39,7 +40,7 @@ class SankeySeries(DependencyWheelSeries, SankeyOptions):
         super().__init__(**kwargs)
 
     @property
-    def data(self) -> Optional[List[OutgoingWeightedConnectionData]]:
+    def data(self) -> Optional[List[OutgoingWeightedConnectionData] | OutgoingWeightedConnectionDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -55,13 +56,14 @@ class SankeySeries(DependencyWheelSeries, SankeyOptions):
             :class:`OutgoingWeightedConnectionData` instances.
 
         :rtype: :class:`list <python:list>` of :class:`OutgoingWeightedConnectionData` or
+          :class:`OutgoingWeightedConnectionDataCollection` or
           :obj:`None <python:None>`
         """
         return self._data
 
     @data.setter
     def data(self, value):
-        if not value:
+        if not is_ndarray(value) and not value:
             self._data = None
         else:
             self._data = OutgoingWeightedConnectionData.from_array(value)
@@ -184,3 +186,21 @@ class SankeySeries(DependencyWheelSeries, SankeyOptions):
         untrimmed['nodes'] = self.nodes
 
         return untrimmed
+
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return OutgoingWeightedConnectionDataCollection
+      
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return OutgoingWeightedConnectionData

@@ -1,9 +1,12 @@
 from typing import Optional, List
-from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarray
 
 from highcharts_stock.options.series.base import SeriesBase
 from highcharts_stock.options.plot_options.hlc import HLCOptions, OHLCOptions
-from highcharts_stock.options.series.data.hlc import HLCData, OHLCData
+from highcharts_stock.options.series.data.hlc import (HLCData,
+                                                      HLCDataCollection,
+                                                      OHLCData,
+                                                      OHLCDataCollection)
 
 
 class HLCSeries(SeriesBase, HLCOptions):
@@ -20,7 +23,7 @@ class HLCSeries(SeriesBase, HLCOptions):
         super().__init__(**kwargs)
 
     @property
-    def data(self) -> Optional[List[HLCData]]:
+    def data(self) -> Optional[List[HLCData] | HLCDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -123,13 +126,14 @@ class HLCSeries(SeriesBase, HLCOptions):
             coercable.
 
         :rtype: :class:`list <python:list>` of :class:`HLCData` or
+          :class:`HLCDataCollection` or
           :obj:`None <python:None>`
         """
         return self._data
 
     @data.setter
     def data(self, value):
-        if not value:
+        if not is_ndarray(value) and not value:
             self._data = None
         else:
             self._data = HLCData.from_array(value)
@@ -253,6 +257,24 @@ class HLCSeries(SeriesBase, HLCOptions):
 
         return untrimmed
 
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return HLCDataCollection
+
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return HLCData
+
 
 class OHLCSeries(SeriesBase, OHLCOptions):
     """General options to apply to a :term:`OHLC` series type. An OHLC chart is a
@@ -269,7 +291,7 @@ class OHLCSeries(SeriesBase, OHLCOptions):
         super().__init__(**kwargs)
 
     @property
-    def data(self) -> Optional[List[OHLCData]]:
+    def data(self) -> Optional[List[OHLCData] | OHLCDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -352,13 +374,14 @@ class OHLCSeries(SeriesBase, OHLCOptions):
             coercable.
 
         :rtype: :class:`list <python:list>` of :class:`OHLCData` or
+          :class:`OHLCDataCollection` or
           :obj:`None <python:None>`
         """
         return self._data
 
     @data.setter
     def data(self, value):
-        if not value:
+        if not is_ndarray(value) and not value:
             self._data = None
         else:
             self._data = OHLCData.from_array(value)
@@ -481,3 +504,22 @@ class OHLCSeries(SeriesBase, OHLCOptions):
         untrimmed = mro__to_untrimmed_dict(self, in_cls = in_cls) or {}
 
         return untrimmed
+
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return OHLCDataCollection
+
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return OHLCData
+
