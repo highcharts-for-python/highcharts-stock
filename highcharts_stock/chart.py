@@ -563,6 +563,7 @@ class Chart(ChartBase):
                  wrap_all_strings = False,
                  double_wrapper_character_when_nested = False,
                  escape_character = "\\",
+                 is_stock_chart = False,
                  series_in_rows = False,
                  **kwargs):
         """Create a new :class:`Chart <highcharts_core.chart.Chart>` instance with
@@ -709,6 +710,10 @@ class Chart(ChartBase):
           wrapped in quotation marks. Defaults to ``\\\\`` (which is Python for ``'\\'``,
           which is Python's native escape character).
         :type escape_character: :class:`str <python:str>`
+        
+        :param is_stock_chart: If ``True``, indicates that the chart should be instantiated
+          as a **Highcharts Stock for Python** chart. Defaults to ``False``.
+        :type is_stock_chart: :class:`bool <python:bool>`
 
         :param series_in_rows: if ``True``, will attempt a streamlined cartesian series
           with x-values taken from column names, y-values taken from row values, and
@@ -734,6 +739,8 @@ class Chart(ChartBase):
 
         options_kwargs = validators.dict(options_kwargs, allow_empty = True) or {}
         chart_kwargs = validators.dict(chart_kwargs, allow_empty = True) or {}
+
+        chart_kwargs['is_stock_chart'] = bool(is_stock_chart)
 
         series_cls = SERIES_CLASSES.get(series_type, None)
 
