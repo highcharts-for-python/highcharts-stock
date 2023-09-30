@@ -474,6 +474,111 @@ class Chart(ChartBase):
         self.options.series = series_list
 
     @classmethod
+    def from_array(cls,
+                   value,
+                   series_type = 'line',
+                   series_kwargs = None,
+                   options_kwargs = None,
+                   chart_kwargs = None,
+                   is_stock_chart = False):
+        """Create a :class:`Chart <highcharts_core.chart.Chart>` instance with
+        one series populated from the array contained in ``value``.
+        
+        .. seealso::
+
+          The specific structure of the expected array is highly dependent on the type of data
+          point that the series needs, which itself is dependent on the series type itself.
+
+          Please review the detailed :ref:`series documentation <series_documentation>` for
+          series type-specific details of relevant array structures.
+
+        :param value: The array to use to populate the series data.
+        :type value: iterable
+        
+        :param series_type: Indicates the series type that should be created from the array
+          data. Defaults to ``'line'``.
+        :type series_type: :class:`str <python:str>`
+        
+        :param series_kwargs: An optional :class:`dict <python:dict>` containing keyword
+          arguments that should be used when instantiating the series instance. Defaults
+          to :obj:`None <python:None>`.
+
+          .. warning::
+
+            If ``series_kwargs`` contains a ``data`` key, its value will be *overwritten*.
+            The ``data`` value will be created from ``df`` instead.
+
+        :type series_kwargs: :class:`dict <python:dict>`
+
+        :param options_kwargs: An optional :class:`dict <python:dict>` containing keyword
+          arguments that should be used when instantiating the :class:`HighchartsOptions`
+          instance. Defaults to :obj:`None <python:None>`.
+
+          .. warning::
+
+            If ``options_kwargs`` contains a ``series`` key, the ``series`` value will be
+            *overwritten*. The ``series`` value will be created from the data in ``df``.
+
+        :type options_kwargs: :class:`dict <python:dict>` or :obj:`None <python:None>`
+
+        :param chart_kwargs: An optional :class:`dict <python:dict>` containing keyword
+          arguments that should be used when instantiating the :class:`Chart` instance.
+          Defaults to :obj:`None <python:None>`.
+
+          .. warning::
+
+            If ``chart_kwargs`` contains an ``options`` key, ``options`` will be
+            *overwritten*. The ``options`` value will be created from the
+            ``options_kwargs`` and the data in ``df`` instead.
+
+        :type chart_kwargs: :class:`dict <python:dict>` or :obj:`None <python:None>`
+
+        :param is_stock_chart: if ``True``, enforces the use of 
+          :class:`HighchartsStockOptions <highcharts_stock.options.HighchartsStockOptions>`.
+          If ``False``, applies 
+          :class:`HighchartsOptions <highcharts_stock.options.HighchartsOptions>`.
+          Defaults to ``False``.
+
+          .. note::
+
+            The value given to this argument will override any values specified in
+            ``chart_kwargs``.
+
+        :type is_stock_chart: :class:`bool <python:bool>`
+        
+        :returns: A :class:`Chart <highcharts_core.chart.Chart>` instance with its
+          data populated from the data in ``value``.
+        :rtype: :class:`Chart <highcharts_core.chart.Chart>`
+        
+        """
+        series_type = validators.string(series_type, allow_empty = False)
+        series_type = series_type.lower()
+        if series_type not in SERIES_CLASSES:
+            raise errors.HighchartsValueError(f'series_type expects a valid Highcharts '
+                                              f'series type. Received: {series_type}')
+
+        series_kwargs = validators.dict(series_kwargs, allow_empty = True) or {}
+        options_kwargs = validators.dict(options_kwargs, allow_empty = True) or {}
+        chart_kwargs = validators.dict(chart_kwargs, allow_empty = True) or {}
+
+        series_cls = SERIES_CLASSES.get(series_type, None)
+
+        series = series_cls.from_array(value, series_kwargs = series_kwargs)
+
+        options_kwargs['series'] = [series]
+        chart_kwargs['is_stock_chart'] = is_stock_chart
+
+        if is_stock_chart:
+            options = HighchartsStockOptions(**options_kwargs)
+        else:
+            options = HighchartsOptions(**options_kwargs)
+
+        instance = cls(**chart_kwargs)
+        instance.options = options
+
+        return instance
+
+    @classmethod
     def from_series(cls, *series, kwargs = None):
         """Creates a new :class:`Chart <highcharts_core.chart.Chart>` instance populated
         with ``series``.
