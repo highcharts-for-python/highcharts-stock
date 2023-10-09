@@ -1,5 +1,5 @@
 ##########################################################################################
-:mod:`.base <highcharts_stock.options.series.data.base>`
+:mod:`.collections <highcharts_stock.options.series.data.collections>`
 ##########################################################################################
 
 .. contents:: Module Contents
@@ -9,19 +9,19 @@
 
 --------------
 
-.. module:: highcharts_core.options.series.data.base
+.. module:: highcharts_core.options.series.data.collections
 
 ********************************************************************************************************************
-class: :class:`DataBase <highcharts_stock.options.series.data.base.DataBase>`
+class: :class:`DataPointCollection <highcharts_stock.options.series.data.collections.DataPointCollection>`
 ********************************************************************************************************************
 
-.. autoclass:: DataBase
+.. autoclass:: DataPointCollection
   :members:
   :inherited-members:
 
   .. collapse:: Class Inheritance
 
-    .. inheritance-diagram:: DataBase
+    .. inheritance-diagram:: DataPointCollection
       :top-classes: highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 

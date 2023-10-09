@@ -30,7 +30,7 @@ class: :class:`DataLabel <highcharts_stock.utility_classes.data_labels.DataLabel
 -----------------
 
 ********************************************************************************************************************
-class: :class:`OrganizationDataLabel <highcharts_core.utility_classes.data_labels.OrganizationDataLabel>`
+class: :class:`OrganizationDataLabel <highcharts_stock.utility_classes.data_labels.OrganizationDataLabel>`
 ********************************************************************************************************************
 
 .. autoclass:: OrganizationDataLabel
@@ -48,7 +48,7 @@ class: :class:`OrganizationDataLabel <highcharts_core.utility_classes.data_label
 -----------------
 
 ********************************************************************************************************************
-class: :class:`SunburstDataLabel <highcharts_core.utility_classes.data_labels.SunburstDataLabel>`
+class: :class:`SunburstDataLabel <highcharts_stock.utility_classes.data_labels.SunburstDataLabel>`
 ********************************************************************************************************************
 
 .. autoclass:: SunburstDataLabel

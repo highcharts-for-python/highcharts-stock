@@ -903,17 +903,17 @@ class Chart(ChartBase):
                     **kwargs):
         """Create a :class:`Chart <highcharts_core.chart.Chart>` instance whose
         data is populated from a `pandas <https://pandas.pydata.org/>`_
-        :class:`DataFrame <pandas:DataFrame>`.
+        :class:`DataFrame <pandas:pandas.DataFrame>`.
 
-        :param df: The :class:`DataFrame <pandas:DataFrame>` from which data should be
+        :param df: The :class:`DataFrame <pandas:pandas.DataFrame>` from which data should be
           loaded.
-        :type df: :class:`DataFrame <pandas:DataFrame>`
+        :type df: :class:`DataFrame <pandas:pandas.DataFrame>`
 
         :param property_map: A :class:`dict <python:dict>` used to indicate which
           data point property should be set to which column in ``df``. The keys in the
           :class:`dict <python:dict>` should correspond to properties in the data point
           class, while the value should indicate the label for the
-          :class:`DataFrame <pandas:DataFrame>` column. Defaults to 
+          :class:`DataFrame <pandas:pandas.DataFrame>` column. Defaults to 
           :obj:`None <python:None>`.
         :type property_map: :class:`dict <python:dict>` or :obj:`None <python:None>`
 
