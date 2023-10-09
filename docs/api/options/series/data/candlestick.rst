@@ -26,3 +26,23 @@ class: :class:`CandlestickData <highcharts_stock.options.series.data.candlestick
       :parts: -1
 
   |
+
+--------------
+
+.. module:: highcharts_stock.options.series.data.candlestick
+
+************************************************************************************************************************
+class: :class:`CandlestickDataCollection <highcharts_stock.options.series.data.candlestick.CandlestickDataCollection>`
+************************************************************************************************************************
+
+.. autoclass:: CandlestickDataCollection
+  :members:
+  :inherited-members:
+
+  .. collapse:: Class Inheritance
+
+    .. inheritance-diagram:: CandlestickDataCollection
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :parts: -1
+
+  |

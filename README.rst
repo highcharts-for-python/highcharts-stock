@@ -389,6 +389,13 @@ that will render the chart wherever it is you want it to go:
     my_image_bytes = my_chart.download_chart(filename = 'my_target_file.png',
                                              format = 'png')
 
+8. Render Your Chart in a Jupyter Notebook
+===============================================
+
+  .. code-block:: python
+
+    my_chart.display()
+
 --------------
 
 ***********************
