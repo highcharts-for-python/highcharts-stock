@@ -221,7 +221,7 @@ class HLCData(DataBase):
             4: ['x', 'high', 'low', 'close'],
             3: ['high', 'low', 'close'],
         }
-        return prop_list[length]
+        return cls._get_props_from_array_helper(prop_list, length)
 
     @classmethod
     def from_list(cls, value):

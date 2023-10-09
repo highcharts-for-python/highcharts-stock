@@ -203,7 +203,7 @@ def reduce_to_two_columns(df):
     ('test-data-files/nst-est2019-01.csv',
      {},
      prep_df,
-     5,
+     10,
      57,
      None),
 
@@ -215,7 +215,7 @@ def reduce_to_two_columns(df):
      None,
      11,
      57,
-     None),
+     TypeError),
     
 ])
 def test_from_pandas(run_pandas_tests,
@@ -278,7 +278,7 @@ def test_from_csv_in_rows(input_files, filename, expected_series, expected_data_
      {
          'wrapper_character': '"'
      },
-     11,
+     10,
      57,
      None),
     ('test-data-files/nst-est2019-01.csv',
@@ -371,7 +371,7 @@ def test_from_csv_in_rows(input_files, filename, expected_series, expected_data_
      {
          'wrapper_character': '"'
      },
-     5,
+     9,
      57,
      None),
 
@@ -383,7 +383,7 @@ def test_from_csv_in_rows(input_files, filename, expected_series, expected_data_
      {
          'wrapper_character': '"'
      },
-     11,
+     10,
      57,
      None),
     
@@ -459,7 +459,11 @@ def test_from_array(value, expected_shape, has_ndarray, has_data_points, error):
             data = result.options.series[0].data
             if HAS_NUMPY:
                 assert data.ndarray is not None
-                assert data.ndarray.shape == expected_shape
+                assert isinstance(data.ndarray, dict) is True
+                for key in data.ndarray:
+                    assert data.ndarray[key] is not None
+                    assert isinstance(data.ndarray[key], np.ndarray) is True
+                    assert data.ndarray[key].shape[0] == expected_shape[0]
             else:
                 assert data.array is not None or data.data_points is not None
                 if data.array:
