@@ -1,7 +1,7 @@
 from typing import Optional, List
 
-from highcharts_stock.options.series.data.vector import VectorData
-from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.vector import VectorData, VectorDataCollection
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarray
 
 from highcharts_stock.options.series.base import SeriesBase
 from highcharts_stock.options.plot_options.vector import VectorOptions
@@ -23,7 +23,7 @@ class VectorSeries(SeriesBase, VectorOptions):
         super().__init__(**kwargs)
 
     @property
-    def data(self) -> Optional[List[VectorData]]:
+    def data(self) -> Optional[List[VectorData] | VectorDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -54,13 +54,14 @@ class VectorSeries(SeriesBase, VectorOptions):
             A one-dimensional collection of :class:`VectorData` objects.
 
         :rtype: :class:`list <python:list>` of :class:`VectorData` or
+          :class:`VectorDataCollection` or
           :obj:`None <python:None>`
         """
         return self._data
 
     @data.setter
     def data(self, value):
-        if not value:
+        if not is_ndarray(value) and not value:
             self._data = None
         else:
             self._data = VectorData.from_array(value)
@@ -169,3 +170,21 @@ class VectorSeries(SeriesBase, VectorOptions):
         untrimmed = mro__to_untrimmed_dict(self, in_cls = in_cls)
 
         return untrimmed
+
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return VectorDataCollection
+      
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return VectorData

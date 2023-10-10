@@ -9,7 +9,7 @@
 
 --------------
 
-.. module:: highcharts_stock.options.series.data.wordcloud
+.. module:: highcharts_core.options.series.data.wordcloud
 
 ********************************************************************************************************************
 class: :class:`WordcloudData <highcharts_stock.options.series.data.wordcloud.WordcloudData>`
@@ -22,7 +22,25 @@ class: :class:`WordcloudData <highcharts_stock.options.series.data.wordcloud.Wor
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: WordcloudData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_core.metaclasses.HighchartsMeta
+      :parts: -1
+
+  |
+
+--------------
+
+********************************************************************************************************************
+class: :class:`WordcloudDataCollection <highcharts_stock.options.series.data.wordcloud.WordcloudDataCollection>`
+********************************************************************************************************************
+
+.. autoclass:: WordcloudDataCollection
+  :members:
+  :inherited-members:
+
+  .. collapse:: Class Inheritance
+
+    .. inheritance-diagram:: WordcloudDataCollection
+      :top-classes: highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

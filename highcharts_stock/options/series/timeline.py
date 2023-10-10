@@ -1,7 +1,7 @@
 from typing import Optional, List
 
-from highcharts_stock.options.series.data.single_point import LabeledSingleXData
-from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.single_point import LabeledSingleXData, LabeledSingleXDataCollection
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarray
 
 from highcharts_stock.options.series.base import SeriesBase
 from highcharts_stock.options.plot_options.timeline import TimelineOptions
@@ -38,7 +38,7 @@ class TimelineSeries(SeriesBase, TimelineOptions):
         super().__init__(**kwargs)
 
     @property
-    def data(self) -> Optional[List[LabeledSingleXData]]:
+    def data(self) -> Optional[List[LabeledSingleXData] | LabeledSingleXDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -52,13 +52,14 @@ class TimelineSeries(SeriesBase, TimelineOptions):
             A one-dimensional collection of :class:`LabeledSingleXData` objects.
 
         :rtype: :class:`list <python:list>` of :class:`LabeledSingleXData` or
+          :class:`LabelSingleXDataCollection` or
           :obj:`None <python:None>`
         """
         return self._data
 
     @data.setter
     def data(self, value):
-        if not value:
+        if not is_ndarray(value) and not value:
             self._data = None
         else:
             self._data = LabeledSingleXData.from_array(value)
@@ -166,3 +167,21 @@ class TimelineSeries(SeriesBase, TimelineOptions):
         untrimmed = mro__to_untrimmed_dict(self, in_cls = in_cls)
 
         return untrimmed
+
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return LabeledSingleXDataCollection
+      
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return LabeledSingleXData

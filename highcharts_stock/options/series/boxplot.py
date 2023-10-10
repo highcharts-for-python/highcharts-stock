@@ -1,8 +1,8 @@
 from typing import Optional, List
 
-from highcharts_stock.options.series.data.boxplot import BoxPlotData
-from highcharts_stock.options.series.data.range import RangeData
-from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.boxplot import BoxPlotData, BoxPlotDataCollection
+from highcharts_stock.options.series.data.range import RangeData, RangeDataCollection
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarray
 
 from highcharts_stock.options.series.bar import BarSeries
 from highcharts_stock.options.plot_options.boxplot import BoxPlotOptions
@@ -30,7 +30,7 @@ class BoxPlotSeries(BarSeries, BoxPlotOptions):
         super().__init__(**kwargs)
 
     @property
-    def data(self) -> Optional[List[BoxPlotData]]:
+    def data(self) -> Optional[List[BoxPlotData] | BoxPlotDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -105,13 +105,14 @@ class BoxPlotSeries(BarSeries, BoxPlotOptions):
             A one-dimensional collection of :class:`BoxPlotData` objects.
 
         :rtype: :class:`list <python:list>` of :class:`BoxPlotData` or
+          :class:`BoxPlotDataCollection` or
           :obj:`None <python:None>`
         """
         return self._data
 
     @data.setter
     def data(self, value):
-        if not value:
+        if not is_ndarray(value) and not value:
             self._data = None
         else:
             self._data = BoxPlotData.from_array(value)
@@ -250,6 +251,24 @@ class BoxPlotSeries(BarSeries, BoxPlotOptions):
 
         return untrimmed
 
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return BoxPlotDataCollection
+    
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return BoxPlotData
+
 
 class ErrorBarSeries(BoxPlotSeries):
     """Options to configure an Error Bar series.
@@ -264,7 +283,7 @@ class ErrorBarSeries(BoxPlotSeries):
     """
 
     @property
-    def data(self) -> Optional[List[RangeData]]:
+    def data(self) -> Optional[List[RangeData] | RangeDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -333,13 +352,32 @@ class ErrorBarSeries(BoxPlotSeries):
             A one-dimensional collection of :class:`RangeData` objects.
 
         :rtype: :class:`list <python:list>` of :class:`RangeData` or
+          :class:`RangeDataCollection` or
           :obj:`None <python:None>`
         """
         return self._data
 
     @data.setter
     def data(self, value):
-        if not value:
+        if not is_ndarray(value) and not value:
             self._data = None
         else:
             self._data = RangeData.from_array(value)
+
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return RangeDataCollection
+
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return RangeData

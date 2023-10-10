@@ -1,10 +1,10 @@
-If you have an existing **Highcharts Stock for Python** instance, you can copy its
+If you have an existing **Highcharts for Python** instance, you can copy its
 properties to another object using the ``.copy()`` method. You can therefore set up
 one chart, and then copy its properties to other chart objects with one method call.
 
   .. code-block:: python
 
-    type_1_chart = Chart.from_js_literal('../../project_resources/highcharts_config/hlc-template-01.js')
+    type_1_chart = Chart.from_js_literal('../../project_resources/highcharts_config/line-template-01.js')
     other_chart = type_1_chart.copy(other_chart, overwrite = True)
 
   .. tip::
@@ -19,7 +19,7 @@ one chart, and then copy its properties to other chart objects with one method c
 
         other_chart = Chart()
         other_chart.add_series(
-          HLCSeries.from_csv('../../project_resources/data_files/data-file-02.csv')
+          LineSeries.from_csv('../../project_resources/data_files/data-file-02.csv')
         )
 
         other_chart = type_1_chart.copy(other_chart,

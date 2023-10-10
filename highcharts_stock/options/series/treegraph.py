@@ -1,9 +1,9 @@
 from typing import Optional, List
 
 from highcharts_stock.options.series.base import SeriesBase
-from highcharts_stock.options.series.data.treegraph import TreegraphData
+from highcharts_stock.options.series.data.treegraph import TreegraphData, TreegraphDataCollection
 from highcharts_stock.options.plot_options.treegraph import TreegraphOptions
-from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarray
 
 
 class TreegraphSeries(SeriesBase, TreegraphOptions):
@@ -22,7 +22,7 @@ class TreegraphSeries(SeriesBase, TreegraphOptions):
         super().__init__(**kwargs)
 
     @property
-    def data(self) -> Optional[List[TreegraphData]]:
+    def data(self) -> Optional[List[TreegraphData] | TreegraphDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -51,13 +51,14 @@ class TreegraphSeries(SeriesBase, TreegraphOptions):
             :class:`dict <python:dict>` instances coercable to :class:`TreegraphData`
 
         :rtype: :class:`list <python:list>` of :class:`TreegraphData` or
+          :class:`TreegraphDataCollection` or
           :obj:`None <python:None>`
         """
         return self._data
 
     @data.setter
     def data(self, value):
-        if not value:
+        if not is_ndarray(value) and not value:
             self._data = None
         else:
             self._data = TreegraphData.from_array(value)
@@ -137,3 +138,21 @@ class TreegraphSeries(SeriesBase, TreegraphOptions):
         untrimmed = mro__to_untrimmed_dict(self, in_cls = in_cls) or {}
 
         return untrimmed
+
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return TreegraphDataCollection
+      
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return TreegraphData

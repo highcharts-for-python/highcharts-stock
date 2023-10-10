@@ -184,3 +184,4 @@ class BellCurveSeries(AreaSeries, BellCurveOptions):
             untrimmed[key] = parents_as_dict[key]
 
         return untrimmed
+

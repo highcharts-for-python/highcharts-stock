@@ -1,7 +1,7 @@
 from typing import Optional, List
 
-from highcharts_stock.options.series.data.wordcloud import WordcloudData
-from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.wordcloud import WordcloudData, WordcloudDataCollection
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarray
 from highcharts_stock.options.series.base import SeriesBase
 from highcharts_stock.options.plot_options.wordcloud import WordcloudOptions
 
@@ -22,7 +22,7 @@ class WordcloudSeries(SeriesBase, WordcloudOptions):
         super().__init__(**kwargs)
 
     @property
-    def data(self) -> Optional[List[WordcloudData]]:
+    def data(self) -> Optional[List[WordcloudData] | WordcloudDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -37,13 +37,14 @@ class WordcloudSeries(SeriesBase, WordcloudOptions):
             coercable to :class:`WordcloudData`.
 
         :rtype: :class:`list <python:list>` of :class:`WordcloudData` or
+          :class:`WordcloudDataCollection` or
           :obj:`None <python:None>`
         """
         return self._data
 
     @data.setter
     def data(self, value):
-        if not value:
+        if not is_ndarray(value) and not value:
             self._data = None
         else:
             self._data = WordcloudData.from_array(value)
@@ -166,3 +167,21 @@ class WordcloudSeries(SeriesBase, WordcloudOptions):
         untrimmed = mro__to_untrimmed_dict(self, in_cls = in_cls) or {}
 
         return untrimmed
+
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return WordcloudDataCollection
+      
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return WordcloudData

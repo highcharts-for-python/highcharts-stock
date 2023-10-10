@@ -4,7 +4,7 @@
 
   We really like to use JS literals written as separate files in our codebase. It
   makes it super simple to instantiate a
-  :class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
+  :class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
   instance with one method call.
 
 Let's say you organize your files like so:
@@ -51,17 +51,17 @@ visualizations. This file might look something like this:
     :language: javascript
 
 Now with this file, you can easily create a
-:class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
+:class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
 instance by executing:
 
   .. code-block:: python
 
-    from highcharts_stock.highcharts import SharedStockOptions
+    from highcharts_stock.highcharts import SharedOptions
 
-    my_shared_options = SharedStockOptions.from_js_literal('../../project_resources/highcharts_config/shared_options.js')
+    my_shared_options = SharedOptions.from_js_literal('../../project_resources/highcharts_config/shared_options.js')
 
 And that's it! Now you have a
-:class:`SharedStockOptions <highcharts_stock.global_options.shared_options.SharedStockOptions>`
+:class:`SharedOptions <highcharts_stock.global_options.shared_options.SharedOptions>`
 instance that can be used to apply your configuration standards to all of your charts.
 You can do that by delivering its JavaScript output to your front-end by calling:
 
