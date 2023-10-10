@@ -101,7 +101,7 @@ class in **Highcharts Stock for Python**. You can find the complete list in our
 comprehensive :doc:`Highcharts Stock for Python API Reference <api>`.
 
 These classes generally inherit from the
-:class:`HighchartsMeta <highcharts_core:highcharts_core.metaclasses.HighchartsMeta>` metaclass, which
+:class:`HighchartsMeta <highcharts_core:highcharts_stock.metaclasses.HighchartsMeta>` metaclass, which
 provides each class with a number of standard methods. These methods are the "workhorses"
 of **Highcharts for Python** and you will be relying heavily on them when using any of the
 libraries in the toolkit. Thankfully, their signatures and behavior is consistent - even 
@@ -386,97 +386,154 @@ As a result, `Highcharts (JS) <https://www.highcharts.com>`__ and
 **Highcharts for Python** both represent the data points in series as a list of data point
 objects in the ``data`` property within the series:
 
-.. list-table::
-  :widths: 50 50
-  :header-rows: 1
+    .. list-table::
+      :widths: 50 50
+      :header-rows: 1
 
-  * - Highcharts (JS)
-    - Highcharts for Python
-  * - .. code-block:: javascript
+      * - Highcharts (JS)
+        - Highcharts for Python
+      * - .. code-block:: javascript
 
-        // Example Series Object
-        // (for a Line series type):
-        {
-          data: [
+            // Example Series Object
+            // (for a Line series type):
             {
-              id: 'first-data-point',
-              x: 1,
-              y: 123,
+              data: [
+                {
+                  id: 'first-data-point',
+                  x: 1,
+                  y: 123,
+                  // ...
+                  // optional additional properties
+                  // for styling/behavior go here
+                  // ...
+                },
+                {
+                  id: 'second-data-point',
+                  x: 2,
+                  y: 456,
+                  // ...
+                  // optional additional properties
+                  // for styling/behavior go here
+                  // ...
+                },
+                {
+                  id: 'third-data-point',
+                  x: 3,
+                  y: 789,
+                  // ...
+                  // optional additional properties
+                  // for styling/behavior go here
+                  // ...
+                }
+              ],
               // ...
-              // optional additional properties
-              // for styling/behavior go here
-              // ...
-            },
-            {
-              id: 'second-data-point',
-              x: 2,
-              y: 456,
-              // ...
-              // optional additional properties
-              // for styling/behavior go here
-              // ...
-            },
-            {
-              id: 'third-data-point',
-              x: 3,
-              y: 789,
-              // ...
-              // optional additional properties
-              // for styling/behavior go here
-              // ...
+              // other Series properties go here
+              // to configure styling/behavior
             }
-          ],
-          // ...
-          // other Series properties go here
-          // to configure styling/behavior
-        }
-    - .. code-block:: python
+        - .. code-block:: python
 
-        # Corresponding LineSeries object
-        my_series = Series(data = [
-            CartesianData(id = 'first-data-point1',
-                          x = 1,
-                          y = 123),
-            CartesianData(id = 'second-data-point1',
-                          x = 2,
-                          y = 456),
-            CartesianData(id = 'third-data-point1',
-                          x = 3,
-                          y = 789),
-        ])
+            # Corresponding LineSeries object
+            my_series = Series(data = [
+                CartesianData(id = 'first-data-point1',
+                              x = 1,
+                              y = 123),
+                CartesianData(id = 'second-data-point1',
+                              x = 2,
+                              y = 456),
+                CartesianData(id = 'third-data-point1',
+                              x = 3,
+                              y = 789),
+            ])
+
+  #. As a single :class:`DataPointCollection <highcharts_stock.options.series.data.collections.DataPointCollection>`
+     object in the ``data`` property within the series, which in turn contains the 
+     individual data points.
+
+    .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Highcharts (JS)
+        - Highcharts for Python
+      * - .. code-block:: javascript
+
+            // Example Series Object
+            // (for a Line series type):
+            {
+              data: [
+                {
+                  name: 'first-data-point',
+                  x: 1,
+                  y: 123,
+                  // ...
+                  // optional additional properties
+                  // for styling/behavior go here
+                  // ...
+                },
+                {
+                  name: 'second-data-point',
+                  x: 2,
+                  y: 456,
+                  // ...
+                  // optional additional properties
+                  // for styling/behavior go here
+                  // ...
+                },
+                {
+                  name: 'third-data-point',
+                  x: 3,
+                  y: 789,
+                  // ...
+                  // optional additional properties
+                  // for styling/behavior go here
+                  // ...
+                }
+              ],
+              // ...
+              // other Series properties go here
+              // to configure styling/behavior
+            }
+        - .. code-block:: python
+
+            # EXAMPLE 1. Corresponding LineSeries object, with data as an
+            # numpy.ndarray.
+
+            my_series = Series(data = CartesianDataCollection(
+                ndarray = [
+                    [1, 123, 'first-data-point1'],
+                    [2, 456, 'second-data-point1'],
+                    [3, 789, 'third-data-point1'])
+            ])
+
+            # EXAMPLE 2. Corresponding LineSeries object, with data as a
+            # primitive array.
+
+            my_series = Series(data = CartesianDataCollection(
+                array = [
+                    [1, 123, 'first-data-point1'],
+                    [2, 456, 'second-data-point1'],
+                    [3, 789, 'third-data-point1'])
+                ]
+            ))
 
 As you can see, **Highcharts for Python** represents its data the same way that
 `Highcharts (JS) <https://www.highcharts.com>`__ does. That should be expected. 
 However, constructing tens, hundreds, or possibly thousands of data points 
 individually in your code would be a nightmare. For that reason, the 
-**Highcharts for Python Toolkit** provides a number of convenience methods to make it
-easier to populate your series.
-
-.. warning::
-
-  **PLEASE TAKE NOTE!**
-
-  **Highcharts Stock for Python** and
-  `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ support 50
-  different :term:`technical indicators <technical indicator>`, which are visualizations
-  that are derived from *other* :term:`series` on your chart. 
-  
-  These technical indicators are a special kind of series. They do not have a ``.data`` 
-  property and thus cannot be given their own data points. Their data points are 
-  calculated automatically by
-  `Highcharts Stock <https://www.highcharts.com/products/stock/>`__ from the
-  related :term:`series` indicated in their
-  :meth:`.linked_to <highcharts_stock.options.series.base.IndicatorSeriesBase.linked_to>`
-  properties.
+**Highcharts for Python Toolkit** natively supports vectorized 
+:class:`numpy.ndarray <numpy:numpy.ndarray>` values, and automatically assembles data
+point collections for easy management/manipulation. In addition, the Toolkit 
+provides a number of convenience methods to make it easier to populate your 
+series.
 
 .. _populating_series_data:
 
 Populating Series Data
 ===========================
 
-Every single :term:`Series` class in **Highcharts Stock for Python** features several
-different methods to either instantiate data points directly, load data (to an existing
-series instance), or to create a new series instance with data already loaded.
+Every single :term:`Series` class in **Highcharts for Python** features several different
+methods to either instantiate data points directly, load data (to an existing series
+instance), or to create a new series instance with data already loaded.
 
 .. tabs::
 
@@ -502,18 +559,21 @@ series instance), or to create a new series instance with data already loaded.
 
     Data points all have the same standard **Highcharts for Python**
     :ref:`deserialization methods <deserialization_methods>`, so those make things very easy.
-    However, they also have a special data point-specific ``.from_array()`` deserialization method:
+    However, they also have a special data point-specific deserialization method:
 
-      .. collapse:: Method Signature
+      .. collapse:: Expand Method Signature
 
         .. method:: .from_array(cls, value)
           :classmethod:
           :noindex:
 
-          Creates a collection of data point instances, parsing the contents of ``value`` as an
-          array (iterable). This method is specifically used to parse data that is input to
+          Creates a 
+          :class:`DataPointCollection <highcharts_stock.options.series.data.collections.DataPointCollection>`
+          instance if possible, or falls back to a collection of data point 
+          instances, parsing the contents of ``value`` as an array (iterable). This method 
+          is specifically used to parse data that is input to
           **Highcharts for Python** without property names, in an array-organized structure as
-          described in the `Highcharts <https://www.highcharts.com>`__ documentation.
+          described in the `Highcharts (JS) <https://www.highcharts.com>`__ documentation.
 
           .. seealso::
 
@@ -534,12 +594,37 @@ series instance), or to create a new series instance with data already loaded.
 
               my_series = LineSeries()
 
+              # EXAMPLE 1.
               # A simple array of numerical values which correspond to the Y value of the data
-              # point
+              # point, passed to the .from_array() method.
+
+              my_series = LineSeries.from_array([0, 5, 3, 5])
+
+              # EXAMPLE 2.
+              # A simple array of numerical values which correspond to the Y value of the data
+              # point, passed to the series data property.
+
               my_series.data = [0, 5, 3, 5]
 
+              # EXAMPLE 3.
+              # A simple array of numerical values which correspond to the Y value of the data
+              # point, updated in the series using the .load_from_array() method.
+
+              my_series.load_from_array([0, 5, 3, 5])
+
+              # EXAMPLE 4.
               # An array containing 2-member arrays (corresponding to the X and Y values of the
-              # data point)
+              # data point), passed to the .from_array() class method.
+              my_series = LineSeries.from_array([
+                  [0, 0],
+                  [1, 5],
+                  [2, 3],
+                  [3, 5]
+              ])
+
+              # EXAMPLE 5.
+              # An array containing 2-member arrays (corresponding to the X and Y values of the
+              # data point), passed to the series data property.
               my_series.data = [
                   [0, 0],
                   [1, 5],
@@ -547,7 +632,37 @@ series instance), or to create a new series instance with data already loaded.
                   [3, 5]
               ]
 
-              # An array of dict with named values
+              # EXAMPLE 6.
+              # An array of dict with named values, passed to the .from_array() class method.
+              my_series = LineSeries.from_array([
+                {
+                    'x': 0,
+                    'y': 0,
+                    'name': 'Point1',
+                    'color': '#00FF00'
+                },
+                {
+                    'x': 1,
+                    'y': 5,
+                    'name': 'Point2',
+                    'color': '#CCC'
+                },
+                {
+                    'x': 2,
+                    'y': 3,
+                    'name': 'Point3',
+                    'color': '#999'
+                },
+                {
+                    'x': 3,
+                    'y': 5,
+                    'name': 'Point4',
+                    'color': '#000'
+                }
+              ])
+
+              # EXAMPLE 6.
+              # An array of dict with named values, passed to the series data property.
               my_series.data = [
                 {
                     'x': 0,
@@ -575,6 +690,36 @@ series instance), or to create a new series instance with data already loaded.
                 }
               ]
 
+              # EXAMPLE 6.
+              # An array of dict with named values, passed to .load_from_array()
+              # method.
+              my_series.load_from_array([
+                {
+                    'x': 0,
+                    'y': 0,
+                    'name': 'Point1',
+                    'color': '#00FF00'
+                },
+                {
+                    'x': 1,
+                    'y': 5,
+                    'name': 'Point2',
+                    'color': '#CCC'
+                },
+                {
+                    'x': 2,
+                    'y': 3,
+                    'name': 'Point3',
+                    'color': '#999'
+                },
+                {
+                    'x': 3,
+                    'y': 5,
+                    'name': 'Point4',
+                    'color': '#000'
+                }
+              ])
+
           :param value: The value that should contain the data which will be converted into data
             point instances.
 
@@ -589,9 +734,11 @@ series instance), or to create a new series instance with data already loaded.
             :class:`DataBase <highcharts_stock.options.series.data.base.DataBase>`)
           :rtype: :class:`list <python:list>` of
             :class:`DataBase <highcharts_stock.options.series.data.base.DataBase>`-descendant
-            instances
+            instances or
+            :class:`DataPointCollection <highcharts_stock.options.series.data.collections.DataPointCollection>`
+            instance
 
-  .. tab:: Load to Existing Series
+  .. tab:: Update an Existing Series
 
     .. warning::
 
@@ -605,7 +752,12 @@ series instance), or to create a new series instance with data already loaded.
 
         * :doc:`Using Highcharts for Python <using>` > :ref:`Using Technical Indicators <using_technical_indicators>`
 
+
     .. tabs::
+
+      .. tab:: Using ``.load_from_array()``
+
+        .. include:: using/populating_series_data/_load_from_array.rst
 
       .. tab:: Using ``.load_from_csv()``
 
@@ -636,6 +788,10 @@ series instance), or to create a new series instance with data already loaded.
 
     .. tabs::
 
+      .. tab:: Using ``.from_array()``
+
+        .. include:: using/populating_series_data/_new_from_array.rst
+
       .. tab:: Using ``.from_csv()``
 
         .. include:: using/populating_series_data/_new_from_csv.rst
@@ -664,7 +820,7 @@ an instance of
 
     The :class:`HighchartsStockOptions <highcharts_stock.options.HighchartsStockOptions>`
     is a sub-class of the **Highcharts Core for Python**
-    :class:`HighchartsOptions <highcharts_core:highcharts_core.options.HighchartsOptions>` 
+    :class:`HighchartsOptions <highcharts_core:highcharts_stock.options.HighchartsOptions>` 
     class, and is fully backwards-compatible with it. 
     
     This means that you can use them interchangeably when using 
@@ -686,6 +842,10 @@ To be visualized on your chart, you will need to add your series instances to th
 property. You can do this in several ways:
 
 .. tabs::
+
+  .. tab:: Using Keyword Arguments
+
+    .. include:: using/adding_series_to_charts/_using_kwargs.rst
 
   .. tab:: Using ``.options.series``
 
@@ -760,14 +920,26 @@ will display the chart in full.
 
 .. warning::
 
-  The current version of **Highcharts Stock for Python** assumes that your web content
-  already has all the ``<script/>`` tags which include the
-  `Highcharts Core <https://www.highcharts.com/products/highcharts>`__ and
-  `Highcharts Stock <https://www.highcharts.com/products/stock>`__ modules your chart
-  relies on.
+  The :meth:`.to_js_literal() <highcharts_stock.chart.Chart.to_js_literal>` method 
+  assumes that your web content already has all the ``<script/>`` tags which include 
+  the `Highcharts (JS) <https://www.highcharts.com>`__ modules your chart relies on.
 
-  This is likely to change in a future version of **Highcharts Stock for Python**, where the
-  library will support the production of ``<script/>`` tags (see roadmap issue :issue:`4`).
+  If you need to generate the required ``<script/>`` tags for your chart, you can do
+  so by calling:
+
+    .. code-block:: python
+
+      # EXAMPLE 1.
+      # Get a list of <script/> tags.
+      list_of_script_tags = my_chart.get_script_tags()
+
+      # EXAMPLE 2.
+      # Get a string of <script/> tags.
+      script_tags_as_str = my_chart.get_script_tags(as_str = True)
+
+      # EXAMPLE 3.
+      # Get a list of the required Highcharts modules.
+      required_modules = my_chart.get_required_modules()
 
 For example:
 
@@ -793,7 +965,7 @@ application's HTML output (in an appropriate ``<script/>`` tag, of course).
 Rendering Highcharts for Python in Jupyter Labs or Jupyter Notebooks
 ======================================================================
 
-You can also render **Highcharts Stock for Python** visualizations inside your
+You can also render **Highcharts for Python** visualizations inside your
 `Jupyter <https://jupyter.org/>`_ notebook. This is as simple as executing a single
 :meth:`.display() <highcharts_stock.chart.Chart.display>` call on your
 :class:`Chart <highcharts_stock.chart.Chart>` instance:
@@ -896,6 +1068,7 @@ environment. The actual file itself is produced using a
   .. tab:: Using a Custom Server
 
     .. include:: using/download_visualizations/_using_custom.rst
+
 
 .. warning::
 

@@ -9,6 +9,8 @@ from highcharts_stock import errors
 from tests.fixtures import input_files, check_input_file, to_camelCase, to_js_dict, \
     Class__init__, Class__to_untrimmed_dict, Class_from_dict, Class_to_dict, \
     Class_from_js_literal
+    
+from validator_collection import checkers
 
 STANDARD_PARAMS = [
     ({}, None),
@@ -655,3 +657,54 @@ def test_to_dict(kwargs, error):
 ])
 def test_from_js_literal(input_files, filename, as_file, error):
     Class_from_js_literal(cls, input_files, filename, as_file, error)
+
+
+@pytest.mark.parametrize('kwargs, error', STANDARD_PARAMS)
+def test_to_chart(kwargs, error):
+    if not error:
+        instance = cls(**kwargs)
+        chart = instance.to_chart()
+        assert chart is not None
+        assert checkers.is_type(chart, 'Chart')
+    else:
+        with pytest.raises(error):
+            instance = cls(**kwargs)
+            chart = instance.to_chart()
+
+
+@pytest.mark.parametrize('filename, target_type, as_cls, error', [
+    ('series/base/01.js', 'line', False, None),
+    ('series/base/02.js', 'line', False, None),
+    ('series/base/03.js', 'line', False, None),
+
+    ('series/base/01.js', 'line', True, None),
+    ('series/base/02.js', 'line', True, None),
+    ('series/base/03.js', 'line', True, None),
+
+    ('series/base/01.js', 'not a series type', False, ValueError),
+    ('series/base/01.js', 123, False, ValueError),
+])
+def test_convert_to(input_files, filename, target_type, as_cls, error):
+    input_file = check_input_file(input_files, filename)
+    if not error:
+        from highcharts_stock.options.series.base import SeriesBase
+        from highcharts_stock.options.series.series_generator import SERIES_CLASSES
+
+        original = cls.from_js_literal(input_file)
+
+        if isinstance(target_type, str):
+            target_type_cls = SERIES_CLASSES.get(target_type)
+            target_type_name = target_type
+        else:
+            target_type_cls = target_type
+            target_type_name = target_type.__name__
+
+        if as_cls:
+            target_type = target_type_cls
+        else:
+            target_type = target_type_name
+        
+        converted = original.convert_to(target_type)
+        assert converted is not None
+        assert isinstance(converted, SeriesBase)
+        assert isinstance(converted, target_type_cls)

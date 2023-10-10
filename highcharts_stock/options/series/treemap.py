@@ -1,7 +1,7 @@
 from typing import Optional, List
 
-from highcharts_stock.options.series.data.treemap import TreemapData
-from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.treemap import TreemapData, TreemapDataCollection
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarray
 
 from highcharts_stock.options.series.base import SeriesBase
 from highcharts_stock.options.plot_options.treemap import TreemapOptions
@@ -23,7 +23,7 @@ class TreemapSeries(SeriesBase, TreemapOptions):
         super().__init__(**kwargs)
 
     @property
-    def data(self) -> Optional[List[TreemapData]]:
+    def data(self) -> Optional[List[TreemapData] | TreemapDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -38,13 +38,14 @@ class TreemapSeries(SeriesBase, TreemapOptions):
             :class:`dict <python:dict>` instances coercable to :class:`TreemapData`
 
         :rtype: :class:`list <python:list>` of :class:`TreemapData` or
+          :class:`TreemapDataCollection` or
           :obj:`None <python:None>`
         """
         return self._data
 
     @data.setter
     def data(self, value):
-        if not value:
+        if not is_ndarray(value) and not value:
             self._data = None
         else:
             self._data = TreemapData.from_array(value)
@@ -158,3 +159,21 @@ class TreemapSeries(SeriesBase, TreemapOptions):
         untrimmed = mro__to_untrimmed_dict(self, in_cls = in_cls) or {}
 
         return untrimmed
+
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return TreemapDataCollection
+      
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return TreemapData

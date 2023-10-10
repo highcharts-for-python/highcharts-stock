@@ -13,6 +13,11 @@ from copy import deepcopy
 from collections import UserDict
 
 import pytest
+try:
+    import numpy as np
+    HAS_NUMPY = True
+except ImportError:
+    HAS_NUMPY = False
 
 from validator_collection import checkers, validators
 from highcharts_stock import constants
@@ -46,6 +51,17 @@ def run_pyspark_tests(request):
 
 
 @pytest.fixture
+def run_pandas_tests(request):
+    """Return the ``--pandas`` command-line option."""
+    value = request.config.getoption("--pandas")
+    value = value.lower()
+    if value in ['false', False, 0, 'no', 'no']:
+        return False
+    else:
+        return True
+
+
+@pytest.fixture
 def run_download_tests(request):
     """Return the ``--downloads`` command-line option."""
     value = request.config.getoption("--downloads")
@@ -60,6 +76,31 @@ def run_download_tests(request):
 def input_files(request):
     """Return the ``--inputs`` command-line option."""
     return request.config.getoption("--inputs")
+
+
+@pytest.fixture
+def openai_api_key(request):
+    """Return the ``--openai`` command-line option."""
+    api_key = request.config.getoption("--openai")
+    if api_key == 'none':
+        api_key = None
+        
+    if not api_key:
+        api_key = os.getenv('OPENAI_API_KEY', None)
+    
+    return api_key
+
+
+@pytest.fixture
+def disable_ai(request):
+    """Return the ``--disable-ai`` command-line option."""
+    disable_ai = request.config.getoption("--disable-ai")
+    if disable_ai in ['false', False, 0, 'no', 'no', 'f', 'F']:
+        disable_ai = False
+    else:
+        disable_ai = True
+        
+    return disable_ai
 
 
 def check_input_file(input_directory, input_value):
@@ -202,6 +243,8 @@ def does_kwarg_value_match_result(kwarg_value, result_value):
                 return False
 
         return True
+    elif HAS_NUMPY and isinstance(kwarg_value, np.ndarray):
+        return np.array_equal(kwarg_value, result_value)
     elif checkers.is_iterable(kwarg_value):
         print('- evaluating a KWARG value that is iterable')
         if hasattr(result_value, 'from_setter'):
@@ -254,6 +297,8 @@ def trim_expected(expected):
             trimmed_value = trim_expected(expected[key])
             if trimmed_value:
                 new_dict[key] = trimmed_value
+        elif HAS_NUMPY and isinstance(expected[key], np.ndarray):
+            new_dict[key] = expected[key]
         elif checkers.is_iterable(expected[key]):
             trimmed_value = []
             for item in expected[key]:
@@ -277,8 +322,8 @@ def compare_js_literals(original, new):
 
     counter = 0
     for char in original:
-        min_index = max(0, counter - 20)
-        max_index = min(counter + 20, len(original))
+        min_index = max(0, counter - 200)
+        max_index = min(counter + 200, len(original))
 
         if new[counter] != char:
             print(f'\nMISMATCH FOUND AT ORIGINAL CHARACTER: {counter}')
@@ -301,8 +346,10 @@ def Class__init__(cls, kwargs, error):
             #kwargs['type'] = result.type
         for key in kwargs_copy:
             print(f'CHECKING: {key}')
-            if kwargs.get(key) and isinstance(kwargs_copy[key],
-                                              str) and kwargs[key].startswith('function'):
+            if HAS_NUMPY and isinstance(kwargs.get(key, None), np.ndarray):
+                continue
+            elif kwargs.get(key) and isinstance(kwargs_copy[key],
+                                                str) and kwargs[key].startswith('function'):
                 continue
             if kwargs.get(key) and isinstance(kwargs_copy[key],
                                               str) and kwargs[key].startswith('class'):
@@ -365,6 +412,13 @@ def Class__to_untrimmed_dict(cls, kwargs, error):
             kwarg_value = kwargs_copy[key]
             result_value = result.get(key)
 
+            if HAS_NUMPY and isinstance(kwarg_value, np.ndarray):
+                assert isinstance(result_value, dict) is True
+                for key in result_value:
+                    key_value = result_value[key]
+                    assert isinstance(key_value, np.ndarray) is True
+                    assert len(key_value) == len(kwarg_value)
+                continue
             if kwargs.get(key) and isinstance(kwargs_copy[key],
                                               str) and kwargs[key].startswith('function'):
                 continue
@@ -596,7 +650,13 @@ def Class_from_dict(cls, kwargs, error):
                     result_value = getattr(instance, key)
                 print(kwarg_value)
                 print(result_value)
-                assert does_kwarg_value_match_result(kwarg_value, result_value)
+                if key == 'ndarray':
+                    assert isinstance(result_value, dict) is True
+                    for key in result_value:
+                        key_value = result_value[key]
+                        assert isinstance(key_value, np.ndarray) is True
+                else:
+                    assert does_kwarg_value_match_result(kwarg_value, result_value)
     else:
         with pytest.raises(error):
             instance = cls.from_dict(as_dict)

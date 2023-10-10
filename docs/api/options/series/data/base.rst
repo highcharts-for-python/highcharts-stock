@@ -9,7 +9,7 @@
 
 --------------
 
-.. module:: highcharts_stock.options.series.data.base
+.. module:: highcharts_core.options.series.data.base
 
 ********************************************************************************************************************
 class: :class:`DataBase <highcharts_stock.options.series.data.base.DataBase>`
@@ -22,7 +22,7 @@ class: :class:`DataBase <highcharts_stock.options.series.data.base.DataBase>`
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: DataBase
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

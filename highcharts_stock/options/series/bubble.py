@@ -1,7 +1,7 @@
 from typing import Optional, List
 
-from highcharts_stock.options.series.data.cartesian import Cartesian3DData
-from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from highcharts_stock.options.series.data.cartesian import Cartesian3DData, Cartesian3DDataCollection
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarray
 
 from highcharts_stock.options.series.base import SeriesBase
 from highcharts_stock.options.plot_options.bubble import BubbleOptions
@@ -25,7 +25,7 @@ class BubbleSeries(SeriesBase, BubbleOptions):
         super().__init__(**kwargs)
 
     @property
-    def data(self) -> Optional[List[Cartesian3DData]]:
+    def data(self) -> Optional[List[Cartesian3DData] | Cartesian3DDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -93,13 +93,14 @@ class BubbleSeries(SeriesBase, BubbleOptions):
             A one-dimensional collection of :class:`Cartesian3DData` objects.
 
         :rtype: :class:`list <python:list>` of :class:`Cartesian3DData` or
+          :class:`Cartesian3DDataCollection` or
           :obj:`None <python:None>`
         """
         return self._data
 
     @data.setter
     def data(self, value):
-        if not value:
+        if not is_ndarray(value) and not value:
             self._data = None
         else:
             self._data = Cartesian3DData.from_array(value)
@@ -214,3 +215,21 @@ class BubbleSeries(SeriesBase, BubbleOptions):
         untrimmed = mro__to_untrimmed_dict(self, in_cls = in_cls)
 
         return untrimmed
+
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return Cartesian3DDataCollection
+      
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return Cartesian3DData

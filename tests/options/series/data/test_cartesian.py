@@ -11,7 +11,7 @@ from highcharts_stock.options.series.data.cartesian import CartesianValueData as
 from highcharts_stock import errors
 from tests.fixtures import input_files, check_input_file, to_camelCase, to_js_dict, \
     Class__init__, Class__to_untrimmed_dict, Class_from_dict, Class_to_dict, \
-    Class_from_js_literal
+    Class_from_js_literal, Class_from_js_literal_with_expected
 
 STANDARD_PARAMS = [
     ({}, None),
@@ -746,6 +746,21 @@ def test_CartesianData_from_js_literal(input_files, filename, as_file, error):
     Class_from_js_literal(cls, input_files, filename, as_file, error)
 
 
+@pytest.mark.parametrize('input_filename, expected_filename, as_file, error', [
+    ('series/data/cartesian/05-input.js',
+     'series/data/cartesian/05-expected.js',
+     False,
+     None),
+])
+def test_Cartesian3DData_from_js_literal_expected(input_files, input_filename, expected_filename, as_file, error):
+    Class_from_js_literal_with_expected(cls2,
+                                        input_files,
+                                        input_filename,
+                                        expected_filename,
+                                        as_file,
+                                        error)
+
+
 ## NEXT CLASS
 
 STANDARD_PARAMS_2 = [
@@ -1007,7 +1022,6 @@ def test_Cartesian3DData_to_dict(kwargs, error):
 
 
 @pytest.mark.parametrize('filename, as_file, error', [
-    ('series/data/cartesian/05.js', False, None),
     ('series/data/cartesian/06.js', False, None),
 
     ('series/data/cartesian/error-05.js',
@@ -1018,7 +1032,6 @@ def test_Cartesian3DData_to_dict(kwargs, error):
       TypeError,
       ValueError)),
 
-    ('series/data/cartesian/05.js', True, None),
     ('series/data/cartesian/06.js', True, None),
 
     ('series/data/cartesian/error-05.js',

@@ -9,7 +9,7 @@
 
 --------------
 
-.. module:: highcharts_stock.options.series.data.sunburst
+.. module:: highcharts_core.options.series.data.sunburst
 
 ********************************************************************************************************************
 class: :class:`SunburstData <highcharts_stock.options.series.data.sunburst.SunburstData>`
@@ -22,7 +22,25 @@ class: :class:`SunburstData <highcharts_stock.options.series.data.sunburst.Sunbu
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: SunburstData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_core.metaclasses.HighchartsMeta
+      :parts: -1
+
+  |
+
+--------------
+
+********************************************************************************************************************
+class: :class:`SunburstDataCollection <highcharts_stock.options.series.data.sunburst.SunburstDataCollection>`
+********************************************************************************************************************
+
+.. autoclass:: SunburstDataCollection
+  :members:
+  :inherited-members:
+
+  .. collapse:: Class Inheritance
+
+    .. inheritance-diagram:: SunburstDataCollection
+      :top-classes: highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |

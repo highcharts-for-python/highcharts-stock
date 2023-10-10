@@ -9,7 +9,7 @@
 
 --------------
 
-.. module:: highcharts_stock.options.series.data.vector
+.. module:: highcharts_core.options.series.data.vector
 
 ********************************************************************************************************************
 class: :class:`VectorData <highcharts_stock.options.series.data.vector.VectorData>`
@@ -22,7 +22,25 @@ class: :class:`VectorData <highcharts_stock.options.series.data.vector.VectorDat
   .. collapse:: Class Inheritance
 
     .. inheritance-diagram:: VectorData
-      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :top-classes: highcharts_core.metaclasses.HighchartsMeta
+      :parts: -1
+
+  |
+
+--------------
+
+********************************************************************************************************************
+class: :class:`VectorDataCollection <highcharts_stock.options.series.data.vector.VectorDataCollection>`
+********************************************************************************************************************
+
+.. autoclass:: VectorDataCollection
+  :members:
+  :inherited-members:
+
+  .. collapse:: Class Inheritance
+
+    .. inheritance-diagram:: VectorDataCollection
+      :top-classes: highcharts_core.metaclasses.HighchartsMeta
       :parts: -1
 
   |
