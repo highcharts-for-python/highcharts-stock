@@ -582,9 +582,9 @@ class OHLCData(HLCData):
             close = constants.EnforcedNull
             
         if self.x is None and self.name is None:
-            return [open, high, low, close]
+            return [open_, high, low, close]
 
-        return [x, open, high, low, close]
+        return [x, open_, high, low, close]
 
 
 class OHLCDataCollection(HLCDataCollection):

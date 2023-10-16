@@ -1,4 +1,11 @@
 
+Release 1.4.1
+=========================================
+
+* **BUGFIX**: Fixed serialization of `OHLCData` to JS literal. ``.open`` property no longer serializing to ``null``. (#40 )
+
+---------------------
+
 Release 1.4.0
 =========================================
 
