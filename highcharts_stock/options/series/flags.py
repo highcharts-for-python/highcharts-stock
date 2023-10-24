@@ -1,7 +1,11 @@
-from highcharts_stock.utility_functions import mro__to_untrimmed_dict
+from typing import Optional, List
+
+from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarray
 
 from highcharts_stock.options.series.base import NavigatorIndicatorSeries
 from highcharts_stock.options.plot_options.flags import FlagsOptions
+from highcharts_stock.options.series.data.single_point import (SingleXData, 
+                                                               SingleXDataCollection)
 
 
 class FlagsSeries(NavigatorIndicatorSeries, FlagsOptions):
@@ -15,7 +19,53 @@ class FlagsSeries(NavigatorIndicatorSeries, FlagsOptions):
     """
 
     def __init__(self, **kwargs):
+        self._data = None
+        
+        self.data = kwargs.get('data', None)
+        
         super().__init__(**kwargs)
+        
+    @property
+    def data(self) -> Optional[List[SingleXData] | SingleXDataCollection]:
+        """Collection of data that represents the series. Defaults to
+        :obj:`None <python:None>`.
+
+        While the series type returns a collection of :class:`SingleXData` instances
+        or an :class:`SingleXDataCollection` instance, it accepts as input 
+        two different types of data:
+
+        .. tabs::
+
+          .. tab:: 1D Collection
+
+            .. code-block::
+
+              series = FlagSeries()
+              series.data = [
+                  [1463753252],
+                  [1563753252],
+                  [1663753252]
+              ]
+
+            A one-dimensional collection of values, corresponding to the position of
+            each flag on the x-axis. 
+
+          .. tab:: Object Collection
+
+            A one-dimensional collection of :class:`SingleXData` objects, or objects
+            coercable.
+
+        :rtype: :class:`list <python:list>` of :class:`SingleXData` or
+          :class:`SingleXDataCollection` or :obj:`None <python:None>`
+        """
+        return self._data
+
+    @data.setter
+    def data(self, value):
+        if not is_ndarray(value) and not value:
+            self._data = None
+        else:
+            self._data = SingleXData.from_array(value)
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -130,11 +180,18 @@ class FlagsSeries(NavigatorIndicatorSeries, FlagsOptions):
             'x_axis': as_dict.get('xAxis', None),
             'y_axis': as_dict.get('yAxis', None),
             'z_index': as_dict.get('zIndex', None),
+
+            'data': as_dict.get('data', None),
         }
 
         return kwargs
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
-        untrimmed = mro__to_untrimmed_dict(self, in_cls = in_cls) or {}
+        untrimmed = {
+            'data': self.data
+        }
+        untrimmed_parents = mro__to_untrimmed_dict(self, in_cls = in_cls) or {}
+        for key in untrimmed_parents:
+            untrimmed[key] = untrimmed_parents[key]
 
         return untrimmed
