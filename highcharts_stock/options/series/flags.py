@@ -65,7 +65,25 @@ class FlagsSeries(NavigatorIndicatorSeries, FlagsOptions):
         if not is_ndarray(value) and not value:
             self._data = None
         else:
-            self._data = SingleXData.from_array(value)
+            self._data = self._data_point_class().from_array(value)
+
+    @classmethod
+    def _data_collection_class(cls):
+        """Returns the class object used for the data collection.
+        
+        :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
+          descendent
+        """
+        return SingleXDataCollection
+    
+    @classmethod
+    def _data_point_class(cls):
+        """Returns the class object used for individual data points.
+        
+        :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
+          descendent
+        """
+        return SingleXData
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -192,6 +210,7 @@ class FlagsSeries(NavigatorIndicatorSeries, FlagsOptions):
         }
         untrimmed_parents = mro__to_untrimmed_dict(self, in_cls = in_cls) or {}
         for key in untrimmed_parents:
-            untrimmed[key] = untrimmed_parents[key]
+            if key not in untrimmed:
+                untrimmed[key] = untrimmed_parents[key]
 
         return untrimmed
