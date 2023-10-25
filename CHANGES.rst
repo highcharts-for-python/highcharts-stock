@@ -1,3 +1,10 @@
+Release 1.4.3
+=========================================
+
+* **BUGFIX**: Fixed error in ``FlagsSeries`` serialization and added unit test.
+
+---------------------
+
 Release 1.4.2
 =========================================
 
