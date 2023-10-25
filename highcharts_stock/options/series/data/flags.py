@@ -108,6 +108,7 @@ class FlagData(SingleXData):
             1: ['x'],
             2: ['x', 'title']
         }
+        
         return cls._get_props_from_array_helper(prop_list, length)
 
     def to_array(self, force_object = False) -> List | Dict:
@@ -128,23 +129,7 @@ class FlagData(SingleXData):
         :returns: The array representation of the data point.
         :rtype: :class:`list <python:list>` of values or :class:`dict <python:dict>`
         """
-        if self.requires_js_object or force_object:
-            return self._to_untrimmed_dict()
-        
-        if self.x is not None:
-            x = self.x
-        else:
-            x = constants.EnforcedNull
-        
-        if self.title is not None:
-            title = self.title
-        else:
-            title = constants.EnforcedNull
-
-        if self.title is None:
-            return [x]
-        
-        return [x, title]
+        return self._to_untrimmed_dict()
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -212,6 +197,18 @@ class FlagData(SingleXData):
 
 
 class FlagDataCollection(DataPointCollection):
+
+    @property
+    def requires_js_object(self) -> bool:
+        """Indicates whether or not the data point *must* be serialized to a JS literal 
+        object or whether it can be serialized to a primitive array.
+        
+        :returns: ``True`` if the data point *must* be serialized to a JS literal object.
+          ``False`` if it can be serialized to an array.
+        :rtype: :class:`bool <python:bool>`
+        """
+        return True
+
     @classmethod
     def _get_data_point_class(cls):
         """The Python class to use as the underlying data point within the Collection.
