@@ -1,3 +1,10 @@
+Release 1.4.6
+=========================================
+
+* **BUGFIX**: Fixed ``FlagData`` and ``FlagDataCollection`` serialization bug (#49).
+
+---------------------
+
 Release 1.4.5
 =========================================
 
