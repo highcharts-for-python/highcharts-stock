@@ -4,8 +4,8 @@ from highcharts_stock.utility_functions import mro__to_untrimmed_dict, is_ndarra
 
 from highcharts_stock.options.series.base import NavigatorIndicatorSeries
 from highcharts_stock.options.plot_options.flags import FlagsOptions
-from highcharts_stock.options.series.data.single_point import (SingleXData, 
-                                                               SingleXDataCollection)
+from highcharts_stock.options.series.data.flags import (FlagData, 
+                                                        FlagDataCollection)
 
 
 class FlagsSeries(NavigatorIndicatorSeries, FlagsOptions):
@@ -26,7 +26,7 @@ class FlagsSeries(NavigatorIndicatorSeries, FlagsOptions):
         super().__init__(**kwargs)
         
     @property
-    def data(self) -> Optional[List[SingleXData] | SingleXDataCollection]:
+    def data(self) -> Optional[List[FlagData] | FlagDataCollection]:
         """Collection of data that represents the series. Defaults to
         :obj:`None <python:None>`.
 
@@ -74,7 +74,7 @@ class FlagsSeries(NavigatorIndicatorSeries, FlagsOptions):
         :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
           descendent
         """
-        return SingleXDataCollection
+        return FlagDataCollection
     
     @classmethod
     def _data_point_class(cls):
@@ -83,7 +83,7 @@ class FlagsSeries(NavigatorIndicatorSeries, FlagsOptions):
         :rtype: :class:`DataBase <highcharts_core.options.series.data.base.DataBase>` 
           descendent
         """
-        return SingleXData
+        return FlagData
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
