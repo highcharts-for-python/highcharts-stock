@@ -54,15 +54,6 @@ class FlagData(SingleXData):
                 as_obj = cls(x = None)
             elif checkers.is_numeric(item):
                 as_obj = cls(x = item)
-            elif checkers.is_iterable(item):
-                if len(item) == 2:
-                    as_obj = cls(x = item[0], title = item[1])
-                elif len(item) == 1:
-                    as_obj = cls(x = item[0])
-                else:
-                    raise errors.HighchartsValueError(f'data expects either a 1D or 2D '
-                                                      f'collection. Collection received '
-                                                      f'had {len(item)} dimensions.')
             else:
                 raise errors.HighchartsValueError(f'each data point supplied must either '
                                                   f'be a Flag Data Point or be '
@@ -81,55 +72,14 @@ class FlagData(SingleXData):
         :rtype: :class:`DataPointCollection <highcharts_core.options.series.data.collections.DataPointCollection>`
         """
         return FlagDataCollection.from_ndarray(value)
-    
+
     @classmethod
     def _get_supported_dimensions(cls) -> List[int]:
         """Returns a list of the supported dimensions for the data point.
         
         :rtype: :class:`list <python:list>` of :class:`int <python:int>`
         """
-        return [1, 2]
-
-    @classmethod
-    def _get_props_from_array(cls, length = None) -> List[str]:
-        """Returns a list of the property names that can be set using the
-        :meth:`.from_array() <highcharts_core.options.series.data.base.DataBase.from_array>`
-        method.
-        
-        :param length: The length of the array, which may determine the properties to 
-          parse. Defaults to :obj:`None <python:None>`, which returns the full list of 
-          properties.
-        :type length: :class:`int <python:int>` or :obj:`None <python:None>`
-        
-        :rtype: :class:`list <python:list>` of :class:`str <python:str>`
-        """
-        prop_list = {
-            None: ['x', 'title'],
-            1: ['x'],
-            2: ['x', 'title']
-        }
-        
-        return cls._get_props_from_array_helper(prop_list, length)
-
-    def to_array(self, force_object = False) -> List | Dict:
-        """Generate the array representation of the data point (the inversion 
-        of 
-        :meth:`.from_array() <highcharts_core.options.series.data.base.DataBase.from_array>`).
-        
-        .. warning::
-        
-          If the data point *cannot* be serialized to a JavaScript array,
-          this method will instead return the untrimmed :class:`dict <python:dict>`
-          representation of the data point as a fallback.
-          
-        :param force_object: if ``True``, forces the return of the instance's
-          untrimmed :class:`dict <python:dict>` representation. Defaults to ``False``.
-        :type force_object: :class:`bool <python:bool>`
-
-        :returns: The array representation of the data point.
-        :rtype: :class:`list <python:list>` of values or :class:`dict <python:dict>`
-        """
-        return self._to_untrimmed_dict()
+        return [1]
 
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
@@ -197,17 +147,6 @@ class FlagData(SingleXData):
 
 
 class FlagDataCollection(DataPointCollection):
-
-    @property
-    def requires_js_object(self) -> bool:
-        """Indicates whether or not the data point *must* be serialized to a JS literal 
-        object or whether it can be serialized to a primitive array.
-        
-        :returns: ``True`` if the data point *must* be serialized to a JS literal object.
-          ``False`` if it can be serialized to an array.
-        :rtype: :class:`bool <python:bool>`
-        """
-        return True
 
     @classmethod
     def _get_data_point_class(cls):
