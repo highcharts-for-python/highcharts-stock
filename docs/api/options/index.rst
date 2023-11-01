@@ -266,6 +266,7 @@ Sub-components
   * - :mod:`.options.navigator <highcharts_stock.options.navigator>`
     - :class:`Navigator <highcharts_stock.options.navigator.Navigator>`
       :class:`HandleOptions <highcharts_stock.options.navigator.HandleOptions>`
+      :class:`NavigatorAccessibilityOptions <highcharts_stock.options.navigator.NavigatorAccessibilityOptions>`
   * - :mod:`.options.no_data <highcharts_stock.options.no_data>`
     - :class:`NoData <highcharts_stock.options.no_data.NoData>`
   * - :mod:`.options.pane <highcharts_stock.options.pane>`
