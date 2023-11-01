@@ -10,9 +10,24 @@ class Definition(HighchartsMeta):
     """Definition of a symbol for a single Stock Tools button."""
 
     def __init__(self, **kwargs):
+        self._class_name = None
         self._symbol = None
 
+        self.class_name = kwargs.get('class_name', None)
         self.symbol = kwargs.get('symbol', None)
+
+    @property
+    def class_name(self) -> Optional[str]:
+        """The name of the class to apply to the button. Defaults to
+        ``'highcharts-fibonacci'``.
+        
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return self._class_name
+    
+    @class_name.setter
+    def class_name(self, value):
+        self._class_name = validators.string(value, allow_empty = True)
 
     @property
     def symbol(self) -> Optional[str]:
@@ -29,6 +44,7 @@ class Definition(HighchartsMeta):
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
         kwargs = {
+            'class_name': as_dict.get('className', None),
             'symbol': as_dict.get('symbol', None)
         }
 
@@ -36,6 +52,7 @@ class Definition(HighchartsMeta):
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
+            'className': self.class_name,
             'symbol': self.symbol
         }
 
