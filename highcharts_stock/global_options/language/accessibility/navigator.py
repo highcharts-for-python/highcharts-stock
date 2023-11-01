@@ -1,0 +1,1 @@
+from highcharts_core.global_options.language.accessibility.navigator import NavigatorLanguageOptions
