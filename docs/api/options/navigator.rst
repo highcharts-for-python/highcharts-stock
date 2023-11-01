@@ -44,3 +44,21 @@ class: :class:`HandleOptions <highcharts_stock.options.navigator.HandleOptions>`
       :parts: -1
 
   |
+
+------------------
+
+********************************************************************************************************************
+class: :class:`NavigatorAccessibilityOptions <highcharts_stock.options.navigator.NavigatorAccessibilityOptions>`
+********************************************************************************************************************
+
+.. autoclass:: NavigatorAccessibilityOptions
+  :members:
+  :inherited-members:
+
+  .. collapse:: Class Inheritance
+
+    .. inheritance-diagram:: NavigatorAccessibilityOptions
+      :top-classes: highcharts_stock.metaclasses.HighchartsMeta, highcharts_core.metaclasses.HighchartsMeta
+      :parts: -1
+
+  |

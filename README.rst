@@ -16,7 +16,7 @@ JavaScript data visualization library.
   * The **Highcharts Export Server** - enabling the programmatic creation of static
     (downloadable) data visualizations
 
-The library supports Highcharts (JS) v.10.2 and higher, including Highcharts (JS) v.11.1.0.
+The library supports Highcharts (JS) v.10.2 and higher, including Highcharts (JS) v.11.2.0.
 
 **Highcharts Stock for Python** is fully integrated with the broader Python ecosystem,
 in particular:
