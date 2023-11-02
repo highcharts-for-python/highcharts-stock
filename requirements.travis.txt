@@ -13,4 +13,4 @@ sphinx-tabs==3.4.1
 tox==4.4.6
 requests==2.31.0
 validator-collection==1.5.0
-highcharts-core>=1.4.0
+highcharts-core>=1.5.0

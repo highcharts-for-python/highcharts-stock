@@ -25,6 +25,7 @@ class FibonacciTypeOptions(HighchartsMeta):
         self._points = None
         self._x_axis = None
         self._y_axis = None
+        self._reversed = None
 
         self.background_colors = kwargs.get('background_colors', None)
         self.height = kwargs.get('height', None)
@@ -35,6 +36,7 @@ class FibonacciTypeOptions(HighchartsMeta):
         self.points = kwargs.get('points', None)
         self.x_axis = kwargs.get('x_axis', None)
         self.y_axis = kwargs.get('y_axis', None)
+        self.reversed = kwargs.get('reversed', None)
 
     @property
     def background_colors(self) -> Optional[List[str]]:
@@ -152,6 +154,22 @@ class FibonacciTypeOptions(HighchartsMeta):
         self._points = value
 
     @property
+    def reversed(self) -> Optional[bool]:
+        """Flag which determines whether the annotation levels should be reversed. 
+        Defaults to ``False``, meaning that they go from ``0`` to ``1``.
+        
+        :rtype: :class:`bool <python:bool>`
+        """
+        return self._reversed
+    
+    @reversed.setter
+    def reversed(self, value):
+        if value is None:
+            self._reversed = None
+        else:
+            self._reversed = bool(value)
+
+    @property
     def x_axis(self) -> Optional[str | int]:
         """This number defines which xAxis the point is connected to.
 
@@ -219,6 +237,7 @@ class FibonacciTypeOptions(HighchartsMeta):
             'line_color': as_dict.get('lineColor', None),
             'line_colors': as_dict.get('lineColors', None),
             'points': as_dict.get('points', None),
+            'reversed': as_dict.get('reversed', None),
             'x_axis': as_dict.get('xAxis', None),
             'y_axis': as_dict.get('yAxis', None),
         }
@@ -234,6 +253,7 @@ class FibonacciTypeOptions(HighchartsMeta):
             'lineColor': self.line_color,
             'lineColors': self.line_colors,
             'points': self.points,
+            'reversed': self.reversed,
             'xAxis': self.x_axis,
             'yAxis': self.y_axis,
         }

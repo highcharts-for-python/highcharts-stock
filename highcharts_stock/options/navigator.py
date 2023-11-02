@@ -173,12 +173,61 @@ class HandleOptions(HighchartsMeta):
         return untrimmed
 
 
+class NavigatorAccessibilityOptions(HighchartsMeta):
+    """Accessibility options for the Navigator."""
+    
+    def __init__(self, **kwargs):
+        self._enabled = None
+        
+        self.enabled = kwargs.get('enabled')
+        
+    @property
+    def _dot_path(self) -> Optional[str]:
+        """The dot-notation path to the options key for the current class.
+        
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return 'accessibility'
+    
+    @property
+    def enabled(self) -> Optional[bool]:
+        """If ``True``, enables accessibility support for the navigator. 
+        Defaults to ``True``.
+        
+        :rtype: :class:`bool <python:bool>`
+        """
+        return self._enabled
+    
+    @enabled.setter
+    def enabled(self, value):
+        if value is None:
+            self._enabled = None
+        else:
+            self._enabled = bool(value)
+
+    @classmethod
+    def _get_kwargs_from_dict(cls, as_dict):
+        kwargs = {
+            'enabled': as_dict.get('enabled', None),
+        }
+
+        return kwargs
+
+    def _to_untrimmed_dict(self, in_cls = None) -> dict:
+        untrimmed = {
+            'enabled': self.enabled,
+        }
+
+        return untrimmed
+
+
 class Navigator(HighchartsMeta):
     """The navigator is a small series below the main series, displaying a view of the
     entire data set. It provides tools to zoom in and out on parts of the data as well as
     panning across the dataset."""
 
     def __init__(self, **kwargs):
+        self._accessibility = None
         self._adapt_to_updated_data = None
         self._enabled = None
         self._handles = None
@@ -193,6 +242,7 @@ class Navigator(HighchartsMeta):
         self._x_axis = None
         self._y_axis = None
 
+        self.accessibility = kwargs.get('accessibility', None)
         self.adapt_to_updated_data = kwargs.get('adapt_to_updated_data', None)
         self.enabled = kwargs.get('enabled', None)
         self.handles = kwargs.get('handles', None)
@@ -214,6 +264,20 @@ class Navigator(HighchartsMeta):
         :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
         """
         return 'navigator'
+
+    @property
+    def accessibility(self) -> Optional[NavigatorAccessibilityOptions]:
+        """Options for configuring accessibility for the navigator.
+        
+        :rtype: :class:`NavigatorAccessibilityOptions <highcharts_stock.options.navigator.NavigatorAccessibilityOptions>`
+          or :obj:`None <python:None>`
+        """
+        return self._accessibility
+    
+    @accessibility.setter
+    @class_sensitive(NavigatorAccessibilityOptions)
+    def accessibility(self, value):
+        self._accessibility = value
 
     @property
     def adapt_to_updated_data(self) -> Optional[bool]:
@@ -457,6 +521,7 @@ class Navigator(HighchartsMeta):
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
         kwargs = {
+            'accessibility': as_dict.get('accessibility', None),
             'adapt_to_updated_data': as_dict.get('adaptToUpdatedData', None),
             'enabled': as_dict.get('enabled', None),
             'handles': as_dict.get('handles', None),
@@ -476,6 +541,7 @@ class Navigator(HighchartsMeta):
 
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
+            'accessibility': self.accessibility,
             'adaptToUpdatedData': self.adapt_to_updated_data,
             'enabled': self.enabled,
             'handles': self.handles,
