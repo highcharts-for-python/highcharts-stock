@@ -60,11 +60,11 @@ def test_FlagsSeries_from_js_literal(input_files, filename, as_file, error):
 
 
 def test_FlagsSeries_to_js_literal():
-    data_points = [{'x': 1635255000000, 'title': 'Sell'},
-                   {'x': 1635427800000, 'title': 'Sell'},
-                   {'x': 1636119000000, 'title': 'Buy'},
-                   {'x': 1636381800000, 'title': 'Buy'},
-                   {'x': 1636468200000, 'title': 'Sell'}]
+    data_points = [{'x': 1635255000000, 'title': 'Sell', 'text': '1st text'},
+                   {'x': 1635427800000, 'title': 'Sell', 'text': '2nd text'},
+                   {'x': 1636119000000, 'title': 'Buy', 'text': '3rd text'},
+                   {'x': 1636381800000, 'title': 'Buy', 'text': '4th text'},
+                   {'x': 1636468200000, 'title': 'Sell', 'text': '5th text'}]
     flag_series = cls(data = data_points,
                       on_series = 'dataseries',
                       shape = 'squarepin',
@@ -76,3 +76,5 @@ def test_FlagsSeries_to_js_literal():
     assert result is not None
     assert isinstance(result, str) is True
     assert 'data:' in result
+    assert 'Sell' in result
+    assert '1st text' in result
