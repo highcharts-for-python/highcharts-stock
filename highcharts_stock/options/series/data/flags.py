@@ -8,19 +8,21 @@ from highcharts_stock import constants, errors
 
 
 class FlagData(SingleXData):
-    """Data point that features a single ``x`` point with a ``title``."""
+    """Data point that features a single ``x`` point with a ``title`` and ``text``."""
 
     def __init__(self, **kwargs):
         self._title = None
-        
+        self._text = None
+
         self.title = kwargs.get('title', None)
-        
+        self.text = kwargs.get('text', None)
+
         super().__init__(**kwargs)
 
     @property
     def title(self) -> Optional[str]:
         """The short text to be shown on the flag.
-        
+
         :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
         """
         return self._title
@@ -31,6 +33,21 @@ class FlagData(SingleXData):
             self._title = None
         else:
             self._title = validators.string(value, coerce_value = True)
+
+    @property
+    def text(self) -> Optional[str]:
+        """The longer text to be shown in the flag's tooltip.
+
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return self._text
+
+    @text.setter
+    def text(self, value):
+        if not value:
+            self._text = None
+        else:
+            self._text = validators.string(value, coerce_value = True)
 
     @classmethod
     def from_list(cls, value):
@@ -116,6 +133,7 @@ class FlagData(SingleXData):
             'x': as_dict.get('x', None),
             
             'title': as_dict.get('title', None),
+            'text': as_dict.get('text', None),
         }
 
         return kwargs
@@ -123,6 +141,7 @@ class FlagData(SingleXData):
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
             'title': self.title,
+            'text': self.text,
             'x': self.x,
 
             'dataLabels': self.data_labels,
