@@ -1,4 +1,21 @@
 
+Release 1.6.0
+=========================================
+
+* **ENHANCEMENT:** Align the API to **Highcharts (JS) v.11.3** (#55). In particular, this includes:
+
+  * Added ``ChartOptions.axis_layout_runs`` property.
+  * Added ``ColorAxis.height`` property.
+  * Added ``ColorAxis.width`` property.
+  * Added ``Data.column_types`` property.
+  * Added ``Exporting.fetch_options`` property.
+  * Implemented support for verbose axis date-time unit labelling configuration (see: ``DateTimeLabelFormats``).
+
+* **BUGFIX:** Fixed missing functionality for ``RangeSelectorButton.type`` property (#56).
+* **BUGFIX:** Fixed missing ``FlagData.text`` property (courtesy of `@szemek <https://github.com/szemek>`)
+
+-----------------------
+
 Release 1.5.0
 =========================================
 
