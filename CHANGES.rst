@@ -14,6 +14,7 @@ Release 1.6.0
 
 * **BUGFIX:** Fixed missing functionality for ``RangeSelectorButton.type`` property (#56).
 * **BUGFIX:** Fixed missing ``FlagData.text`` property (courtesy of `@szemek <https://github.com/szemek>`__ )
+* **DOCUMENTATION:** Fixed typos in **Getting Started** tutorial.
 
 -----------------------
 
