@@ -33,3 +33,17 @@ STOCK_TOOLS_INCLUDE_STR = """
     <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/stocktools/gui.css">
     <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/annotations/popup.css">
 """
+
+
+RANGE_SELECTOR_BUTTON_TYPES = [
+    'all',
+    'millisecond',
+    'second',
+    'minute',
+    'hour',
+    'day',
+    'week',
+    'month',
+    'ytd',
+    'year',
+]
