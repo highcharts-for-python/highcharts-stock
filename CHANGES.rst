@@ -13,7 +13,7 @@ Release 1.6.0
   * Implemented support for verbose axis date-time unit labelling configuration (see: ``DateTimeLabelFormats``).
 
 * **BUGFIX:** Fixed missing functionality for ``RangeSelectorButton.type`` property (#56).
-* **BUGFIX:** Fixed missing ``FlagData.text`` property (courtesy of `@szemek <https://github.com/szemek>`)
+* **BUGFIX:** Fixed missing ``FlagData.text`` property (courtesy of `@szemek <https://github.com/szemek>`__ )
 
 -----------------------
 
