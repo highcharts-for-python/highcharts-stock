@@ -12,6 +12,11 @@ from tests.fixtures import input_files, check_input_file, to_camelCase, to_js_di
 
 STANDARD_PARAMS = [
     ({}, None),
+    ({
+        'buttons': [
+            {'type': 'all', 'text': 'All'},
+        ]
+    }, None),
 ]
 
 
