@@ -3,7 +3,7 @@ from decimal import Decimal
 
 from validator_collection import validators
 
-from highcharts_stock import errors
+from highcharts_stock import errors, constants
 from highcharts_stock.metaclasses import HighchartsMeta
 from highcharts_stock.decorators import class_sensitive
 from highcharts_stock.utility_classes.data_grouping import DataGroupingOptions
@@ -254,6 +254,40 @@ class RangeSelectorButton(HighchartsMeta):
     def title(self, value):
         self._title = validators.string(value, allow_empty = True)
 
+    @property
+    def type(self) -> Optional[str]:
+        """The time span for the button. Accepts the following values:
+        
+        * ``'all'``
+        * ``'millisecond'``
+        * ``'second'``
+        * ``'minute'``
+        * ``'hour'``
+        * ``'day'``
+        * ``'week'``
+        * ``'month'``
+        * ``'year'``
+        * ``'ytd'``
+        
+        Defaults to :obj:`None <python:None>`
+        
+        :rtype: :class:`str <python:str>`
+        """
+        return self._type
+    
+    @type.setter
+    def type(self, value):
+        if not value:
+            self._type = None
+        else:
+            value = validators.string(value, allow_empty = False)
+            value = value.lower()
+            if value not in constants.RANGE_SELECTOR_BUTTON_TYPES:
+                raise errors.HighchartsValueError(
+                    f'type expects one of {constants.RANGE_SELECTOR_BUTTON_TYPES}. Received: "{value}"'
+                )
+            self._type = value
+
     @classmethod
     def _get_kwargs_from_dict(cls, as_dict):
         kwargs = {
@@ -265,6 +299,7 @@ class RangeSelectorButton(HighchartsMeta):
             'preserve_data_grouping': as_dict.get('preserveDataGrouping', None),
             'text': as_dict.get('text', None),
             'title': as_dict.get('title', None),
+            'type': as_dict.get('type', None),
         }
 
         return kwargs
@@ -279,6 +314,7 @@ class RangeSelectorButton(HighchartsMeta):
             'preserveDataGrouping': self.preserve_data_grouping,
             'text': self.text,
             'title': self.title,
+            'type': self.type,
         }
 
         return untrimmed
