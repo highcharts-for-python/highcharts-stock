@@ -11,9 +11,11 @@ class Definition(HighchartsMeta):
 
     def __init__(self, **kwargs):
         self._class_name = None
+        self._element_type = None
         self._symbol = None
 
         self.class_name = kwargs.get('class_name', None)
+        self.element_type = kwargs.get('element_type', None)
         self.symbol = kwargs.get('symbol', None)
 
     @property
@@ -28,6 +30,18 @@ class Definition(HighchartsMeta):
     @class_name.setter
     def class_name(self, value):
         self._class_name = validators.string(value, allow_empty = True)
+
+    @property
+    def element_type(self) -> Optional[str]:
+        """The element to use for the item. Defaults to ``'span'``.
+        
+        :rtype: :class:`str <python:str>` or :obj:`None <python:None>`
+        """
+        return self._element_type
+    
+    @element_type.setter
+    def element_type(self, value):
+        self._element_type = validators.string(value, allow_empty = True)
 
     @property
     def symbol(self) -> Optional[str]:
@@ -45,6 +59,7 @@ class Definition(HighchartsMeta):
     def _get_kwargs_from_dict(cls, as_dict):
         kwargs = {
             'class_name': as_dict.get('className', None),
+            'element_type': as_dict.get('elementType', None),
             'symbol': as_dict.get('symbol', None)
         }
 
@@ -53,6 +68,7 @@ class Definition(HighchartsMeta):
     def _to_untrimmed_dict(self, in_cls = None) -> dict:
         untrimmed = {
             'className': self.class_name,
+            'elementType': self.element_type,
             'symbol': self.symbol
         }
 
