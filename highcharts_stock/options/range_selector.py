@@ -674,7 +674,7 @@ class RangeSelector(HighchartsMeta):
 
     @input_style.setter
     def input_style(self, value):
-        self._input_style = validators.string(value, allow_empty = True)
+        self._input_style = value
 
     @property
     def label_style(self) -> Optional[str]:
@@ -687,7 +687,7 @@ class RangeSelector(HighchartsMeta):
 
     @label_style.setter
     def label_style(self, value):
-        self._label_style = validators.string(value, allow_empty = True)
+        self._label_style = value
 
     @property
     def selected(self) -> Optional[int]:
